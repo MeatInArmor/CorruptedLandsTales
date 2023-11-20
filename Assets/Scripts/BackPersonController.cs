@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
 	public class BackPersonController : MonoBehaviour
 	{
