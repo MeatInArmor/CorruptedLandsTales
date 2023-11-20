@@ -46,8 +46,8 @@ MonoBehaviour:
     isAimedOnPlayer: 0
     attackRange: 5
     reserveAttackRange: 5
-  viewPosition: {x: 522, y: -104, z: 0}
-  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+  viewPosition: {x: 566, y: -241, z: 0}
+  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
@@ -377,7 +377,7 @@ MonoBehaviour:
           reserveAttackRange: 8
         description: 
         drawGizmos: 0
-        duration: 1
+        duration: 1.3
     - rid: 5970866477781221396
       type: {class: AttackAction, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:
