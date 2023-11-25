@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5138283520677574742}
   - component: {fileID: 8307232963831181964}
   - component: {fileID: 8465032352854147778}
-  - component: {fileID: -7105628289275366396}
+  - component: {fileID: 9222002406757968233}
   m_Layer: 7
-  m_Name: Bullet
+  m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 70014f4c52be9164b82203c25a510c1a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,10 +131,10 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-7105628289275366396
+--- !u!114 &9222002406757968233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2393316542524500278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac703167eb53063448a5390b35535837, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b8efc08a59f79b4fb5008ff7f5ea6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 1
+  m_force: 20
+  m_lifeTime: 3
+  m_damage: 100

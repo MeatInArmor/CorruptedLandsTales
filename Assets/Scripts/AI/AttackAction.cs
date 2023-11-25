@@ -16,7 +16,7 @@ namespace TheKiwiCoder {
         }
 
         protected override State OnUpdate() {
-            context.enemyAttack.Shoot();
+            //context.enemyAttack.Shoot();
             return State.Success;
         }
     }

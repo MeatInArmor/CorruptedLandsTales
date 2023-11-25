@@ -20,8 +20,6 @@ namespace TheKiwiCoder
 		public BoxCollider boxCollider;
 		public CapsuleCollider capsuleCollider;
 		public CharacterController characterController;
-		public EnemyAttack enemyAttack;//моя Атака но тогда зависим есть ли скрипт атаки
-		public SearcherTarget searcherTarget;//Поиск цели
 		// Add other game specific systems here
 
 		public static Context CreateFromGameObject(GameObject gameObject)
@@ -37,8 +35,6 @@ namespace TheKiwiCoder
 			context.boxCollider = gameObject.GetComponent<BoxCollider>();
 			context.capsuleCollider = gameObject.GetComponent<CapsuleCollider>();
 			context.characterController = gameObject.GetComponent<CharacterController>();
-			context.enemyAttack = gameObject.GetComponent<EnemyAttack>();//моя Атака но тогда зависим есть ли скрипт атаки
-			context.searcherTarget = gameObject.GetComponent<SearcherTarget>();
 			// Add whatever else you need here...
 
 			return context;

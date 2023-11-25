@@ -17,7 +17,7 @@ namespace CorruptedLandTales
 
         protected override State OnUpdate()
         {
-            blackboard.target = context.searcherTarget.FindTarget();
+            //blackboard.target = context.searcherTarget.FindTarget();
             if (blackboard.target)
             {
                 blackboard.moveToPosition = blackboard.target.position;
