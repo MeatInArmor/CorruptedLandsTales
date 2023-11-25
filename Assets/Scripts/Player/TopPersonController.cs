@@ -10,7 +10,7 @@ namespace CorruptedLandTales
 		[SerializeField] private Character m_character;
 		[SerializeField] private InputActionAsset m_inputActionAsset;
 		[SerializeField] private Transform m_cameraTransform;
-		[SerializeField] private SpecialAttack specialAttack;	
+		[SerializeField] private SpecialAttack m_specialAttack;	
 		
 		private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
@@ -65,12 +65,12 @@ namespace CorruptedLandTales
 
 		private void OnUseSpecialStarted(InputAction.CallbackContext context)
 		{
-			specialAttack.StartUseSpecial();
+			m_specialAttack.StartUseSpecial();
 		}
 		
 		private void OnUseSpecialCanceled(InputAction.CallbackContext context)
 		{
-			specialAttack.EndUseSpecial();
+			m_specialAttack.EndUseSpecial(); // переделать просто под атаку и кд
 		}
 
 		private void Update()

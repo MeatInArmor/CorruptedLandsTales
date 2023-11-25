@@ -6,9 +6,8 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class FireBallComponent : MonoBehaviour
+    public class ProjectileComponent : MonoBehaviour
     {
-
         [SerializeField] private float m_force = 50f;
         [SerializeField] private float m_lifeTime = 5f;
         [SerializeField] private float m_damage = 10f;

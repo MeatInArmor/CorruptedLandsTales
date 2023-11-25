@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class SpecialAttack : MonoBehaviour
+    public class Bow : AttackItem
     {
-
-        [SerializeField] private ProjectileComponent m_prefab;
+        [SerializeField] private GameObject m_prefab;
         [SerializeField] private Transform m_muzzle;
         [SerializeField] private float m_delay = 3f;
         
         private Coroutine m_fireCoroutine;
 
-        public void EndUseSpecial()
+        public override void EndUse()
         {
             Debug.Log("End Use", this);
 
@@ -24,7 +23,7 @@ namespace CorruptedLandTales
             }
         }
 
-        public void StartUseSpecial()
+        public override void StartUse()
         {
             Debug.Log("Start Use", this);
 
@@ -42,7 +41,5 @@ namespace CorruptedLandTales
             }
             while(true);
         }
-        
-
     }
 }
