@@ -1,11 +1,13 @@
+using System;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
-	public class TopPersonController : MonoBehaviour
+	public class PlayerController : MonoBehaviour
 	{
 		[SerializeField] private Character m_character;
 		[SerializeField] private InputActionAsset m_inputActionAsset;
@@ -35,6 +37,7 @@ namespace CorruptedLandTales
 			m_fireAction.canceled += OnFireInputCanceled;
 			m_swapWeapon.performed += SwapWeapon;
 			m_useSpecial.performed += OnUseSpecial;
+			
 		}
 
 		private void OnDisable()
@@ -70,7 +73,7 @@ namespace CorruptedLandTales
 
 		private void Update()
 		{
-			if (m_character == null)
+			if (!m_character)
 			{
 				enabled = false;
 				return;
@@ -78,7 +81,7 @@ namespace CorruptedLandTales
 			Vector2 move = m_moveAction.ReadValue<Vector2>();
 			Move(move, false);
 		}
-		
+
 		private void Move(Vector2 move, bool isSprint)
 		{
 			m_character.Move(move, isSprint, m_cameraTransform.eulerAngles.y);

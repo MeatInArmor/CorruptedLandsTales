@@ -46,7 +46,6 @@ namespace CorruptedLandTales
         
         private IEnumerator StartAttack()
         {
-            Debug.Log("StartAttack");
             var waitForSeconds = new WaitForSeconds(m_refreshTime);
             var fromRot = m_fromRot;
             do
@@ -60,7 +59,6 @@ namespace CorruptedLandTales
         
         private IEnumerator EndAttack()
         {
-            Debug.Log("EndAttack");
             var waitForSeconds = new WaitForSeconds(m_refreshTime);
             var toRot = m_toRot;
             do

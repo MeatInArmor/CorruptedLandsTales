@@ -11,7 +11,6 @@ namespace CorruptedLandTales
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log($"Collide:{other.tag}");
             var damageable = other.GetComponentInParent<IDamageable>();
             if (damageable != null)
             {

@@ -14,8 +14,6 @@ namespace CorruptedLandTales
 
         public override void EndUse()
         {
-            Debug.Log("End Use", this);
-
             if(m_fireCoroutine != null)
             {
                 StopCoroutine(m_fireCoroutine);
@@ -25,8 +23,6 @@ namespace CorruptedLandTales
 
         public override void StartUse()
         {
-            Debug.Log("Start Use", this);
-
             m_fireCoroutine = StartCoroutine(StartFire());
         }
 

@@ -11,7 +11,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_force = 50f;
         [SerializeField] private float m_lifeTime = 5f;
         [SerializeField] private float m_damage = 10f;
-
+        
         private void Start()
         {
             var rb = GetComponent<Rigidbody>();
@@ -19,7 +19,6 @@ namespace CorruptedLandTales
 
             Destroy(gameObject, m_lifeTime);
         }
-
 
         private void OnTriggerEnter(Collider other)
         {
