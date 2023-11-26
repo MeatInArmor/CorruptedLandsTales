@@ -7,10 +7,10 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class MeleeAtack : AttackItem
+    public class MeleeAttack : AttackItem
     {
-        private float m_refreshTime = 0.001f;
-        private float m_speed = 800.0f;
+        [SerializeField] private float m_refreshTime = 0.001f;
+        [SerializeField] private float m_speed = 800.0f;
         
         private Quaternion m_toRot = Quaternion.Euler(90f, 0f, 0f);
         private Quaternion m_fromRot = Quaternion.Euler(0f, 0f, 0f);

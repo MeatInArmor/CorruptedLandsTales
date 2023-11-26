@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -9,40 +11,18 @@ namespace CorruptedLandTales
 
         [SerializeField] private ProjectileComponent m_prefab;
         [SerializeField] private Transform m_muzzle;
-        [SerializeField] private float m_delay = 3f;
-        
-        private Coroutine m_fireCoroutine;
+        [SerializeField] private float m_cooldown = 3f;
 
-        public void EndUseSpecial()
+        private float m_timeLastUsed;
+
+        public void UseSpecial()
         {
-            Debug.Log("End Use", this);
-
-            if(m_fireCoroutine != null)
-            {
-                StopCoroutine(m_fireCoroutine);
-                m_fireCoroutine = null;
-            }
-        }
-
-        public void StartUseSpecial()
-        {
-            Debug.Log("Start Use", this);
-
-            m_fireCoroutine = StartCoroutine(StartFire());
-        }
-
-        private IEnumerator StartFire()
-        {
-            var waitForSeconds = new WaitForSeconds(m_delay);
-
-            do
+            var passedTime = Time.time - m_timeLastUsed; 
+            if (m_cooldown < passedTime)
             {
                 Instantiate(m_prefab, m_muzzle.position, m_muzzle.rotation);
-                yield return waitForSeconds;
+                m_timeLastUsed = Time.time;
             }
-            while(true);
         }
-        
-
     }
 }

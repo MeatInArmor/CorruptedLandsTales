@@ -34,8 +34,7 @@ namespace CorruptedLandTales
 			m_fireAction.started += OnFireInputStarted;
 			m_fireAction.canceled += OnFireInputCanceled;
 			m_swapWeapon.performed += SwapWeapon;
-			m_useSpecial.started += OnUseSpecialStarted;
-			m_useSpecial.canceled += OnUseSpecialCanceled;
+			m_useSpecial.performed += OnUseSpecial;
 		}
 
 		private void OnDisable()
@@ -44,8 +43,8 @@ namespace CorruptedLandTales
 
 			m_fireAction.started -= OnFireInputStarted;
 			m_fireAction.canceled -= OnFireInputCanceled;
-			m_useSpecial.started -= OnUseSpecialStarted;
-			m_useSpecial.canceled -= OnUseSpecialCanceled;
+			m_swapWeapon.performed -= SwapWeapon;
+			m_useSpecial.performed -= OnUseSpecial;
 		}
 		
 		private void OnFireInputStarted(InputAction.CallbackContext context)
@@ -63,15 +62,11 @@ namespace CorruptedLandTales
 			m_character.attackManager.Next();
 		}
 
-		private void OnUseSpecialStarted(InputAction.CallbackContext context)
+		private void OnUseSpecial(InputAction.CallbackContext context)
 		{
-			m_specialAttack.StartUseSpecial();
+			m_specialAttack.UseSpecial();
 		}
 		
-		private void OnUseSpecialCanceled(InputAction.CallbackContext context)
-		{
-			m_specialAttack.EndUseSpecial(); // переделать просто под атаку и кд
-		}
 
 		private void Update()
 		{
