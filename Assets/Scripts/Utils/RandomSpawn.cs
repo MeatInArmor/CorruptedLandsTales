@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = System.Random;
 
 namespace CorruptedLandTales
 {
@@ -72,11 +73,16 @@ namespace CorruptedLandTales
 
         public List<Vector3> GetRandomPositions()
         {
+            Random rnd = new Random();
             List<Vector3> m_List = new List<Vector3>(m_midPointsCoord.Count);
-            foreach (Vector2 item in m_midPointsCoord)
+            int i = rnd.Next(0, m_midPointsCoord.Count);
+            m_List.Add(new Vector3(m_midPointsCoord[i].x, 1.0f,m_midPointsCoord[i].y));
+            int j;
+            do
             {
-                m_List.Add(new Vector3(item.x, 1.0f,item.y));
-            }
+                j = rnd.Next(0, m_midPointsCoord.Count);
+            } while (j == i);
+            m_List.Add(new Vector3(m_midPointsCoord[j].x, 1.0f, m_midPointsCoord[j].y));
             return m_List;
         }
         

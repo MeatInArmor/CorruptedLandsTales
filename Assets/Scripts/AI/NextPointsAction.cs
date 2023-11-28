@@ -27,7 +27,6 @@ namespace CorruptedLandTales
                     Debug.LogError("PointsContainer not found!");
                     return;
                 }
-
                 m_points = pointsContainer.GetRandomPositions();
             }
         }
