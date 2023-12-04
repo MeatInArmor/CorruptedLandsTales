@@ -9,7 +9,7 @@ namespace CorruptedLandTales.AI
 		private Transform m_agentTransform;
 		protected override void OnStart()
 		{
-			m_layerMask = LayerMask.GetMask("Projectile"); // надо потом разобраться
+			m_layerMask = LayerMask.GetMask("Projectile");
 			m_agentTransform = context.agent.transform;
 		}
 

@@ -8,7 +8,7 @@ namespace CorruptedLandTales
     public class NextPointsAction : ActionNode
     {
         private List<Vector3> m_points = new();
-        private RandomSpawn randomSpawn;
+        private MeshSpawn _meshSpawn;
         private int m_index = 0;
         protected override void OnStart()
         {
@@ -19,7 +19,7 @@ namespace CorruptedLandTales
                 return;
             }
             m_points = pointsContainer.GetPoints();
-
+            
             /*if (m_points.Count == 0)
             {
                 var pointsContainer = context.gameObject.GetComponent<RandomSpawn>();

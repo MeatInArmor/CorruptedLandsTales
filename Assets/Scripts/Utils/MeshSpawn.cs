@@ -3,11 +3,12 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class RandomSpawn : MonoBehaviour
+    public class MeshSpawn : MonoBehaviour
     {
         [SerializeField] private Transform a;
         [SerializeField] private Transform b;
         [SerializeField] private int m_countQuads = 9; //количество разбиения прямоугольников
+        [SerializeField] private List<PatrolPoints> m_enemyList = new();
         
         private Vector2[] m_pointsCoord; //массив координат для нахождения точек
         private List<Vector2> m_midPointsCoord; //координаты середин прямоугольников
@@ -19,7 +20,7 @@ namespace CorruptedLandTales
         private float m_stepX; //шаг по x
         private float m_stepZ; //шаг по z
 
-        [SerializeField] private List<PatrolPoints> m_enemyList = new();
+        
 
         private void Start()
         {
@@ -41,20 +42,16 @@ namespace CorruptedLandTales
                     k++;
                 }
             }
-            
-            /*for (int i = 0; i < m_pointsCoord.Length; i += 1)
-            {
-                Debug.Log($"{m_pointsCoord[i]}");
-            }*/
 
-            int flag = (int) Mathf.Sqrt(m_countQuads) + 1;//flag который определяет крайнюю точку которую нам не нужно брать 
+            int flag = (int) Mathf.Sqrt(m_countQuads) + 1;
+            int skipCoordFlag = flag + 1;
             
             for (int i = 0; i < countPointsCoord - 4; i++)
             {
                 if ((i + 1) % flag != 0)
                 {
-                    Vector2 midPointVec = new Vector2((m_pointsCoord[i].x + m_pointsCoord[i + 5].x) / 2,
-                        (m_pointsCoord[i].y + m_pointsCoord[i + 5].y) / 2);
+                    Vector2 midPointVec = new Vector2((m_pointsCoord[i].x + m_pointsCoord[i + skipCoordFlag].x) / 2,
+                        (m_pointsCoord[i].y + m_pointsCoord[i + skipCoordFlag].y) / 2);
                     m_midPointsCoord.Add(midPointVec);
                 }
                 else
@@ -63,22 +60,29 @@ namespace CorruptedLandTales
                 }
             }
 
-            /*for (int i = 0; i < m_midPointsCoord.Count; i += 1)
-            {
-                Debug.Log($"{m_midPointsCoord[i]}");
-            }*/
-
-            var listPoints = ToVector3();
+            //var listPoints = ToVector3();
+            //m_enemyList.ForEach(e => e.AddPoints(listPoints));
+            var listPoints = ShuffleIntList(ToVector3());
             m_enemyList.ForEach(e => e.AddPoints(listPoints));
-
         }
 
-        public List<Vector3> GetRandomPositions()
+        /*public List<Vector3> GetRandomPositions()
         {
-            var list = ToVector3();
-
-            //int rIndex = Random.Range(0, list.Count);
+            var list = ShuffleIntList(ToVector3());
             return list;
+        }*/
+        
+        private List<Vector3> ShuffleIntList(List<Vector3> list)
+        {
+            var newShuffledList = new List<Vector3>();
+            var listcCount = list.Count;
+            for (int i = 0; i < listcCount; i++)
+            {
+                var randomElementInList = Random.Range(0, list.Count);
+                newShuffledList.Add(list[randomElementInList]);
+                list.Remove(list[randomElementInList]);
+            }
+            return newShuffledList;
         }
         
         private void OnDrawGizmos()
