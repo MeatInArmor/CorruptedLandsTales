@@ -14,7 +14,8 @@ namespace CorruptedLandTales
 
         public Transform FindTarget()
         {
-            var count = Physics.OverlapSphereNonAlloc(transform.position, m_radius, m_result, m_layerMask, QueryTriggerInteraction.Ignore);
+            var count = Physics.OverlapSphereNonAlloc(transform.position, m_radius, m_result, m_layerMask, 
+                QueryTriggerInteraction.Ignore);
 
             if(count > 0)
             {

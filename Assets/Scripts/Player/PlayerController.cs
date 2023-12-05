@@ -37,7 +37,6 @@ namespace CorruptedLandTales
 			m_fireAction.canceled += OnFireInputCanceled;
 			m_swapWeapon.performed += SwapWeapon;
 			m_useSpecial.performed += OnUseSpecial;
-			
 		}
 
 		private void OnDisable()

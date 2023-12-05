@@ -20,6 +20,7 @@ namespace CorruptedLandTales
         {
             if (m_items.Count > 0)
             {
+                //if (m_items[m_currentIndex].inInventory) доелать под такой флаг, как будто не нужно 
                 m_items[m_currentIndex].TurnOff();
                 m_currentIndex++;
                 if (m_currentIndex >= m_items.Count)

@@ -28,7 +28,7 @@ namespace CorruptedLandTales
             m_pointsCoord = new Vector2[countPointsCoord];
             m_midPointsCoord = new List<Vector2>(m_countQuads);
             int k = 0;
-            float divisor = (float) Mathf.Sqrt(m_countQuads);
+            float divisor = Mathf.Sqrt(m_countQuads);
             m_aCoord = new Vector2(a.position.x, a.position.z); 
             m_bCoord = new Vector2(b.position.x, b.position.z);
             m_stepX = Mathf.Abs(m_bCoord.x - m_aCoord.x) / divisor;
@@ -59,31 +59,12 @@ namespace CorruptedLandTales
                     
                 }
             }
-
-            //var listPoints = ToVector3();
-            //m_enemyList.ForEach(e => e.AddPoints(listPoints));
-            var listPoints = ShuffleIntList(ToVector3());
+            
+            var listPoints = ToVector3();
             m_enemyList.ForEach(e => e.AddPoints(listPoints));
         }
-
-        /*public List<Vector3> GetRandomPositions()
-        {
-            var list = ShuffleIntList(ToVector3());
-            return list;
-        }*/
         
-        private List<Vector3> ShuffleIntList(List<Vector3> list)
-        {
-            var newShuffledList = new List<Vector3>();
-            var listcCount = list.Count;
-            for (int i = 0; i < listcCount; i++)
-            {
-                var randomElementInList = Random.Range(0, list.Count);
-                newShuffledList.Add(list[randomElementInList]);
-                list.Remove(list[randomElementInList]);
-            }
-            return newShuffledList;
-        }
+        
         
         private void OnDrawGizmos()
         {

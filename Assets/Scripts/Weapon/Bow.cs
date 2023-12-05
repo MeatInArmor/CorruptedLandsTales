@@ -21,6 +21,8 @@ namespace CorruptedLandTales
             }
         }
 
+        public override bool inInventory { get; set; }
+
         public override void StartUse()
         {
             m_fireCoroutine = StartCoroutine(StartFire());

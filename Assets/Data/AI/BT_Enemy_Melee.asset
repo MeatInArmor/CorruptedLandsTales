@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d285eb63c2cdd74180de7cfceaa96ad, type: 3}
-  m_Name: BT_Enemy_Test_Range
+  m_Name: BT_Enemy_Melee
   m_EditorClassIdentifier: 
   rootNode:
     rid: 5970866477781221377
@@ -44,9 +44,9 @@ MonoBehaviour:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
     isAimedOnPlayer: 0
-    attackRange: 6
-    reserveAttackRange: 6
-  viewPosition: {x: 551, y: -130, z: 0}
+    attackRange: 2
+    reserveAttackRange: 2
+  viewPosition: {x: 424, y: -73, z: 0}
   viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:
     version: 2
@@ -130,7 +130,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: ceefbbac2d061424aa40aa1033b3b337
-        position: {x: 299, y: 750}
+        position: {x: 298.99994, y: 749.9999}
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}

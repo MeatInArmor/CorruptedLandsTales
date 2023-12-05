@@ -19,17 +19,6 @@ namespace CorruptedLandTales
                 return;
             }
             m_points = pointsContainer.GetPoints();
-            
-            /*if (m_points.Count == 0)
-            {
-                var pointsContainer = context.gameObject.GetComponent<RandomSpawn>();
-                if (pointsContainer == null)
-                {
-                    Debug.LogError("PointsContainer not found!");
-                    return;
-                }
-                m_points = pointsContainer.GetRandomPositions();
-            }*/
         }
 
         protected override void OnStop()

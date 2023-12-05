@@ -14,10 +14,12 @@ namespace CorruptedLandTales
         [SerializeField] private LayerMask m_layerMask;
         
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
-
+        private Transform m_parentTransform;
+        
         private void Awake()
         {
             m_attackAngle /= 2;
+            m_parentTransform = GetComponentInParent<Transform>();
         }
 
         public void Attack()
@@ -29,9 +31,8 @@ namespace CorruptedLandTales
             {
                 var other = m_result[i];
                 var damageable = other.GetComponentInParent<IDamageable>();
-                //var itemTransform = other.transform.position;
-                Vector3 pos = transform.position;
-                Vector3 facingNormalized = transform.forward.normalized;
+                Vector3 pos = m_parentTransform.position;
+                Vector3 facingNormalized = m_parentTransform.forward.normalized;
                 Vector3 enemyPos = other.transform.position;
                 Vector3 enemyFacingNormalized = (enemyPos - pos).normalized;
                 float dist = Vector3.Distance(pos, enemyPos);

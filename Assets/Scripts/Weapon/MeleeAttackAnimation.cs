@@ -24,6 +24,8 @@ namespace CorruptedLandTales
             m_EndCoroutine = StartCoroutine(EndAttack());
         }
 
+        public override bool inInventory { get; set; }
+
         public override void StartUse()
         {
             if (m_EndCoroutine != null)

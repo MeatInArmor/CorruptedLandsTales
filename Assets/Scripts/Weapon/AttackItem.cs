@@ -6,6 +6,8 @@ namespace CorruptedLandTales
 {
     public abstract class AttackItem: MonoBehaviour
     {
+        public abstract bool inInventory { set; get; }
+        
         public abstract void StartUse();
         public abstract void EndUse();
 
