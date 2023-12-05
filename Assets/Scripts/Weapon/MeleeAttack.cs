@@ -1,4 +1,5 @@
 using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,35 +13,34 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
         
-        private Collider[] m_result = new Collider[4];
-        private float m_direction;
+        private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
 
         private void Awake()
         {
-            m_direction = m_attackAngle / 180.0f; //отношения угла к единице
+            m_attackAngle /= 2;
         }
 
         public void Attack()
         {
             var count = Physics.OverlapSphereNonAlloc(transform.position,  m_attackRange, m_result, m_layerMask,
                 QueryTriggerInteraction.Ignore);
-            if (count > 0)
+
+            for (int i = 0; i < count; i++)
             {
-                foreach (var other in m_result)
+                var other = m_result[i];
+                var damageable = other.GetComponentInParent<IDamageable>();
+                //var itemTransform = other.transform.position;
+                Vector3 pos = transform.position;
+                Vector3 facingNormalized = transform.forward.normalized;
+                Vector3 enemyPos = other.transform.position;
+                Vector3 enemyFacingNormalized = (enemyPos - pos).normalized;
+                float dist = Vector3.Distance(pos, enemyPos);
+                Debug.Log($"{dist}");
+                float dotProductAngle = Mathf.Acos(Vector3.Dot(facingNormalized, enemyFacingNormalized)) * Mathf.Rad2Deg;
+                Debug.Log($"{dotProductAngle}");
+                if (damageable != null && dist < m_attackRange && dotProductAngle < m_attackAngle)
                 {
-                   
-                    var damageable = other.GetComponentInParent<IDamageable>();
-                    var itemTransform = other.transform.position;
-                    Vector3 pos = transform.position;
-                    Vector3 facing = transform.forward.normalized;
-                    Vector3 enemyPos = other.transform.position;
-                    Vector3 enemyFacing = (pos - enemyPos).normalized; //
-                    float dist = Vector3.Distance(pos, enemyPos);
-                    float dotProduct = Vector3.Dot(facing, enemyFacing);
-                    if (damageable != null && dist < m_attackRange && dotProduct <= m_direction)
-                    {
-                        damageable.TakeDamage(m_damage);
-                    }
+                    damageable.TakeDamage(m_damage);
                 }
             }
         }
