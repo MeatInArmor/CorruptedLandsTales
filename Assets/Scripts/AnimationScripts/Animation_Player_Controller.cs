@@ -8,16 +8,42 @@ namespace CorruptedLandTales
     {
         [SerializeField] private Animator m_animator;
 
-        public void AnimatorMove(Vector2 move)
+        public void AnimatorMove(Vector3 move)
         {
-            if ((move.x == 0) & (move.y == 0))
+            float speed = move.normalized.magnitude;
+            m_animator.SetFloat("speed",speed);
+            //if ((move.x == 0) && (move.z == 0))
+            //{
+            //    m_animator.SetBool("IsRunning", false);
+            //}
+            //else
+            //{
+            //    m_animator.SetBool("IsRunning", true);
+            //}
+        }
+        public void AnimatorAttack_Stand(bool start)
+        {
+            if (start == true)
             {
-                m_animator.SetBool("IsRunning", false);
+                m_animator.SetBool("IsAttacking", true);
             }
             else
             {
-                m_animator.SetBool("IsRunning", true);
+                m_animator.SetBool("IsAttacking", false);
             }
+            
+        }
+        public void AnimatorCastingSpell(bool start)
+        {
+            if (start == true)
+            {
+                m_animator.SetBool("IsCastingSpell", true);
+            }
+            else
+            {
+                m_animator.SetBool("IsCastingSpell", false);
+            }
+
         }
     }
 }

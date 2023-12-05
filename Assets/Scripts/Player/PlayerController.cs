@@ -37,10 +37,10 @@ namespace CorruptedLandTales
 		private void OnEnable()
 		{
 			m_playerMap.Enable();
-
-			m_fireAction.started += OnFireInputStarted;
-			m_fireAction.canceled += OnFireInputCanceled;
-			m_swapWeapon.performed += SwapWeapon;
+			m_fireAction.performed += OnFireInputStarted;
+            /*m_fireAction.started += OnFireInputStarted;
+			m_fireAction.canceled += OnFireInputCanceled;*/
+            m_swapWeapon.performed += SwapWeapon;
 			m_useSpecial.performed += OnUseSpecial;
 			
 		}
@@ -49,21 +49,24 @@ namespace CorruptedLandTales
 		{
 			m_playerMap.Disable();
 
-			m_fireAction.started -= OnFireInputStarted;
-			m_fireAction.canceled -= OnFireInputCanceled;
-			m_swapWeapon.performed -= SwapWeapon;
+			m_fireAction.performed -= OnFireInputStarted;
+            /*m_fireAction.started -= OnFireInputStarted;
+			m_fireAction.canceled -= OnFireInputCanceled;*/
+            m_swapWeapon.performed -= SwapWeapon;
 			m_useSpecial.performed -= OnUseSpecial;
 		}
 		
 		private void OnFireInputStarted(InputAction.CallbackContext context)
 		{
-			m_character.attackManager.StartUseWeapon();
+            
+            m_character.attackManager.StartUseWeapon();
 		}
 
-		private void OnFireInputCanceled(InputAction.CallbackContext context)
+		/*private void OnFireInputCanceled(InputAction.CallbackContext context)
 		{
-			m_character.attackManager.EndUseWeapon();
-		}
+            
+            m_character.attackManager.EndUseWeapon();
+		}*/
 
 		private void SwapWeapon(InputAction.CallbackContext context)
 		{
@@ -85,11 +88,11 @@ namespace CorruptedLandTales
 			}
 			Vector2 move = m_moveAction.ReadValue<Vector2>();
 			
-			Move(move, false);
+			Move(new Vector3(move.x, 0, move.y), false);
             
         }
 
-		private void Move(Vector2 move, bool isSprint)
+		private void Move(Vector3 move, bool isSprint)
 		{
 
             //Передаем значение move в AnimatorMove для проверки перемещения персонажа

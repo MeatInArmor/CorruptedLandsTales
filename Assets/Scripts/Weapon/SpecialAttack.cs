@@ -8,6 +8,8 @@ namespace CorruptedLandTales
 {
     public class SpecialAttack : MonoBehaviour
     {
+        //Инициализируем Animation_Player_Controller
+        private Animation_Player_Controller m_animation_Player_Controller;
 
         [SerializeField] private ProjectileComponent m_prefab;
         [SerializeField] private Transform m_muzzle;
@@ -17,6 +19,8 @@ namespace CorruptedLandTales
 
         public void UseSpecial()
         {
+            //m_animation_Player_Controller.AnimatorCastingSpell(true);
+            //m_animation_Player_Controller.AnimatorCastingSpell(false);
             var passedTime = Time.time - m_timeLastUsed; 
             if (m_cooldown < passedTime)
             {

@@ -12,7 +12,6 @@ namespace CorruptedLandTales
         private void Start()
         {
             GetComponentsInChildren(true, m_items);
-
             m_currentIndex =  m_items.Count > 0 ? 0: -1;
         }
 

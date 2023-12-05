@@ -27,7 +27,7 @@ namespace CorruptedLandTales
             }
         }
         
-        public void Move(Vector2 move, bool isSprint, float cameraY)
+        public void Move(Vector3 move, bool isSprint, float cameraY)
         {
             float targetSpeed = 0f;
             float speed = 0;
@@ -60,7 +60,7 @@ namespace CorruptedLandTales
 			
             if (inputMagnitude != 0f)
             {
-                Vector3 inputDirection = new Vector3(move.x, 0f, move.y).normalized;
+                Vector3 inputDirection =  move.normalized;
 				
                 m_targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cameraY;
 				
