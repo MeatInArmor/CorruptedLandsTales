@@ -22,8 +22,8 @@ namespace TheKiwiCoder {
         protected override State OnUpdate() {
             if (m_attackManager)
             {
-                m_attackManager.StartUseWeapon();
-                m_attackManager.EndUseWeapon();
+                m_attackManager.UseWeapon();
+                //m_attackManager.EndUseWeapon();
             }
             return State.Success;
         }

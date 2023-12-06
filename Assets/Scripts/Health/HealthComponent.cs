@@ -7,7 +7,6 @@ namespace CorruptedLandTales
     public class HealthComponent : MonoBehaviour, IDamageable
     {
         [SerializeField] private float m_health = 100f;
-        [SerializeField] private LayerMask m_layerMask;
         
         public void TakeDamage(float damage)
         {

@@ -17,7 +17,7 @@ namespace CorruptedLandTales
 
         public void UseSpecial()
         {
-            var passedTime = Time.time - m_timeLastUsed; 
+            float passedTime = Time.time - m_timeLastUsed; 
             if (m_cooldown < passedTime)
             {
                 Instantiate(m_prefab, m_muzzle.position, m_muzzle.rotation);

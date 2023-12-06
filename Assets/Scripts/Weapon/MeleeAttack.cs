@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class MeleeAttack : MonoBehaviour
+    public class MeleeAttack : MonoBehaviour, IAttackItem
     {
         [SerializeField] private float m_damage = 40.0f;
         [SerializeField] private float m_attackAngle = 120.0f;
@@ -15,15 +15,27 @@ namespace CorruptedLandTales
         
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
+        private MeleeAttackAnimation m_anim;
+        
+        /*public void Initialize(MeleeWeaponSO weaponData)
+        {
+            m_damage = weaponData.damage;
+            m_attackAngle = weaponData.attackAngle;
+            m_attackRange = weaponData.attackRange;
+            m_layerMask = weaponData.layerMask;
+        }*/
         
         private void Awake()
         {
             m_attackAngle /= 2;
             m_parentTransform = GetComponentInParent<Transform>();
+            m_anim = GetComponent<MeleeAttackAnimation>();
         }
 
         public void Attack()
         {
+            m_anim.AttackAnimation();
+            
             var count = Physics.OverlapSphereNonAlloc(transform.position,  m_attackRange, m_result, m_layerMask,
                 QueryTriggerInteraction.Ignore);
 
@@ -44,6 +56,21 @@ namespace CorruptedLandTales
                     damageable.TakeDamage(m_damage);
                 }
             }
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void DestroySelf()
+        {
+            Destroy(gameObject);
         }
     }
 }

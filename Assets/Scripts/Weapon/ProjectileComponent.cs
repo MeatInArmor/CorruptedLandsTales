@@ -12,7 +12,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_lifeTime = 5f;
         [SerializeField] private float m_damage = 10f;
 
-        private LayerMask m_layer;
+        //private LayerMask m_layer;
 
         private void Start()
         {

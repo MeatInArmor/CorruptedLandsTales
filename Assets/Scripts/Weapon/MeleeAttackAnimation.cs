@@ -7,72 +7,54 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class MeleeAttackAnimation : AttackItem
+    public class MeleeAttackAnimation : MonoBehaviour
     {
         [SerializeField] private float m_refreshTime = 0.001f;
-        [SerializeField] private float m_speed = 800.0f;
-        [SerializeField] private MeleeAttack m_meleeAttack;
-        
+        [SerializeField] private float m_speed = 400.0f;
+
         private Quaternion m_toRot = Quaternion.Euler(90f, 0f, 0f);
         private Quaternion m_fromRot = Quaternion.Euler(0f, 0f, 0f);
-        
+
         private Coroutine m_AttackCoroutine;
-        private Coroutine m_EndCoroutine;
-
-        private void Awake()
-        {
-            m_EndCoroutine = StartCoroutine(EndAttack());
-        }
-
-        public override bool inInventory { get; set; }
-
-        public override void StartUse()
-        {
-            if (m_EndCoroutine != null)
-            {
-                StopCoroutine(m_EndCoroutine);
-                m_EndCoroutine = null;
-                m_AttackCoroutine = StartCoroutine(StartAttack());
-                m_meleeAttack.Attack();
-            }
-        }
-
-        public override void EndUse()
-        {
-            if (m_AttackCoroutine != null)
-            {
-                StopCoroutine(m_AttackCoroutine);
-                m_AttackCoroutine = null;
-                m_EndCoroutine = StartCoroutine(EndAttack());
-            }
-        }
-
         
+
+        public void AttackAnimation()
+        {
+            if (m_AttackCoroutine == null)
+            {
+                m_AttackCoroutine = StartCoroutine(AttackRoutine());
+            }
+        }
+
+        private IEnumerator AttackRoutine()
+        {
+            yield return StartCoroutine(StartAttack());
+            yield return StartCoroutine(EndAttack());
+            m_AttackCoroutine = null;
+        }
+
         private IEnumerator StartAttack()
         {
             var waitForSeconds = new WaitForSeconds(m_refreshTime);
             var fromRot = m_fromRot;
             do
             {
-                transform.localRotation = Quaternion.RotateTowards(fromRot, m_toRot, m_speed*Time.deltaTime);
+                transform.localRotation = Quaternion.RotateTowards(fromRot, m_toRot, m_speed * Time.deltaTime);
                 fromRot = transform.localRotation;
                 yield return waitForSeconds;
-            } 
-            while (true);
+            } while (Quaternion.Angle(transform.localRotation, m_toRot) > 0.1f);
         }
-        
+
         private IEnumerator EndAttack()
         {
             var waitForSeconds = new WaitForSeconds(m_refreshTime);
             var toRot = m_toRot;
             do
             {
-                transform.localRotation = Quaternion.RotateTowards(toRot, m_fromRot, m_speed*Time.deltaTime);
+                transform.localRotation = Quaternion.RotateTowards(toRot, m_fromRot, m_speed * Time.deltaTime);
                 toRot = transform.localRotation;
                 yield return waitForSeconds;
-            } 
-            while (true);
+            } while (Quaternion.Angle(transform.localRotation, m_fromRot) > 0.1f);
         }
-        
     }
 }

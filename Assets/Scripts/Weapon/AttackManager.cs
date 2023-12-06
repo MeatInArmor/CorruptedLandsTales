@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,42 +7,25 @@ namespace CorruptedLandTales
 {
     public class AttackManager : MonoBehaviour
     {
-        private List<AttackItem> m_items = new();
-        private int m_currentIndex = -1;
+        private IAttackItem m_activeWeapon;
 
-        private void Start()
+        /*public void Initialize(IReadOnlyList<MeleeWeaponSO> weaponData)
         {
-            GetComponentsInChildren(true, m_items);
+            var item = Instantiate(weaponData.prefab, transform);
+            item.
+        }*/
 
-            m_currentIndex =  m_items.Count > 0 ? 0: -1;
+        private void Awake()
+        {
+            m_activeWeapon = GetComponentInChildren<IAttackItem>(); //пока так, потом переделать
         }
 
-        public void Next()
+        public void UseWeapon()
         {
-            if (m_items.Count > 0)
+            if (m_activeWeapon != null)
             {
-                //if (m_items[m_currentIndex].inInventory) доелать под такой флаг, как будто не нужно 
-                m_items[m_currentIndex].TurnOff();
-                m_currentIndex++;
-                if (m_currentIndex >= m_items.Count)
-                {
-                    m_currentIndex = 0;
-                }
-                m_items[m_currentIndex].TurnOn();
+                m_activeWeapon.Attack();
             }
-        }
-
-        public void StartUseWeapon()
-        {
-            if (m_currentIndex >= 0) 
-            { 
-                m_items[m_currentIndex].StartUse();
-            }
-        }
-
-        public void EndUseWeapon()
-        {
-            m_items[m_currentIndex].EndUse();
         }
     }
 }
