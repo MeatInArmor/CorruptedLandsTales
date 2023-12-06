@@ -8,6 +8,7 @@ namespace CorruptedLandTales
     public class NextPointsAction : ActionNode
     {
         private List<Vector3> m_points = new();
+        private MeshSpawn _meshSpawn;
         private int m_index = 0;
         protected override void OnStart()
         {

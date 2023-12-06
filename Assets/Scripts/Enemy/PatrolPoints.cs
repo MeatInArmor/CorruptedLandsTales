@@ -6,16 +6,29 @@ namespace CorruptedLandTales
 {
     public class PatrolPoints : MonoBehaviour
     {
-        [SerializeField] private List<Transform> m_points;
+        private List<Vector3> m_points = new List<Vector3>();
 
         public List<Vector3> GetPoints()
         {
-            var list = new List<Vector3>();
-            foreach (var p in m_points)
+           return m_points;
+        }
+
+        public void AddPoints(List<Vector3> list)
+        {
+            m_points.AddRange(ShuffleIntList(list));
+        }
+        
+        private List<Vector3> ShuffleIntList(List<Vector3> list)
+        {
+            var newShuffledList = new List<Vector3>();
+            var listcCount = list.Count;
+            for (int i = 0; i < listcCount; i++)
             {
-                list.Add(p.position);
+                var randomElementInList = Random.Range(0, list.Count);
+                newShuffledList.Add(list[randomElementInList]);
+                list.Remove(list[randomElementInList]);
             }
-            return list;
+            return newShuffledList;
         }
     }
 }
