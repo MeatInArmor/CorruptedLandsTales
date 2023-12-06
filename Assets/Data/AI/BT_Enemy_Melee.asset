@@ -44,8 +44,8 @@ MonoBehaviour:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
     isAimedOnPlayer: 0
-    attackRange: 2
-    reserveAttackRange: 2
+    attackRange: 2.5
+    reserveAttackRange: 2.5
   viewPosition: {x: 424, y: -73, z: 0}
   viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:

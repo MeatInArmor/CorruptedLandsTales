@@ -10,7 +10,6 @@ namespace CorruptedLandTales
         [SerializeField] private Transform m_muzzle;
         [SerializeField] private float m_delay = 1f; // у противников своя задержка,
                                                      // нужно подумать что с этим сделать
-        
         private float m_timeLastUsed;
         
         public void Attack() //надо потом переделать под стейты

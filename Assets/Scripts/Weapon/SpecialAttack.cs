@@ -8,7 +8,6 @@ namespace CorruptedLandTales
 {
     public class SpecialAttack : MonoBehaviour
     {
-
         [SerializeField] private ProjectileComponent m_prefab;
         [SerializeField] private Transform m_muzzle;
         [SerializeField] private float m_cooldown = 3f;

@@ -17,13 +17,13 @@ namespace CorruptedLandTales
         private Transform m_parentTransform;
         private MeleeAttackAnimation m_anim;
         
-        /*public void Initialize(MeleeWeaponSO weaponData)
+        public void Initialize(MeleeWeaponSO weaponData)
         {
             m_damage = weaponData.damage;
             m_attackAngle = weaponData.attackAngle;
             m_attackRange = weaponData.attackRange;
             m_layerMask = weaponData.layerMask;
-        }*/
+        }
         
         private void Awake()
         {

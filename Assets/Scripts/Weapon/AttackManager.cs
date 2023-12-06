@@ -9,11 +9,15 @@ namespace CorruptedLandTales
     {
         private IAttackItem m_activeWeapon;
 
-        /*public void Initialize(IReadOnlyList<MeleeWeaponSO> weaponData)
+        public void InitializeMelee(MeleeWeaponSO weaponData)
         {
+            m_activeWeapon.Hide();
+            m_activeWeapon.DestroySelf();
             var item = Instantiate(weaponData.prefab, transform);
-            item.
-        }*/
+            item.Initialize(weaponData);
+            m_activeWeapon = item;
+            m_activeWeapon.Show();
+        }
 
         private void Awake()
         {

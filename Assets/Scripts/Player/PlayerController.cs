@@ -13,19 +13,20 @@ namespace CorruptedLandTales
 		[SerializeField] private InputActionAsset m_inputActionAsset;
 		[SerializeField] private Transform m_cameraTransform;
 		[SerializeField] private SpecialAttack m_specialAttack;
+		[SerializeField] private FindItem m_findItem;
 		
 		private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
-		private InputAction m_fireAction;
-		private InputAction m_swapWeapon;
+		private InputAction m_AttackAction;
+		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
 		
 		private void Awake()
 		{
 			m_playerMap = m_inputActionAsset.FindActionMap("Player");
 			m_moveAction = m_playerMap.FindAction("Move");
-			m_fireAction = m_playerMap.FindAction("Attack");
-			m_swapWeapon = m_playerMap.FindAction("Swap");
+			m_AttackAction = m_playerMap.FindAction("Attack");
+			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
 		}
 
@@ -33,9 +34,8 @@ namespace CorruptedLandTales
 		{
 			m_playerMap.Enable();
 
-			m_fireAction.performed += OnAttackInput;
-			//m_fireAction.canceled += OnFireInputCanceled;
-			//m_swapWeapon.performed += SwapWeapon;
+			m_AttackAction.performed += OnAttackInput;
+			m_pickUp.performed += OnPickUpInput;
 			m_useSpecial.performed += OnUseSpecial;
 		}
 
@@ -43,9 +43,8 @@ namespace CorruptedLandTales
 		{
 			m_playerMap.Disable();
 
-			m_fireAction.performed -= OnAttackInput;
-			//m_fireAction.canceled -= OnFireInputCanceled;
-			//m_swapWeapon.performed -= SwapWeapon;
+			m_AttackAction.performed -= OnAttackInput;
+			m_pickUp.performed -= OnPickUpInput;
 			m_useSpecial.performed -= OnUseSpecial;
 		}
 		
@@ -54,21 +53,15 @@ namespace CorruptedLandTales
 			m_character.attackManager.UseWeapon();
 		}
 
-		/*private void OnFireInputCanceled(InputAction.CallbackContext context)
-		{
-			m_character.attackManager.EndUseWeapon();
-		}*/
-
-		/*private void SwapWeapon(InputAction.CallbackContext context)
-		{
-			m_character.attackManager.Next();
-		}*/
-
 		private void OnUseSpecial(InputAction.CallbackContext context)
 		{
 			m_specialAttack.UseSpecial();
 		}
-		
+
+		private void OnPickUpInput(InputAction.CallbackContext context)
+		{
+			m_findItem.PickUp();
+		}
 
 		private void Update()
 		{

@@ -16,7 +16,6 @@ namespace CorruptedLandTales
         private Quaternion m_fromRot = Quaternion.Euler(0f, 0f, 0f);
 
         private Coroutine m_AttackCoroutine;
-        
 
         public void AttackAnimation()
         {

@@ -33,18 +33,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Swap",
+                    "name": "Special",
                     "type": "Button",
-                    "id": "cafffd3d-e015-4cca-ba75-4f0e295c342d",
+                    "id": "957a700a-44d7-4cd1-b276-14922bc2567b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Special",
+                    "name": "PickUp",
                     "type": "Button",
-                    "id": "957a700a-44d7-4cd1-b276-14922bc2567b",
+                    "id": "0eff6da2-6a58-4636-97d3-c26e8882ee80",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -274,23 +274,23 @@
                 },
                 {
                     "name": "",
-                    "id": "943d97a4-a7bd-43bb-b960-d5d0dd2b4063",
+                    "id": "ca60fd97-ce29-4e61-b6f1-a1aedaf3c2da",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Swap",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Special",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ca60fd97-ce29-4e61-b6f1-a1aedaf3c2da",
+                    "id": "1603a08b-c1f7-4afa-b599-e3ed91ec5905",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Special",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PickUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
