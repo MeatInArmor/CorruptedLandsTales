@@ -2223,7 +2223,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2133098551173313751, guid: a1edbb30b3f7e194eb6df6cddb0bc0fb, type: 3}
       propertyPath: m_Name
-      value: SwordToLift
+      value: PickUpSword
       objectReference: {fileID: 0}
     - target: {fileID: 2133098551173313751, guid: a1edbb30b3f7e194eb6df6cddb0bc0fb, type: 3}
       propertyPath: m_Layer
@@ -2235,7 +2235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3996735393203337054, guid: a1edbb30b3f7e194eb6df6cddb0bc0fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.030099869
+      value: 0.37
       objectReference: {fileID: 0}
     - target: {fileID: 3996735393203337054, guid: a1edbb30b3f7e194eb6df6cddb0bc0fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10415,7 +10415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7900906350088172212, guid: fccba194975c1b8498d3761f95d6b22a, type: 3}
       propertyPath: m_Name
-      value: HammerToLift
+      value: PickUpHammer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10598,5 +10598,5 @@ SceneRoots:
   - {fileID: 511043757}
   - {fileID: 770812212}
   - {fileID: 976645614}
-  - {fileID: 1826436179}
   - {fileID: 351437464}
+  - {fileID: 1826436179}

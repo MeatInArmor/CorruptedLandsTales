@@ -29,15 +29,12 @@ namespace CorruptedLandTales.AI
 					blackboard.attackRange = 0.1f;
 					Debug.DrawRay(m_agentTransform.position, 
 						m_agentTransform.TransformDirection(Vector3.forward) * 100, Color.white);
-					//Debug.Log("Did not Hit");
-					
 				}
 				else
 				{
 					blackboard.attackRange = blackboard.reserveAttackRange;
 					Debug.DrawRay(m_agentTransform.position, 
 						m_agentTransform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
-					//Debug.Log("Did Hit");
 				}
 			}
 			
