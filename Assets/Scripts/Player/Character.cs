@@ -68,12 +68,16 @@ namespace CorruptedLandTales
 
                 targetTr.rotation = Quaternion.Euler(0f, rotation, 0f);
             }
-			
-
+            
             Vector3 targetDirection = Quaternion.Euler(0f, m_targetRotation, 0f) * Vector3.forward;
             Vector3 vertical = new Vector3(0f, Physics.gravity.y * Time.deltaTime, 0f);
             Vector3 horizontal = targetDirection.normalized * (speed * Time.deltaTime);
             m_characterController.Move(horizontal + vertical);
+        }
+
+        public void Dash()
+        {
+            
         }
     }
 }

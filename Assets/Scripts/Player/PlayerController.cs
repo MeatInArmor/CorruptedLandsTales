@@ -14,12 +14,14 @@ namespace CorruptedLandTales
 		[SerializeField] private Transform m_cameraTransform;
 		[SerializeField] private SpecialAttack m_specialAttack;
 		[SerializeField] private FindItem m_findItem;
+		//[SerializeField] private Dashing m_dashing;
 		
 		private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
 		private InputAction m_AttackAction;
 		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
+		//private InputAction m_dash;
 		
 		private void Awake()
 		{
@@ -28,6 +30,7 @@ namespace CorruptedLandTales
 			m_AttackAction = m_playerMap.FindAction("Attack");
 			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
+			//m_dash = m_playerMap.FindAction("Dash");
 		}
 
 		private void OnEnable()
@@ -37,6 +40,7 @@ namespace CorruptedLandTales
 			m_AttackAction.performed += OnAttackInput;
 			m_pickUp.performed += OnPickUpInput;
 			m_useSpecial.performed += OnUseSpecial;
+			//m_dash.performed += OnDash;
 		}
 
 		private void OnDisable()
@@ -46,6 +50,7 @@ namespace CorruptedLandTales
 			m_AttackAction.performed -= OnAttackInput;
 			m_pickUp.performed -= OnPickUpInput;
 			m_useSpecial.performed -= OnUseSpecial;
+			//m_dash.performed -= OnDash;
 		}
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
@@ -62,6 +67,11 @@ namespace CorruptedLandTales
 		{
 			m_findItem.PickUp();
 		}
+
+		/*private void OnDash(InputAction.CallbackContext context)
+		{
+			m_character.Dash();
+		}*/
 
 		private void Update()
 		{
