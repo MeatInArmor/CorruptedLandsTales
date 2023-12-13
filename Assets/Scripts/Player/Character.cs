@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -14,9 +15,17 @@ namespace CorruptedLandTales
         
         public void Initialize(CharacterSO data)
         {
-            if (attackManager)
+            if (attackManager) //пока такой костыль
             {
-                attackManager.Initialize(data.weapon);
+
+                if(data.weapon)
+                {
+                    attackManager.InitializeMelee(data.weapon);
+                }
+                else
+                {
+                    
+                }
             }
             
             if (m_healthComponent)

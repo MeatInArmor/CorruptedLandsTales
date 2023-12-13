@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharacterSO
   m_EditorClassIdentifier: 
   moveData:
-    speed: 8
+    speed: 10
     sprintSpeed: 12
   healthData:
     health: 100

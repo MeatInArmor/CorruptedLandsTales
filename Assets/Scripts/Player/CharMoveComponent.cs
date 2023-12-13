@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class CharMoveComponent : MonoBehaviour
+    public class CharMoveComponent : MonoBehaviour, IMoveComponent
     {
         [SerializeField] private CharacterController m_characterController;
         

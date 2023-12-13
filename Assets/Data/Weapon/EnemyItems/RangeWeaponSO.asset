@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5deda6ec8a009449b92e53ff0e8195, type: 3}
   m_Name: RangeWeaponSO
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 8352356418444366943, guid: 58c779f07db3c9f4c8f21fb8763500bf, type: 3}
+  m_prefab: {fileID: 1685018171459433130, guid: 58c779f07db3c9f4c8f21fb8763500bf, type: 3}
   m_delay: 1
