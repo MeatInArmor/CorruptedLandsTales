@@ -19,6 +19,7 @@ namespace CorruptedLandTales
         
         public AttackManager attackManager => m_attackManager;
 
+        public Vector3 velocity => m_characterController.velocity;
         private void Awake()
         {
             if (m_attackManager == null)
@@ -26,7 +27,10 @@ namespace CorruptedLandTales
                 m_attackManager = GetComponent<AttackManager>();
             }
         }
-        
+        //public void moveComponent()
+        //{
+        //    return transform.position.veloc
+        //}
         public void Move(Vector2 move, bool isSprint, float cameraY)
         {
             float targetSpeed = 0f;
