@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: EnemyGunSO
   m_EditorClassIdentifier: 
   moveData:
-    speed: 5
+    speed: 6
     sprintSpeed: 10
   healthData:
     health: 100
     maxHealth: 100
-  weapon: {fileID: 11400000, guid: 50c6aa3056e8c1f45bd0d0882e6da3ca, type: 2}
+  weapon: {fileID: 0}
