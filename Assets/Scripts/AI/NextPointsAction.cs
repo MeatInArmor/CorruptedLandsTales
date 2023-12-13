@@ -7,18 +7,8 @@ namespace CorruptedLandTales
 {
     public class NextPointsAction : ActionNode
     {
-        private List<Vector3> m_points = new();
-        private MeshSpawn _meshSpawn;
-        private int m_index = 0;
         protected override void OnStart()
         {
-            var pointsContainer = context.gameObject.GetComponent<PatrolPoints>();
-            if (pointsContainer == null)
-            {
-                Debug.Log("pointsContainer are null");
-                return;
-            }
-            m_points = pointsContainer.GetPoints();
         }
 
         protected override void OnStop()
@@ -27,21 +17,11 @@ namespace CorruptedLandTales
 
         protected override State OnUpdate()
         {
-            if (m_points.Count == 0)
-            {
-                return State.Failure;
-            }
-
-            if (m_index >= m_points.Count - 1)
-            {
-                m_index = 0;
-            }
-            else
-            {
-                m_index++;
-            }
-
-            blackboard.moveToPosition = m_points[m_index];
+            var newPoint = Random.insideUnitSphere * Random.Range(5,8);
+            var enemyPoint = context.gameObject.transform.position;
+            // return State.Failure;
+            
+            blackboard.moveToPosition = enemyPoint - newPoint;
             return State.Success;
         }
     }

@@ -19,9 +19,35 @@ namespace CorruptedLandTales
             m_activeWeapon.Show();
         }
 
+        /*public void Initialize(ScriptableObject data)
+        {
+            if (data.GetType().ToString() == "CorruptedLandTales.MeleeWeaponSO")
+            {
+                
+                MeleeWeaponSO weaponData = data.GetComponent<MeleeWeaponSO>();
+                m_activeWeapon.Hide();
+                m_activeWeapon.DestroySelf();
+                var item = Instantiate(weaponData.prefab, transform);
+                item.Initialize(weaponData);
+                m_activeWeapon = item;
+                m_activeWeapon.Show();
+            }
+
+            if (data.GetType().ToString() == "CorruptedLandTales.RangeWeaponSO")
+            {
+                RangeWeaponSO weaponData = data.GetComponent<RangeWeaponSO>();
+                m_activeWeapon.Hide();
+                m_activeWeapon.DestroySelf();
+                var item = Instantiate(weaponData.prefab, transform);
+                item.Initialize(weaponData);
+                m_activeWeapon = item;
+                m_activeWeapon.Show();
+            }
+        }*/
+
         private void Awake()
         {
-            m_activeWeapon = GetComponentInChildren<IAttackItem>(); //пока так, потом переделать
+            m_activeWeapon = GetComponentInChildren<IAttackItem>();
         }
 
         public void UseWeapon()

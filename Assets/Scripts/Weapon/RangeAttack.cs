@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CorruptedLandTales;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -12,7 +13,12 @@ namespace CorruptedLandTales
                                                      // нужно подумать что с этим сделать
         private float m_timeLastUsed;
         
-        public void Attack() //надо потом переделать под стейты
+        public void Initialize(RangeWeaponSO weaponData)
+        { 
+            m_delay = weaponData.delay;
+        }
+        
+        public void Attack()
         {
             float passedTime = Time.time - m_timeLastUsed; 
             if (m_delay < passedTime)
