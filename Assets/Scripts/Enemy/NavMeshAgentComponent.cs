@@ -14,5 +14,7 @@ namespace CorruptedLandTales
         {
             m_agent.speed = speed;
         }
+
+        public Vector3 velocity { get; }
     }
 }

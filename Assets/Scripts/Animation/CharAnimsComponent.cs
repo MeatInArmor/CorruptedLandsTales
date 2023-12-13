@@ -9,9 +9,9 @@ namespace CorruptedLandTales
     public class CharAnimsComponent : MonoBehaviour
     {
         private IMoveComponent m_moveComponent;
+        
         //[SerializeField] private Avatar m_Avataranimator;
         [SerializeField] private Animator m_animator;
-        [SerializeField] private Character character;
 
         private void Awake()
         {
@@ -20,23 +20,24 @@ namespace CorruptedLandTales
                 m_animator = GetComponent<Animator>();
             }
 
-            //Character character = GetComponentInParent<Character>();
-            //m_moveComponent = character.velocity.magnitude;
-            //character.healthComponent.onDie += () =>
-            //{
-            //    m_animator.SetTrigger("Die");
-            //};
+            Character character = GetComponentInParent<Character>();
+            Debug.Log($"{character}");
+            m_moveComponent = character.moveComponent;
+            Debug.Log($"{m_moveComponent}");
+            /*character.healthComponent.onDie += () =>
+            {
+                m_animator.SetTrigger("Die");
+            };*/
         }
 
         private void Update()
         {
-            var speed = character.velocity.magnitude;
-            m_animator.SetFloat("Speed", speed);
-            //if (m_moveComponent != null)
-            //{
-            //    var speed = character.velocity.magnitude;
-            //    m_animator.SetFloat("Speed", speed);
-            //}
+            if (m_moveComponent != null)
+            {
+                var speed = m_moveComponent.velocity.magnitude;
+                Debug.Log($"{speed}");
+                m_animator.SetFloat("Speed", speed);
+            }
         }
     }
 }

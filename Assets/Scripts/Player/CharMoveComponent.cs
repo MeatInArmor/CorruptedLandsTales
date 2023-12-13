@@ -16,12 +16,14 @@ namespace CorruptedLandTales
         private float m_rotationVelocity;
         private float m_targetRotation;
         
+        public Vector3 velocity => m_characterController.velocity;
+        
         public void Init(float speed, float sprintSpeed)
         {
             m_moveSpeed = speed;
             m_sprintSpeed = sprintSpeed;
         }
-        
+
         public void Move(Vector2 move, bool isSprint, float cameraY)
         {
             float targetSpeed = 0f;

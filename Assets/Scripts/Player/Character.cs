@@ -12,32 +12,21 @@ namespace CorruptedLandTales
         
         private IMoveComponent m_moveComponent;
         public AttackManager attackManager => m_attackManager;
+        
+        public HealthComponent HealthComponent => m_healthComponent;
+        
+        public IMoveComponent moveComponent => m_moveComponent;
+        
         public void Initialize(CharacterSO data)
-        public Vector3 velocity => m_characterController.velocity;
-        private void Awake()
-        {
-            if (m_attackManager == null)
-            {
-                m_attackManager = GetComponent<AttackManager>();
-            }
-        }
-        //public void moveComponent()
-        //{
-        //    return transform.position.veloc
-        //}
-        public void Move(Vector2 move, bool isSprint, float cameraY)
-        NewAnimation
         {
             if (attackManager) //пока такой костыль
             {
-
                 if(data.weapon)
                 {
                     attackManager.InitializeMelee(data.weapon);
                 }
                 else
                 {
-                    
                 }
             }
             
@@ -49,6 +38,7 @@ namespace CorruptedLandTales
             if (m_moveComponent != null)
             {
                 m_moveComponent.Init(data.moveData.speed, data.moveData.sprintSpeed);
+                Debug.Log($"{this}, {m_moveComponent}");
             }
         }
 
@@ -65,6 +55,7 @@ namespace CorruptedLandTales
             }
 
             m_moveComponent = GetComponent<IMoveComponent>();
+            Debug.Log($"{this}, {m_moveComponent}");
         }
     }
 }

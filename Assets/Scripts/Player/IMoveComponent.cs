@@ -8,6 +8,6 @@ namespace CorruptedLandTales
     {
         void Init(float speed, float sprintSpeed);
 
-        //Vector3 velocity { get; }
+        Vector3 velocity { get; }
     }
 }
