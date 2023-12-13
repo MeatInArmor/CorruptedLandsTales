@@ -12,8 +12,21 @@ namespace CorruptedLandTales
         
         private IMoveComponent m_moveComponent;
         public AttackManager attackManager => m_attackManager;
-        
         public void Initialize(CharacterSO data)
+        public Vector3 velocity => m_characterController.velocity;
+        private void Awake()
+        {
+            if (m_attackManager == null)
+            {
+                m_attackManager = GetComponent<AttackManager>();
+            }
+        }
+        //public void moveComponent()
+        //{
+        //    return transform.position.veloc
+        //}
+        public void Move(Vector2 move, bool isSprint, float cameraY)
+        NewAnimation
         {
             if (attackManager) //пока такой костыль
             {
