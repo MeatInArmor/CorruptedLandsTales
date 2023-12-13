@@ -7,9 +7,9 @@ namespace CorruptedLandTales
 {
     public class PickUpItem : MonoBehaviour
     {
-        [SerializeField] private MeleeWeaponSO m_data;
+        [SerializeField] private ScriptableObject m_data;
 
-        public MeleeWeaponSO GetWeaponData()
+        public ScriptableObject GetWeaponData()
         {
             return m_data;
         }

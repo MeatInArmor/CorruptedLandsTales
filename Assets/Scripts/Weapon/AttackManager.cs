@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -9,7 +10,7 @@ namespace CorruptedLandTales
     {
         private IAttackItem m_activeWeapon;
 
-        public void InitializeMelee(MeleeWeaponSO weaponData)
+        /*public void InitializeMelee(MeleeWeaponSO weaponData)
         {
             m_activeWeapon.Hide();
             m_activeWeapon.DestroySelf();
@@ -17,6 +18,31 @@ namespace CorruptedLandTales
             item.Initialize(weaponData);
             m_activeWeapon = item;
             m_activeWeapon.Show();
+        }*/
+
+        public void Initialize(ScriptableObject data)
+        {
+            if (data.GetType().ToString() == "MeleeWeaponSO")
+            {
+                MeleeWeaponSO weaponData = data.GetComponent<MeleeWeaponSO>();
+                m_activeWeapon.Hide();
+                m_activeWeapon.DestroySelf();
+                var item = Instantiate(weaponData.prefab, transform);
+                item.Initialize(weaponData);
+                m_activeWeapon = item;
+                m_activeWeapon.Show();
+            }
+
+            if (data.GetType().ToString() == "RangeWeaponSO")
+            {
+                RangeWeaponSO weaponData = data.GetComponent<RangeWeaponSO>();
+                m_activeWeapon.Hide();
+                m_activeWeapon.DestroySelf();
+                var item = Instantiate(weaponData.prefab, transform);
+                item.Initialize(weaponData);
+                m_activeWeapon = item;
+                m_activeWeapon.Show();
+            }
         }
 
         private void Awake()

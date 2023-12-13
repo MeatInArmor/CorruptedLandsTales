@@ -20,8 +20,6 @@ namespace CorruptedLandTales
         private float m_stepX; //шаг по x
         private float m_stepZ; //шаг по z
 
-        
-
         private void Start()
         {
             int countPointsCoord = (int)Mathf.Pow(Mathf.Sqrt(m_countQuads) + 1, 2);

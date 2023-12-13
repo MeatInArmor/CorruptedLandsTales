@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    [CreateAssetMenu(fileName = "MeleeWeaponSO", menuName = "CorruptedLandTales/WeaponSO")]
+    [CreateAssetMenu(fileName = "MeleeWeaponSO", menuName = "CorruptedLandTales/MeleeWeaponSO")]
     public class MeleeWeaponSO : ScriptableObject
     {
         [SerializeField] private MeleeAttack m_prefab;
