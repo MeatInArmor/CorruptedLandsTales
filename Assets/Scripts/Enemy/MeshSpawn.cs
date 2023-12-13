@@ -8,11 +8,9 @@ namespace CorruptedLandTales
         [SerializeField] private Transform a;
         [SerializeField] private Transform b;
         [SerializeField] private int m_countQuads = 9; //количество разбиения прямоугольников
-        [SerializeField] private List<PatrolPoints> m_enemyList = new();
         
         private Vector2[] m_pointsCoord; //массив координат для нахождения точек
         private List<Vector2> m_midPointsCoord; //координаты середин прямоугольников
-        
         
         private Vector2 m_aCoord; //координаты точки А
         private Vector2 m_bCoord; //координаты точки B
@@ -20,7 +18,8 @@ namespace CorruptedLandTales
         private float m_stepX; //шаг по x
         private float m_stepZ; //шаг по z
 
-        private void Start()
+        public int countQuads => m_countQuads;
+        private void Awake()
         {
             int countPointsCoord = (int)Mathf.Pow(Mathf.Sqrt(m_countQuads) + 1, 2);
             m_pointsCoord = new Vector2[countPointsCoord];
@@ -58,11 +57,8 @@ namespace CorruptedLandTales
                 }
             }
             
-            var listPoints = ToVector3();
-            m_enemyList.ForEach(e => e.AddPoints(listPoints));
+            
         }
-        
-        
         
         private void OnDrawGizmos()
         {
@@ -76,7 +72,7 @@ namespace CorruptedLandTales
             }
         }
 
-        private List<Vector3> ToVector3() 
+        public List<Vector3> GetRandomRoomPoints() 
         {
             var list = new List<Vector3>();
             
@@ -84,7 +80,20 @@ namespace CorruptedLandTales
             {
                 list.Add(new Vector3(m_midPointsCoord[i].x, 1, m_midPointsCoord[i].y));
             }
-            return list;
+            return ShuffleIntList(list);
+        }
+        
+        private List<Vector3> ShuffleIntList(List<Vector3> list)
+        {
+            var newShuffledList = new List<Vector3>();
+            var listcCount = list.Count;
+            for (int i = 0; i < listcCount; i++)
+            {
+                var randomElementInList = Random.Range(0, list.Count);
+                newShuffledList.Add(list[randomElementInList]);
+                list.Remove(list[randomElementInList]);
+            }
+            return newShuffledList;
         }
     }
 }
