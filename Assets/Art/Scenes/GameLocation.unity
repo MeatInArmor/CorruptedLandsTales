@@ -516,7 +516,7 @@ Transform:
   m_GameObject: {fileID: 210267738}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28, y: -0, z: 25.85}
+  m_LocalPosition: {x: 44.99, y: -0, z: 24.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -956,7 +956,7 @@ Transform:
   m_GameObject: {fileID: 364493768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.44, y: 0, z: 37.49}
+  m_LocalPosition: {x: 59.68, y: 0, z: 28.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -973,7 +973,7 @@ GameObject:
   - component: {fileID: 453497036}
   - component: {fileID: 453497035}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1162,6 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 100
+  m_group: 0
 --- !u!114 &676736990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,7 +1353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be10c51159dbf242ad20f16aeb4b790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_health: 5000
+  m_health: 100
+  m_group: 1
 --- !u!1 &710709843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1369,7 +1371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &710709844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2634,6 +2636,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 100
+  m_group: 0
 --- !u!114 &1698680489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3128,12 +3131,12 @@ SceneRoots:
   m_Roots:
   - {fileID: 1799929117}
   - {fileID: 453497036}
-  - {fileID: 202086266}
-  - {fileID: 659664030}
   - {fileID: 682167074}
   - {fileID: 1192474799}
-  - {fileID: 2099387401}
+  - {fileID: 202086266}
+  - {fileID: 216360254}
+  - {fileID: 710709845}
   - {fileID: 1976833963}
   - {fileID: 1316860818}
-  - {fileID: 710709845}
-  - {fileID: 216360254}
+  - {fileID: 2099387401}
+  - {fileID: 659664030}
