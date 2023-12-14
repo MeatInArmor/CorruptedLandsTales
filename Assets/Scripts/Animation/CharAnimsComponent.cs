@@ -21,9 +21,7 @@ namespace CorruptedLandTales
             }
 
             Character character = GetComponentInParent<Character>();
-            Debug.Log($"{character}");
             m_moveComponent = character.moveComponent;
-            Debug.Log($"{m_moveComponent}");
             //m_attackItem = (IAttackItem)character.attackManager;
             /*character.healthComponent.onDie += () =>
             {
@@ -36,7 +34,6 @@ namespace CorruptedLandTales
             if (m_moveComponent != null)
             {
                 var speed = m_moveComponent.velocity.magnitude;
-                Debug.Log($"{speed}");
                 m_animator.SetFloat("Speed", speed);
             }
             //if (m_attackItem != null)

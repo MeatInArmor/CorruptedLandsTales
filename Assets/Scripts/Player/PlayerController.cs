@@ -33,6 +33,8 @@ namespace CorruptedLandTales
 			m_useSpecial = m_playerMap.FindAction("Special");
 			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
+			m_charAnim = m_character.GetComponentInChildren<CharAnimsComponent>();
+			Debug.Log($"{m_charAnim}");
 		}
 
 		private void OnEnable()
@@ -57,7 +59,6 @@ namespace CorruptedLandTales
 		{
 			m_character.attackManager.UseWeapon();
 			m_charAnim.Slash(true);
-
         }
 
 		private void OnUseSpecial(InputAction.CallbackContext context)

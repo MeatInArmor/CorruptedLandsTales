@@ -38,7 +38,6 @@ namespace CorruptedLandTales
             if (m_moveComponent != null)
             {
                 m_moveComponent.Init(data.moveData.speed, data.moveData.sprintSpeed);
-                Debug.Log($"{this}, {m_moveComponent}");
             }
         }
 
@@ -55,7 +54,6 @@ namespace CorruptedLandTales
             }
 
             m_moveComponent = GetComponent<IMoveComponent>();
-            Debug.Log($"{this}, {m_moveComponent}");
         }
     }
 }
