@@ -41,9 +41,13 @@ namespace CorruptedLandTales
             //    m_animator.SetBool("IsSlash",true);
             //}
         }
-        public void Slash(bool isSlash)
+        public void Slash()
         {
-            m_animator.SetBool("isSlash", isSlash);
+            m_animator.SetTrigger("isSlash");
+        }
+        public void CastSpell()
+        {
+            m_animator.SetTrigger("isCastSpell");
         }
     }
 }
