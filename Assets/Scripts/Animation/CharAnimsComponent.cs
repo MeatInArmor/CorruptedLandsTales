@@ -9,7 +9,7 @@ namespace CorruptedLandTales
     public class CharAnimsComponent : MonoBehaviour
     {
         private IMoveComponent m_moveComponent;
-        
+        private IAttackItem m_attackItem;
         //[SerializeField] private Avatar m_Avataranimator;
         [SerializeField] private Animator m_animator;
 
@@ -24,6 +24,7 @@ namespace CorruptedLandTales
             Debug.Log($"{character}");
             m_moveComponent = character.moveComponent;
             Debug.Log($"{m_moveComponent}");
+            //m_attackItem = (IAttackItem)character.attackManager;
             /*character.healthComponent.onDie += () =>
             {
                 m_animator.SetTrigger("Die");
@@ -38,6 +39,14 @@ namespace CorruptedLandTales
                 Debug.Log($"{speed}");
                 m_animator.SetFloat("Speed", speed);
             }
+            //if (m_attackItem != null)
+            //{                
+            //    m_animator.SetBool("IsSlash",true);
+            //}
+        }
+        public void Slash(bool isSlash)
+        {
+            m_animator.SetBool("isSlash", isSlash);
         }
     }
 }

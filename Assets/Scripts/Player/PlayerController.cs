@@ -22,6 +22,7 @@ namespace CorruptedLandTales
 		private InputAction m_useSpecial;
 		
 		private CharMoveComponent m_charMoveController;
+		private CharAnimsComponent m_charAnim;
 		
 		private void Awake()
 		{
@@ -55,7 +56,9 @@ namespace CorruptedLandTales
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
 			m_character.attackManager.UseWeapon();
-		}
+			m_charAnim.Slash(true);
+
+        }
 
 		private void OnUseSpecial(InputAction.CallbackContext context)
 		{
