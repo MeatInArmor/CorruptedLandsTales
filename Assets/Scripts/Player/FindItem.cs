@@ -58,7 +58,7 @@ namespace CorruptedLandTales
 
         public void PickUp()
         {
-            m_attackManager.InitializeMelee(m_upItem.GetWeaponData());
+            m_attackManager.Initialize(m_upItem.GetWeaponData());
             //Destroy(gameObject);
         }
     }

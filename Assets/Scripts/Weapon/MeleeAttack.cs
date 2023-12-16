@@ -17,8 +17,9 @@ namespace CorruptedLandTales
         private Transform m_parentTransform;
         private MeleeAttackAnimation m_anim;
         
-        public void Initialize(MeleeWeaponSO weaponData)
+        public void Initialize(WeaponSO data)
         {
+            var weaponData = data as MeleeWeaponSO;
             m_damage = weaponData.damage;
             m_attackAngle = weaponData.attackAngle;
             m_attackRange = weaponData.attackRange;
