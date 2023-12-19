@@ -9,7 +9,7 @@ namespace CorruptedLandTales
     {
         private IAttackItem m_activeWeapon;
 
-        public void InitializeMelee(MeleeWeaponSO weaponData)
+        /*public void InitializeMelee(MeleeWeaponSO weaponData)
         {
             m_activeWeapon.Hide();
             m_activeWeapon.DestroySelf();
@@ -17,33 +17,48 @@ namespace CorruptedLandTales
             item.Initialize(weaponData);
             m_activeWeapon = item;
             m_activeWeapon.Show();
+        }*/
+
+        public void Initialize(WeaponSO data)
+        {
+            if (data is MeleeWeaponSO meleeData)
+            {
+                EquipWeapon(meleeData);
+                /*MeleeWeaponSO weaponData = data.GetComponent<MeleeWeaponSO>();
+                var weaponData = data as MeleeWeaponSO;
+                m_activeWeapon.Hide();
+                m_activeWeapon.DestroySelf();
+                var item = Instantiate(weaponData.prefab, transform);
+                item.Initialize(weaponData);
+                m_activeWeapon = item;
+                m_activeWeapon.Show();*/
+            }
+            
+            if (data is RangeWeaponSO rangeData)
+            {
+                EquipWeapon(rangeData);
+                /*RangeWeaponSO weaponData = data.GetComponent<RangeWeaponSO>();
+                var weaponData = data as RangeWeaponSO;
+                m_activeWeapon.Hide();
+                m_activeWeapon.DestroySelf();
+                var item = Instantiate(weaponData.prefab, transform);
+                item.Initialize(weaponData);
+                m_activeWeapon = item;
+                m_activeWeapon.Show();*/
+            }
         }
 
-        /*public void Initialize(ScriptableObject data)
+        private void EquipWeapon<T>(T data) where T: WeaponSO
         {
-            if (data.GetType().ToString() == "CorruptedLandTales.MeleeWeaponSO")
-            {
-                
-                MeleeWeaponSO weaponData = data.GetComponent<MeleeWeaponSO>();
-                m_activeWeapon.Hide();
-                m_activeWeapon.DestroySelf();
-                var item = Instantiate(weaponData.prefab, transform);
-                item.Initialize(weaponData);
-                m_activeWeapon = item;
-                m_activeWeapon.Show();
-            }
-
-            if (data.GetType().ToString() == "CorruptedLandTales.RangeWeaponSO")
-            {
-                RangeWeaponSO weaponData = data.GetComponent<RangeWeaponSO>();
-                m_activeWeapon.Hide();
-                m_activeWeapon.DestroySelf();
-                var item = Instantiate(weaponData.prefab, transform);
-                item.Initialize(weaponData);
-                m_activeWeapon = item;
-                m_activeWeapon.Show();
-            }
-        }*/
+            var weaponData = data;
+            m_activeWeapon.Hide();
+            m_activeWeapon.DestroySelf();
+            var item = Instantiate(weaponData.prefab, transform);
+            var attackComponent = item.GetComponent<IAttackItem>();
+            attackComponent.Initialize(weaponData);
+            m_activeWeapon = attackComponent;
+            m_activeWeapon.Show();
+        }
 
         private void Awake()
         {

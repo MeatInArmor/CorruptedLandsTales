@@ -13,8 +13,9 @@ namespace CorruptedLandTales
                                                      // нужно подумать что с этим сделать
         private float m_timeLastUsed;
         
-        public void Initialize(RangeWeaponSO weaponData)
-        { 
+        public void Initialize(WeaponSO data)
+        {
+            var weaponData = data as RangeWeaponSO;
             m_delay = weaponData.delay;
         }
         
