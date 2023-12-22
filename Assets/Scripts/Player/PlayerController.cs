@@ -57,15 +57,15 @@ namespace CorruptedLandTales
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
-			m_character.attackManager.UseWeapon();
-			m_charAnim.Slash();
+            m_charAnim.Slash();
+            m_character.attackManager.UseWeapon();			
             //m_charAnim.Slash(false);
         }
 
 		private void OnUseSpecial(InputAction.CallbackContext context)
 		{
-			m_specialAttack.UseSpecial();
             m_charAnim.CastSpell();
+            m_specialAttack.UseSpecial();            
         }
 
 		private void OnPickUpInput(InputAction.CallbackContext context)

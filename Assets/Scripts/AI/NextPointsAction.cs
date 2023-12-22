@@ -7,6 +7,8 @@ namespace CorruptedLandTales
 {
     public class NextPointsAction : ActionNode
     {
+        private CharAnimsComponent m_charAnim;
+        
         protected override void OnStart()
         {
         }
