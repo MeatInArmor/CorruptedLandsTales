@@ -75,9 +75,8 @@ namespace CorruptedLandTales
                 Vector3 enemyPos = other.transform.position;
                 Vector3 enemyFacingNormalized = (enemyPos - pos).normalized;
                 float dist = Vector3.Distance(pos, enemyPos);
-                Debug.Log($"{dist}");
                 float dotProductAngle = Mathf.Acos(Vector3.Dot(facingNormalized, enemyFacingNormalized)) * Mathf.Rad2Deg;
-                Debug.Log($"{dotProductAngle}");
+                Debug.Log($" {this} {dotProductAngle} {dist}");
                 if (damageable != null && dist < m_attackRange && dotProductAngle < m_attackAngle)
                 {
                     damageable.TakeDamage(m_damage);

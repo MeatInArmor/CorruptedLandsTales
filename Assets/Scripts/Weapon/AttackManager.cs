@@ -14,15 +14,11 @@ namespace CorruptedLandTales
             if (data is MeleeWeaponSO meleeData)
             {
                 EquipWeapon(meleeData);
-                var meleeAttackComponent = meleeData.prefab.GetComponent<MeleeAttack>();
-                meleeAttackComponent.onUseAttack += () => onUseAttack.Invoke();
             }
             
             if (data is RangeWeaponSO rangeData)
             {
                 EquipWeapon(rangeData);
-                var rangeAttackComponent = rangeData.prefab.GetComponent<RangeAttack>();
-                rangeAttackComponent.onUseAttack += () => onUseAttack.Invoke();
             }
         }
 
@@ -33,6 +29,20 @@ namespace CorruptedLandTales
             m_activeWeapon.DestroySelf();
             var item = Instantiate(weaponData.prefab, transform);
             var attackComponent = item.GetComponent<IAttackItem>();
+            if (item.TryGetComponent<MeleeAttack>(out MeleeAttack meleeAttack))
+            {
+                meleeAttack.onUseAttack += () => onUseAttack?.Invoke();
+            }
+            
+            if (item.TryGetComponent<RangeAttack>(out RangeAttack rangeAttack))
+            {
+                rangeAttack.onUseAttack += () => onUseAttack?.Invoke();
+            }
+            /*if (data is RangeWeaponSO rangeData)
+            {
+                var rangeAttackComponent = rangeData.prefab.gameObject.GetComponent<RangeAttack>();
+                rangeAttackComponent.onUseAttack += () => onUseAttack?.Invoke();
+            }*/
             attackComponent.Initialize(weaponData);
             m_activeWeapon = attackComponent;
             m_activeWeapon.Show();
