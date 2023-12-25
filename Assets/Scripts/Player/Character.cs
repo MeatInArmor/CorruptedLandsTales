@@ -23,7 +23,7 @@ namespace CorruptedLandTales
             {
                 if(data.weapon)
                 {
-                    attackManager.InitializeMelee(data.weapon);
+                    attackManager.Initialize(data.weapon);
                 }
                 else
                 {

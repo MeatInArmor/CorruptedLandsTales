@@ -10,5 +10,6 @@ namespace CorruptedLandTales
         void Show();
         void Hide();
         void DestroySelf();
+        void Initialize(WeaponSO data);
     }
 }

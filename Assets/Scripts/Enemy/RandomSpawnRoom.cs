@@ -15,21 +15,23 @@ namespace CorruptedLandTales
         
         private List<Vector3> m_spawnPoints = new List<Vector3>();
         private int m_rangeCount;
+        private int m_meleeCount;
         
         private void Start()
         {
             m_spawnPoints = m_meshSpawn.GetRandomRoomPoints();
             m_rangeCount = Random.Range(1, m_enemyCount);
-            for (int i = 0; i < m_enemyCount; i++)
+            m_meleeCount = Random.Range(1, m_enemyCount - m_rangeCount + 1);
+            
+            for (int i = 0; i < m_rangeCount; i++)
             {
-                if (i < m_rangeCount)
-                {
-                    SpawnEnemy(m_spawnPoints[i], m_rangePrefab);
-                }
-                else
-                {
-                    SpawnEnemy(m_spawnPoints[i], m_meleePrefab);
-                }
+                SpawnEnemy(m_spawnPoints[i], m_rangePrefab);
+            }
+            
+            for (int i = 0; i < m_meleeCount; i++)
+            {
+                int index = i + m_rangeCount;
+                SpawnEnemy(m_spawnPoints[index], m_meleePrefab);
             }
         }
 
