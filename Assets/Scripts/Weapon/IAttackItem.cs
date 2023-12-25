@@ -6,7 +6,7 @@ namespace CorruptedLandTales
 {
     public interface IAttackItem
     {
-        void Attack();
+        void Use();
         void Show();
         void Hide();
         void DestroySelf();

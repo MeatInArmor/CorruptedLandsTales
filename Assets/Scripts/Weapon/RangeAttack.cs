@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CorruptedLandTales;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -9,9 +10,11 @@ namespace CorruptedLandTales
     {
         [SerializeField] private GameObject m_prefab;
         [SerializeField] private Transform m_muzzle;
-        [SerializeField] private float m_delay = 1f; // у противников своя задержка,
-                                                     // нужно подумать что с этим сделать
+        [SerializeField] private float m_delay = 1f; 
+        [SerializeField] private float m_castDelay = 1f;
         private float m_timeLastUsed;
+        
+        public event System.Action onUseAttack;
         
         public void Initialize(WeaponSO data)
         {
@@ -19,12 +22,14 @@ namespace CorruptedLandTales
             m_delay = weaponData.delay;
         }
         
-        public void Attack()
+        public void Use()
         {
             float passedTime = Time.time - m_timeLastUsed; 
             if (m_delay < passedTime)
             {
-                Instantiate(m_prefab, m_muzzle.position, m_muzzle.rotation);
+                onUseAttack?.Invoke();
+                StartCoroutine(Waiter());
+                /*Attack();*/
                 m_timeLastUsed = Time.time;
             }
         }
@@ -42,6 +47,17 @@ namespace CorruptedLandTales
         public void DestroySelf()
         {
             Destroy(gameObject);
+        }
+
+        private void Attack()
+        {
+            Instantiate(m_prefab, m_muzzle.position, m_muzzle.rotation);
+        }
+        
+        private IEnumerator Waiter()
+        {
+            yield return new WaitForSeconds(m_castDelay);
+            Attack();
         }
     }
 }

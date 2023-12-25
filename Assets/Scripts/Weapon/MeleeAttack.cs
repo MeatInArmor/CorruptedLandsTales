@@ -1,8 +1,7 @@
-using System;
-using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -12,11 +11,14 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackAngle = 120.0f;
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
+        [SerializeField] private float m_delay = 1f;
+        [SerializeField] private float m_castDelay = 1f;
         
+        private float m_timeLastUsed;
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
-        private MeleeAttackAnimation m_anim;
         
+        public event System.Action onUseAttack;
         public void Initialize(WeaponSO data)
         {
             var weaponData = data as MeleeWeaponSO;
@@ -30,13 +32,37 @@ namespace CorruptedLandTales
         {
             m_attackAngle /= 2;
             m_parentTransform = GetComponentInParent<Transform>();
-            m_anim = GetComponent<MeleeAttackAnimation>();
         }
 
-        public void Attack()
+        public void Use()
         {
-            m_anim.AttackAnimation();
-            
+            float passedTime = Time.time - m_timeLastUsed; 
+            if (m_delay < passedTime)
+            {
+                onUseAttack?.Invoke();
+                StartCoroutine(Waiter());
+                //Attack();
+                m_timeLastUsed = Time.time;
+            }
+        }
+
+        public void Show()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            gameObject.SetActive(false);
+        }
+
+        public void DestroySelf()
+        {
+            Destroy(gameObject);
+        }
+
+        private void Attack()
+        {
             var count = Physics.OverlapSphereNonAlloc(transform.position,  m_attackRange, m_result, m_layerMask,
                 QueryTriggerInteraction.Ignore);
 
@@ -58,20 +84,11 @@ namespace CorruptedLandTales
                 }
             }
         }
-
-        public void Show()
+        
+        private IEnumerator Waiter()
         {
-            gameObject.SetActive(true);
-        }
-
-        public void Hide()
-        {
-            gameObject.SetActive(false);
-        }
-
-        public void DestroySelf()
-        {
-            Destroy(gameObject);
+            yield return new WaitForSeconds(m_castDelay);
+            Attack();
         }
     }
 }

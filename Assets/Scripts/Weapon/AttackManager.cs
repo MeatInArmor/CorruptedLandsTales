@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -8,43 +6,23 @@ namespace CorruptedLandTales
     public class AttackManager : MonoBehaviour
     {
         private IAttackItem m_activeWeapon;
-
-        /*public void InitializeMelee(MeleeWeaponSO weaponData)
-        {
-            m_activeWeapon.Hide();
-            m_activeWeapon.DestroySelf();
-            var item = Instantiate(weaponData.prefab, transform);
-            item.Initialize(weaponData);
-            m_activeWeapon = item;
-            m_activeWeapon.Show();
-        }*/
+        
+        public event System.Action onUseAttack;
 
         public void Initialize(WeaponSO data)
         {
             if (data is MeleeWeaponSO meleeData)
             {
                 EquipWeapon(meleeData);
-                /*MeleeWeaponSO weaponData = data.GetComponent<MeleeWeaponSO>();
-                var weaponData = data as MeleeWeaponSO;
-                m_activeWeapon.Hide();
-                m_activeWeapon.DestroySelf();
-                var item = Instantiate(weaponData.prefab, transform);
-                item.Initialize(weaponData);
-                m_activeWeapon = item;
-                m_activeWeapon.Show();*/
+                var meleeAttackComponent = meleeData.prefab.GetComponent<MeleeAttack>();
+                meleeAttackComponent.onUseAttack += () => onUseAttack.Invoke();
             }
             
             if (data is RangeWeaponSO rangeData)
             {
                 EquipWeapon(rangeData);
-                /*RangeWeaponSO weaponData = data.GetComponent<RangeWeaponSO>();
-                var weaponData = data as RangeWeaponSO;
-                m_activeWeapon.Hide();
-                m_activeWeapon.DestroySelf();
-                var item = Instantiate(weaponData.prefab, transform);
-                item.Initialize(weaponData);
-                m_activeWeapon = item;
-                m_activeWeapon.Show();*/
+                var rangeAttackComponent = rangeData.prefab.GetComponent<RangeAttack>();
+                rangeAttackComponent.onUseAttack += () => onUseAttack.Invoke();
             }
         }
 
@@ -69,7 +47,7 @@ namespace CorruptedLandTales
         {
             if (m_activeWeapon != null)
             {
-                m_activeWeapon.Attack();
+                m_activeWeapon.Use();
             }
         }
     }
