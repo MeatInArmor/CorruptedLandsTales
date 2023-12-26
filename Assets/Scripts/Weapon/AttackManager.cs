@@ -8,43 +8,18 @@ namespace CorruptedLandTales
     public class AttackManager : MonoBehaviour
     {
         private IAttackItem m_activeWeapon;
-
-        /*public void InitializeMelee(MeleeWeaponSO weaponData)
-        {
-            m_activeWeapon.Hide();
-            m_activeWeapon.DestroySelf();
-            var item = Instantiate(weaponData.prefab, transform);
-            item.Initialize(weaponData);
-            m_activeWeapon = item;
-            m_activeWeapon.Show();
-        }*/
+        //массив с оружием и дописать метод который свапает оружия
 
         public void Initialize(WeaponSO data)
         {
             if (data is MeleeWeaponSO meleeData)
             {
                 EquipWeapon(meleeData);
-                /*MeleeWeaponSO weaponData = data.GetComponent<MeleeWeaponSO>();
-                var weaponData = data as MeleeWeaponSO;
-                m_activeWeapon.Hide();
-                m_activeWeapon.DestroySelf();
-                var item = Instantiate(weaponData.prefab, transform);
-                item.Initialize(weaponData);
-                m_activeWeapon = item;
-                m_activeWeapon.Show();*/
             }
             
             if (data is RangeWeaponSO rangeData)
             {
                 EquipWeapon(rangeData);
-                /*RangeWeaponSO weaponData = data.GetComponent<RangeWeaponSO>();
-                var weaponData = data as RangeWeaponSO;
-                m_activeWeapon.Hide();
-                m_activeWeapon.DestroySelf();
-                var item = Instantiate(weaponData.prefab, transform);
-                item.Initialize(weaponData);
-                m_activeWeapon = item;
-                m_activeWeapon.Show();*/
             }
         }
 
