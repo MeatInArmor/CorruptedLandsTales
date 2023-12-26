@@ -38,11 +38,6 @@ namespace CorruptedLandTales
             {
                 rangeAttack.onUseAttack += () => onUseAttack?.Invoke();
             }
-            /*if (data is RangeWeaponSO rangeData)
-            {
-                var rangeAttackComponent = rangeData.prefab.gameObject.GetComponent<RangeAttack>();
-                rangeAttackComponent.onUseAttack += () => onUseAttack?.Invoke();
-            }*/
             attackComponent.Initialize(weaponData);
             m_activeWeapon = attackComponent;
             m_activeWeapon.Show();

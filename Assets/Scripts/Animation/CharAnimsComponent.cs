@@ -3,8 +3,6 @@ using CorruptedLandTales;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.TextCore.Text;
 
 namespace CorruptedLandTales
 {
@@ -50,6 +48,7 @@ namespace CorruptedLandTales
                     CastSpell();
                 };
             }
+            
         }
 
         private void LateUpdate()
@@ -62,9 +61,12 @@ namespace CorruptedLandTales
         {
             m_animator.SetTrigger("isSlash");
         }
+        
         private void CastSpell()
         {
             m_animator.SetTrigger("isCastSpell");
         }
+        
+        
     }
 }

@@ -32,6 +32,7 @@ namespace CorruptedLandTales
 			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
 			
+			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
 			m_charAnim = m_character.GetComponentInChildren<CharAnimsComponent>();
 			Debug.Log($"{m_charAnim}");
@@ -57,8 +58,7 @@ namespace CorruptedLandTales
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
-            m_character.attackManager.UseWeapon();			
-            //m_charAnim.Slash(false);
+            m_character.attackManager.UseWeapon();
         }
 
 		private void OnUseSpecial(InputAction.CallbackContext context)
@@ -69,6 +69,11 @@ namespace CorruptedLandTales
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
 			m_findItem.PickUp();
+		}
+
+		private void OnUseDash(InputAction.CallbackContext context)
+		{
+			//m_charMoveController.Dash();
 		}
 
 		private void Update()
