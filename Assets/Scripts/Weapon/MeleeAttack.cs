@@ -1,8 +1,7 @@
-using System;
-using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -12,11 +11,14 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackAngle = 120.0f;
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
+        [SerializeField] private float m_delay = 1f;
+        [SerializeField] private float m_castDelay = 1f;
         
+        private float m_timeLastUsed;
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
-        private MeleeAttackAnimation m_anim;
         
+        public event System.Action onUseAttack;
         public void Initialize(WeaponSO data)
         {
             var weaponData = data as MeleeWeaponSO;
@@ -30,32 +32,17 @@ namespace CorruptedLandTales
         {
             m_attackAngle /= 2;
             m_parentTransform = GetComponentInParent<Transform>();
-            m_anim = GetComponent<MeleeAttackAnimation>();
         }
 
-        public void Attack()
+        public void Use()
         {
-            m_anim.AttackAnimation();
-            
-            var count = Physics.OverlapSphereNonAlloc(transform.position,  m_attackRange, m_result, m_layerMask,
-                QueryTriggerInteraction.Ignore);
-
-            for (int i = 0; i < count; i++)
+            float passedTime = Time.time - m_timeLastUsed; 
+            if (m_delay < passedTime)
             {
-                var other = m_result[i];
-                var damageable = other.GetComponentInParent<IDamageable>();
-                Vector3 pos = m_parentTransform.position;
-                Vector3 facingNormalized = m_parentTransform.forward.normalized;
-                Vector3 enemyPos = other.transform.position;
-                Vector3 enemyFacingNormalized = (enemyPos - pos).normalized;
-                float dist = Vector3.Distance(pos, enemyPos);
-                Debug.Log($"{dist}");
-                float dotProductAngle = Mathf.Acos(Vector3.Dot(facingNormalized, enemyFacingNormalized)) * Mathf.Rad2Deg;
-                Debug.Log($"{dotProductAngle}");
-                if (damageable != null && dist < m_attackRange && dotProductAngle < m_attackAngle)
-                {
-                    damageable.TakeDamage(m_damage);
-                }
+                onUseAttack?.Invoke();
+                StartCoroutine(Waiter());
+                //Attack();
+                m_timeLastUsed = Time.time;
             }
         }
 
@@ -72,6 +59,35 @@ namespace CorruptedLandTales
         public void DestroySelf()
         {
             Destroy(gameObject);
+        }
+
+        private void Attack()
+        {
+            var count = Physics.OverlapSphereNonAlloc(transform.position,  m_attackRange, m_result, m_layerMask,
+                QueryTriggerInteraction.Ignore);
+
+            for (int i = 0; i < count; i++)
+            {
+                var other = m_result[i];
+                var damageable = other.GetComponentInParent<IDamageable>();
+                Vector3 pos = m_parentTransform.position;
+                Vector3 facingNormalized = m_parentTransform.forward.normalized;
+                Vector3 enemyPos = other.transform.position;
+                Vector3 enemyFacingNormalized = (enemyPos - pos).normalized;
+                float dist = Vector3.Distance(pos, enemyPos);
+                float dotProductAngle = Mathf.Acos(Vector3.Dot(facingNormalized, enemyFacingNormalized)) * Mathf.Rad2Deg;
+                Debug.Log($" {this} {dotProductAngle} {dist}");
+                if (damageable != null && dist < m_attackRange && dotProductAngle < m_attackAngle)
+                {
+                    damageable.TakeDamage(m_damage);
+                }
+            }
+        }
+        
+        private IEnumerator Waiter()
+        {
+            yield return new WaitForSeconds(m_castDelay);
+            Attack();
         }
     }
 }

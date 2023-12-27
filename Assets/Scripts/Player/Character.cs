@@ -13,18 +13,20 @@ namespace CorruptedLandTales
         private IMoveComponent m_moveComponent;
         public AttackManager attackManager => m_attackManager;
         
+        public HealthComponent HealthComponent => m_healthComponent;
+        
+        public IMoveComponent moveComponent => m_moveComponent;
+        
         public void Initialize(CharacterSO data)
         {
             if (attackManager) //пока такой костыль
             {
-
                 if(data.weapon)
                 {
                     attackManager.Initialize(data.weapon);
                 }
                 else
                 {
-                    
                 }
             }
             

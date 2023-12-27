@@ -46,8 +46,8 @@ MonoBehaviour:
     isAimedOnPlayer: 0
     attackRange: 6
     reserveAttackRange: 6
-  viewPosition: {x: -160, y: -385, z: 0}
-  viewScale: {x: 1, y: 1, z: 1}
+  viewPosition: {x: 27.2, y: -205.6, z: 0}
+  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
   references:
     version: 2
     RefIds:
@@ -384,7 +384,7 @@ MonoBehaviour:
         state: 0
         started: 0
         guid: 34ced49503ece9443a5d96943d62174a
-        position: {x: -146.0001, y: 1498.7487}
+        position: {x: -146.00002, y: 1498.4003}
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}

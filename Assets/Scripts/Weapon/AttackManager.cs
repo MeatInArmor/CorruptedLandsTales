@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -8,7 +6,8 @@ namespace CorruptedLandTales
     public class AttackManager : MonoBehaviour
     {
         private IAttackItem m_activeWeapon;
-        //массив с оружием и дописать метод который свапает оружия
+        
+        public event System.Action onUseAttack;
 
         public void Initialize(WeaponSO data)
         {
@@ -30,6 +29,15 @@ namespace CorruptedLandTales
             m_activeWeapon.DestroySelf();
             var item = Instantiate(weaponData.prefab, transform);
             var attackComponent = item.GetComponent<IAttackItem>();
+            if (item.TryGetComponent<MeleeAttack>(out MeleeAttack meleeAttack))
+            {
+                meleeAttack.onUseAttack += () => onUseAttack?.Invoke();
+            }
+            
+            if (item.TryGetComponent<RangeAttack>(out RangeAttack rangeAttack))
+            {
+                rangeAttack.onUseAttack += () => onUseAttack?.Invoke();
+            }
             attackComponent.Initialize(weaponData);
             m_activeWeapon = attackComponent;
             m_activeWeapon.Show();
@@ -44,7 +52,7 @@ namespace CorruptedLandTales
         {
             if (m_activeWeapon != null)
             {
-                m_activeWeapon.Attack();
+                m_activeWeapon.Use();
             }
         }
     }

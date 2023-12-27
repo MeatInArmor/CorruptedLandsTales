@@ -16,12 +16,16 @@ namespace CorruptedLandTales
         private float m_rotationVelocity;
         private float m_targetRotation;
         
+        public Vector3 velocity => m_characterController.velocity;
+
+        public event System.Action onUseDash;
+        
         public void Init(float speed, float sprintSpeed)
         {
             m_moveSpeed = speed;
             m_sprintSpeed = sprintSpeed;
         }
-        
+
         public void Move(Vector2 move, bool isSprint, float cameraY)
         {
             float targetSpeed = 0f;
@@ -68,6 +72,11 @@ namespace CorruptedLandTales
             Vector3 vertical = new Vector3(0f, Physics.gravity.y * Time.deltaTime, 0f);
             Vector3 horizontal = targetDirection.normalized * (speed * Time.deltaTime);
             m_characterController.Move(horizontal + vertical);
+        }
+        
+        public void Dash()
+        {
+            //onUseDash?.Invoke();
         }
     }
 }

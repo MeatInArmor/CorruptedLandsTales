@@ -23,7 +23,6 @@ namespace TheKiwiCoder {
             if (m_attackManager)
             {
                 m_attackManager.UseWeapon();
-                //m_attackManager.EndUseWeapon();
             }
             return State.Success;
         }
