@@ -12,7 +12,6 @@ namespace CorruptedLandTales
         [SerializeField] private GameObject m_projectilePrefab;
         [SerializeField] private Transform m_muzzle;
         [SerializeField] private float m_delay = 1f; 
-        [SerializeField] private float m_castDelay = 1f;
         private float m_timeLastUsed;
         
         public event System.Action onUseAttack;
@@ -29,8 +28,7 @@ namespace CorruptedLandTales
             if (m_delay < passedTime)
             {
                 onUseAttack?.Invoke();
-                StartCoroutine(Waiter());
-                /*Attack();*/
+                Attack();
                 m_timeLastUsed = Time.time;
             }
         }
@@ -53,12 +51,6 @@ namespace CorruptedLandTales
         private void Attack()
         {
             Instantiate(m_projectilePrefab, m_muzzle.position, m_muzzle.rotation);
-        }
-        
-        private IEnumerator Waiter()
-        {
-            yield return new WaitForSeconds(m_castDelay);
-            Attack();
         }
     }
 }

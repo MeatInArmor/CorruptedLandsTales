@@ -12,7 +12,6 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
         [SerializeField] private float m_delay = 1f;
-        [SerializeField] private float m_castDelay = 1f;
         
         private float m_timeLastUsed;
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
@@ -40,8 +39,7 @@ namespace CorruptedLandTales
             if (m_delay < passedTime)
             {
                 onUseAttack?.Invoke();
-                StartCoroutine(Waiter());
-                //Attack();
+                Attack();
                 m_timeLastUsed = Time.time;
             }
         }
@@ -82,12 +80,6 @@ namespace CorruptedLandTales
                     damageable.TakeDamage(m_damage);
                 }
             }
-        }
-        
-        private IEnumerator Waiter()
-        {
-            yield return new WaitForSeconds(m_castDelay);
-            Attack();
         }
     }
 }

@@ -18,5 +18,6 @@ namespace TheKiwiCoder {
         public float reserveAttackRange = 8f;
         [Header("Boss")]
         public string typeOfAttack;
+        public bool hasChangedTypeOfAttack = false;
 	}
 }

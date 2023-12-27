@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -13,6 +9,10 @@ namespace CorruptedLandTales
         [SerializeField] private List<WeaponSO> m_weaponList;
         
         private List<IAttackItem> m_attackList = new List<IAttackItem>();
+        
+        public event System.Action onMeleeAttack1Action;
+        public event System.Action onRangeAttack1Action;
+        
         private void Start()
         {
             for (int i = 0; i < m_weaponList.Count; i++)
@@ -30,17 +30,33 @@ namespace CorruptedLandTales
             return attackComponent;
         }
 
-        public void BossAttack(string attackType)//при добавлении атаки нужно будет расширять switch
+        public void BossAnimateAttack(string attackType) //при добавлении атаки нужно будет расширять switch
+        {                                       
+            switch (attackType)
+            {
+                case "meleeAttack1":
+                    Debug.Log("meleeAttack1");
+                    onMeleeAttack1Action?.Invoke();
+                    break;
+                case "rangeAttack1":
+                    Debug.Log("rangeAttack1");
+                    onRangeAttack1Action?.Invoke();
+                    break;
+                default:
+                    Debug.Log("incorrect attack type");
+                    break;
+            }
+        }
+        
+        public void BossAttack(string attackType)
         {                                       
             switch (attackType)
             {
                 case "meleeAttack1":
                     m_attackList[0].Use();
-                    Debug.Log("meleeAttack1");
                     break;
                 case "rangeAttack1":
                     m_attackList[1].Use();
-                    Debug.Log("rangeAttack1");
                     break;
                 default:
                     Debug.Log("incorrect attack type");

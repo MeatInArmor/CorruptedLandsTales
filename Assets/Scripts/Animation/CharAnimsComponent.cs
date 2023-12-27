@@ -66,7 +66,5 @@ namespace CorruptedLandTales
         {
             m_animator.SetTrigger("isCastSpell");
         }
-        
-        
     }
 }

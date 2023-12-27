@@ -15,8 +15,9 @@ namespace CorruptedLandTales
             if (m_attackTypes == null)
             {
                 BossAttackManager attackManager = context.agent.GetComponent<BossAttackManager>();
-                m_attackTypes = attackManager.GetAttackTypes();
+                m_attackTypes = attackManager.GetAttackTypes();//походу в старт нужно логику перенести?
             }
+            
         }
 
         protected override void OnStop()
@@ -25,7 +26,19 @@ namespace CorruptedLandTales
 
         protected override State OnUpdate()
         {
-            blackboard.typeOfAttack = m_attackTypes[Random.Range(0, m_attackTypes.Length)];
+            if (!blackboard.hasChangedTypeOfAttack)
+            {
+                blackboard.typeOfAttack = m_attackTypes[Random.Range(0, m_attackTypes.Length)];
+                if (blackboard.typeOfAttack.Contains("range"))
+                {
+                    blackboard.attackRange = 10.0f;
+                }
+                else
+                {
+                    blackboard.attackRange = 5.0f;
+                }
+                blackboard.hasChangedTypeOfAttack = true;
+            }
             return State.Success;
         }
     }

@@ -46,7 +46,9 @@ MonoBehaviour:
     isAimedOnPlayer: 0
     attackRange: 2.5
     reserveAttackRange: 2.5
-  viewPosition: {x: 307, y: -117, z: 0}
+    typeOfAttack: 
+    hasChangedTypeOfAttack: 0
+  viewPosition: {x: 481, y: -163, z: 0}
   viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:
     version: 2
@@ -64,6 +66,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -81,6 +85,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -100,6 +106,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -118,6 +126,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -137,6 +147,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 1.5
@@ -153,6 +165,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221383
@@ -168,6 +182,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         stoppingDistance: 0.1
@@ -184,6 +200,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -202,6 +220,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -220,6 +240,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -239,6 +261,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -257,6 +281,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221389
@@ -272,6 +298,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 0.1
@@ -288,6 +316,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -307,6 +337,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -324,6 +356,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -342,6 +376,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221394
@@ -357,6 +393,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -375,6 +413,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 1.7
@@ -391,6 +431,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221397
@@ -406,6 +448,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -425,6 +469,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -443,6 +489,8 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221400
@@ -458,5 +506,7 @@ MonoBehaviour:
           isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0

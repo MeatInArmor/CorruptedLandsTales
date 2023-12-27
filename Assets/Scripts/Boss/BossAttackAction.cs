@@ -22,7 +22,8 @@ namespace TheKiwiCoder {
         protected override State OnUpdate() {
             if (m_attackManager)
             {
-                m_attackManager.BossAttack(blackboard.typeOfAttack);
+                m_attackManager.BossAnimateAttack(blackboard.typeOfAttack);
+                blackboard.hasChangedTypeOfAttack = false;
             }
             return State.Success;
         }
