@@ -38,9 +38,8 @@ public class ChasePlayer : ActionNode
 		
 		if (agent.remainingDistance <= blackboard.attackRange)
 		{
-			blackboard.isAimedOnPlayer = true; // уменьшать радиус атаки если рейкастом не попадаем по игроку
+			blackboard.isAimedOnPlayer = true;
 		}
-		//Debug.Log($"{}");
 		return State.Success;
 	}
 }

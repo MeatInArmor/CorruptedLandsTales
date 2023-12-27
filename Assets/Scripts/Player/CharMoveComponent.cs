@@ -18,7 +18,7 @@ namespace CorruptedLandTales
         
         public Vector3 velocity => m_characterController.velocity;
 
-        public event System.Action onUseDash;
+        //public event System.Action onUseDash;
         
         public void Init(float speed, float sprintSpeed)
         {

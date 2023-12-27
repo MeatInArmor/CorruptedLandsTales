@@ -7,8 +7,6 @@ namespace CorruptedLandTales
 {
     public class NextPointsAction : ActionNode
     {
-        private CharAnimsComponent m_charAnim;
-        
         protected override void OnStart()
         {
         }
@@ -21,8 +19,6 @@ namespace CorruptedLandTales
         {
             var newPoint = Random.insideUnitSphere * Random.Range(5,8);
             var enemyPoint = context.gameObject.transform.position;
-            // return State.Failure;
-            
             blackboard.moveToPosition = enemyPoint - newPoint;
             return State.Success;
         }

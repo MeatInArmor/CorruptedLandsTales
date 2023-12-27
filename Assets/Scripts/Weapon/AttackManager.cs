@@ -25,8 +25,11 @@ namespace CorruptedLandTales
         private void EquipWeapon<T>(T data) where T: WeaponSO
         {
             var weaponData = data;
-            m_activeWeapon.Hide();
-            m_activeWeapon.DestroySelf();
+            if (m_activeWeapon != null)
+            {
+                m_activeWeapon.Hide();
+                m_activeWeapon.DestroySelf();
+            }
             var item = Instantiate(weaponData.prefab, transform);
             var attackComponent = item.GetComponent<IAttackItem>();
             if (item.TryGetComponent<MeleeAttack>(out MeleeAttack meleeAttack))

@@ -35,7 +35,6 @@ namespace CorruptedLandTales
 			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
 			m_charAnim = m_character.GetComponentInChildren<CharAnimsComponent>();
-			Debug.Log($"{m_charAnim}");
 		}
 
 		private void OnEnable()

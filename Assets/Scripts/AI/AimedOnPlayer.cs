@@ -16,9 +16,9 @@ namespace TheKiwiCoder {
         protected override State OnUpdate() {
             if (blackboard.isAimedOnPlayer)
             {
+                context.agent.isStopped = true;
                 return State.Success;
             }
-
             return State.Failure;
 
         }

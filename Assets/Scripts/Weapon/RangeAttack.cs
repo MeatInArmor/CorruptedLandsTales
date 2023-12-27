@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using CorruptedLandTales;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
     public class RangeAttack : MonoBehaviour, IAttackItem
     {
-        [SerializeField] private GameObject m_prefab;
+        [SerializeField] private GameObject m_projectilePrefab;
         [SerializeField] private Transform m_muzzle;
         [SerializeField] private float m_delay = 1f; 
         [SerializeField] private float m_castDelay = 1f;
@@ -51,7 +52,7 @@ namespace CorruptedLandTales
 
         private void Attack()
         {
-            Instantiate(m_prefab, m_muzzle.position, m_muzzle.rotation);
+            Instantiate(m_projectilePrefab, m_muzzle.position, m_muzzle.rotation);
         }
         
         private IEnumerator Waiter()

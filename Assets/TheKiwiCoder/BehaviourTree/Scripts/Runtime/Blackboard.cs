@@ -16,5 +16,7 @@ namespace TheKiwiCoder {
 		public bool isAimedOnPlayer;
         public float attackRange = 8f;
         public float reserveAttackRange = 8f;
-    }
+        [Header("Boss")]
+        public string typeOfAttack;
+	}
 }
