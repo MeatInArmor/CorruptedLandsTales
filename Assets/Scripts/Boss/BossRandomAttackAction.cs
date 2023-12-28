@@ -15,7 +15,7 @@ namespace CorruptedLandTales
             if (m_attackTypes == null)
             {
                 BossAttackManager attackManager = context.agent.GetComponent<BossAttackManager>();
-                m_attackTypes = attackManager.GetAttackTypes();//походу в старт нужно логику перенести?
+                m_attackTypes = attackManager.GetAttackTypes();
             }
             
         }
@@ -35,7 +35,7 @@ namespace CorruptedLandTales
                 }
                 else
                 {
-                    blackboard.attackRange = 5.0f;
+                    blackboard.attackRange = 6.0f;
                 }
                 blackboard.hasChangedTypeOfAttack = true;
             }

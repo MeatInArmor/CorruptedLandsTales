@@ -12,7 +12,6 @@ public class ChasePlayer : ActionNode
 {
 	protected override void OnStart()
 	{
-		blackboard.isAimedOnPlayer = false;
 		context.agent.isStopped = false;
 		context.agent.stoppingDistance = blackboard.attackRange;
 		context.agent.SetDestination(blackboard.target.position);
@@ -38,7 +37,8 @@ public class ChasePlayer : ActionNode
 		
 		if (agent.remainingDistance <= blackboard.attackRange)
 		{
-			blackboard.isAimedOnPlayer = true;
+			agent.isStopped = true;
+			return State.Success;
 		}
 		return State.Success;
 	}

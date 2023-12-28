@@ -23,7 +23,6 @@ namespace TheKiwiCoder {
             if (m_attackManager)
             {
                 m_attackManager.BossAnimateAttack(blackboard.typeOfAttack);
-                blackboard.hasChangedTypeOfAttack = false;
             }
             return State.Success;
         }

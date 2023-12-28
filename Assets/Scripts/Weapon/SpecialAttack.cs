@@ -8,7 +8,6 @@ namespace CorruptedLandTales
         [SerializeField] private ProjectileComponent m_prefab;
         [SerializeField] private Transform m_muzzle;
         [SerializeField] private float m_cooldown = 3f;
-        [SerializeField] private float m_useDelay = 1.0f;
 
         private float m_timeLastUsed;
         
@@ -20,8 +19,7 @@ namespace CorruptedLandTales
             if (m_cooldown < passedTime)
             {
                 onUseSpecial?.Invoke();
-                StartCoroutine(Waiter());
-                //UseSpecialAttack();
+                UseSpecialAttack();
                 m_timeLastUsed = Time.time;
             }
         }
@@ -29,12 +27,6 @@ namespace CorruptedLandTales
         private void UseSpecialAttack()
         {
             Instantiate(m_prefab, m_muzzle.position, m_muzzle.rotation);
-        }
-
-        private IEnumerator Waiter()
-        {
-            yield return new WaitForSeconds(m_useDelay);
-            UseSpecialAttack();
         }
     }
 }

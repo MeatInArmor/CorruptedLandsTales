@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1599426596862757286}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.61, z: 2.71}
+  m_LocalPosition: {x: 0, y: 5, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25eec083fd3b562469071f28b6ed793d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player: {fileID: 0}
 --- !u!1 &5588360234851695542
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,4 +92,3 @@ MonoBehaviour:
   m_projectilePrefab: {fileID: 3298326605091429281, guid: c6cdeff8dfca05d46967b175464618a0, type: 3}
   m_muzzle: {fileID: 3718923617102582925}
   m_delay: 0
-  m_castDelay: 1
