@@ -48,10 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damage: 30
   m_attackAngle: 90
-  m_attackRange: 3
+  m_attackRange: 3.5
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
+  m_delay: 1
 --- !u!1 &4777572813946602796
 GameObject:
   m_ObjectHideFlags: 0

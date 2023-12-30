@@ -11,6 +11,8 @@ namespace CorruptedLandTales
         private List<IAttackItem> m_attackList = new List<IAttackItem>();
         
         public event System.Action onMeleeAttack1Action;
+        public event System.Action onMeleeAttack2Action;
+        public event System.Action onMeleeAttack3Action;
         public event System.Action onRangeAttack1Action;
         
         private void Start()
@@ -35,12 +37,16 @@ namespace CorruptedLandTales
             switch (attackType)
             {
                 case "meleeAttack1":
-                    Debug.Log("meleeAttack1");
                     onMeleeAttack1Action?.Invoke();
                     break;
                 case "rangeAttack1":
-                    Debug.Log("rangeAttack1");
                     onRangeAttack1Action?.Invoke();
+                    break;
+                case "meleeAttack2":
+                    onMeleeAttack2Action?.Invoke();
+                    break;
+                case "meleeAttack3":
+                    onMeleeAttack3Action?.Invoke();
                     break;
                 default:
                     Debug.Log("incorrect attack type");
@@ -58,6 +64,12 @@ namespace CorruptedLandTales
                 case "rangeAttack1":
                     m_attackList[1].Use();
                     break;
+                case "meleeAttack2":
+                    m_attackList[2].Use();
+                    break;
+                case "meleeAttack3":
+                    m_attackList[3].Use();
+                    break;
                 default:
                     Debug.Log("incorrect attack type");
                     break;
@@ -70,7 +82,7 @@ namespace CorruptedLandTales
             {
                 return null;
             }
-            return new string[] {"meleeAttack1", "rangeAttack1"};
+            return new string[] {"meleeAttack1", "rangeAttack1", "meleeAttack2", "meleeAttack3"};
         }
     }
 }

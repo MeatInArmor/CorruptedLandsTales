@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b897dbb5ca4f26f46af26dfa272240d8, type: 3}
-  m_Name: meleeAttack1
+  m_Name: meleeAttack3
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 5588360234851695542, guid: 0ec5404a860ceab48ba95d91213e0460, type: 3}
-  m_damage: 50
-  m_attackAngle: 90
+  m_damage: 40
+  m_attackAngle: 70
   m_attackRange: 5
   m_layerMask:
     serializedVersion: 2

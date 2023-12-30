@@ -13,6 +13,8 @@ namespace CorruptedLandTales
         
         private static int SpeedId = Animator.StringToHash("Speed");
         private static int MeleeAttack1Id = Animator.StringToHash("MeleeAttack1");
+        private static int MeleeAttack2Id = Animator.StringToHash("MeleeAttack2");
+        private static int MeleeAttack3Id = Animator.StringToHash("MeleeAttack3");
         private static int RangeAttack1Id = Animator.StringToHash("RangeAttack1");
         
         private void Start()
@@ -37,6 +39,16 @@ namespace CorruptedLandTales
             m_attackManager.onRangeAttack1Action += () =>
             {
                 m_animator.SetTrigger(RangeAttack1Id);
+            };
+            
+            m_attackManager.onMeleeAttack2Action += () =>
+            {
+                m_animator.SetTrigger(MeleeAttack2Id);
+            };
+            
+            m_attackManager.onMeleeAttack3Action += () =>
+            {
+                m_animator.SetTrigger(MeleeAttack3Id);
             };
             
         }

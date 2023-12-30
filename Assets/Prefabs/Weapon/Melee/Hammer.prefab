@@ -153,10 +153,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damage: 50
   m_attackAngle: 150
-  m_attackRange: 2
+  m_attackRange: 3
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
+  m_delay: 1
 --- !u!1 &6075040667082494062
 GameObject:
   m_ObjectHideFlags: 0

@@ -1772,7 +1772,6 @@ MonoBehaviour:
   m_prefab: {fileID: 9222002406757968233, guid: f3ce70df8178cfc499e4f474b9aa0365, type: 3}
   m_muzzle: {fileID: 2130737864}
   m_cooldown: 3
-  m_useDelay: 1
 --- !u!4 &1531096589 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8117013142518068250, guid: 29347e78bf0fe044cb38b73ab97047ec, type: 3}
@@ -2831,6 +2830,8 @@ MonoBehaviour:
   m_weaponList:
   - {fileID: 11400000, guid: 22121537f7f33ed4abdb6ee282ec32e2, type: 2}
   - {fileID: 11400000, guid: e28ace02d0447be4aa96d0dffa1ceb87, type: 2}
+  - {fileID: 11400000, guid: 1e8c030aad04c8b4f904be237286f053, type: 2}
+  - {fileID: 11400000, guid: 6a73f063aee9e0a4bbd0157f42aece06, type: 2}
 --- !u!65 &8537461268580011856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2860,8 +2861,8 @@ SceneRoots:
   - {fileID: 453497036}
   - {fileID: 1192474799}
   - {fileID: 682167074}
-  - {fileID: 202086266}
   - {fileID: 414402819332543109}
+  - {fileID: 202086266}
   - {fileID: 216360254}
   - {fileID: 1976833963}
   - {fileID: 2099387401}

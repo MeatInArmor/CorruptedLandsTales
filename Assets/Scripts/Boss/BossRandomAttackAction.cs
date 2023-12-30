@@ -26,7 +26,7 @@ namespace CorruptedLandTales
 
         protected override State OnUpdate()
         {
-            if (!blackboard.hasChangedTypeOfAttack)
+            if (!blackboard.hasChangedTypeOfAttack) //нужно доделать вот это под каждую атаку чтобы считывался рендж
             {
                 blackboard.typeOfAttack = m_attackTypes[Random.Range(0, m_attackTypes.Length)];
                 if (blackboard.typeOfAttack.Contains("range"))
