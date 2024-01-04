@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -9,7 +10,11 @@ namespace CorruptedLandTales
     {
         [SerializeField] private float m_healthMax = 100f;
         [SerializeField] private float m_health = 100f;
+        [Header("0 - Enemy, 1 - Player")]
         [SerializeField] private int m_group = 0;
+
+        public float CurrentHealth => m_health;
+        public float MaxHealth => m_healthMax;
         
         public int group { get; set; }
         

@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be10c51159dbf242ad20f16aeb4b790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_healthMax: 100
+  m_healthMax: 500
   m_health: 500
   m_group: 1
 --- !u!114 &682167080
@@ -2494,6 +2494,7 @@ GameObject:
   - component: {fileID: 7182697124472429680}
   - component: {fileID: 1081152033012174097}
   - component: {fileID: 7182697124472429681}
+  - component: {fileID: 7182697124472429682}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -2804,6 +2805,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e28ace02d0447be4aa96d0dffa1ceb87, type: 2}
   - {fileID: 11400000, guid: 1e8c030aad04c8b4f904be237286f053, type: 2}
   - {fileID: 11400000, guid: 6a73f063aee9e0a4bbd0157f42aece06, type: 2}
+  m_stageManager: {fileID: 7182697124472429682}
+--- !u!114 &7182697124472429682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855788543833522189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9aeaf64587ec69e429f45f81f3976437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_countStages: 2
+  m_healthComponent: {fileID: 3537577790323841145}
 --- !u!65 &8537461268580011856
 BoxCollider:
   m_ObjectHideFlags: 0

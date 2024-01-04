@@ -10,14 +10,15 @@ namespace CorruptedLandTales
     
     {
         private string[] m_attackTypes;
+        private BossAttackManager m_attackManager;
         protected override void OnStart()
         {
             if (m_attackTypes == null)
             {
-                BossAttackManager attackManager = context.agent.GetComponent<BossAttackManager>();
-                m_attackTypes = attackManager.GetAttackTypes();
+                m_attackManager = context.agent.GetComponent<BossAttackManager>();
             }
-            
+            /*m_attackTypes = m_attackManager.GetAttackTypes();
+            Debug.Log($"{m_attackTypes}");*/
         }
 
         protected override void OnStop()
@@ -27,7 +28,11 @@ namespace CorruptedLandTales
         protected override State OnUpdate()
         {
             if (!blackboard.hasChangedTypeOfAttack) //нужно доделать вот это под каждую атаку чтобы считывался рендж
+                                                    //много что нужно переделать потом
+                                                    //с получением типов атаки в том числе
             {
+                m_attackTypes = m_attackManager.GetAttackTypes();
+                Debug.Log($"{m_attackTypes}");
                 blackboard.typeOfAttack = m_attackTypes[Random.Range(0, m_attackTypes.Length)];
                 if (blackboard.typeOfAttack.Contains("range"))
                 {

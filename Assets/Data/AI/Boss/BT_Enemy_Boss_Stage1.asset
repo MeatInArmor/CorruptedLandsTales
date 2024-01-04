@@ -38,8 +38,8 @@ MonoBehaviour:
     reserveAttackRange: 6
     typeOfAttack: 
     hasChangedTypeOfAttack: 0
-  viewPosition: {x: 261, y: -242, z: 0}
-  viewScale: {x: 0.7561437, y: 0.7561437, z: 1}
+  viewPosition: {x: 482, y: 145, z: 0}
+  viewScale: {x: 0.32690176, y: 0.32690176, z: 1}
   references:
     version: 2
     RefIds:
@@ -110,7 +110,6 @@ MonoBehaviour:
           hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
-        duration: 1
     - rid: 5970866477781221377
       type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:

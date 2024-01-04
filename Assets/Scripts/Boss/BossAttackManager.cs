@@ -1,12 +1,15 @@
 using System.Collections.Generic;
+using ShadowChimera;
 using UnityEngine;
 
 namespace CorruptedLandTales
 {
     public class BossAttackManager : MonoBehaviour
     {
-        [Header("Attack")]
+        [Header("Attacks")]
         [SerializeField] private List<WeaponSO> m_weaponList;
+
+        [SerializeField] private BossStageManager m_stageManager;
         
         private List<IAttackItem> m_attackList = new List<IAttackItem>();
         
@@ -77,12 +80,20 @@ namespace CorruptedLandTales
         }
 
         public string[] GetAttackTypes()
-        { 
+        {
             if (m_weaponList == null)
             {
                 return null;
             }
-            return new string[] {"meleeAttack1", "rangeAttack1", "meleeAttack2", "meleeAttack3"};
+            if (m_stageManager.ActiveStage == 1)
+            {
+                return new string[] { "meleeAttack1", "rangeAttack1" };
+            }
+            if (m_stageManager.ActiveStage == 2)
+            {
+                return new string[] { "meleeAttack1", "rangeAttack1", "meleeAttack2", "meleeAttack3" };
+            }
+            return null;
         }
     }
 }
