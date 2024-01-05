@@ -43,13 +43,12 @@ MonoBehaviour:
   blackboard:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-    isAimedOnPlayer: 0
     attackRange: 2.5
     reserveAttackRange: 2.5
     typeOfAttack: 
     hasChangedTypeOfAttack: 0
-  viewPosition: {x: 481, y: -163, z: 0}
-  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+  viewPosition: {x: 455, y: -117, z: 0}
+  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
@@ -63,7 +62,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -82,7 +80,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -103,7 +100,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -123,7 +119,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -144,7 +139,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -162,7 +156,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -179,7 +172,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -197,7 +189,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -217,7 +208,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -237,7 +227,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -258,7 +247,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -278,7 +266,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -295,7 +282,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -313,7 +299,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -334,7 +319,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -353,7 +337,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -373,7 +356,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -390,7 +372,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -410,7 +391,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -428,7 +408,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -445,7 +424,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -466,7 +444,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -486,7 +463,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 
@@ -503,7 +479,6 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
           typeOfAttack: 

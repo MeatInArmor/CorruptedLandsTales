@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -15,7 +11,7 @@ namespace CorruptedLandTales
 
         public float CurrentHealth => m_health;
         public float MaxHealth => m_healthMax;
-        
+        public event System.Action onDie;
         public int group { get; set; }
         
         public void Initialize(float max, float initHp)
@@ -37,7 +33,8 @@ namespace CorruptedLandTales
             
             if (m_health <= 0)
             {
-                Destroy(gameObject);
+                onDie?.Invoke();
+                //Destroy(gameObject);
             }
         }
 

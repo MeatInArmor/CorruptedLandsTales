@@ -32,7 +32,6 @@ namespace CorruptedLandTales
                                                     //с получением типов атаки в том числе
             {
                 m_attackTypes = m_attackManager.GetAttackTypes();
-                Debug.Log($"{m_attackTypes}");
                 blackboard.typeOfAttack = m_attackTypes[Random.Range(0, m_attackTypes.Length)];
                 if (blackboard.typeOfAttack.Contains("range"))
                 {

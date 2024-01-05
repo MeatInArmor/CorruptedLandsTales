@@ -18,7 +18,6 @@ namespace CorruptedLandTales
         public void EndAttack()
         {
             flag = true;
-            Debug.Log("end attack");
         }
     }
 }

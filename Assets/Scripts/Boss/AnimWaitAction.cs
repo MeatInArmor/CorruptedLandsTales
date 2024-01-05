@@ -13,7 +13,6 @@ namespace TheKiwiCoder {
             if (!bossEvents)
             {
                 bossEvents = context.agent.GetComponentInChildren<BossEventCatcher>();
-                Debug.Log(bossEvents);
             }
         }
 

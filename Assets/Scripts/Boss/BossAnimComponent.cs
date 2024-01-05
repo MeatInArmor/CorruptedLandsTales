@@ -12,6 +12,7 @@ namespace CorruptedLandTales
         private IAttackItem m_attackItem;
         
         private static int SpeedId = Animator.StringToHash("Speed");
+        private static int DieId = Animator.StringToHash("Die");
         private static int MeleeAttack1Id = Animator.StringToHash("MeleeAttack1");
         private static int MeleeAttack2Id = Animator.StringToHash("MeleeAttack2");
         private static int MeleeAttack3Id = Animator.StringToHash("MeleeAttack3");
@@ -50,7 +51,11 @@ namespace CorruptedLandTales
             {
                 m_animator.SetTrigger(MeleeAttack3Id);
             };
-            
+
+            m_character.HealthComponent.onDie += () =>
+            {
+                m_animator.SetTrigger(DieId);
+            };
         }
 
         private void LateUpdate()
