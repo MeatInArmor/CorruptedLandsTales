@@ -13,8 +13,10 @@ namespace TheKiwiCoder {
 	{
 		public Transform target;
 		public Vector3 moveToPosition;
-		public bool isAimedOnPlayer;
         public float attackRange = 8f;
         public float reserveAttackRange = 8f;
-    }
+        [Header("Boss")]
+        public string typeOfAttack;
+        public bool hasChangedTypeOfAttack = false;
+	}
 }

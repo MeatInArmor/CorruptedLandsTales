@@ -22,6 +22,7 @@ namespace CorruptedLandTales
 		private InputAction m_useSpecial;
 		
 		private CharMoveComponent m_charMoveController;
+		private CharAnimsComponent m_charAnim;
 		
 		private void Awake()
 		{
@@ -31,7 +32,9 @@ namespace CorruptedLandTales
 			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
 			
+			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
+			m_charAnim = m_character.GetComponentInChildren<CharAnimsComponent>();
 		}
 
 		private void OnEnable()
@@ -54,17 +57,22 @@ namespace CorruptedLandTales
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
-			m_character.attackManager.UseWeapon();
-		}
+            m_character.attackManager.UseWeapon();
+        }
 
 		private void OnUseSpecial(InputAction.CallbackContext context)
 		{
-			m_specialAttack.UseSpecial();
-		}
+            m_specialAttack.UseSpecial();            
+        }
 
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
 			m_findItem.PickUp();
+		}
+
+		private void OnUseDash(InputAction.CallbackContext context)
+		{
+			//m_charMoveController.Dash();
 		}
 
 		private void Update()
@@ -77,6 +85,8 @@ namespace CorruptedLandTales
 			Vector2 move = m_moveAction.ReadValue<Vector2>();
 			Move(move, false);
 		}
+
+		
 
 		private void Move(Vector2 move, bool isSprint)
 		{

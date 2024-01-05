@@ -9,7 +9,7 @@ namespace CorruptedLandTales
     {
         public MoveData moveData;
         public HealthData healthData;
-        public MeleeWeaponSO weapon;
+        public WeaponSO weapon;
     }
 
     [System.Serializable]

@@ -43,11 +43,12 @@ MonoBehaviour:
   blackboard:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-    isAimedOnPlayer: 0
     attackRange: 2.5
     reserveAttackRange: 2.5
-  viewPosition: {x: 243, y: -104, z: 0}
-  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
+    typeOfAttack: 
+    hasChangedTypeOfAttack: 0
+  viewPosition: {x: 455, y: -117, z: 0}
+  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
   references:
     version: 2
     RefIds:
@@ -61,9 +62,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -78,9 +80,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -97,9 +100,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -115,9 +119,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -134,9 +139,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 1.5
@@ -150,9 +156,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221383
@@ -165,9 +172,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         stoppingDistance: 0.1
@@ -181,9 +189,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -199,9 +208,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -217,9 +227,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -236,9 +247,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -254,9 +266,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221389
@@ -269,9 +282,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 0.1
@@ -285,9 +299,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -304,9 +319,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -321,9 +337,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -339,9 +356,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221394
@@ -354,9 +372,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -372,9 +391,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 1.7
@@ -388,9 +408,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221397
@@ -403,9 +424,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -422,9 +444,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -440,9 +463,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221400
@@ -455,8 +479,9 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
