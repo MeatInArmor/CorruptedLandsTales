@@ -10,6 +10,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private Character m_character;
+        [SerializeField] private CharMoveComponent m_charMoveComponent;
         [SerializeField] private SpecialAttack m_specialAttack;
         
         private IMoveComponent moveComponent => m_character.moveComponent;
@@ -31,9 +32,15 @@ namespace CorruptedLandTales
             {
                 m_character = GetComponent<Character>();
             }
-            
+
+            if (m_charMoveComponent == null)
+            {
+                m_charMoveComponent = GetComponent<CharMoveComponent>();
+            }
+
             m_character = GetComponentInParent<Character>();
-            
+            m_charMoveComponent = GetComponentInParent<CharMoveComponent>();
+
             m_character.attackManager.onUseAttack += () =>
             {
                 //m_animator.SetTrigger(SlashId);
@@ -48,7 +55,12 @@ namespace CorruptedLandTales
                     CastSpell();
                 };
             }
-            
+
+            m_charMoveComponent.onUseDash += () =>
+            {
+                //m_animator.SetTrigger(SlashId);
+                Dash();
+            };
         }
 
         private void LateUpdate()
@@ -66,7 +78,11 @@ namespace CorruptedLandTales
         {
             m_animator.SetTrigger("isCastSpell");
         }
-        
-        
+
+        private void Dash()
+        {
+            m_animator.SetTrigger("isDash");
+        }
+
     }
 }

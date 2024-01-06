@@ -20,8 +20,10 @@ namespace CorruptedLandTales
 		private InputAction m_AttackAction;
 		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
-		
-		private CharMoveComponent m_charMoveController;
+        //Dash
+        private InputAction m_useDash;
+
+        private CharMoveComponent m_charMoveController;
 		private CharAnimsComponent m_charAnim;
 		
 		private void Awake()
@@ -31,9 +33,10 @@ namespace CorruptedLandTales
 			m_AttackAction = m_playerMap.FindAction("Attack");
 			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
-			
-			
-			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
+			//Dash
+            m_useDash = m_playerMap.FindAction("Dash");
+
+            m_charMoveController = m_character.GetComponent<CharMoveComponent>();
 			m_charAnim = m_character.GetComponentInChildren<CharAnimsComponent>();
 			Debug.Log($"{m_charAnim}");
 		}
@@ -41,8 +44,9 @@ namespace CorruptedLandTales
 		private void OnEnable()
 		{
 			m_playerMap.Enable();
-
-			m_AttackAction.performed += OnAttackInput;
+            //Dash
+            m_useDash.performed += OnUseDash;
+            m_AttackAction.performed += OnAttackInput;
 			m_pickUp.performed += OnPickUpInput;
 			m_useSpecial.performed += OnUseSpecial;
 		}
@@ -50,8 +54,9 @@ namespace CorruptedLandTales
 		private void OnDisable()
 		{
 			m_playerMap.Disable();
-
-			m_AttackAction.performed -= OnAttackInput;
+            //Dash
+            m_useDash.performed -= OnUseDash;
+            m_AttackAction.performed -= OnAttackInput;
 			m_pickUp.performed -= OnPickUpInput;
 			m_useSpecial.performed -= OnUseSpecial;
 		}
@@ -70,10 +75,10 @@ namespace CorruptedLandTales
 		{
 			m_findItem.PickUp();
 		}
-
-		private void OnUseDash(InputAction.CallbackContext context)
+        //Dash
+        private void OnUseDash(InputAction.CallbackContext context)
 		{
-			//m_charMoveController.Dash();
+			m_charMoveController.Dash();
 		}
 
 		private void Update()

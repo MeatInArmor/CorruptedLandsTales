@@ -17,7 +17,7 @@ namespace CorruptedLandTales
         private float m_targetRotation;
         
         public Vector3 velocity => m_characterController.velocity;
-
+        //Dash
         public event System.Action onUseDash;
         
         public void Init(float speed, float sprintSpeed)
@@ -73,10 +73,10 @@ namespace CorruptedLandTales
             Vector3 horizontal = targetDirection.normalized * (speed * Time.deltaTime);
             m_characterController.Move(horizontal + vertical);
         }
-        
+        //Dash
         public void Dash()
         {
-            //onUseDash?.Invoke();
+            onUseDash?.Invoke();
         }
     }
 }
