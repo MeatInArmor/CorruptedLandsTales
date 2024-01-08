@@ -21,7 +21,12 @@ namespace CorruptedLandTales
             var weaponData = data as RangeWeaponSO;
             m_delay = weaponData.delay;
         }
-        
+
+        public void UseSkill()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Use()
         {
             float passedTime = Time.time - m_timeLastUsed; 

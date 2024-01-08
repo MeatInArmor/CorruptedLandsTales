@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ShadowChimera;
+using CorruptedLandTales;
 using UnityEngine;
 
 namespace CorruptedLandTales

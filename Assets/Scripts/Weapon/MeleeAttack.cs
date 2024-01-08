@@ -13,6 +13,7 @@ namespace CorruptedLandTales
         [SerializeField] private LayerMask m_layerMask;
         [SerializeField] private float m_delay = 1f;
         
+        private IWeaponSkill m_weaponSkill;
         private float m_timeLastUsed;
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
@@ -31,6 +32,7 @@ namespace CorruptedLandTales
         {
             m_attackAngle /= 2;
             m_parentTransform = GetComponentInParent<Transform>();
+            m_weaponSkill = GetComponent<IWeaponSkill>();
         }
 
         public void Use()
@@ -42,6 +44,11 @@ namespace CorruptedLandTales
                 Attack();
                 m_timeLastUsed = Time.time;
             }
+        }
+
+        public void UseSkill() 
+        {
+            m_weaponSkill.Use();
         }
 
         public void Show()
