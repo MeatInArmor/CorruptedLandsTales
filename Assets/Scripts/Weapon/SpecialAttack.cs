@@ -13,15 +13,19 @@ namespace CorruptedLandTales
         
         public event System.Action onUseSpecial;
 
-        public void UseSpecial()
+        public void AnimateSpecialAttack()
         {
             float passedTime = Time.time - m_timeLastUsed; 
             if (m_cooldown < passedTime)
             {
                 onUseSpecial?.Invoke();
-                UseSpecialAttack();
                 m_timeLastUsed = Time.time;
             }
+        }
+
+        public void CastSpecialAttack()
+        {
+            UseSpecialAttack();
         }
 
         private void UseSpecialAttack()

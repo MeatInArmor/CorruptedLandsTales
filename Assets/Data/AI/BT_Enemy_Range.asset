@@ -33,24 +33,42 @@ MonoBehaviour:
   - rid: 5970866477781221392
   - rid: 5970866477781221393
   - rid: 5970866477781221394
-  - rid: 5970866477781221395
   - rid: 5970866477781221396
   - rid: 5970866477781221397
   - rid: 5970866477781221398
   - rid: 5970866477781221399
   - rid: 5970866477781221400
+  - rid: 591404428617056257
   treeState: 0
   blackboard:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-    isAimedOnPlayer: 0
     attackRange: 6
     reserveAttackRange: 6
-  viewPosition: {x: 27.2, y: -205.6, z: 0}
-  viewScale: {x: 0.65751624, y: 0.65751624, z: 1}
+    typeOfAttack: 
+    hasChangedTypeOfAttack: 0
+  viewPosition: {x: 438, y: -896, z: 0}
+  viewScale: {x: 1, y: 1, z: 1}
   references:
     version: 2
     RefIds:
+    - rid: 591404428617056257
+      type: {class: Wait, ns: TheKiwiCoder, asm: Assembly-CSharp}
+      data:
+        state: 0
+        started: 0
+        guid: 2e4e4b1805cfe1f46ac4f8297e66f219
+        position: {x: 4, y: 1498}
+        blackboard:
+          target: {fileID: 0}
+          moveToPosition: {x: 0, y: 0, z: 0}
+          attackRange: 8
+          reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
+        description: 
+        drawGizmos: 0
+        duration: 1.5
     - rid: 5970866477781221377
       type: {class: RootNode, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:
@@ -61,9 +79,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -78,9 +97,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -97,9 +117,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -115,9 +136,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -134,9 +156,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 1.5
@@ -150,9 +173,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221383
@@ -165,9 +189,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         stoppingDistance: 0.1
@@ -181,9 +206,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -199,9 +225,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -217,9 +244,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -236,9 +264,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -254,9 +283,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221389
@@ -269,9 +299,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         duration: 0.1
@@ -285,9 +316,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -304,9 +336,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -321,9 +354,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -339,9 +373,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221394
@@ -354,30 +389,15 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
         - rid: 5970866477781221396
-        - rid: 5970866477781221395
-    - rid: 5970866477781221395
-      type: {class: Wait, ns: TheKiwiCoder, asm: Assembly-CSharp}
-      data:
-        state: 0
-        started: 0
-        guid: 04e70e44878d654448ad3ee1ce902ce5
-        position: {x: -0.000043988228, y: 1498.9998}
-        blackboard:
-          target: {fileID: 0}
-          moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
-          attackRange: 8
-          reserveAttackRange: 8
-        description: 
-        drawGizmos: 0
-        duration: 1.7
+        - rid: 591404428617056257
     - rid: 5970866477781221396
       type: {class: AttackAction, ns: TheKiwiCoder, asm: Assembly-CSharp}
       data:
@@ -388,9 +408,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221397
@@ -403,9 +424,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         child:
@@ -422,9 +444,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
         children:
@@ -440,9 +463,10 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0
     - rid: 5970866477781221400
@@ -455,8 +479,9 @@ MonoBehaviour:
         blackboard:
           target: {fileID: 0}
           moveToPosition: {x: 0, y: 0, z: 0}
-          isAimedOnPlayer: 0
           attackRange: 8
           reserveAttackRange: 8
+          typeOfAttack: 
+          hasChangedTypeOfAttack: 0
         description: 
         drawGizmos: 0

@@ -22,7 +22,7 @@ namespace TheKiwiCoder {
         protected override State OnUpdate() {
             if (m_attackManager)
             {
-                m_attackManager.UseWeapon();
+                m_attackManager.AnimateUse();
             }
             return State.Success;
         }

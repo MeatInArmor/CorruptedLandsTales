@@ -58,7 +58,7 @@ namespace CorruptedLandTales
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
-            m_character.attackManager.UseWeapon();
+            m_character.attackManager.AnimateUse();
         }
 		
 		private void OnUseWeaponSkill(InputAction.CallbackContext context)
@@ -68,7 +68,7 @@ namespace CorruptedLandTales
 
 		private void OnUseSpecial(InputAction.CallbackContext context)
 		{
-            m_specialAttack.UseSpecial();            
+            m_specialAttack.AnimateSpecialAttack();            
         }
 
 		private void OnPickUpInput(InputAction.CallbackContext context)

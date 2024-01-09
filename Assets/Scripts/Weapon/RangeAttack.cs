@@ -14,8 +14,6 @@ namespace CorruptedLandTales
         [SerializeField] private float m_delay = 1f; 
         private float m_timeLastUsed;
         
-        public event System.Action onUseAttack;
-        
         public void Initialize(WeaponSO data)
         {
             var weaponData = data as RangeWeaponSO;
@@ -32,7 +30,6 @@ namespace CorruptedLandTales
             float passedTime = Time.time - m_timeLastUsed; 
             if (m_delay < passedTime)
             {
-                onUseAttack?.Invoke();
                 Attack();
                 m_timeLastUsed = Time.time;
             }

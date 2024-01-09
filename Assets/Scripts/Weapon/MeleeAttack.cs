@@ -18,7 +18,7 @@ namespace CorruptedLandTales
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
         
-        public event System.Action onUseAttack;
+        
         public void Initialize(WeaponSO data)
         {
             var weaponData = data as MeleeWeaponSO;
@@ -31,7 +31,7 @@ namespace CorruptedLandTales
         private void Awake()
         {
             m_attackAngle /= 2;
-            m_parentTransform = GetComponentInParent<Transform>();
+            m_parentTransform = GetComponentInParent<Transform>(); // надо это переделать - кринж
             m_weaponSkill = GetComponent<IWeaponSkill>();
         }
 
@@ -40,7 +40,6 @@ namespace CorruptedLandTales
             float passedTime = Time.time - m_timeLastUsed; 
             if (m_delay < passedTime)
             {
-                onUseAttack?.Invoke();
                 Attack();
                 m_timeLastUsed = Time.time;
             }

@@ -215,7 +215,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7943257
+      - time: 0.796903
         functionName: Attack
         data: rangeAttack1
         objectReferenceParameter: {instanceID: 0}
@@ -325,7 +325,7 @@ ModelImporter:
       takeName: Armature|IdlePieces
       internalID: -7377625503026327429
       firstFrame: 0
-      lastFrame: 48
+      lastFrame: 54
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
