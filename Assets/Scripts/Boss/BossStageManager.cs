@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using CorruptedLandTales;
 using UnityEngine;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
     public class BossStageManager : MonoBehaviour
     {

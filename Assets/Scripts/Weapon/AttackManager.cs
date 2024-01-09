@@ -5,6 +5,8 @@ namespace CorruptedLandTales
 {
     public class AttackManager : MonoBehaviour
     {
+        [SerializeField] private Transform m_weaponRoot;
+            
         private IAttackItem m_activeWeapon;
         
         public event System.Action onUseAttack;
@@ -30,17 +32,9 @@ namespace CorruptedLandTales
                 m_activeWeapon.Hide();
                 m_activeWeapon.DestroySelf();
             }
-            var item = Instantiate(weaponData.prefab, transform);
+            var item = Instantiate(weaponData.prefab, m_weaponRoot);
+            item.transform.SetParent(m_weaponRoot);
             var attackComponent = item.GetComponent<IAttackItem>();
-            if (item.TryGetComponent<MeleeAttack>(out MeleeAttack meleeAttack))
-            {
-                meleeAttack.onUseAttack += () => onUseAttack?.Invoke();
-            }
-            
-            if (item.TryGetComponent<RangeAttack>(out RangeAttack rangeAttack))
-            {
-                rangeAttack.onUseAttack += () => onUseAttack?.Invoke();
-            }
             attackComponent.Initialize(weaponData);
             m_activeWeapon = attackComponent;
             m_activeWeapon.Show();
@@ -56,6 +50,22 @@ namespace CorruptedLandTales
             if (m_activeWeapon != null)
             {
                 m_activeWeapon.Use();
+            }
+        }
+
+        public void AnimateUse()
+        {
+            if (m_activeWeapon != null)
+            {
+                onUseAttack?.Invoke();
+            }
+        }
+
+        public void UseWeaponSkill()
+        {
+            if (m_activeWeapon != null)
+            {
+                m_activeWeapon.UseSkill();
             }
         }
     }

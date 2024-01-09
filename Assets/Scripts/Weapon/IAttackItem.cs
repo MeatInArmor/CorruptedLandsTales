@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace CorruptedLandTales
 {
     public interface IAttackItem
@@ -11,5 +7,7 @@ namespace CorruptedLandTales
         void Hide();
         void DestroySelf();
         void Initialize(WeaponSO data);
+
+        void UseSkill();
     }
 }

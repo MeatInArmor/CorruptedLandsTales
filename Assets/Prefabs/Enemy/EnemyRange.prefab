@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a0f9cbe77c458449d6948d2695ac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 3298326605091429281, guid: 6140c94da7e70e94883123b2adb53dd7, type: 3}
+  m_projectilePrefab: {fileID: 0}
   m_muzzle: {fileID: 5393221449576687959}
   m_delay: 1
 --- !u!1 &7498935545700271009
@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8270754432196641918961bebfcc303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_weaponRoot: {fileID: 922252120610004865}
 --- !u!114 &5350257549637729870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +604,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cbb94b5ac88a3424ba1695c44f81e97e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5486764795824410}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cbb94b5ac88a3424ba1695c44f81e97e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1906308002640420071}
   m_SourcePrefab: {fileID: 100100000, guid: cbb94b5ac88a3424ba1695c44f81e97e, type: 3}
 --- !u!95 &168306833574357136 stripped
 Animator:
@@ -632,3 +636,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animator: {fileID: 168306833574357136}
+  m_character: {fileID: 7776493581667566217}
+  m_specialAttack: {fileID: 0}
+--- !u!114 &1906308002640420071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6916981833703221328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e058c8a01abff64f8dfe9c59edb43ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

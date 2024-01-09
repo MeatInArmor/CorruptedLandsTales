@@ -20,7 +20,7 @@ namespace CorruptedLandTales
 
         private void Start()
         {
-            m_attackManager = GetComponent<AttackManager>();
+            m_attackManager = GetComponentInParent<AttackManager>();
             m_layerMask = LayerMask.GetMask("Item");
             m_isActive = false;
         }

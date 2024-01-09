@@ -29,10 +29,8 @@ namespace CorruptedLandTales
 
             if (m_character == null)
             {
-                m_character = GetComponent<Character>();
+                m_character = GetComponentInParent<Character>();
             }
-            
-            m_character = GetComponentInParent<Character>();
             
             m_character.attackManager.onUseAttack += () =>
             {
