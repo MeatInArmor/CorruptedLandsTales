@@ -8,6 +8,7 @@ namespace ShadowChimera
     {
         private AttackManager m_attackManager;
         [SerializeField] private SpecialAttack m_specialAttack;
+        [SerializeField] private CharMoveComponent m_charMoveComponent;
 
         private void Start()
         {
@@ -22,6 +23,16 @@ namespace ShadowChimera
         public void SpecialAttack()
         {
             m_specialAttack.CastSpecialAttack();
+        }
+
+        public void StartDash()
+        {
+            m_charMoveComponent.isDashing = true;
+        }
+
+        public void EndDash()
+        {
+            m_charMoveComponent.isDashing = false;
         }
     }
 }

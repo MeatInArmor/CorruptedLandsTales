@@ -12,9 +12,14 @@ namespace CorruptedLandTales
         [SerializeField] private float m_sprintSpeed = 10f;
         [SerializeField] private float m_rotationSmoothTime = 0.12f;
         [SerializeField] private float m_speedChangeRate = 15f;
-        
+        [SerializeField] private float m_dashSpeed = 40f;
+        [SerializeField] private Transform player;
+
         private float m_rotationVelocity;
         private float m_targetRotation;
+        //private bool isDashing = false;
+
+        public bool isDashing;
         
         public Vector3 velocity => m_characterController.velocity;
         //Dash
@@ -26,6 +31,7 @@ namespace CorruptedLandTales
             m_sprintSpeed = sprintSpeed;
         }
 
+
         public void Move(Vector2 move, bool isSprint, float cameraY)
         {
             float targetSpeed = 0f;
@@ -35,6 +41,7 @@ namespace CorruptedLandTales
             if (inputMagnitude != 0)
             {
                 targetSpeed = isSprint ? m_sprintSpeed : m_moveSpeed;
+                targetSpeed = isDashing ? m_dashSpeed : m_moveSpeed;
             }
 
             var characterVelocity = m_characterController.velocity;
@@ -76,7 +83,28 @@ namespace CorruptedLandTales
         //Dash
         public void Dash()
         {
+            //isDashing = true;
             onUseDash?.Invoke();
+            //StartCoroutine(EndDash());
+            /*            float speed = 0.1f;
+                        //speed = Mathf.Lerp(1, 10, 5);
+                        //Vector3 To = new Vector3 (0f, 0f, 1);
+                        //Vector3 targetDirection = Quaternion.Euler(0f, m_targetRotation, 0f) * Vector3.forward;
+                        //Vector3 vertical = new Vector3(0f, Physics.gravity.y * Time.deltaTime, 0f);
+                        //Vector3 horizontal = targetDirection.normalized * (speed * Time.deltaTime);
+                        //m_characterController.Move(horizontal + vertical + To);
+                        Vector3 From = player.position;
+                        Vector3 To = new Vector3(0, 0, 1f);
+                        m_characterController.Move(From + To*/
+           
+            
         }
+
+        /*private IEnumerator EndDash()
+        {
+            yield return new WaitForSecondsRealtime(m_dashTime);
+            isDashing = false;
+            Debug.Log($"dash false");
+        }*/
     }
 }
