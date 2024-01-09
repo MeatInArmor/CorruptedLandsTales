@@ -26,7 +26,6 @@ namespace CorruptedLandTales
         //Dash
         private InputAction m_useDash;
 
-        private CharMoveComponent m_charMoveController;
 		private CharAnimsComponent m_charAnim;
 		
 		private void Awake()
