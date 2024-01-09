@@ -112,9 +112,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spearPrefab: {fileID: 2826950414564320495, guid: 167dc431a9b9e1e498d0309980137b2f, type: 3}
-  m_muzzle: {fileID: 3202209693326884437}
---- !u!4 &3202209693326884437 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f8c78aad6ac67fc4daec89e8b541de1e, type: 3}
-  m_PrefabInstance: {fileID: 3168899977736018366}
-  m_PrefabAsset: {fileID: 0}

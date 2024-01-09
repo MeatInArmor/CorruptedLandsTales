@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: f8c78aad6ac67fc4daec89e8b541de1e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.75
+      value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8c78aad6ac67fc4daec89e8b541de1e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.75
+      value: 1.8170629
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8c78aad6ac67fc4daec89e8b541de1e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.75
+      value: 4.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f8c78aad6ac67fc4daec89e8b541de1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78b3a3be61f406fb34ac7c0fae4b15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_force: 10
+  m_force: 15
   m_lifeTime: 5
   m_damage: 40
   m_group: 0
@@ -125,9 +125,9 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &3552813060528105582
