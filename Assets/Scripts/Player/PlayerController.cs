@@ -20,6 +20,9 @@ namespace CorruptedLandTales
 		private InputAction m_AttackAction;
 		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
+		private InputAction m_useWeaponSkill;
+		
+		private CharMoveComponent m_charMoveController;
         //Dash
         private InputAction m_useDash;
 
@@ -33,6 +36,9 @@ namespace CorruptedLandTales
 			m_AttackAction = m_playerMap.FindAction("Attack");
 			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
+			m_useWeaponSkill = m_playerMap.FindAction("WeaponSkill");
+			
+			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
 			//Dash
             m_useDash = m_playerMap.FindAction("Dash");
 
@@ -49,6 +55,7 @@ namespace CorruptedLandTales
             m_AttackAction.performed += OnAttackInput;
 			m_pickUp.performed += OnPickUpInput;
 			m_useSpecial.performed += OnUseSpecial;
+			m_useWeaponSkill.performed += OnUseWeaponSkill;
 		}
 
 		private void OnDisable()
@@ -59,16 +66,22 @@ namespace CorruptedLandTales
             m_AttackAction.performed -= OnAttackInput;
 			m_pickUp.performed -= OnPickUpInput;
 			m_useSpecial.performed -= OnUseSpecial;
+			m_useWeaponSkill.performed -= OnUseWeaponSkill;
 		}
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
-            m_character.attackManager.UseWeapon();
+            m_character.attackManager.AnimateUse();
         }
+		
+		private void OnUseWeaponSkill(InputAction.CallbackContext context)
+		{
+			m_character.attackManager.UseWeaponSkill();
+		}
 
 		private void OnUseSpecial(InputAction.CallbackContext context)
 		{
-            m_specialAttack.UseSpecial();            
+            m_specialAttack.AnimateSpecialAttack();            
         }
 
 		private void OnPickUpInput(InputAction.CallbackContext context)

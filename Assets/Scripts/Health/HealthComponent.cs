@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -9,8 +6,12 @@ namespace CorruptedLandTales
     {
         [SerializeField] private float m_healthMax = 100f;
         [SerializeField] private float m_health = 100f;
+        [Header("0 - Enemy, 1 - Player")]
         [SerializeField] private int m_group = 0;
-        
+
+        public float CurrentHealth => m_health;
+        public float MaxHealth => m_healthMax;
+        public event System.Action onDie;
         public int group { get; set; }
         
         public void Initialize(float max, float initHp)
@@ -32,7 +33,8 @@ namespace CorruptedLandTales
             
             if (m_health <= 0)
             {
-                Destroy(gameObject);
+                onDie?.Invoke();
+                //Destroy(gameObject);
             }
         }
 

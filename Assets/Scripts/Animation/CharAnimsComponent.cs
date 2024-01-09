@@ -30,7 +30,7 @@ namespace CorruptedLandTales
 
             if (m_character == null)
             {
-                m_character = GetComponent<Character>();
+                m_character = GetComponentInParent<Character>();
             }
 
             if (m_charMoveComponent == null)

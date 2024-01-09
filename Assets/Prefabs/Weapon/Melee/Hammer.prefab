@@ -49,7 +49,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522728993954643854}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -131,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 5277693757349116810}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.65, y: -0.013, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,12 +151,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f6f1f597c9e9343945aacc0b7efc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_weaponType: 2
   m_damage: 50
   m_attackAngle: 150
-  m_attackRange: 2
+  m_attackRange: 3
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
+  m_delay: 1
 --- !u!1 &6075040667082494062
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +208,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6075040667082494062}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -14,13 +14,13 @@ namespace TheKiwiCoder {
         }
 
         protected override State OnUpdate() {
-            if (blackboard.isAimedOnPlayer)
+            var agent = context.agent;
+            if (agent.remainingDistance <= blackboard.attackRange)
             {
+                context.agent.isStopped = true;
                 return State.Success;
             }
-
             return State.Failure;
-
         }
     }
 }
