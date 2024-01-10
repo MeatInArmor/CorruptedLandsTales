@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using CorruptedLandTales;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -11,17 +12,17 @@ namespace CorruptedLandTales
         [SerializeField] private GameObject m_meleePrefab;
         [SerializeField] private GameObject m_rangePrefab;
         [SerializeField] private MeshSpawn m_meshSpawn;
-        [SerializeField] private int m_enemyCount = 4;
-        
         private List<Vector3> m_spawnPoints = new List<Vector3>();
         private int m_rangeCount;
         private int m_meleeCount;
         
+        private int EnemyCount = 0;
+        
         private void Start()
         {
             m_spawnPoints = m_meshSpawn.GetRandomRoomPoints();
-            m_rangeCount = Random.Range(1, m_enemyCount);
-            m_meleeCount = Random.Range(1, m_enemyCount - m_rangeCount + 1);
+            m_rangeCount = Random.Range(1, EnemyCount);
+            m_meleeCount = EnemyCount - m_rangeCount;
             
             for (int i = 0; i < m_rangeCount; i++)
             {
@@ -39,6 +40,10 @@ namespace CorruptedLandTales
         {
             Instantiate(prefab, point, transform.rotation);
         }
-        
+
+        public void SetEnemyCount(int count)
+        {
+            EnemyCount += count;
+        }
     }
 }

@@ -17,8 +17,7 @@ namespace CorruptedLandTales
         
         private float m_stepX; //шаг по x
         private float m_stepZ; //шаг по z
-
-        public int countQuads => m_countQuads;
+        
         private void Awake()
         {
             int countPointsCoord = (int)Mathf.Pow(Mathf.Sqrt(m_countQuads) + 1, 2);
@@ -53,11 +52,8 @@ namespace CorruptedLandTales
                 }
                 else
                 {
-                    
                 }
             }
-            
-            
         }
         
         private void OnDrawGizmos()
