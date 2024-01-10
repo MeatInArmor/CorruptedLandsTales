@@ -1,38 +1,40 @@
-using System.Collections;
 using System.Collections.Generic;
-using CorruptedLandTales;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
     public class RandomSpawnRoom : MonoBehaviour
     {
-        [SerializeField] private GameObject m_meleePrefab;
-        [SerializeField] private GameObject m_rangePrefab;
         [SerializeField] private MeshSpawn m_meshSpawn;
-        private List<Vector3> m_spawnPoints = new List<Vector3>();
-        private int m_rangeCount;
-        private int m_meleeCount;
         
-        private int EnemyCount = 0;
+        private List<GameObject> m_prefabs = new List<GameObject>();
+        private List<Vector3> m_spawnPoints = new List<Vector3>();
+        private int m_enemyCount;
+        private int m_remainigEnemy;
+        private int m_currentEnemyCount;
         
         private void Start()
         {
             m_spawnPoints = m_meshSpawn.GetRandomRoomPoints();
-            m_rangeCount = Random.Range(1, EnemyCount);
-            m_meleeCount = EnemyCount - m_rangeCount;
+            m_remainigEnemy = m_enemyCount;
             
-            for (int i = 0; i < m_rangeCount; i++)
+            int index = 0;
+            for (int i = 0; i < m_prefabs.Count; i++)
             {
-                SpawnEnemy(m_spawnPoints[i], m_rangePrefab);
-            }
-            
-            for (int i = 0; i < m_meleeCount; i++)
-            {
-                int index = i + m_rangeCount;
-                SpawnEnemy(m_spawnPoints[index], m_meleePrefab);
+                if (i == m_prefabs.Count - 1)
+                {
+                    m_currentEnemyCount = m_remainigEnemy;
+                }
+                else
+                {
+                    m_currentEnemyCount = Random.Range(1, m_remainigEnemy + 1);
+                }
+                for (int j = 0; j < m_currentEnemyCount; j++)
+                {
+                    SpawnEnemy(m_spawnPoints[j + index], m_prefabs[i]);
+                }
+                m_remainigEnemy -= m_currentEnemyCount;
+                index += m_currentEnemyCount;
             }
         }
 
@@ -43,7 +45,12 @@ namespace CorruptedLandTales
 
         public void SetEnemyCount(int count)
         {
-            EnemyCount += count;
+            m_enemyCount = count;
+        }
+
+        public void SetEnemyTypes(GameObject enemyType)
+        {
+            m_prefabs.Add(enemyType);
         }
     }
 }
