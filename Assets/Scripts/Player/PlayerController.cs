@@ -92,12 +92,9 @@ namespace CorruptedLandTales
 			Move(move, false);
 		}
 
-		
-
 		private void Move(Vector2 move, bool isSprint)
 		{
 			m_charMoveController.Move(move, isSprint, m_cameraTransform.eulerAngles.y);
 		}
-		
 	}
 }
