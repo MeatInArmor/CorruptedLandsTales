@@ -8,10 +8,13 @@ namespace CorruptedLandTales
         [SerializeField] private float m_health = 100f;
         [Header("0 - Enemy, 1 - Player")]
         [SerializeField] private int m_group = 0;
+        public float healthPercent = 1;
 
         public float CurrentHealth => m_health;
         public float MaxHealth => m_healthMax;
+        public event System.Action<float> onTakeDamage;
         public event System.Action onDie;
+
         public int group { get; set; }
         
         public void Initialize(float max, float initHp)
@@ -28,9 +31,9 @@ namespace CorruptedLandTales
         public void TakeDamage(float damage)
         {
             damage = Mathf.Min(damage, m_health);
-            
             m_health -= damage;
-            
+            healthPercent = m_healthMax / m_health;
+
             if (m_health <= 0)
             {
                 onDie?.Invoke();
