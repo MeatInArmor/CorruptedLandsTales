@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8270754432196641918961bebfcc303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponRoot: {fileID: 4780366636993562130}
+  m_weaponRoot: {fileID: 8197800631229488037}
 --- !u!114 &6740973288869589746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +549,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 193179e41737658488f7e4271caed7c4, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b8ebdbc7b19591746bc9f2d03a9a5f89, type: 2}
+      objectReference: {fileID: 9100000, guid: 11aa88d9b5468cb4aa3e5f6a6cf77d7c, type: 2}
     - target: {fileID: 5866666021909216657, guid: 193179e41737658488f7e4271caed7c4, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
