@@ -31,7 +31,8 @@ namespace CorruptedLandTales
         private void Awake()
         {
             m_attackAngle /= 2;
-            m_parentTransform = GetComponentInParent<Transform>(); // надо это переделать - кринж
+            m_parentTransform = transform.root;
+            Debug.Log($"{m_parentTransform}");
             m_weaponSkill = GetComponent<IWeaponSkill>();
         }
 
