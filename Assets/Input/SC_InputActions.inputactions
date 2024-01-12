@@ -51,9 +51,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "WeaponSkill",
+                    "name": "Dash",
                     "type": "Button",
-                    "id": "a51229e6-f7ef-4efd-93a6-ba39b5377e9a",
+                    "id": "17b54efa-4736-4bf2-9e5b-ad2b7a4c1791",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -334,12 +334,12 @@
                 },
                 {
                     "name": "",
-                    "id": "b369b611-9b72-445d-933c-a77f24a9ec38",
-                    "path": "<Keyboard>/r",
+                    "id": "a6610a57-98dc-4e17-a300-cf20c15cd736",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "WeaponSkill",
+                    "groups": "",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

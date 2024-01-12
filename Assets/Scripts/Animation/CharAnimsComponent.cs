@@ -10,8 +10,10 @@ namespace CorruptedLandTales
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private Character m_character;
+        [SerializeField] private CharMoveComponent m_charMoveComponent;
         [SerializeField] private SpecialAttack m_specialAttack;
         
+        private HealthComponent m_healthcomponent;
         private IMoveComponent moveComponent => m_character.moveComponent;
         private IAttackItem m_attackItem;
         
@@ -31,7 +33,20 @@ namespace CorruptedLandTales
             {
                 m_character = GetComponentInParent<Character>();
             }
-            
+
+            if (m_charMoveComponent == null)
+            {
+                m_charMoveComponent = GetComponent<CharMoveComponent>();
+            }
+
+            if (m_healthcomponent)
+            {
+                m_healthcomponent = GetComponentInParent<HealthComponent>();
+            }
+
+            m_character = GetComponentInParent<Character>();
+            m_charMoveComponent = GetComponentInParent<CharMoveComponent>();
+
             m_character.attackManager.onUseAttack += () =>
             {
                 //m_animator.SetTrigger(SlashId);
@@ -47,6 +62,19 @@ namespace CorruptedLandTales
                 };
             }
             
+            if (m_healthcomponent != null)
+            {
+                m_charMoveComponent.onUseDash += () =>
+                {
+                    //m_animator.SetTrigger(SlashId);
+                    Dash();
+                };
+            }
+
+            m_healthcomponent.onDie += () =>
+            {
+                m_animator.SetTrigger("isDie");
+            };
         }
 
         private void LateUpdate()
@@ -64,5 +92,11 @@ namespace CorruptedLandTales
         {
             m_animator.SetTrigger("isCastSpell");
         }
+
+        private void Dash()
+        {
+            m_animator.SetTrigger("isDash");
+        }
+
     }
 }
