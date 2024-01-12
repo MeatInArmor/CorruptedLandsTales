@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_force: 20
   m_lifeTime: 3
-  m_damage: 100
+  m_damage: 30
   m_group: 0
 --- !u!198 &2985905355087271752
 ParticleSystem:
