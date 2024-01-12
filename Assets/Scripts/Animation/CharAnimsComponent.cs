@@ -64,17 +64,20 @@ namespace CorruptedLandTales
             
             if (m_healthcomponent != null)
             {
-                m_charMoveComponent.onUseDash += () =>
+                m_healthcomponent.onDie += () =>
                 {
-                    //m_animator.SetTrigger(SlashId);
-                    Dash();
+                    m_animator.SetTrigger("isDie");
                 };
             }
-
-            m_healthcomponent.onDie += () =>
+            
+            /*
+            m_charMoveComponent.onUseDash += () =>
             {
-                m_animator.SetTrigger("isDie");
+                //m_animator.SetTrigger(SlashId);
+                Dash();
             };
+            */
+            
         }
 
         private void LateUpdate()

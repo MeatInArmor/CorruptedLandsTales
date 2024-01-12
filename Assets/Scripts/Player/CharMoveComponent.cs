@@ -13,7 +13,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_rotationSmoothTime = 0.12f;
         [SerializeField] private float m_speedChangeRate = 15f;
         [SerializeField] private float m_dashSpeed = 40f;
-        [SerializeField] private Transform player;
+        //[SerializeField] private Transform player;
 
         private float m_rotationVelocity;
         private float m_targetRotation;
