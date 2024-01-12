@@ -592,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: cbb94b5ac88a3424ba1695c44f81e97e, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b8ebdbc7b19591746bc9f2d03a9a5f89, type: 2}
+      objectReference: {fileID: 9100000, guid: 9a49bd8da363425458e6eccf56dad45c, type: 2}
     - target: {fileID: 5866666021909216657, guid: cbb94b5ac88a3424ba1695c44f81e97e, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -637,7 +637,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animator: {fileID: 168306833574357136}
   m_character: {fileID: 7776493581667566217}
+  m_charMoveComponent: {fileID: 0}
   m_specialAttack: {fileID: 0}
+  m_healthcomponent: {fileID: 1974900794855629100}
 --- !u!114 &1906308002640420071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,3 +652,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e058c8a01abff64f8dfe9c59edb43ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_specialAttack: {fileID: 0}
+  m_charMoveComponent: {fileID: 0}

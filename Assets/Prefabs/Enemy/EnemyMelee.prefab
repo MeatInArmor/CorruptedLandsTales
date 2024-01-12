@@ -460,6 +460,7 @@ MonoBehaviour:
   m_character: {fileID: 7861628940492116717}
   m_charMoveComponent: {fileID: 0}
   m_specialAttack: {fileID: 0}
+  m_healthcomponent: {fileID: 3689000501695359997}
 --- !u!114 &9082352320028724049
 MonoBehaviour:
   m_ObjectHideFlags: 0
