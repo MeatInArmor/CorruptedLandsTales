@@ -18,7 +18,7 @@ namespace CorruptedLandTales.AI
 			if (name == null)
 			{
 				name = context.gameObject.name;
-				Debug.Log(name);
+				
 				if (name == "Boss")
 				{
 					isBoss = true;
