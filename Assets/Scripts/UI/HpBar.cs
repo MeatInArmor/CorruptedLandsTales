@@ -11,8 +11,6 @@ namespace CorruptedLandTales
     {
         [SerializeField] private HealthComponent m_healthComponent;
         [SerializeField] private Image m_fillImage;
-        [SerializeField] private GameObject m_container;
-
         public void Initialize(HealthComponent healthComponent)
         {
             m_healthComponent = healthComponent;

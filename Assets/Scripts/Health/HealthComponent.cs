@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CorruptedLandTales
 {
@@ -8,9 +9,11 @@ namespace CorruptedLandTales
         [SerializeField] private float m_health = 100f;
         [Header("0 - Enemy, 1 - Player")]
         [SerializeField] private int m_group = 0;
-        public float healthPercent = 1;
+
 
         public float CurrentHealth => m_health;
+        public bool isFullHealth => m_health == m_healthMax;
+        public float healthPercent => m_health / m_healthMax;
         public float MaxHealth => m_healthMax;
         public event System.Action<float> onTakeDamage;
         public event System.Action onDie;
@@ -21,8 +24,10 @@ namespace CorruptedLandTales
         {
             m_healthMax = max;
             m_health = initHp;
+            onTakeDamage?.Invoke(0);
+
         }
-        
+
         private void Start()
         {
             group = m_group;
@@ -32,7 +37,7 @@ namespace CorruptedLandTales
         {
             damage = Mathf.Min(damage, m_health);
             m_health -= damage;
-            healthPercent = m_healthMax / m_health;
+            onTakeDamage?.Invoke(damage);
 
             if (m_health <= 0)
             {
