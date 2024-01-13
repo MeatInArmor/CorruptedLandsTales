@@ -2,7 +2,7 @@ using System;
 using CorruptedLandTales;
 using UnityEngine;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
     public class AnimEventCatcher : MonoBehaviour
     {

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b897dbb5ca4f26f46af26dfa272240d8, type: 3}
-  m_Name: SpearWeaponSO
+  m_Name: CheatSpear
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 2826950414564320495, guid: 76d96cbdc52042e439d5e48c1b974f82, type: 3}
-  m_damage: 30
+  m_damage: 100
   m_attackAngle: 100
   m_attackRange: 5
   m_layerMask:

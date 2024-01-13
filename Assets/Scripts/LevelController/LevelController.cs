@@ -6,7 +6,7 @@ namespace CorruptedLandTales
 {
     public class LevelController : MonoBehaviour
     {
-        [SerializeField] private List<RandomSpawnRoom> m_rooms = new List<RandomSpawnRoom>();
+        [SerializeField] private List<RoomComponent> m_rooms = new List<RoomComponent>();
         [SerializeField] private int m_enemyCountOnLevel = 28;
         [SerializeField] private int m_bossCountOnRoom = 1;
         [SerializeField] private GameObject m_bossPrefab;
@@ -39,6 +39,7 @@ namespace CorruptedLandTales
                     if (i == m_playerRoomIndex)
                     {
                         m_player.transform.position = m_rooms[i].transform.position + m_playerSpawnOffset; // лютый костыль
+                        m_rooms[i].gameObject.SetActive(false); //надеюсь из за этого в будущем не сломается скрипт доступа к боссу
                     }
                     else
                     {

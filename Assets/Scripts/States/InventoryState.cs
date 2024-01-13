@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
     public class InventoryState : GameState
     {
