@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,18 +7,19 @@ namespace CorruptedLandTales
     public class RoomComponent : MonoBehaviour
     {
         [SerializeField] private MeshSpawn m_meshSpawn;
-        [SerializeField] private List<DoorComponent> m_doors;
+        [SerializeField] private List<RoomDoorComponent> m_doors;
         
         private List<GameObject> m_prefabs = new List<GameObject>();
+        private List<GameObject> m_enemies = new List<GameObject>(9);
         private List<Vector3> m_spawnPoints = new List<Vector3>();
         private int m_enemyCount;
         private int m_remainigEnemy;
         private int m_currentEnemyCount;
-        private List<GameObject> m_enemies = new List<GameObject>(9);
+        private string m_roomType;
         
         public event System.Action onRoomCleared;
 
-        private RoomStatus m_state = RoomStatus.Deactivated;
+        private RoomStatus m_state;
         private enum RoomStatus
         {
             Deactivated,
@@ -30,6 +30,25 @@ namespace CorruptedLandTales
         
         private void Start()
         {
+            switch (m_roomType) // при необходимости можно будет добавить что то в каждый тип
+            {
+                case "Player":
+                    gameObject.SetActive(false);
+                    break;
+                
+                case "Boss":
+                    foreach (var door in m_doors)
+                    {
+                        door.Activate();
+                        door.SetDoorFlag(true);
+                    }
+                    break;
+                
+                case "Enemy":
+                    break;
+            }
+            
+            m_state = RoomStatus.Deactivated;
             foreach (var door in m_doors)
             {
                 door.onPlayerEnter += () =>
@@ -115,6 +134,20 @@ namespace CorruptedLandTales
         public void SetEnemyTypes(GameObject enemyType)
         {
             m_prefabs.Add(enemyType);
+        }
+
+        public void SetRoomType(string type)
+        {
+            m_roomType = type;
+        }
+
+        public void OpenBossDoors()
+        {
+            foreach (var door in m_doors)
+            {
+                door.SetDoorFlag(false);
+                door.Deactivate();
+            }
         }
     }
 }

@@ -36,8 +36,8 @@ ModelImporter:
       name: slash
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 0
-      lastFrame: 45
+      firstFrame: 15
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -57,7 +57,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.43556702
+      - time: 0.33211875
         functionName: Attack
         data: 
         objectReferenceParameter: {instanceID: 0}
