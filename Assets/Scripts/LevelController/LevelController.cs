@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -6,13 +7,13 @@ namespace CorruptedLandTales
 {
     public class LevelController : MonoBehaviour
     {
-        [SerializeField] private GameObject m_bossPrefab;
-        [SerializeField] private List<RoomComponent> m_rooms = new List<RoomComponent>();
         [SerializeField] private List<GameObject> m_enemyPrefabs = new List<GameObject>();
+        [SerializeField] private GameObject m_bossPrefab;
         [SerializeField] private GameObject m_player;
+        [SerializeField] private List<RoomComponent> m_rooms = new List<RoomComponent>();
+        [SerializeField] private int[] m_bossPossibleRoomIndexes;
         [SerializeField] private int m_enemyCountOnLevel = 28;
         [SerializeField] private int m_bossCountOnRoom = 1;
-        [SerializeField] private int[] m_bossPossibleRoomIndexes;
         
         private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
         private int m_roomCount = 7;
@@ -44,9 +45,10 @@ namespace CorruptedLandTales
                 {
                     if (i == m_playerRoomIndex)
                     {
-                        
+                        m_player.transform.SetPositionAndRotation(m_rooms[m_playerRoomIndex].transform.position 
+                                                                  + m_playerSpawnOffset, m_player.transform.rotation);
                         m_rooms[i].SetRoomType("Player");
-                        m_player.transform.position = m_rooms[i].transform.position + m_playerSpawnOffset; // лютый костыль
+                        //m_player.transform.position = m_rooms[i].transform.position + m_playerSpawnOffset; // лютый костыль
                                                                                                            // т.к. не хочется заморачиваться
                                                                                                            // с опрокидыванием ссылок
                                                                                                            // при спавне

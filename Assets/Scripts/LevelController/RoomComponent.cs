@@ -118,7 +118,7 @@ namespace CorruptedLandTales
                     {
                         door.Deactivate();
                     }
-                    m_doors.Clear();
+                    m_doors.Clear(); //мб можно убрать
                     onRoomCleared?.Invoke();
                     gameObject.SetActive(false);
                     //m_state = RoomStatus.Deactivated;

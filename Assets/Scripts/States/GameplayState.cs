@@ -12,8 +12,7 @@ namespace CorruptedLandTales
         public PauseState pauseState;
         public InventoryState inventoryState;
         public StaticElementsViewState sevState;
-
-
+        
         protected override void OnEnable()
         {
             base.OnEnable();
