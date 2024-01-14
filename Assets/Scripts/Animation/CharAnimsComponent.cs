@@ -64,17 +64,10 @@ namespace CorruptedLandTales
                 };
             }
 
-            //if (m_healthcomponent != null)
-            //{
-            //    m_healthcomponent.onDie += () =>
-            //    {
-            //        m_animator.SetTrigger("isDie");
-            //    };
-            //}
+           
 
             m_character.HealthComponent.onDie += () =>
-            {
-                Debug.Log("Animation Die");
+            {                
                 m_animator.SetTrigger("isDie");
             };            
 

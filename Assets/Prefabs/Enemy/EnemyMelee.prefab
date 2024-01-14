@@ -261,7 +261,7 @@ MonoBehaviour:
   m_onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3121549099543955938, guid: aca73a77bf8476b4c8a752170c205035, type: 3}
+      - m_Target: {fileID: 958116532576989061}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -681,6 +681,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_specialAttack: {fileID: 0}
   m_charMoveComponent: {fileID: 0}
+  m_EndDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4114963353435331068}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &8069154803768263558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 193179e41737658488f7e4271caed7c4, type: 3}
