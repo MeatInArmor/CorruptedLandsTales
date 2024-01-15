@@ -1,14 +1,16 @@
 using ShadowChimera;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class StaticElementsViewState : GameState
+    public class MapState : GameState
     {
-        public InventoryState inventoryState;
+        
+        public MapState miniMap;
+
+
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -17,12 +19,14 @@ namespace CorruptedLandTales
         {
             base.OnDisable();
         }
-        public void OpenColseInventory()
+        public void OpenCloseMap()
         {
-            if (inventoryState.isActiveAndEnabled)
-                inventoryState.Exit();
-            else
-                inventoryState.Enter();
+            if (miniMap.isActiveAndEnabled)
+                miniMap.Exit();
+            else 
+                miniMap.Enter();
         }
+
     }
+
 }
