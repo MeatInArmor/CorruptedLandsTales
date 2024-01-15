@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace CorruptedLandTales
@@ -8,6 +9,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] private MeshSpawn m_meshSpawn;
         [SerializeField] private List<RoomDoorComponent> m_doors;
+        [SerializeField] private ExitDoorComponent m_exitDoor;
         
         private List<GameObject> m_prefabs = new List<GameObject>();
         private List<GameObject> m_enemies = new List<GameObject>(9);
@@ -46,6 +48,10 @@ namespace CorruptedLandTales
                         door.Activate();
                         door.SetDoorFlag(true);
                     }
+                    onRoomCleared += () =>
+                    {
+                        m_exitDoor.Open();
+                    };
                     break;
                 
                 case "Enemy":

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -14,7 +13,6 @@ namespace CorruptedLandTales
         [SerializeField] private int[] m_bossPossibleRoomIndexes;
         [SerializeField] private int m_enemyCountOnLevel = 28;
         [SerializeField] private int m_bossCountOnRoom = 1;
-        
         
         private int m_roomCount = 7;
         private int m_enemyCountOnRoom;
@@ -49,10 +47,6 @@ namespace CorruptedLandTales
                                                                   + m_playerSpawnOffset, m_player.transform.rotation);*/
                         m_rooms[i].SetRoomType("Player");
                         m_rooms[i].SetEnemyTypes(m_player);
-                        //m_player.transform.position = m_rooms[i].transform.position + m_playerSpawnOffset; // лютый костыль
-                                                                                                           // т.к. не хочется заморачиваться
-                                                                                                           // с опрокидыванием ссылок
-                                                                                                           // при спавне
                     }
                     else
                     {

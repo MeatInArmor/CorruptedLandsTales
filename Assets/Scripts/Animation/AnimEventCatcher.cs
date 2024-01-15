@@ -1,5 +1,3 @@
-using System;
-using CorruptedLandTales;
 using UnityEngine;
 
 namespace CorruptedLandTales
