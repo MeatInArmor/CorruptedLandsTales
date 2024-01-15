@@ -12,6 +12,7 @@ namespace CorruptedLandTales
         private List<GameObject> m_prefabs = new List<GameObject>();
         private List<GameObject> m_enemies = new List<GameObject>(9);
         private List<Vector3> m_spawnPoints = new List<Vector3>();
+        private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
         private int m_enemyCount;
         private int m_remainigEnemy;
         private int m_currentEnemyCount;
@@ -34,6 +35,9 @@ namespace CorruptedLandTales
             {
                 case "Player":
                     gameObject.SetActive(false);
+                    m_prefabs[0].transform.SetLocalPositionAndRotation(gameObject.transform.position + m_playerSpawnOffset,
+                        m_prefabs[0].transform.rotation);
+                    Debug.Log(gameObject.transform.position);
                     break;
                 
                 case "Boss":

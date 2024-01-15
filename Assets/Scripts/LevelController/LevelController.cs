@@ -15,7 +15,7 @@ namespace CorruptedLandTales
         [SerializeField] private int m_enemyCountOnLevel = 28;
         [SerializeField] private int m_bossCountOnRoom = 1;
         
-        private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
+        
         private int m_roomCount = 7;
         private int m_enemyCountOnRoom;
         private int m_bossRoomIndex;
@@ -45,9 +45,10 @@ namespace CorruptedLandTales
                 {
                     if (i == m_playerRoomIndex)
                     {
-                        m_player.transform.SetPositionAndRotation(m_rooms[m_playerRoomIndex].transform.position 
-                                                                  + m_playerSpawnOffset, m_player.transform.rotation);
+                        /*m_player.transform.SetPositionAndRotation(m_rooms[m_playerRoomIndex].transform.position 
+                                                                  + m_playerSpawnOffset, m_player.transform.rotation);*/
                         m_rooms[i].SetRoomType("Player");
+                        m_rooms[i].SetEnemyTypes(m_player);
                         //m_player.transform.position = m_rooms[i].transform.position + m_playerSpawnOffset; // лютый костыль
                                                                                                            // т.к. не хочется заморачиваться
                                                                                                            // с опрокидыванием ссылок
