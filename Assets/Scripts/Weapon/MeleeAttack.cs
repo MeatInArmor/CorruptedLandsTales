@@ -37,13 +37,8 @@ namespace CorruptedLandTales
         }
 
         public void Use()
-        {
-            float passedTime = Time.time - m_timeLastUsed; 
-            if (m_delay < passedTime)
-            {
-                Attack();
-                m_timeLastUsed = Time.time;
-            }
+        {          
+            Attack();   
         }
 
         public void UseSkill() 
