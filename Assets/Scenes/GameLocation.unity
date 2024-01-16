@@ -2739,6 +2739,10 @@ PrefabInstance:
       propertyPath: m_charMoveComponent
       value: 
       objectReference: {fileID: 8400877901572598439}
+    - target: {fileID: 6882764717639628891, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
+      propertyPath: maxComdoDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7448397370718363661, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_charMoveComponent
       value: 
