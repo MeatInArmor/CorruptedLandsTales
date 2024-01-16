@@ -24,7 +24,7 @@ namespace CorruptedLandTales
         {
             m_roomCount = m_rooms.Count;
             m_remainigEnemyRooms = m_roomCount - 2; //комната для босса и комната где спавнится игрок
-            m_enemyCountOnRoom = m_enemyCountOnLevel / m_roomCount;
+            m_enemyCountOnRoom = m_enemyCountOnLevel / m_remainigEnemyRooms;
             m_bossRoomIndex = m_bossPossibleRoomIndexes[Random.Range(0, m_bossPossibleRoomIndexes.Length)] - 1;
             
             do
