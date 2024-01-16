@@ -11,7 +11,6 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackAngle = 120.0f;
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
-        [SerializeField] private float m_delay = 1f;
         
         private IWeaponSkill m_weaponSkill;
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
