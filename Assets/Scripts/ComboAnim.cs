@@ -21,13 +21,13 @@ namespace ShadowChimera
         // Update is called once per frame
         void Update()
         {
-            if (Time.time - lastClickedTime > maxComdoDelay)
-            {
-                noOfClicks = 0;
-            }
+            //if (Time.time - lastClickedTime > maxComdoDelay)
+            //{
+            //    noOfClicks = 0;
+            //}
             if (Input.GetMouseButtonDown(0))
             {
-                lastClickedTime = Time.time;
+                //lastClickedTime = Time.time;
                 noOfClicks++;
                 if (noOfClicks == 1)
                 {
@@ -47,7 +47,7 @@ namespace ShadowChimera
             else
             {
                 anim.SetBool("Attack1", false);
-                //noOfClicks = 0;
+                noOfClicks = 0;
             }
             //if (noOfClicks == 1)
             //{
