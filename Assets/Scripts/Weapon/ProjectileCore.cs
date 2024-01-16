@@ -8,7 +8,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_lifeTime = 5f;
         [SerializeField] private float m_damage = 10f;
         [SerializeField] private int m_group = 0; //0 enemy 1 player
-
+        
         private void Start()
         {
             var rb = GetComponent<Rigidbody>();
@@ -22,7 +22,7 @@ namespace CorruptedLandTales
             var damageable = other.gameObject.GetComponentInParent<IDamageable>();
             if (damageable != null && m_group == damageable.group)
             {
-                damageable.TakeDamage(m_damage);
+                damageable.TakeDamage(m_damage);                
             }
         }
     }

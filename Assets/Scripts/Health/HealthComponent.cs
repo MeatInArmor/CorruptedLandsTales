@@ -8,7 +8,8 @@ namespace CorruptedLandTales
         [SerializeField] private float m_healthMax = 100f;
         [SerializeField] private float m_health = 100f;
         [SerializeField] private UnityEvent m_onDie;
-        [Header("0 - Enemy, 1 - Player")]
+        [SerializeField] private UnityEvent m_onImpact;
+        [Header("0 - Enemy, 1 - Player")]        
         [SerializeField] private int m_group = 0;
         
 
@@ -18,6 +19,7 @@ namespace CorruptedLandTales
         public float MaxHealth => m_healthMax;
         public event System.Action<float> onTakeDamage;
         public event System.Action onDie;
+        public event System.Action onImpact;
 
         public int group { get; set; }
         
@@ -39,6 +41,7 @@ namespace CorruptedLandTales
             damage = Mathf.Min(damage, m_health);
             m_health -= damage;
             onTakeDamage?.Invoke(damage);
+            
 
             if (m_health <= 0)
             {                
@@ -46,6 +49,12 @@ namespace CorruptedLandTales
                 onDie?.Invoke();
                 m_onDie.Invoke();
                 //Destroy(gameObject);
+            }
+            else
+            {
+                //m_onImpact.Invoke();
+                onImpact.Invoke();
+                
             }
         }
 

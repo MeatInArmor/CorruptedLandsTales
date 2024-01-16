@@ -10,6 +10,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private Character m_character;
+        [SerializeField] private ProjectileCore m_impact;
         [SerializeField] private CharMoveComponent m_charMoveComponent;
         [SerializeField] private SpecialAttack m_specialAttack;
         //[SerializeField] private HealthComponent m_healthcomponent;
@@ -64,7 +65,10 @@ namespace CorruptedLandTales
                 };
             }
 
-           
+            m_character.HealthComponent.onImpact += () =>
+            {
+                m_animator.SetTrigger("isImpact");
+            };
 
             m_character.HealthComponent.onDie += () =>
             {                

@@ -285,6 +285,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_onImpact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8199414851493545764}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_group: 0
 --- !u!114 &6082371126744485788
 MonoBehaviour:
@@ -665,6 +680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animator: {fileID: 4114963353435331068}
   m_character: {fileID: 7861628940492116717}
+  m_impact: {fileID: 0}
   m_charMoveComponent: {fileID: 0}
   m_specialAttack: {fileID: 0}
 --- !u!114 &9082352320028724049
