@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: CharacterSO
   m_EditorClassIdentifier: 
   moveData:
-    speed: 8
+    speed: 9
     sprintSpeed: 12
   healthData:
-    health: 100
-    maxHealth: 100
+    health: 200
+    maxHealth: 200
   weapon: {fileID: 11400000, guid: 06f4adcdb7ff3124cab3d9be2dd0b664, type: 2}

@@ -37,10 +37,8 @@ namespace CorruptedLandTales
             switch (m_roomType) // при необходимости можно будет добавить что то в каждый тип
             {
                 case "Player":
-                    m_prefabs[0].transform.SetLocalPositionAndRotation(gameObject.transform.position + m_playerSpawnOffset,
+                    m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
                         m_prefabs[0].transform.rotation); 
-                    Debug.Log("Room pos " + gameObject.transform.position);
-                    Debug.Log("Player pos " + m_prefabs[0].transform.position);
                     gameObject.SetActive(false);
                     break;
                 

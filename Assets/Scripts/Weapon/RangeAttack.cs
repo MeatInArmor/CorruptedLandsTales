@@ -12,7 +12,6 @@ namespace CorruptedLandTales
         [SerializeField] private GameObject m_projectilePrefab;
         [SerializeField] private Transform m_muzzle;
         [SerializeField] private float m_delay = 1f; 
-        private float m_timeLastUsed;
         
         public void Initialize(WeaponSO data)
         {
@@ -27,12 +26,7 @@ namespace CorruptedLandTales
 
         public void Use()
         {
-            float passedTime = Time.time - m_timeLastUsed; 
-            if (m_delay < passedTime)
-            {
-                Attack();
-                m_timeLastUsed = Time.time;
-            }
+            Attack();
         }
 
         public void Show()

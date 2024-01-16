@@ -12,6 +12,7 @@ namespace CorruptedLandTales
         public PauseState pauseState;
         public InventoryState inventoryState;
         public StaticElementsViewState sevState;
+        public MapState mapState;
         
         protected override void OnEnable()
         {
@@ -36,6 +37,7 @@ namespace CorruptedLandTales
             Exit();
             sevState.Exit();
             inventoryState.Exit();
+            mapState.Exit();
             pauseState.Enter();
 
         }
