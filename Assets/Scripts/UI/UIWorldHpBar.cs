@@ -8,14 +8,14 @@ namespace CorruptedLandTales
     public class UIWorldHpBar : MonoBehaviour
     {
         private Transform m_cameraTransform;
-		
-		[SerializeField] private HealthComponent m_healthComponent;
+
+        [SerializeField] private HealthComponent m_healthComponent;
 		[SerializeField] private GameObject m_container;
 
 		private void Start()
 		{
-			m_cameraTransform = Camera.main.transform;
-		}
+			m_cameraTransform = Camera.main.transform;//GameObject.Find("MainCamera").transform; //
+        }
 
 		private void OnEnable()
 		{
