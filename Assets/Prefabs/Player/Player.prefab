@@ -1295,6 +1295,7 @@ GameObject:
   - component: {fileID: 2854267501968951786}
   - component: {fileID: 3008426225749632157}
   - component: {fileID: 4807377456819990454}
+  - component: {fileID: 5194454707815305610}
   m_Layer: 0
   m_Name: Bogatyr T-Pose
   m_TagString: Untagged
@@ -1364,6 +1365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animator: {fileID: 2854267501968951786}
   m_character: {fileID: 2297376893487946721}
+  m_impact: {fileID: 0}
   m_charMoveComponent: {fileID: 2536953490566234966}
   m_specialAttack: {fileID: 8616952980201909679}
 --- !u!114 &4807377456819990454
@@ -1380,6 +1382,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_specialAttack: {fileID: 8616952980201909679}
   m_charMoveComponent: {fileID: 2536953490566234966}
+  m_EndDie:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5194454707815305610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585124909923891848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca7f47a5f1729843bd03408e0eaca44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2854267501968951786}
+  noOfClicks: 0
+  maxComdoDelay: 0.8
 --- !u!1 &2731849235520801527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,6 +3036,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_healthMax: 500
   m_health: 500
+  m_onDie:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onImpact:
+    m_PersistentCalls:
+      m_Calls: []
   m_group: 1
 --- !u!114 &584742601963079611
 MonoBehaviour:

@@ -44,8 +44,7 @@ namespace CorruptedLandTales
             
 
             if (m_health <= 0)
-            {                
-                Debug.Log("Die");
+            {
                 onDie?.Invoke();
                 m_onDie.Invoke();
                 //Destroy(gameObject);
