@@ -9,7 +9,7 @@ namespace CorruptedLandTales
         [SerializeField] private CharacterSO m_data;
         [SerializeField] private Character m_character;
 
-        private void Start()
+        private void Start() //awake не помог
         {
             if (m_character != null)
             {

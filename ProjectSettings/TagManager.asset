@@ -13,11 +13,11 @@ TagManager:
   - Water
   - UI
   - Player
-  - Projectile
+  - EnemyProjectile
   - Enemy
   - Item
-  - 
-  - 
+  - PlayerProjectile
+  - Map
   - 
   - 
   - 

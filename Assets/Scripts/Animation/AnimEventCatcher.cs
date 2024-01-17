@@ -1,9 +1,7 @@
-using System;
-using CorruptedLandTales;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
     public class AnimEventCatcher : MonoBehaviour
     {

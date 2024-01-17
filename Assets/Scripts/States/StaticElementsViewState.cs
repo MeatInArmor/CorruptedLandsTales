@@ -6,6 +6,7 @@ namespace CorruptedLandTales
 {
     public class StaticElementsViewState : GameState
     {
+        public InventoryState inventoryState;
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -13,6 +14,13 @@ namespace CorruptedLandTales
         protected override void OnDisable()
         {
             base.OnDisable();
+        }
+        public void OpenColseInventory()
+        {
+            if (inventoryState.isActiveAndEnabled)
+                inventoryState.Exit();
+            else
+                inventoryState.Enter();
         }
     }
 }

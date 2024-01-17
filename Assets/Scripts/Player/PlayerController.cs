@@ -1,5 +1,6 @@
 using System;
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -38,6 +39,11 @@ namespace CorruptedLandTales
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
 			//Dash
             //m_useDash = m_playerMap.FindAction("Dash");
+		}
+
+		private void Start()
+		{
+			m_character.GetComponent<CharacterController>().enabled = true;
 		}
 
 		private void OnEnable()

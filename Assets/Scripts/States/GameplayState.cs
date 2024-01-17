@@ -1,4 +1,4 @@
-using ShadowChimera;
+using CorruptedLandTales;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +12,8 @@ namespace CorruptedLandTales
         public PauseState pauseState;
         public InventoryState inventoryState;
         public StaticElementsViewState sevState;
-
-
+        public MapState mapState;
+        
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -37,16 +37,9 @@ namespace CorruptedLandTales
             Exit();
             sevState.Exit();
             inventoryState.Exit();
+           // mapState.Exit();
             pauseState.Enter();
 
-        }
-        public void Inventory()
-        {
-            if (this.isActiveAndEnabled)
-            {
-                Exit();
-                inventoryState.Enter();
-            }
         }
        
     }
