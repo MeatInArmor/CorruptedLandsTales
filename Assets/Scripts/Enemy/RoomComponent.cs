@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
     public class RandomSpawnRoom : MonoBehaviour
     {
-        [SerializeField] private MeshSpawn m_meshSpawn;
+        [SerializeField] private RandomPositions mRandomPositions;
         
         private List<GameObject> m_prefabs = new List<GameObject>();
         private List<Vector3> m_spawnPoints = new List<Vector3>();
@@ -15,7 +16,7 @@ namespace CorruptedLandTales
         
         private void Start()
         {
-            m_spawnPoints = m_meshSpawn.GetRandomRoomPoints();
+            m_spawnPoints = mRandomPositions.GetRandomRoomPoints();
             m_remainigEnemy = m_enemyCount;
             
             int index = 0;
