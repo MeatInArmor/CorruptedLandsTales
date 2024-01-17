@@ -362,8 +362,8 @@ GameObject:
   - component: {fileID: 1974900794855629100}
   - component: {fileID: 262048670298448754}
   - component: {fileID: 5350257549637729870}
-  - component: {fileID: 7776493581667566217}
   - component: {fileID: 5195776346978368524}
+  - component: {fileID: 7776493581667566217}
   m_Layer: 0
   m_Name: EnemyRange
   m_TagString: Enemy
@@ -380,9 +380,9 @@ Transform:
   m_GameObject: {fileID: 7646284900097110066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55.62, y: 1, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6104030030479078122}
   - {fileID: 5299998365308895375}
@@ -470,6 +470,18 @@ MonoBehaviour:
   m_onDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6389757455979112586}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 3121549099543955938}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
@@ -482,8 +494,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6389757455979112586}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+      - m_Target: {fileID: 7370816812727283675}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -521,20 +533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_agent: {fileID: 6389757455979112586}
---- !u!114 &7776493581667566217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7646284900097110066}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d732d5daf507ac14496f51a3ce463de0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_attackManager: {fileID: 262048670298448754}
-  m_healthComponent: {fileID: 1974900794855629100}
 --- !u!114 &5195776346978368524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,6 +547,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: e4bbf56cd18e1bc4ebc986bbb7be993d, type: 2}
   m_character: {fileID: 7776493581667566217}
+--- !u!114 &7776493581667566217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7646284900097110066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d732d5daf507ac14496f51a3ce463de0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_attackManager: {fileID: 262048670298448754}
+  m_healthComponent: {fileID: 1974900794855629100}
 --- !u!1001 &5440659246299275884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -798,6 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animator: {fileID: 168306833574357136}
   m_character: {fileID: 7776493581667566217}
+  m_impact: {fileID: 0}
   m_charMoveComponent: {fileID: 0}
   m_specialAttack: {fileID: 0}
 --- !u!114 &1906308002640420071
@@ -818,6 +831,21 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 168306833574357136}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_onImpact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3121549099543955938}
         m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6

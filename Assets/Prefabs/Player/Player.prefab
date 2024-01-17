@@ -1312,7 +1312,7 @@ Transform:
   m_GameObject: {fileID: 2585124909923891848}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.967, z: 0}
+  m_LocalPosition: {x: 0, y: -0.769, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1383,6 +1383,9 @@ MonoBehaviour:
   m_specialAttack: {fileID: 8616952980201909679}
   m_charMoveComponent: {fileID: 2536953490566234966}
   m_EndDie:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onImpact:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &5194454707815305610
@@ -2972,9 +2975,9 @@ Transform:
   m_GameObject: {fileID: 5701134899015483886}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -90.7, y: 1, z: -37}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4590952302268205976}
   - {fileID: 6186415469472178621}
@@ -3002,8 +3005,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.8
+  m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
@@ -3039,9 +3042,6 @@ MonoBehaviour:
   m_onDie:
     m_PersistentCalls:
       m_Calls: []
-  m_onImpact:
-    m_PersistentCalls:
-      m_Calls: []
   m_group: 1
 --- !u!114 &584742601963079611
 MonoBehaviour:
@@ -3056,7 +3056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_findRange: 2
-  m_pickUpbtn: {fileID: 0}
+  m_pickUpbtn: {fileID: 3740883437299155104, guid: e45bd9340bd87c54583ad2eb82ddce1f, type: 3}
 --- !u!114 &2297376893487946721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3083,7 +3083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567d12682ace0074b97fbcf17d6936aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: b525567a88989e84b91c91011ddd1e29, type: 2}
+  m_data: {fileID: 11400000, guid: 685a3e1961b87c9469b925e541836d2b, type: 2}
   m_character: {fileID: 2297376893487946721}
 --- !u!114 &2536953490566234966
 MonoBehaviour:

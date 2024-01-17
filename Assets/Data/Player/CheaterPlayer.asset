@@ -16,6 +16,6 @@ MonoBehaviour:
     speed: 10
     sprintSpeed: 12
   healthData:
-    health: 500
-    maxHealth: 500
+    health: 100000
+    maxHealth: 100000
   weapon: {fileID: 11400000, guid: cccc64f35fad52d43b62bb8dd7479526, type: 2}

@@ -8,7 +8,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_healthMax = 100f;
         [SerializeField] private float m_health = 100f;
         [SerializeField] private UnityEvent m_onDie;
-        [SerializeField] private UnityEvent m_onImpact;
+        //[SerializeField] private UnityEvent m_onImpact;
         [Header("0 - Enemy, 1 - Player")]        
         [SerializeField] private int m_group = 0;
         
