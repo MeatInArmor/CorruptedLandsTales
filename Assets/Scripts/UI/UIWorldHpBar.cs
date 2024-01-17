@@ -47,7 +47,7 @@ namespace CorruptedLandTales
 
 		private void LateUpdate()
 		{
-			transform.LookAt(m_cameraTransform);
+			transform.rotation = m_cameraTransform.rotation;
 		}
     }
 }

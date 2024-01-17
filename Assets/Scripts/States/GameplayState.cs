@@ -37,17 +37,9 @@ namespace CorruptedLandTales
             Exit();
             sevState.Exit();
             inventoryState.Exit();
-            mapState.Exit();
+           // mapState.Exit();
             pauseState.Enter();
 
-        }
-        public void Inventory()
-        {
-            if (this.isActiveAndEnabled)
-            {
-                Exit();
-                inventoryState.Enter();
-            }
         }
        
     }
