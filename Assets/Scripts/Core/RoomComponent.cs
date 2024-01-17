@@ -8,7 +8,7 @@ namespace CorruptedLandTales
 {
     public class RoomComponent : MonoBehaviour
     {
-        [SerializeField] private MeshSpawn m_meshSpawn;
+        [FormerlySerializedAs("m_meshSpawn")] [SerializeField] private RandomPositions mRandomPositions;
         [SerializeField] private List<RoomDoorComponent> m_doors;
         [SerializeField] private ExitDoorComponent m_exitDoor;
         
@@ -67,7 +67,7 @@ namespace CorruptedLandTales
                 };
             }
             
-            m_spawnPoints = m_meshSpawn.GetRandomRoomPoints();
+            m_spawnPoints = mRandomPositions.GetRandomRoomPoints();
             m_remainigEnemy = m_enemyCount;
             int index = 0;
             
