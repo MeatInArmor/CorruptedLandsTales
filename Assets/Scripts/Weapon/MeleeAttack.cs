@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ShadowChimera;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -12,6 +13,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
         
+        private ManaComponent m_manaComponent;
         private IWeaponSkill m_weaponSkill;
         private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
@@ -31,6 +33,8 @@ namespace CorruptedLandTales
             m_attackAngle /= 2;
             m_parentTransform = transform.root;
             m_weaponSkill = GetComponent<IWeaponSkill>();
+            m_manaComponent = GetComponentInParent<ManaComponent>();
+            Debug.Log($"{m_manaComponent}");
         }
 
         public void Use()
@@ -76,6 +80,10 @@ namespace CorruptedLandTales
                 if (damageable != null && dist < m_attackRange && dotProductAngle < m_attackAngle)
                 {
                     damageable.TakeDamage(m_damage);
+                    if (m_manaComponent)
+                    {
+                        m_manaComponent.GainMana(m_damage/10);
+                    }
                 }
             }
         }
