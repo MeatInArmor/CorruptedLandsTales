@@ -111,4 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_spearPrefab: {fileID: 2826950414564320495, guid: 167dc431a9b9e1e498d0309980137b2f, type: 3}
-  m_manaCost: 40
+  m_manaCost: 15

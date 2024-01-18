@@ -80,7 +80,8 @@ namespace CorruptedLandTales
                     damageable.TakeDamage(m_damage);
                     if (m_manaComponent)
                     {
-                        m_manaComponent.GainMana(m_damage);
+                        /*m_manaComponent.GainMana(m_damage/5f);*/
+                        m_manaComponent.GainMana(5);
                     }
                 }
             }
