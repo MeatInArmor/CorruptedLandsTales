@@ -7,6 +7,7 @@ namespace CorruptedLandTales
 {
     public class MainMenuState : GameState
     {
+        public SettingsState settingsState;
 
         protected override void OnEnable()
         {
@@ -28,6 +29,11 @@ namespace CorruptedLandTales
         public void LoadLevel()
         {
             SceneManager.LoadScene("GameLocation");
+        }
+        public void GoToSettings()
+        {
+            settingsState.Enter();
+            Exit();
         }
     }
 }

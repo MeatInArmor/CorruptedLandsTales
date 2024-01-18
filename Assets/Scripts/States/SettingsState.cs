@@ -4,18 +4,21 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class SettingsState : MonoBehaviour
+    public class SettingsState : GameState
     {
-        // Start is called before the first frame update
-        void Start()
+        public MainMenuState mainMenuState;
+        protected override void OnEnable()
         {
-        
+            base.OnEnable();
         }
-
-        // Update is called once per frame
-        void Update()
+        protected override void OnDisable()
         {
-        
+            base.OnDisable();
+        }
+        public void CloseSettings()
+        {
+            mainMenuState.Enter();
+            Exit();
         }
     }
 }

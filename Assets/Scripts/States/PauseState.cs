@@ -8,7 +8,6 @@ namespace CorruptedLandTales
     public class PauseState : GameState
     {
         public GameplayState gameplayState;
-        public StaticElementsViewState sevState;
         public MapState mapState;
 
         protected override void OnEnable()
@@ -31,7 +30,6 @@ namespace CorruptedLandTales
         {
             Exit();
             gameplayState.Enter();
-            sevState.Enter();
             mapState.Enter();
 
         }
