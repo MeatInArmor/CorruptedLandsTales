@@ -38,8 +38,8 @@ MonoBehaviour:
     reserveAttackRange: 6
     typeOfAttack: 
     hasChangedTypeOfAttack: 0
-  viewPosition: {x: 320, y: -42, z: 0}
-  viewScale: {x: 0.57175326, y: 0.57175326, z: 1}
+  viewPosition: {x: 368, y: 81, z: 0}
+  viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:
     version: 2
     RefIds:

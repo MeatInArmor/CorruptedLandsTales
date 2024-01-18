@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using CorruptedLandTales;
 using UnityEngine;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
     public class ManaComponent : MonoBehaviour
     {
         [SerializeField] private float m_manaPool;
         
-        public float CurrentMana => m_currentMana;
         private float m_currentMana = 0;
+        public float CurrentMana => m_currentMana;
         public bool SpendMana(float manaCost)
         {
             if (manaCost <= m_currentMana)
