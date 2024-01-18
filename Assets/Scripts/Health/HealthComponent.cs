@@ -12,7 +12,7 @@ namespace CorruptedLandTales
         [Header("0 - Enemy, 1 - Player")]        
         [SerializeField] private int m_group = 0;
         
-
+        public bool isDie => m_health <= 0f;
         public float CurrentHealth => m_health;
         public bool isFullHealth => m_health == m_healthMax;
         public float healthPercent => m_health / m_healthMax;
