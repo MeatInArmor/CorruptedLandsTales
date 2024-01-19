@@ -4132,6 +4132,10 @@ PrefabInstance:
       propertyPath: m_pickUpbtn
       value: 
       objectReference: {fileID: 2003545873}
+    - target: {fileID: 2854267501968951786, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4089173368887766831, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -80
