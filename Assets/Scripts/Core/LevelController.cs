@@ -37,6 +37,10 @@ namespace CorruptedLandTales
                 m_rooms[i].onRoomCleared += () =>
                 {
                     m_remainigEnemyRooms--;
+                    if (m_remainigEnemyRooms <= 0)
+                    {
+                        m_rooms[m_bossRoomIndex].OpenBossDoors();
+                    }
                 };
                 
                 if (i != m_bossRoomIndex)
@@ -69,10 +73,10 @@ namespace CorruptedLandTales
 
         private void Update()
         {
-            if (m_remainigEnemyRooms <= 0)
+            /*if (m_remainigEnemyRooms <= 0)
             {
                 m_rooms[m_bossRoomIndex].OpenBossDoors();
-            }
+            }*/
         }
     }
 }
