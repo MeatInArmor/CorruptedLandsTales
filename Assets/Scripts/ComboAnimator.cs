@@ -10,13 +10,14 @@ namespace ShadowChimera
         public int noOfClicks;
         float lastClickedTime;
         public float maxComdoDelay;
-                
+        private CharacterController characterController;
         void Start()
         {
             anim = gameObject.GetComponent<Animator>();
+            characterController = gameObject.GetComponentInParent<CharacterController>();
         }
 
-        // Update is called once per frame
+        
         void Update()
         {
             //if (Time.time - lastClickedTime > maxComdoDelay)
@@ -51,12 +52,17 @@ namespace ShadowChimera
             {
                 anim.SetBool("IsAttack", false);
                 noOfClicks = 0;
-            }            
+            }
+            else
+            {
+                characterController.enabled = false;
+            }
         }
 
         public void attack3()
         {
-            anim.SetBool("IsAttack", false);            
+            anim.SetBool("IsAttack", false);
+            characterController.enabled = true;
             noOfClicks = 0;
         }
     }
