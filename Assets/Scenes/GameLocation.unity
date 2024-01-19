@@ -441,6 +441,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8791659319117129054, guid: 5e654d9616bac7a4fa9dd03983d99d94, type: 3}
+      propertyPath: m_healthComponent
+      value: 
+      objectReference: {fileID: 8400877901572598438}
+    - target: {fileID: 8791659319117129054, guid: 5e654d9616bac7a4fa9dd03983d99d94, type: 3}
       propertyPath: views.Array.data[0]
       value: 
       objectReference: {fileID: 1000491690}
@@ -3345,6 +3349,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CorruptedLandTales.MapState, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1175976152551707932, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175976152551707932, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175976152551707932, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1175976152551707932, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1238883258758714616, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3381,17 +3401,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'CanvasGameScene '
       objectReference: {fileID: 0}
+    - target: {fileID: 2606248602898391687, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606248602898391687, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606248602898391687, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2606248602898391687, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3877458565128965287, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 209443810}
     - target: {fileID: 3877458565128965287, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Exit
+      value: MenuExit
       objectReference: {fileID: 0}
     - target: {fileID: 3877458565128965287, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CorruptedLandTales.GameState, Assembly-CSharp
+      value: CorruptedLandTales.GameOverState, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4168511932521679146, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_IsActive
@@ -3515,11 +3551,11 @@ PrefabInstance:
       objectReference: {fileID: 209443814}
     - target: {fileID: 5175874011438157483, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Exit
+      value: MenuExit
       objectReference: {fileID: 0}
     - target: {fileID: 5175874011438157483, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CorruptedLandTales.GameState, Assembly-CSharp
+      value: CorruptedLandTales.GameWinState, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5967266332580070035, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3592,6 +3628,14 @@ PrefabInstance:
     - target: {fileID: 8723058872807505035, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826252328556515715, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826252328556515715, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8966143762860717944, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_AnchoredPosition.x
