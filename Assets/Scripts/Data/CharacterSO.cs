@@ -10,6 +10,7 @@ namespace CorruptedLandTales
         public MoveData moveData;
         public HealthData healthData;
         public WeaponSO weapon;
+        public ManaData manaData;
     }
 
     [System.Serializable]
@@ -25,5 +26,13 @@ namespace CorruptedLandTales
     {
         public float speed = 5f;
         public float sprintSpeed = 10f;
+    }
+
+    [System.Serializable]
+
+    public class ManaData
+    {
+        public float manaPool = 50f;
+        public float initMana = 0f;
     }
 }

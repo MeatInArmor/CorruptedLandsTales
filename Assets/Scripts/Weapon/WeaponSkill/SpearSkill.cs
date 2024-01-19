@@ -12,6 +12,7 @@ namespace CorruptedLandTales
 
         private void Awake()
         {
+            //костыль с поиском
             m_muzzle = GameObject.Find("ShootPoint");
             m_manaComponent = GetComponentInParent<ManaComponent>();
         }

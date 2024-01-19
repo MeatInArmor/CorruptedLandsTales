@@ -14,11 +14,23 @@ namespace CorruptedLandTales
         [SerializeField] private int m_enemyCountOnLevel = 28;
         [SerializeField] private int m_bossCountOnRoom = 1;
         
+        private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
         private int m_roomCount = 7;
         private int m_enemyCountOnRoom;
         private int m_bossRoomIndex;
         private int m_playerRoomIndex;
         private int m_remainigEnemyRooms;
+        private CharacterController m_characterController;
+
+        public event System.Action onLevelCleared;
+
+        public void Initialize() // как будто бы нужен Initialize с помощью которого будем спавнить новую локу
+                                 // с новыми врагами и т.д. но Scriptable Object нельзя менять в рантайме
+                                 // мб добавить туда методы для добавления врагов
+        
+        {
+            
+        }
         
         private void Awake()
         {
@@ -26,6 +38,15 @@ namespace CorruptedLandTales
             m_remainigEnemyRooms = m_roomCount - 2; //комната для босса и комната где спавнится игрок
             m_enemyCountOnRoom = m_enemyCountOnLevel / m_remainigEnemyRooms;
             m_bossRoomIndex = m_bossPossibleRoomIndexes[Random.Range(0, m_bossPossibleRoomIndexes.Length)] - 1;
+
+            if (m_player == null)
+            {
+                m_player = GameObject.Find("Player");
+            }
+            if (!m_characterController)
+            {
+                m_characterController = m_player.GetComponent<CharacterController>();
+            }
             
             do
             {
@@ -47,8 +68,10 @@ namespace CorruptedLandTales
                 {
                     if (i == m_playerRoomIndex)
                     {
-                        /*m_player.transform.SetPositionAndRotation(m_rooms[m_playerRoomIndex].transform.position 
-                                                                  + m_playerSpawnOffset, m_player.transform.rotation);*/
+                        m_characterController.enabled = false;
+                        m_player.transform.SetPositionAndRotation(m_rooms[m_playerRoomIndex].transform.position 
+                                                                  + m_playerSpawnOffset, m_player.transform.rotation);
+                        m_characterController.enabled = true;
                         m_rooms[i].SetRoomType("Player");
                         m_rooms[i].SetEnemyTypes(m_player);
                     }
@@ -64,19 +87,15 @@ namespace CorruptedLandTales
                 }
                 else
                 {
+                    m_rooms[i].onRoomCleared += () =>
+                    {
+                        onLevelCleared?.Invoke();
+                    };
                     m_rooms[i].SetRoomType("Boss");
                     m_rooms[i].SetEnemyTypes(m_bossPrefab);
                     m_rooms[i].SetEnemyCount(m_bossCountOnRoom);
                 }
             }
-        }
-
-        private void Update()
-        {
-            /*if (m_remainigEnemyRooms <= 0)
-            {
-                m_rooms[m_bossRoomIndex].OpenBossDoors();
-            }*/
         }
     }
 }

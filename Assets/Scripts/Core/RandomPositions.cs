@@ -34,7 +34,7 @@ namespace CorruptedLandTales
                     float z = startCoordinate.z + j * stepZ;
 
                     
-                    float y = 1.0f;
+                    float y = transform.position.y + 1;
 
                     Vector3 coordinate = new Vector3(x, y, z);
                     coordinateGrid.Add(coordinate);

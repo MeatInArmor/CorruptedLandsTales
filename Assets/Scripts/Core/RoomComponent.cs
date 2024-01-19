@@ -8,7 +8,7 @@ namespace CorruptedLandTales
 {
     public class RoomComponent : MonoBehaviour
     {
-        [FormerlySerializedAs("m_meshSpawn")] [SerializeField] private RandomPositions mRandomPositions;
+        [SerializeField] private RandomPositions mRandomPositions;
         [SerializeField] private List<RoomDoorComponent> m_doors;
         [SerializeField] private ExitDoorComponent m_exitDoor;
         
@@ -37,8 +37,8 @@ namespace CorruptedLandTales
             switch (m_roomType) // при необходимости можно будет добавить что то в каждый тип
             {
                 case "Player":
-                    m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
-                        m_prefabs[0].transform.rotation); 
+                    /*m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
+                        m_prefabs[0].transform.rotation);*/ 
                     gameObject.SetActive(false);
                     break;
                 
@@ -128,7 +128,7 @@ namespace CorruptedLandTales
                     {
                         door.Deactivate();
                     }
-                    m_doors.Clear(); //мб можно убрать
+                    m_doors.Clear();
                     onRoomCleared?.Invoke();
                     gameObject.SetActive(false);
                     //m_state = RoomStatus.Deactivated;
