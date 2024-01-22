@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
-using UnityEngine.UI;
 
 namespace CorruptedLandTales
 {
@@ -11,6 +6,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] float m_findRange = 2.0f;
         [SerializeField] private GameObject m_pickUpbtn;
+        [SerializeField] private HealthComponent m_healthComponent;
         
         private Collider[] m_result = new Collider[2];
         private PickUpItem m_upItem;
@@ -27,7 +23,7 @@ namespace CorruptedLandTales
 
         private void Update()
         {
-            if (m_isActive)
+            if (m_isActive) //вот это очень плохо нужно выкидывать событие
             {
                 m_pickUpbtn.SetActive(true);
             }
@@ -58,7 +54,14 @@ namespace CorruptedLandTales
 
         public void PickUp()
         {
-            m_attackManager.Initialize(m_upItem.GetWeaponData());
+            if (m_upItem.GetWeaponData()!=null)
+            {
+                m_attackManager.Initialize(m_upItem.GetWeaponData());
+            }
+            else
+            {
+                m_healthComponent.HealHealth(m_upItem.GetHealth());
+            }
             //Destroy(gameObject);
         }
     }

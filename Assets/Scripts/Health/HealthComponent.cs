@@ -16,6 +16,7 @@ namespace CorruptedLandTales
         public float healthPercent => m_health / m_healthMax;
         public float MaxHealth => m_healthMax;
         public event System.Action<float> onTakeDamage;
+        public event System.Action<float> onHeal;
         public event System.Action onDie;
 
         public int group { get; set; }
@@ -46,6 +47,17 @@ namespace CorruptedLandTales
             }
         }
 
-        
+        public void HealHealth(float amount)
+        {
+            if (m_health + amount >= m_healthMax)
+            {
+                m_health = m_healthMax;
+            }
+            else
+            {
+                m_health += amount;
+            }
+            onHeal?.Invoke(amount);
+        }
     }
 }

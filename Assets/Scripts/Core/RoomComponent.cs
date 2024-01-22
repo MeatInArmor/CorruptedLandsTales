@@ -16,7 +16,7 @@ namespace CorruptedLandTales
         private List<GameObject> m_enemies = new List<GameObject>(9);
         private List<Vector3> m_spawnPoints = new List<Vector3>();
         private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
-        private int m_enemyCount;
+        private int m_enemyCount = 0;
         private int m_remainigEnemy;
         private int m_currentEnemyCount;
         private string m_roomType;
@@ -56,6 +56,17 @@ namespace CorruptedLandTales
                 
                 case "Enemy":
                     break;
+                
+                case "Heal":
+                    var heal = Instantiate(m_prefabs[0], transform.position + m_playerSpawnOffset,
+                        m_prefabs[0].transform.rotation);
+                    heal.SetActive(false);
+                    onRoomCleared += () =>
+                    {
+                        heal.SetActive(true);
+                    };
+                    m_prefabs.RemoveAt(0);
+                    break;
             }
             
             m_state = RoomStatus.Deactivated;
@@ -86,11 +97,10 @@ namespace CorruptedLandTales
                     var enemy = Instantiate(m_prefabs[i], m_spawnPoints[j + index], transform.rotation);
                     m_enemies.Add(enemy);
                     enemy.SetActive(false);
-                    var healthComponent = enemy.GetComponent<HealthComponent>();
-                    healthComponent.onDie += () =>
+                    if (enemy.TryGetComponent<HealthComponent>(out HealthComponent healthComponent))
                     {
-                        m_enemyCount -= 1;
-                    };
+                        healthComponent.onDie += () => { m_enemyCount -= 1; };
+                    }
                 }
                 m_remainigEnemy -= m_currentEnemyCount;
                 index += m_currentEnemyCount;
@@ -136,12 +146,12 @@ namespace CorruptedLandTales
             }
         }
 
-        public void SetEnemyCount(int count)
+        public void AddEnemyCount(int count)
         {
-            m_enemyCount = count;
+            m_enemyCount += count;
         }
 
-        public void SetEnemyTypes(GameObject enemyType)
+        public void SetPrefabs(GameObject enemyType)
         {
             m_prefabs.Add(enemyType);
         }
