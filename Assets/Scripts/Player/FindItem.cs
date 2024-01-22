@@ -11,49 +11,45 @@ namespace CorruptedLandTales
         private Collider[] m_result = new Collider[2];
         private PickUpItem m_upItem;
         private LayerMask m_layerMask;
-        private bool m_isActive;
         private AttackManager m_attackManager;
+        private bool m_flag = true;
+        
+        public event System.Action onFindItem;
+        public event System.Action onDisableItem;
 
         private void Start()
         {
             m_attackManager = GetComponentInParent<AttackManager>();
             m_layerMask = LayerMask.GetMask("Item");
-            m_isActive = false;
         }
 
         private void Update()
-        {
-            if (m_isActive) //вот это очень плохо нужно выкидывать событие
-            {
-                m_pickUpbtn.SetActive(true);
-            }
-            else
-            {
-                m_pickUpbtn.SetActive(false);
-            }
-        }
-
-        private void FixedUpdate() // пока через сферу будет
         {
             var count = Physics.OverlapSphereNonAlloc(transform.position,  m_findRange, m_result, m_layerMask,
                 QueryTriggerInteraction.Ignore);
             
             if (count > 0)
             {
-                m_isActive = true;
+                onFindItem?.Invoke();
                 for (int i = 0; i < count; i++)
                 {
                     m_upItem = m_result[i].GetComponent<PickUpItem>();
                 }
+                m_flag = true;
             }
             else
             {
-                m_isActive = false;
+                if (m_flag)
+                {
+                    onDisableItem?.Invoke();
+                    m_flag = false;
+                }
             }
         }
 
         public void PickUp()
         {
+            onDisableItem?.Invoke();
             if (m_upItem.GetWeaponData()!=null)
             {
                 m_attackManager.Initialize(m_upItem.GetWeaponData());

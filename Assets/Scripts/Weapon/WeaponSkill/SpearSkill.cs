@@ -1,15 +1,17 @@
-﻿using UnityEngine;
+﻿using TheKiwiCoder;
+using UnityEngine;
 
 namespace CorruptedLandTales
 {
     public class SpearSkill : MonoBehaviour, IWeaponSkill
     {
         [SerializeField] private GameObject m_spearPrefab;
-        [SerializeField] private GameObject m_muzzle;
-
+        
+        private Transform m_muzzle;
+        private Vector3 m_playerOffset = new Vector3(0, 0.82f, 0);
         private void Awake()
         {
-            //m_muzzle = GameObject.Find("ShootPoint");
+            m_muzzle = transform.root;
         }
 
         public void Use()
@@ -19,7 +21,10 @@ namespace CorruptedLandTales
 
         private void Attack()
         {
-            Instantiate(m_spearPrefab, m_muzzle.transform.position, m_muzzle.transform.rotation);
+            var muzzleTransform = m_muzzle.transform.rotation.eulerAngles;
+            Quaternion rotation = Quaternion.Euler(90, muzzleTransform.y, muzzleTransform.x);
+            
+            Instantiate(m_spearPrefab, m_muzzle.transform.position + m_playerOffset, rotation);
         }
     }
 }

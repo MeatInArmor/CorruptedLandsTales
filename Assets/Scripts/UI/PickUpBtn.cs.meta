@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: ef07f3d0870e49a69552aeb95f7cb832
+guid: 55d9f5036a13bcd4b8597a93608e6873
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - m_spearPrefab: {instanceID: 0}
-  - m_muzzle: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
