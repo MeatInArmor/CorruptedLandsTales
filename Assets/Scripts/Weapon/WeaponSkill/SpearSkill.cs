@@ -5,25 +5,16 @@ namespace CorruptedLandTales
     public class SpearSkill : MonoBehaviour, IWeaponSkill
     {
         [SerializeField] private GameObject m_spearPrefab;
-        [SerializeField] private float m_manaCost;
-        
-        private ManaComponent m_manaComponent;
-        private GameObject m_muzzle;
+        [SerializeField] private GameObject m_muzzle;
 
         private void Awake()
         {
-            //костыль с поиском
-            m_muzzle = GameObject.Find("ShootPoint");
-            m_manaComponent = GetComponentInParent<ManaComponent>();
+            //m_muzzle = GameObject.Find("ShootPoint");
         }
 
         public void Use()
         {
-            //можно добавить доп эффекты типо поджога
-            if (m_manaComponent.SpendMana(m_manaCost))
-            {
-                Attack();
-            }
+            Attack();
         }
 
         private void Attack()
