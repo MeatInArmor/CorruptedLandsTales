@@ -694,7 +694,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Molot
     m_StateMachine: {fileID: 4100500887908932922}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: 5de730a48c0faee47943aada270c99d6, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
