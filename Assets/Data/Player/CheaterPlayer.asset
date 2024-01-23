@@ -18,4 +18,4 @@ MonoBehaviour:
   healthData:
     health: 100000
     maxHealth: 100000
-  weapon: {fileID: 11400000, guid: cccc64f35fad52d43b62bb8dd7479526, type: 2}
+  weapon: {fileID: 11400000, guid: 1248bd71c4ad28c4684d6069a5bc376e, type: 2}

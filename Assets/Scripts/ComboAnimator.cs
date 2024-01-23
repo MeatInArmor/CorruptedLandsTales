@@ -55,14 +55,14 @@ namespace ShadowChimera
             }
             else
             {
-                characterController.enabled = false;
+                //characterController.enabled = false;
             }
         }
 
         public void attack3()
         {
             anim.SetBool("IsAttack", false);
-            characterController.enabled = true;
+            //characterController.enabled = true;
             noOfClicks = 0;
         }
     }
