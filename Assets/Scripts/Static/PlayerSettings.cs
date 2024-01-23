@@ -27,8 +27,8 @@ namespace CorruptedLandTales
         [System.Serializable]
         public class Settings
         {
-            public int musicVolume = 50;
-            public int fxVolume = 50;
+            public float musicVolume = 50;
+            public float fxVolume = 50;
             public int quality = 5;
         }
     }

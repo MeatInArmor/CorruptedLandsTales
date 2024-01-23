@@ -16,6 +16,7 @@ namespace CorruptedLandTales
                 Destroy(gameObject);
                 return;
             }
+            instance = this;
             DontDestroyOnLoad(gameObject);
             playerSettings.Load();
             ApplySettings(); 

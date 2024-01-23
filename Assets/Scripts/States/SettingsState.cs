@@ -15,6 +15,7 @@ namespace CorruptedLandTales
         protected override void OnEnable()
         {
             base.OnEnable();
+            Debug.Log(GameInstance.instance);
 
             if (GameInstance.instance == null)
             {
@@ -38,8 +39,6 @@ namespace CorruptedLandTales
             m_settingsPanel.onQuallityChanged -= OnQuallityChanged;
 
             GameInstance.instance.ApplySettings();
-
-
         }
         public void CloseSettings()
         {

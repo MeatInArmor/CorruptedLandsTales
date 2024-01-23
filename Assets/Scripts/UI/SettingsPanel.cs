@@ -18,6 +18,7 @@ namespace CorruptedLandTales
         {
             m_quality.ClearOptions();
             m_quality.AddOptions(new List<string>() { "Очень низкая", "Низкая","Средняя","Высокая","Очень высокая", "Ультра"});
+            
         }
         private void Start()
         {
@@ -26,11 +27,11 @@ namespace CorruptedLandTales
             m_quality.onValueChanged.AddListener(index => onQuallityChanged?.Invoke(index));
 
         }
-        public void SetMusic(int volume)
+        public void SetMusic(float volume)
         {
             m_musicVolume.value = volume;
         }
-        public void SetFx(int volume)
+        public void SetFx(float volume)
         {
             m_fxVolume.value = volume;
         }
