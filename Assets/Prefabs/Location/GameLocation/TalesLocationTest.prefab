@@ -555,6 +555,7 @@ MonoBehaviour:
   m_bossPossibleRoomIndexes: 0100000004000000
   m_enemyCountOnLevel: 8
   m_bossCountOnRoom: 1
+  m_healItemPrefab: {fileID: 3135513938243448224, guid: b0cbd48a7eb71614c9b331fa9dbd098e, type: 3}
 --- !u!1 &6354939100671677970
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4821830258959219757, guid: 39cccd6fea791e14fb705c3afbf9273d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6514871530270783969, guid: 39cccd6fea791e14fb705c3afbf9273d, type: 3}
       propertyPath: m_Layer

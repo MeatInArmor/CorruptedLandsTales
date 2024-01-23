@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657862, g: 0.49641347, b: 0.5748182, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402325, g: 0.4931664, b: 0.57223254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2146,10 +2146,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 100239647930131562, guid: 6c5265240edd3d3499fd232efd28bf9d, type: 3}
-      propertyPath: m_exitDoors
-      value: 
-      objectReference: {fileID: 2880544972813916776}
     - target: {fileID: 6772379499677924171, guid: 6c5265240edd3d3499fd232efd28bf9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2194,22 +2190,10 @@ PrefabInstance:
       propertyPath: m_player
       value: 
       objectReference: {fileID: 109863685}
-    - target: {fileID: 6961547817182996441, guid: 6c5265240edd3d3499fd232efd28bf9d, type: 3}
-      propertyPath: m_healItemPrefab
-      value: 
-      objectReference: {fileID: 3135513938243448224, guid: b0cbd48a7eb71614c9b331fa9dbd098e, type: 3}
-    - target: {fileID: 7512563800855045729, guid: 6c5265240edd3d3499fd232efd28bf9d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8292684908891770637, guid: 6c5265240edd3d3499fd232efd28bf9d, type: 3}
       propertyPath: m_Name
       value: TalesLocationTest
       objectReference: {fileID: 0}
-    - target: {fileID: 8874392177662345087, guid: 6c5265240edd3d3499fd232efd28bf9d, type: 3}
-      propertyPath: m_exitDoors
-      value: 
-      objectReference: {fileID: 1628026985}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
