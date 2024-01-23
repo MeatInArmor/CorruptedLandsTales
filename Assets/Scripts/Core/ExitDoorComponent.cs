@@ -30,7 +30,6 @@ namespace CorruptedLandTales
             if (other.CompareTag("Player"))
             {
                 onPlayerExitLocation?.Invoke();
-                Debug.Log("Try to enter next location");
             }
         }
     }

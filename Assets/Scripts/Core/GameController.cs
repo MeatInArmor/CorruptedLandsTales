@@ -26,7 +26,6 @@ namespace CorruptedLandTales
 
         private void OnPlayerExitLocation()
         {
-            Debug.Log("OnPlayerExitLocation");
             Destroy(m_activeLevel);
             Transform activeLevelPos = m_activeLevel.transform;
             m_activeLevel = null;
