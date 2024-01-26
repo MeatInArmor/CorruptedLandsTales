@@ -3,6 +3,7 @@ using CorruptedLandTales;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TheKiwiCoder;
 
 namespace CorruptedLandTales
 {
@@ -66,10 +67,11 @@ namespace CorruptedLandTales
             }
 
             m_character.HealthComponent.onImpact += () =>
-            {
-                m_animator.SetTrigger("isImpact");
+            {                
+                m_animator.SetBool("IsImpact", true);
+                //m_animator.SetTrigger("isImpact");
             };
-
+            
             m_character.HealthComponent.onDie += () =>
             {                
                 m_animator.SetTrigger("isDie");
@@ -84,18 +86,22 @@ namespace CorruptedLandTales
             */
 
         }
+        //public void OnEndImpact()
+        //{
+        //    m_animator.SetBool("IsImpact", false);
 
+        //}
         private void LateUpdate()
         {
             var speed = moveComponent.velocity.magnitude;
             m_animator.SetFloat(SpeedId, speed);
         }
-        
+
         private void Slash()
         {
             m_animator.SetTrigger("isSlash");
         }
-        
+
         private void CastSpell()
         {
             m_animator.SetTrigger("isCastSpell");

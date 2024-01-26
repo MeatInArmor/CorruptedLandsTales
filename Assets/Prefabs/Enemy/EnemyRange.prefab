@@ -827,6 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_specialAttack: {fileID: 0}
   m_charMoveComponent: {fileID: 0}
+  m_animator: {fileID: 168306833574357136}
   m_EndDie:
     m_PersistentCalls:
       m_Calls:

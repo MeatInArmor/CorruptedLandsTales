@@ -1295,7 +1295,7 @@ GameObject:
   - component: {fileID: 2854267501968951786}
   - component: {fileID: 3008426225749632157}
   - component: {fileID: 4807377456819990454}
-  - component: {fileID: 5194454707815305610}
+  - component: {fileID: 769096142067465277}
   m_Layer: 0
   m_Name: Bogatyr T-Pose
   m_TagString: Untagged
@@ -1384,11 +1384,23 @@ MonoBehaviour:
   m_charMoveComponent: {fileID: 2536953490566234966}
   m_EndDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2854267501968951786}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_onImpact:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5194454707815305610
+--- !u!114 &769096142067465277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1397,12 +1409,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2585124909923891848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ca7f47a5f1729843bd03408e0eaca44, type: 3}
+  m_Script: {fileID: 11500000, guid: dcd1fe032d669664daa0599fb3a5a11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2854267501968951786}
   noOfClicks: 0
-  maxComdoDelay: 0.8
+  maxComdoDelay: 0
 --- !u!1 &2731849235520801527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3053,19 @@ MonoBehaviour:
   m_health: 500
   m_onDie:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4744435545907797720}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_group: 1
 --- !u!114 &584742601963079611
 MonoBehaviour:
