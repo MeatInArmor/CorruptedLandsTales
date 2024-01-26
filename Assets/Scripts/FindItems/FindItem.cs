@@ -9,7 +9,7 @@ namespace CorruptedLandTales
         [SerializeField] private HealthComponent m_healthComponent;
         
         private Collider[] m_result = new Collider[2];
-        private IUsableItem m_useItemComponent;
+        private IInteractiveItem m_useItemComponent;
         private GameObject m_useItem; 
         private LayerMask m_layerMask;
         private bool m_flag = true;
@@ -32,7 +32,7 @@ namespace CorruptedLandTales
                 onFindItem?.Invoke();
                 for (int i = 0; i < count; i++)
                 {
-                    m_useItemComponent = m_result[i].GetComponent<IUsableItem>();
+                    m_useItemComponent = m_result[i].GetComponent<IInteractiveItem>();
                     m_useItem = m_result[i].gameObject;
                 }
                 m_flag = true;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class PickUpWeapon : MonoBehaviour, IUsableItem
+    public class InteractiveWeapon : MonoBehaviour, IInteractiveItem
     {
         [SerializeField] private ScriptableObject m_data;
 

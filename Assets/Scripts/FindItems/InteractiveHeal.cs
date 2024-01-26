@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class UsableHeal : MonoBehaviour, IUsableItem
+    public class InteractiveHeal : MonoBehaviour, IInteractiveItem
     {
         [SerializeField] private float m_healAmount;
         

@@ -1,6 +1,6 @@
 namespace CorruptedLandTales
 {
-    public interface IUsableItem
+    public interface IInteractiveItem
     {
         //TODO можно сделать ScriptableObject
         T GetData<T>();

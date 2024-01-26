@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace CorruptedLandTales
 {
-    public class UsableChest : MonoBehaviour, IUsableItem
+    public class InteractiveChest : MonoBehaviour, IInteractiveItem
     {
         //TODO надо ли чтобы в Chest'e сразу спавнилось оружие или спавнить его в FindItem?
         //с точки зрения производительности лучше сразу заспавнить, с точки зрения правильности в FindItem'e
