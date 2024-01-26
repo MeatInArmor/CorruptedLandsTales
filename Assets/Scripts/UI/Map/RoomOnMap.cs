@@ -10,9 +10,8 @@ namespace CorruptedLandTales
         public BossIconOnMap bossIconOnMap;
         public RoomFieldOnMap roomFieldOnMap;
 
-        private void Start()
+        private void Awake()
         {
-
             healingRoomOnMap = GetComponentInChildren<HealingRoomOnMap>();
             bossIconOnMap = GetComponentInChildren<BossIconOnMap>();
             roomFieldOnMap = GetComponentInChildren<RoomFieldOnMap>();

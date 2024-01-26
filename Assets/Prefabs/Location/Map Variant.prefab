@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 247993045221296581}
+  bossIconOnMap: {fileID: 3987209677298893928}
+  roomFieldOnMap: {fileID: 7728197053110196988}
 --- !u!1 &474617009693799506
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,6 +970,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 4062705001601834588}
+  bossIconOnMap: {fileID: 7277286270265688189}
+  roomFieldOnMap: {fileID: 6936632114746461190}
 --- !u!1 &2912479324008454786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 8620708404010572237}
+  bossIconOnMap: {fileID: 0}
+  roomFieldOnMap: {fileID: 4023191682742682445}
 --- !u!1 &4299025464426142488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 509657017001552382}
+  bossIconOnMap: {fileID: 0}
+  roomFieldOnMap: {fileID: 8452123222085111388}
 --- !u!1 &6235271524803240772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,6 +1990,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 4913813929050818073}
+  bossIconOnMap: {fileID: 0}
+  roomFieldOnMap: {fileID: 7029977725133522121}
 --- !u!1 &7523647441274228834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2025,6 +2040,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 3742175585497859073}
+  bossIconOnMap: {fileID: 8581715002515605870}
+  roomFieldOnMap: {fileID: 3065901559725853650}
 --- !u!1 &8059696432602908167
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,6 +2283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 7247385969240786021}
+  bossIconOnMap: {fileID: 0}
+  roomFieldOnMap: {fileID: 979025558027399943}
 --- !u!1 &8906657158698693560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,6 +2333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478fe82e9792794c90ed011cb4781e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healingRoomOnMap: {fileID: 4306598313742259510}
+  bossIconOnMap: {fileID: 8118709703789770163}
+  roomFieldOnMap: {fileID: 1387664597853728628}
 --- !u!1001 &6824738156437512572
 PrefabInstance:
   m_ObjectHideFlags: 0
