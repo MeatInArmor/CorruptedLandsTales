@@ -35,12 +35,19 @@ namespace CorruptedLandTales
         private void OnEnable()
         {
             m_healthComponent.onTakeDamage += OnTakeDamage;
+            m_healthComponent.onHeal += OnTakeDamage;
             Refresh();
         }
         private void OnTakeDamage(float damage)
         {
             Refresh();
         }
+
+        private void OnHeal(float amount)
+        {
+            Refresh();
+        }
+        
         private void Refresh()
         {
             m_fillImage.fillAmount = m_healthComponent.healthPercent;
@@ -48,7 +55,7 @@ namespace CorruptedLandTales
         private void OnDisable()
         {
             m_healthComponent.onTakeDamage -= OnTakeDamage;
-
+            m_healthComponent.onHeal -= OnTakeDamage;
         }
     }
 }

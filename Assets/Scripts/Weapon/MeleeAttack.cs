@@ -12,6 +12,8 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackAngle = 120.0f;
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
+
+        [SerializeField] private float m_manaCost;
         
         private ManaComponent m_manaComponent;
         private IWeaponSkill m_weaponSkill;
@@ -25,6 +27,7 @@ namespace CorruptedLandTales
             m_attackAngle = weaponData.attackAngle;
             m_attackRange = weaponData.attackRange;
             m_layerMask = weaponData.layerMask;
+            m_manaCost = weaponData.manaCost;
         }
         
         private void Awake()
@@ -42,7 +45,10 @@ namespace CorruptedLandTales
 
         public void UseSkill() 
         {
-            m_weaponSkill.Use();
+            if (m_manaComponent.SpendMana(m_manaCost))
+            {
+                m_weaponSkill.Use();
+            }
         }
 
         public void Show()

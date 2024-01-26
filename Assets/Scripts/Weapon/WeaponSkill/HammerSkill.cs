@@ -10,9 +10,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_damage = 40.0f;
         [SerializeField] private float m_attackRange = 6.0f;
         [SerializeField] private LayerMask m_layerMask;
-        [SerializeField] private float m_manaCost;
-        
-        private ManaComponent m_manaComponent;
+
         private Collider[] m_result = new Collider[10];
         private Transform m_parentTransform;
         private float m_attackAngle = 360.0f;
@@ -21,15 +19,10 @@ namespace CorruptedLandTales
         {
             m_attackAngle /= 2;
             m_parentTransform = transform.root;
-            m_manaComponent = GetComponentInParent<ManaComponent>();
         }
         public void Use()
         {
-            //можно добавить доп эффекты типа стана
-            if (m_manaComponent.SpendMana(m_manaCost))
-            {
-                Attack();
-            }
+            Attack();
         }
 
         private void Attack()
@@ -47,7 +40,6 @@ namespace CorruptedLandTales
                 Vector3 enemyFacingNormalized = (enemyPos - pos).normalized;
                 float dist = Vector3.Distance(pos, enemyPos);
                 float dotProductAngle = Mathf.Acos(Vector3.Dot(facingNormalized, enemyFacingNormalized)) * Mathf.Rad2Deg;
-                Debug.Log($" {this} {dotProductAngle} {dist}");
                 if (damageable != null && dist < m_attackRange && dotProductAngle < m_attackAngle)
                 {
                     damageable.TakeDamage(m_damage);

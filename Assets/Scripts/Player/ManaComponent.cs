@@ -30,13 +30,11 @@ namespace CorruptedLandTales
             {
                 manaCost = Mathf.Min(manaCost, m_currentMana);
                 m_currentMana -= manaCost;
-                Debug.Log($"Spend {manaCost} mana, current mana is {m_currentMana}");
                 onSpendMana?.Invoke(manaCost);
                 return true;
             }
             else
             {
-                Debug.Log($"Try to Spend {manaCost} mana, current mana is {m_currentMana}");
                 onSpendMana?.Invoke(manaCost);
                 return false;
             }
@@ -45,7 +43,6 @@ namespace CorruptedLandTales
         public void GainMana(float manaCount)
         {
             m_currentMana = manaCount + m_currentMana > m_manaPool ? (m_manaPool) : manaCount + m_currentMana;
-            Debug.Log($"gain {manaCount} mana, manapool is {m_manaPool}, current mana is {m_currentMana}");
             onGainMana?.Invoke(manaCount);
 
         }

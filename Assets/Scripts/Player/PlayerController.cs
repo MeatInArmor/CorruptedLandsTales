@@ -22,10 +22,11 @@ namespace CorruptedLandTales
 		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
 		private InputAction m_useWeaponSkill;
+		private CharMoveComponent m_charMoveController;
+		
 		//Dash
 		//private InputAction m_useDash;
 		
-		private CharMoveComponent m_charMoveController;
 		
 		private void Awake()
 		{
@@ -43,7 +44,7 @@ namespace CorruptedLandTales
 
 		private void Start()
 		{
-			m_character.GetComponent<CharacterController>().enabled = true;
+			//m_character.GetComponent<CharacterController>().enabled = true;
 		}
 
 		private void OnEnable()
@@ -85,13 +86,13 @@ namespace CorruptedLandTales
 
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
-			m_findItem.PickUp();
+			m_findItem.UseItem();
 		}
         //Dash
-        private void OnUseDash(InputAction.CallbackContext context)
+        /*private void OnUseDash(InputAction.CallbackContext context)
 		{
 			m_charMoveController.Dash();
-		}
+		}*/
 
 		private void Update()
 		{

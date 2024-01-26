@@ -19,6 +19,7 @@ namespace CorruptedLandTales
         {
             foreach (var item in views)
             {
+                
                 item.SetActive(true);
             }
         }

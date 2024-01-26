@@ -9,6 +9,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] private AttackManager m_attackManager;
         [SerializeField] private HealthComponent m_healthComponent;
+        [SerializeField] private ManaComponent m_manaComponent;
         
         private IMoveComponent m_moveComponent;
         public AttackManager attackManager => m_attackManager;
@@ -38,6 +39,11 @@ namespace CorruptedLandTales
             if (m_moveComponent != null)
             {
                 m_moveComponent.Init(data.moveData.speed, data.moveData.sprintSpeed);
+            }
+
+            if (m_manaComponent != null)
+            {
+               m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana);
             }
         }
 
