@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace CorruptedLandTales
 {
-    public class PickUpBtn : MonoBehaviour
+    public class InteractionBtn : MonoBehaviour
     {
         [SerializeField] private FindItem m_findItem;
         [SerializeField] private Image m_parentImage;

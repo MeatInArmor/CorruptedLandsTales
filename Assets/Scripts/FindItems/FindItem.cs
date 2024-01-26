@@ -21,7 +21,8 @@ namespace CorruptedLandTales
         {
             m_layerMask = LayerMask.GetMask("Item");
         }
-
+        
+        //TODO можно вынести в отдельный скрипт
         private void Update()
         {
             var count = Physics.OverlapSphereNonAlloc(transform.position,  m_findRange, m_result, m_layerMask,
@@ -63,6 +64,7 @@ namespace CorruptedLandTales
                 }
                 if (data is GameObject)
                 {
+                    
                     //надо будет не спавнить а включать
                     Instantiate((GameObject)data, m_useItem.transform.position, m_useItem.transform.rotation);
                 }

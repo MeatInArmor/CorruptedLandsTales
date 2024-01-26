@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657862, g: 0.49641347, b: 0.5748182, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402325, g: 0.4931664, b: 0.57223254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -522,6 +522,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &716086354 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5220532202447944919, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+  m_PrefabInstance: {fileID: 1937769377}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &716086357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 454045432228232868, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+  m_PrefabInstance: {fileID: 1937769377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716086354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &716086359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716086354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55d9f5036a13bcd4b8597a93608e6873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_findItem: {fileID: 2573612662567074169}
+  m_parentImage: {fileID: 716086357}
+  m_childImage: {fileID: 1064134283}
 --- !u!1 &1000491690 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7752463960537507648, guid: 75a763ce847fad840b860727a1d91676, type: 3}
@@ -532,6 +563,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1480644711390450700, guid: 75a763ce847fad840b860727a1d91676, type: 3}
   m_PrefabInstance: {fileID: 1937769377}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1064134283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7286955704420482538, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+  m_PrefabInstance: {fileID: 1937769377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1192474796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1273,14 @@ PrefabInstance:
       propertyPath: m_manaComponent
       value: 
       objectReference: {fileID: 8400877901572598444}
+    - target: {fileID: 2196424389601094822, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2196424389601094822, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -110
+      objectReference: {fileID: 0}
     - target: {fileID: 2230097381359367507, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1467,6 +1517,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CorruptedLandTales.GameState, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5220532202447944919, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5474194674831459772, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1673,7 +1727,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1480644711390450700, guid: 75a763ce847fad840b860727a1d91676, type: 3}
       insertIndex: 3
       addedObject: {fileID: 1345928074}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5220532202447944919, guid: 75a763ce847fad840b860727a1d91676, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 716086359}
   m_SourcePrefab: {fileID: 100100000, guid: 75a763ce847fad840b860727a1d91676, type: 3}
 --- !u!1 &1973692635 stripped
 GameObject:
@@ -1967,6 +2024,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3465083201844976310, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
+      propertyPath: m_data
+      value: 
+      objectReference: {fileID: 11400000, guid: 685a3e1961b87c9469b925e541836d2b, type: 2}
     - target: {fileID: 4089173368887766831, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -80

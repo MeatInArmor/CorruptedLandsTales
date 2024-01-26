@@ -80,31 +80,5 @@ namespace CorruptedLandTales
             Vector3 horizontal = targetDirection.normalized * (speed * Time.deltaTime);
             m_characterController.Move(horizontal + vertical);
         }
-        //Dash
-        public void Dash()
-        {
-            //isDashing = true;
-            onUseDash?.Invoke();
-            //StartCoroutine(EndDash());
-            /*            float speed = 0.1f;
-                        //speed = Mathf.Lerp(1, 10, 5);
-                        //Vector3 To = new Vector3 (0f, 0f, 1);
-                        //Vector3 targetDirection = Quaternion.Euler(0f, m_targetRotation, 0f) * Vector3.forward;
-                        //Vector3 vertical = new Vector3(0f, Physics.gravity.y * Time.deltaTime, 0f);
-                        //Vector3 horizontal = targetDirection.normalized * (speed * Time.deltaTime);
-                        //m_characterController.Move(horizontal + vertical + To);
-                        Vector3 From = player.position;
-                        Vector3 To = new Vector3(0, 0, 1f);
-                        m_characterController.Move(From + To*/
-           
-            
-        }
-
-        /*private IEnumerator EndDash()
-        {
-            yield return new WaitForSecondsRealtime(m_dashTime);
-            isDashing = false;
-            Debug.Log($"dash false");
-        }*/
     }
 }
