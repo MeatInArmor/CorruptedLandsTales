@@ -1293,9 +1293,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4590952302268205976}
   - component: {fileID: 2854267501968951786}
+  - component: {fileID: 5224456995168290030}
   - component: {fileID: 3008426225749632157}
   - component: {fileID: 4807377456819990454}
   - component: {fileID: 769096142067465277}
+  - component: {fileID: 5707410832482083042}
   m_Layer: 0
   m_Name: Bogatyr T-Pose
   m_TagString: Untagged
@@ -1338,12 +1340,12 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2585124909923891848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 4b72f7ad4514ee74bb18bf6a23cb2a3a, type: 3}
-  m_Controller: {fileID: 9100000, guid: b8ebdbc7b19591746bc9f2d03a9a5f89, type: 2}
+  m_Controller: {fileID: 9100000, guid: 046858260cb6de344bf0f717802d2af4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1351,6 +1353,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5224456995168290030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585124909923891848}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1389f1e496cfc2940aa5c403cc9d104b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 2854267501968951786}
+  m_moveSpeed: 0
+  m_character: {fileID: 0}
 --- !u!114 &3008426225749632157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,7 +1383,7 @@ MonoBehaviour:
   m_animator: {fileID: 2854267501968951786}
   m_character: {fileID: 2297376893487946721}
   m_impact: {fileID: 0}
-  m_charMoveComponent: {fileID: 2536953490566234966}
+  m_charMoveComponent: {fileID: 0}
   m_specialAttack: {fileID: 8616952980201909679}
 --- !u!114 &4807377456819990454
 MonoBehaviour:
@@ -1381,8 +1398,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_specialAttack: {fileID: 8616952980201909679}
-  m_charMoveComponent: {fileID: 2536953490566234966}
-  m_animator: {fileID: 2854267501968951786}
+  m_charMoveComponent: {fileID: 0}
+  m_animator: {fileID: 0}
   m_EndDie:
     m_PersistentCalls:
       m_Calls:
@@ -1416,6 +1433,29 @@ MonoBehaviour:
   anim: {fileID: 2854267501968951786}
   noOfClicks: 0
   maxComdoDelay: 0
+--- !u!136 &5707410832482083042
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585124909923891848}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.23495634
+  m_Height: 1.9351605
+  m_Direction: 1
+  m_Center: {x: -0.0022739668, y: 0.9236187, z: 0.0012446691}
 --- !u!1 &2731849235520801527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,7 +2574,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 781
+  m_VersionIndex: 784
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2965,15 +3005,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4089173368887766831}
-  - component: {fileID: 4744435545907797720}
+  - component: {fileID: 6795548287528926784}
+  - component: {fileID: 4247237936406122142}
   - component: {fileID: 2892508709089259748}
   - component: {fileID: 9196480389814277058}
   - component: {fileID: 584742601963079611}
   - component: {fileID: 2297376893487946721}
   - component: {fileID: 3465083201844976310}
-  - component: {fileID: 2536953490566234966}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Player new Animator
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2999,32 +3039,42 @@ Transform:
   - {fileID: 432561383182189206}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!143 &4744435545907797720
-CharacterController:
+--- !u!95 &6795548287528926784
+Animator:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5701134899015483886}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Height: 1.8
-  m_Radius: 0.3
-  m_SlopeLimit: 45
-  m_StepOffset: 0.25
-  m_SkinWidth: 0.02
-  m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4b72f7ad4514ee74bb18bf6a23cb2a3a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 046858260cb6de344bf0f717802d2af4, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4247237936406122142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701134899015483886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1389f1e496cfc2940aa5c403cc9d104b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 2854267501968951786}
+  m_moveSpeed: 0
+  m_character: {fileID: 2297376893487946721}
 --- !u!114 &2892508709089259748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3055,20 +3105,8 @@ MonoBehaviour:
   m_onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4744435545907797720}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2536953490566234966}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -3122,25 +3160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_data: {fileID: 11400000, guid: 685a3e1961b87c9469b925e541836d2b, type: 2}
   m_character: {fileID: 2297376893487946721}
---- !u!114 &2536953490566234966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701134899015483886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4df215ec5d7afdb4f989442f8e5e536b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_characterController: {fileID: 4744435545907797720}
-  m_moveSpeed: 15
-  m_sprintSpeed: 10
-  m_rotationSmoothTime: 0.08
-  m_speedChangeRate: 15
-  m_dashSpeed: 40
-  isDashing: 0
 --- !u!1 &5741678466699072853
 GameObject:
   m_ObjectHideFlags: 0
