@@ -21,6 +21,11 @@ namespace CorruptedLandTales
                 bossIconOnMap.gameObject.SetActive(false);
             if (roomFieldOnMap != null)
                 roomFieldOnMap.gameObject.SetActive(false);
+
+        }
+        private void Start()
+        {
+           
         }
     }
 }

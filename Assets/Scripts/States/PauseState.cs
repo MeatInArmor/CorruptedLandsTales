@@ -26,7 +26,6 @@ namespace CorruptedLandTales
         {
             base.OnDisable();
             Time.timeScale = 1;
-
         }
         public void Restart()
         {
