@@ -39,7 +39,8 @@ namespace CorruptedLandTales
             {
                 case "Player":
                     /*m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
-                        m_prefabs[0].transform.rotation);*/ 
+                        m_prefabs[0].transform.rotation);*/
+                    m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
                     gameObject.SetActive(false);
                     break;
                 
