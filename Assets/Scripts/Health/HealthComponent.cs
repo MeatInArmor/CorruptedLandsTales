@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace CorruptedLandTales
 {
@@ -43,6 +45,10 @@ namespace CorruptedLandTales
             {
                 onDie?.Invoke();
                 Destroy(gameObject);
+                if (m_group == 0)
+                {
+                    NumbersCounts.kills++;
+                }
             }
         }
 

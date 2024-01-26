@@ -71,7 +71,7 @@ namespace CorruptedLandTales
         {
             if (m_remainigEnemyRooms <= 0)
             {
-                m_rooms[m_bossRoomIndex].OpenBossDoors();
+                m_rooms[m_bossRoomIndex].OpenBossDoors();   // !!! мб можно оптимизировать вызов?
             }
         }
     }

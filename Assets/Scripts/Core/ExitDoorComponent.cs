@@ -29,6 +29,7 @@ namespace CorruptedLandTales
         {
             if (other.CompareTag("Player"))
             {
+                NumbersCounts.levelsCleared++;
                 onPlayerExitLocation?.Invoke();
                 Debug.Log("Try to enter next location");
             }
