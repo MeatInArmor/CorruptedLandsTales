@@ -10,14 +10,21 @@ namespace CorruptedLandTales
         [SerializeField] private ManaComponent m_manaComponent;
         [SerializeField] private Image m_fillImage;
         [SerializeField] private float m_fillMaxAmount = 15f;
+        private Color32 m_fullFillColor;
         private float m_fillAmountPercent => m_manaComponent.CurrentMana / m_fillMaxAmount;
 
-        public void Initialize(ManaComponent manaComponent)
+        private void Awake()
         {
-            m_manaComponent = manaComponent;
+            if(m_manaComponent == null)
+                m_manaComponent = GameObject.Find("Player").GetComponent<ManaComponent>();
+            m_fullFillColor = m_fillImage.color;
+            Refresh();
+
         }
+
         private void OnEnable()
         {
+
             m_manaComponent.onSpendMana += OnSpendMana;
             m_manaComponent.onGainMana += OnGainMana;
             Refresh();
@@ -25,13 +32,13 @@ namespace CorruptedLandTales
         private void OnSpendMana(float mana)
         {
             if(m_manaComponent.CurrentMana < m_fillMaxAmount)
-                m_fillImage.color = new Color32(255, 255, 255, 255);
+                m_fillImage.color = Color.white;
             Refresh();
         }
         private void OnGainMana(float mana)
         {
-            if (m_manaComponent.CurrentMana > m_fillMaxAmount)
-                m_fillImage.color = new Color32(255, 85, 50, 255);
+            if (m_manaComponent.CurrentMana >= m_fillMaxAmount)
+                m_fillImage.color = m_fullFillColor;
             Refresh();
         }
        

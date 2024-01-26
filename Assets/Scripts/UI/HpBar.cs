@@ -1,4 +1,3 @@
-using CorruptedLandTales;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +12,25 @@ namespace CorruptedLandTales
         [SerializeField] private Image m_fillImage;
         public void Initialize(HealthComponent healthComponent)
         {
-            m_healthComponent = healthComponent;
+            m_healthComponent = healthComponent;                                        // если компонент указан, то он и будет
+            Refresh();
+        }
+        private void Awake()
+        {
+            if(m_healthComponent == null)
+                SetComponent();
+            Refresh();
+        }
+        public void SetComponent()
+        {
+            if (m_healthComponent != null)                                              // если компонент не указан
+            {
+                var parentHealthComponent = GetComponentInParent<HealthComponent>();    // ищется компонент в родителе
+                if (parentHealthComponent != null && m_healthComponent == null)         // если в родитееле есть компонент - берётся он
+                    m_healthComponent = parentHealthComponent;
+            }
+            else                                                                        // если нет, то компонент берётся у Player со сцены
+                m_healthComponent = GameObject.Find("Player").GetComponent<HealthComponent>();
         }
         private void OnEnable()
         {

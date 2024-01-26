@@ -11,7 +11,8 @@ namespace CorruptedLandTales
         [SerializeField] private RandomPositions mRandomPositions;
         [SerializeField] private List<RoomDoorComponent> m_doors;
         [SerializeField] private ExitDoorComponent m_exitDoor;
-        
+        [SerializeField] private RoomOnMap m_roomOnMap;
+
         private List<GameObject> m_prefabs = new List<GameObject>();
         private List<GameObject> m_enemies = new List<GameObject>(9);
         private List<Vector3> m_spawnPoints = new List<Vector3>();
@@ -57,6 +58,7 @@ namespace CorruptedLandTales
                         chest.SetActive(true);
                     };
                     m_prefabs.RemoveAt(0);
+                    m_roomOnMap.bossIconOnMap.gameObject.SetActive(true);
                     break;
                 
                 case "Enemy":
@@ -143,9 +145,11 @@ namespace CorruptedLandTales
                     {
                         door.Deactivate();
                     }
-                    m_doors.Clear();
+                    m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
+                    m_doors.Clear(); //мб можно убрать
                     onRoomCleared?.Invoke();
                     gameObject.SetActive(false);
+                    
                     //m_state = RoomStatus.Deactivated;
                     break;
             }

@@ -20,10 +20,17 @@ namespace CorruptedLandTales
         {
             var scene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(scene.name);
+            NumbersCounts.kills = 0;
+            NumbersCounts.levelsCleared = 0;
+
         }
         public void MenuExit()
         {
             SceneManager.LoadScene("MainMenu");
+            NumbersCounts.kills = 0;
+            NumbersCounts.levelsCleared = 0;
+
+
         }
     }
 }
