@@ -31,7 +31,7 @@ namespace CorruptedLandTales
             InCombat,
             Deactivating
         }
-        
+        //TODO можно отрефакторить в нормальный StateMachine
         private void Start()
         {
             switch (m_roomType) // при необходимости можно будет добавить что то в каждый тип
@@ -43,6 +43,9 @@ namespace CorruptedLandTales
                     break;
                 
                 case "Boss":
+                    var chest = Instantiate(m_prefabs[0], transform.position + m_playerSpawnOffset,
+                        m_prefabs[0].transform.rotation);
+                    chest.SetActive(false);
                     foreach (var door in m_doors)
                     {
                         door.Activate();
@@ -51,7 +54,9 @@ namespace CorruptedLandTales
                     onRoomCleared += () =>
                     {
                         m_exitDoor.Open();
+                        chest.SetActive(true);
                     };
+                    m_prefabs.RemoveAt(0);
                     break;
                 
                 case "Enemy":

@@ -4,14 +4,14 @@ namespace CorruptedLandTales
 {
     public class FindItem : MonoBehaviour
     {
-        [SerializeField] float m_findRange = 2.0f;
-        [SerializeField] private GameObject m_pickUpbtn;
+        [SerializeField] private float m_findRange = 2.0f;
+        [SerializeField] private AttackManager m_attackManager;
         [SerializeField] private HealthComponent m_healthComponent;
         
         private Collider[] m_result = new Collider[2];
-        private PickUpItem m_upItem;
+        private IUsableItem m_useItemComponent;
+        private GameObject m_useItem; 
         private LayerMask m_layerMask;
-        private AttackManager m_attackManager;
         private bool m_flag = true;
         
         public event System.Action onFindItem;
@@ -19,7 +19,6 @@ namespace CorruptedLandTales
 
         private void Start()
         {
-            m_attackManager = GetComponentInParent<AttackManager>();
             m_layerMask = LayerMask.GetMask("Item");
         }
 
@@ -33,7 +32,8 @@ namespace CorruptedLandTales
                 onFindItem?.Invoke();
                 for (int i = 0; i < count; i++)
                 {
-                    m_upItem = m_result[i].GetComponent<PickUpItem>();
+                    m_useItemComponent = m_result[i].GetComponent<IUsableItem>();
+                    m_useItem = m_result[i].gameObject;
                 }
                 m_flag = true;
             }
@@ -46,19 +46,28 @@ namespace CorruptedLandTales
                 }
             }
         }
-
-        public void PickUp()
+        
+        //TODO переписать как будет правильнее
+        public void UseItem()
         {
-            onDisableItem?.Invoke();
-            if (m_upItem.GetWeaponData()!=null)
+            var data = m_useItemComponent.GetData<object>();
+            if (data != null)
             {
-                m_attackManager.Initialize(m_upItem.GetWeaponData());
+                if (data is float)
+                {
+                    m_healthComponent.HealHealth((float)data);
+                }
+                if (data is ScriptableObject)
+                {
+                    m_attackManager.Initialize((WeaponSO)data);
+                }
+                if (data is GameObject)
+                {
+                    //надо будет не спавнить а включать
+                    Instantiate((GameObject)data, m_useItem.transform.position, m_useItem.transform.rotation);
+                }
+                Destroy(m_useItem);
             }
-            else
-            {
-                m_healthComponent.HealHealth(m_upItem.GetHealth());
-            }
-            //Destroy(gameObject);
         }
     }
 }

@@ -31,7 +31,10 @@ namespace CorruptedLandTales
             m_activeLevel = null;
             m_activeLevel = Instantiate(m_levelPrefab, activeLevelPos.position + new Vector3(0f,50f,0f),
                 activeLevelPos.rotation);
-
+            foreach (var door in m_exitDoors)
+            {
+                door.onPlayerExitLocation -= OnPlayerExitLocation;
+            }
             m_exitDoors.Clear();
             m_activeLevel.GetComponentsInChildren(true, m_exitDoors);
             

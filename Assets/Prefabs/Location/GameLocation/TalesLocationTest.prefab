@@ -556,6 +556,7 @@ MonoBehaviour:
   m_enemyCountOnLevel: 8
   m_bossCountOnRoom: 1
   m_healItemPrefab: {fileID: 3135513938243448224, guid: b0cbd48a7eb71614c9b331fa9dbd098e, type: 3}
+  m_chestPrefab: {fileID: 681107008452733697, guid: a7659a5a0062c524984f874a00d9351b, type: 3}
 --- !u!1 &6354939100671677970
 GameObject:
   m_ObjectHideFlags: 0

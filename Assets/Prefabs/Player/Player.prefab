@@ -472,13 +472,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687125832612526386}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.408, y: 0.75, z: -0.072}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.82, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4089173368887766831}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &832939131723353461
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,7 +2498,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 781
+  m_VersionIndex: 787
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2936,6 +2936,7 @@ GameObject:
   - component: {fileID: 2297376893487946721}
   - component: {fileID: 3465083201844976310}
   - component: {fileID: 2536953490566234966}
+  - component: {fileID: 6070529082942400673}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2980,7 +2981,7 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
@@ -3029,8 +3030,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a8c633ef152c3a449575a99ec82cc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_findRange: 2
-  m_pickUpbtn: {fileID: 0}
+  m_findRange: 1.5
+  m_attackManager: {fileID: 2892508709089259748}
+  m_healthComponent: {fileID: 9196480389814277058}
 --- !u!114 &2297376893487946721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3045,6 +3047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_attackManager: {fileID: 2892508709089259748}
   m_healthComponent: {fileID: 9196480389814277058}
+  m_manaComponent: {fileID: 6070529082942400673}
 --- !u!114 &3465083201844976310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3078,6 +3081,20 @@ MonoBehaviour:
   m_speedChangeRate: 15
   m_dashSpeed: 40
   isDashing: 0
+--- !u!114 &6070529082942400673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701134899015483886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696bcd9b342a2054bb3fa44d53b2700a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_manaPool: 50
+  m_currentMana: 0
 --- !u!1 &5741678466699072853
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,8 +3480,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 9222002406757968233, guid: f3ce70df8178cfc499e4f474b9aa0365, type: 3}
   m_muzzle: {fileID: 5159035948889149013}
-  m_manaCompnonent: {fileID: 0}
-  m_manaCost: 0
+  m_manaCost: 25
 --- !u!1 &7141368172809501033
 GameObject:
   m_ObjectHideFlags: 0

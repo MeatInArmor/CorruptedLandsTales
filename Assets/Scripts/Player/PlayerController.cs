@@ -86,7 +86,7 @@ namespace CorruptedLandTales
 
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
-			m_findItem.PickUp();
+			m_findItem.UseItem();
 		}
         //Dash
         /*private void OnUseDash(InputAction.CallbackContext context)

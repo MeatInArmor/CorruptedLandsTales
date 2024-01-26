@@ -14,6 +14,7 @@ namespace CorruptedLandTales
         [SerializeField] private int m_enemyCountOnLevel = 28;
         [SerializeField] private int m_bossCountOnRoom = 1;
         [SerializeField] private GameObject m_healItemPrefab;
+        [SerializeField] private GameObject m_chestPrefab;
         
         private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
         private int m_roomCount = 7;
@@ -23,9 +24,10 @@ namespace CorruptedLandTales
         private int m_remainigEnemyRooms;
         private int m_healRoomIndex;
         private CharacterController m_characterController;
-
-        //public event System.Action onLevelCleared;
-
+        
+        //TODO надо разбить потом на функции и подфункции всю логику
+        //и отдельно как то вынести "особые префабы" типа хила и сундуков
+        
         private void Awake()
         {
             m_roomCount = m_rooms.Count;
@@ -95,11 +97,8 @@ namespace CorruptedLandTales
                 }
                 else
                 {
-                    m_rooms[i].onRoomCleared += () =>
-                    {
-                        //onLevelCleared?.Invoke();
-                    };
                     m_rooms[i].SetRoomType("Boss");
+                    m_rooms[i].SetPrefabs(m_chestPrefab); 
                     m_rooms[i].SetPrefabs(m_bossPrefab);
                     m_rooms[i].AddEnemyCount(m_bossCountOnRoom);
                 }
