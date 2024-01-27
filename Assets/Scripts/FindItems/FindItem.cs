@@ -44,6 +44,10 @@ namespace CorruptedLandTales
                 {
                     onDisableItem?.Invoke();
                     m_flag = false;
+                    for (int i = 0; i < m_result.Length; i++)
+                    {
+                        m_result[i] = null;
+                    }
                 }
             }
         }

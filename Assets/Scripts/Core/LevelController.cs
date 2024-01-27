@@ -39,10 +39,10 @@ namespace CorruptedLandTales
             m_enemyCountOnRoom = m_enemyCountOnLevel / m_remainigEnemyRooms;
             m_bossRoomIndex = m_bossPossibleRoomIndexes[Random.Range(0, m_bossPossibleRoomIndexes.Length)] - 1;
             
-            /*if (m_player == null)
+            if (m_player == null)
             {
                 m_player = GameObject.Find("Player"); //TODO переделать 
-            }*/
+            }
             if (!m_characterController)
             {
                 m_characterController = m_player.GetComponent<CharacterController>();
