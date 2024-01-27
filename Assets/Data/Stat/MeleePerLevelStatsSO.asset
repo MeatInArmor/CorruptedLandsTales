@@ -15,6 +15,6 @@ MonoBehaviour:
   moveData:
     speed: 0.5
   healthData:
-    health: 50
+    health: 30
   atkData:
     dmg: 15
