@@ -51,24 +51,30 @@ namespace CorruptedLandTales
         //TODO переписать как будет правильнее
         public void UseItem()
         {
-            var data = m_useItemComponent.GetData<object>();
-            if (data != null)
+            if (m_useItemComponent!=null)
             {
-                if (data is float)
+                var data = m_useItemComponent.GetData<object>();
+                if (data != null)
                 {
-                    m_healthComponent.HealHealth((float)data);
+                    if (data is float)
+                    {
+                        m_healthComponent.HealHealth((float)data);
+                    }
+
+                    if (data is ScriptableObject)
+                    {
+                        m_attackManager.Initialize((WeaponSO)data);
+                    }
+
+                    if (data is GameObject)
+                    {
+
+                        //надо будет не спавнить а включать
+                        Instantiate((GameObject)data, m_useItem.transform.position, m_useItem.transform.rotation);
+                    }
+
+                    Destroy(m_useItem);
                 }
-                if (data is ScriptableObject)
-                {
-                    m_attackManager.Initialize((WeaponSO)data);
-                }
-                if (data is GameObject)
-                {
-                    
-                    //надо будет не спавнить а включать
-                    Instantiate((GameObject)data, m_useItem.transform.position, m_useItem.transform.rotation);
-                }
-                Destroy(m_useItem);
             }
         }
     }
