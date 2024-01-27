@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a410d5ff543c12b4597f4b1d3cff7a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mRandomPositions: {fileID: 601637454693074688}
+  m_RandomPositions: {fileID: 601637454693074688}
   m_doors:
   - {fileID: 8101603247540200951}
   - {fileID: 6015121246559791890}
@@ -511,6 +511,7 @@ MonoBehaviour:
   m_enemyCountOnLevel: 8
   m_bossCountOnRoom: 1
   m_healItemPrefab: {fileID: 3135513938243448224, guid: b0cbd48a7eb71614c9b331fa9dbd098e, type: 3}
+  m_additionalEnemyOnHealRoom: 0
   m_chestPrefab: {fileID: 681107008452733697, guid: a7659a5a0062c524984f874a00d9351b, type: 3}
 --- !u!1 &4096621644273229974
 GameObject:
@@ -605,7 +606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a410d5ff543c12b4597f4b1d3cff7a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mRandomPositions: {fileID: 7016898005985488535}
+  m_RandomPositions: {fileID: 7016898005985488535}
   m_doors:
   - {fileID: 6015121246559791890}
   - {fileID: 5257875298326563496}
@@ -674,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a410d5ff543c12b4597f4b1d3cff7a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mRandomPositions: {fileID: 6319007607965315394}
+  m_RandomPositions: {fileID: 6319007607965315394}
   m_doors:
   - {fileID: 5863180951207923568}
   - {fileID: 8101603247540200951}
@@ -837,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a410d5ff543c12b4597f4b1d3cff7a6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mRandomPositions: {fileID: 273385134990886417}
+  m_RandomPositions: {fileID: 273385134990886417}
   m_doors:
   - {fileID: 5863180951207923568}
   - {fileID: 5088001711104414854}

@@ -5,6 +5,7 @@ namespace CorruptedLandTales
 {
     public class GameController : MonoBehaviour
     {
+        [SerializeField] private GameObject m_player;
         [SerializeField] private GameObject m_firstLevel;
         [SerializeField] private GameObject m_levelPrefab;
         [SerializeField] private List<ExitDoorComponent> m_exitDoors;
@@ -33,6 +34,8 @@ namespace CorruptedLandTales
             m_activeLevel = null;
             m_activeLevel = Instantiate(m_levelPrefab, activeLevelPos.position + new Vector3(0f,50f,0f),
                 activeLevelPos.rotation);
+            var lc = activeLevelController;
+            lc.SetPlayer(m_player);
             foreach (var door in m_exitDoors)
             {
                 door.onPlayerExitLocation -= OnPlayerExitLocation;

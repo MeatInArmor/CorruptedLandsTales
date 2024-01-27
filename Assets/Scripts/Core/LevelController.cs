@@ -14,6 +14,7 @@ namespace CorruptedLandTales
         [SerializeField] private int m_enemyCountOnLevel = 28;
         [SerializeField] private int m_bossCountOnRoom = 1;
         [SerializeField] private GameObject m_healItemPrefab;
+        [SerializeField] private int m_additionalEnemyOnHealRoom;
         [SerializeField] private GameObject m_chestPrefab;
         
         private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
@@ -24,6 +25,7 @@ namespace CorruptedLandTales
         private int m_remainigEnemyRooms;
         private int m_healRoomIndex;
         private CharacterController m_characterController;
+        private List<GameObject> m_prefabList = new List<GameObject>(1);
 
         public List<RoomComponent> rooms => m_rooms;
         
@@ -37,10 +39,10 @@ namespace CorruptedLandTales
             m_enemyCountOnRoom = m_enemyCountOnLevel / m_remainigEnemyRooms;
             m_bossRoomIndex = m_bossPossibleRoomIndexes[Random.Range(0, m_bossPossibleRoomIndexes.Length)] - 1;
             
-            if (m_player == null)
+            /*if (m_player == null)
             {
-                m_player = GameObject.Find("Player");
-            }
+                m_player = GameObject.Find("Player"); //TODO переделать 
+            }*/
             if (!m_characterController)
             {
                 m_characterController = m_player.GetComponent<CharacterController>();
@@ -56,55 +58,72 @@ namespace CorruptedLandTales
                 m_healRoomIndex = Random.Range(0, m_roomCount);
             } while (m_healRoomIndex == m_bossRoomIndex || m_healRoomIndex == m_playerRoomIndex);
             
+            m_prefabList.Clear();
             for (int i = 0; i < m_rooms.Count; i++)
             {
-                m_rooms[i].onRoomCleared += () =>
+                SubscribeRoom(rooms[i]);
+                if (i == m_playerRoomIndex)
                 {
-                    m_remainigEnemyRooms--;
-                    if (m_remainigEnemyRooms <= 0)
-                    {
-                        m_rooms[m_bossRoomIndex].OpenBossDoors();
-                    }
-                };
-                
-                if (i != m_bossRoomIndex)
+                    //TODO переделать потом под рут моушен
+                    m_characterController.enabled = false;
+                    m_player.transform.SetPositionAndRotation(m_rooms[m_playerRoomIndex].transform.position 
+                                                              + m_playerSpawnOffset, m_player.transform.rotation);
+                    m_characterController.enabled = true;
+                    m_prefabList.Add(m_player);
+                    SetRoom(rooms[i], "Player", m_prefabList, null, 0);
+                    m_prefabList.Clear();
+                }
+                else
                 {
-                    if (i == m_playerRoomIndex)
+                    if (i == m_bossRoomIndex)
                     {
-                        m_characterController.enabled = false;
-                        m_player.transform.SetPositionAndRotation(m_rooms[m_playerRoomIndex].transform.position 
-                                                                  + m_playerSpawnOffset, m_player.transform.rotation);
-                        m_characterController.enabled = true;
-                        m_rooms[i].SetRoomType("Player");
-                        m_rooms[i].SetPrefabs(m_player);
+                        m_prefabList.Add(m_bossPrefab);
+                        SetRoom(rooms[i], "Boss", m_prefabList, m_chestPrefab, m_bossCountOnRoom);
+                        m_prefabList.Clear();
                     }
                     else
                     {
                         if (i == m_healRoomIndex)
                         {
-                            m_rooms[i].SetRoomType("Heal");
-                            m_rooms[i].AddEnemyCount(2); //дополнительное количество врагов в комнате с хилом
-                            m_rooms[i].SetPrefabs(m_healItemPrefab);
+                            SetRoom(rooms[i], "Heal", m_enemyPrefabs, m_healItemPrefab, 
+                                m_enemyCountOnRoom + m_additionalEnemyOnHealRoom);
                         }
                         else
                         {
-                            m_rooms[i].SetRoomType("Enemy");
+                            SetRoom(rooms[i], "Enemy", m_enemyPrefabs, null, m_enemyCountOnRoom);
                         }
-                        for (int j = 0; j < m_enemyPrefabs.Count; j++)
-                        {
-                            m_rooms[i].SetPrefabs(m_enemyPrefabs[j]);
-                        }
-                        m_rooms[i].AddEnemyCount(m_enemyCountOnRoom);
                     }
                 }
-                else
-                {
-                    m_rooms[i].SetRoomType("Boss");
-                    m_rooms[i].SetPrefabs(m_chestPrefab); 
-                    m_rooms[i].SetPrefabs(m_bossPrefab);
-                    m_rooms[i].AddEnemyCount(m_bossCountOnRoom);
-                }
             }
+        }
+
+        private void SetRoom(RoomComponent room, string roomtype, List<GameObject> prefabs, 
+            GameObject specialPrefab, int enemyCount) 
+        {
+            room.SetRoomType(roomtype);
+            room.SetPrefabs(specialPrefab);
+            foreach (var prefab in prefabs)
+            {
+                room.SetPrefabs(prefab);
+            }
+            room.SetEnemyCount(enemyCount);
+        }
+
+        private void SubscribeRoom(RoomComponent room)
+        {
+            room.onRoomCleared += () =>
+            {
+                m_remainigEnemyRooms--;
+                if (m_remainigEnemyRooms <= 0)
+                {
+                    m_rooms[m_bossRoomIndex].OpenBossDoors();
+                }
+            };
+        }
+
+        public void SetPlayer(GameObject player)
+        {
+            m_player = player;
         }
     }
 }

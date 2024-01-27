@@ -10,7 +10,7 @@ namespace CorruptedLandTales
         [SerializeField] private GameController m_gameController;
         [SerializeField] private LevelController m_levelController;
 
-        private List<RoomComponent> m_rooms;
+        private List<RoomComponent> m_rooms = new List<RoomComponent>(10);
         private int m_enemyCount = 0;
         
         private void Start()
@@ -43,7 +43,7 @@ namespace CorruptedLandTales
             foreach (var room in m_rooms)
             {
                 var enemies = room.enemies;
-                if(enemies!=null)
+                if (enemies!=null)
                 {
                     foreach (var enemy in enemies)
                     {
