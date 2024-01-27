@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -19,14 +20,21 @@ namespace CorruptedLandTales
 
         private void Start()
         {
-            m_gameController.onLevelCleared += () =>
+            m_gameController.onLevelCleared += IncreaseStats;
+        }
+        
+        private void OnDisable()
+        {
+            m_gameController.onLevelCleared -= IncreaseStats;
+        }
+        
+        private void IncreaseStats()
+        {
+            for (int i = 0; i <= m_timeController.GetLevel(); i++) 
             {
-                for (int i = 0; i <= m_timeController.GetLevel(); i++)
-                {
                     m_meleeData.IncreaseStats();
                     m_rangeData.IncreaseStats();
-                }
-            };
+            }
         }
     }
 }

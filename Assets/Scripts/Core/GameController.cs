@@ -27,19 +27,24 @@ namespace CorruptedLandTales
         private void OnPlayerExitLocation()
         {
             Destroy(m_activeLevel);
+            RespawnLevel();
+            var lc = activeLevelController;
+            lc.SetPlayer(m_player);
+            UnsubscribeDoors();
+            SubscribeDoors();
+        }
+
+        private void RespawnLevel()
+        {
             Transform activeLevelPos = m_activeLevel.transform;
             m_activeLevel = null;
             m_activeLevel = Instantiate(m_levelPrefab, activeLevelPos.position + new Vector3(0f,50f,0f),
                 activeLevelPos.rotation);
-            var lc = activeLevelController;
-            lc.SetPlayer(m_player);
-            UnsubscribeDoors();
-            m_activeLevel.GetComponentsInChildren(true, m_exitDoors);
-            SubscribeDoors();
         }
 
         private void SubscribeDoors()
         {
+            m_activeLevel.GetComponentsInChildren(true, m_exitDoors);
             foreach (var door in m_exitDoors)
             {
                 door.onPlayerExitLocation += OnPlayerExitLocation;

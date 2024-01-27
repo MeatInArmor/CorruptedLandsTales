@@ -109,6 +109,7 @@ namespace CorruptedLandTales
             room.SetEnemyCount(enemyCount);
         }
 
+        //TODO переписать
         private void SubscribeRoom(RoomComponent room)
         {
             room.onRoomCleared += () =>
