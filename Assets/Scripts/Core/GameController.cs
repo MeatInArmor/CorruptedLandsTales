@@ -21,10 +21,7 @@ namespace CorruptedLandTales
         private void Awake()
         {
             m_activeLevel = m_firstLevel;
-            foreach (var door in m_exitDoors)
-            {
-                door.onPlayerExitLocation += OnPlayerExitLocation;
-            }     
+            SubscribeDoors();
         }
 
         private void OnPlayerExitLocation()
@@ -36,18 +33,27 @@ namespace CorruptedLandTales
                 activeLevelPos.rotation);
             var lc = activeLevelController;
             lc.SetPlayer(m_player);
-            foreach (var door in m_exitDoors)
-            {
-                door.onPlayerExitLocation -= OnPlayerExitLocation;
-            }
-            m_exitDoors.Clear();
+            UnsubscribeDoors();
             m_activeLevel.GetComponentsInChildren(true, m_exitDoors);
-            
+            SubscribeDoors();
+        }
+
+        private void SubscribeDoors()
+        {
             foreach (var door in m_exitDoors)
             {
                 door.onPlayerExitLocation += OnPlayerExitLocation;
             } 
             onLevelCleared?.Invoke();
+        }
+
+        private void UnsubscribeDoors()
+        {
+            foreach (var door in m_exitDoors)
+            {
+                door.onPlayerExitLocation -= OnPlayerExitLocation;
+            }
+            m_exitDoors.Clear();
         }
     }
 }

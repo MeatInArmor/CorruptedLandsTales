@@ -18,9 +18,24 @@ namespace CorruptedLandTales
         
         public IMoveComponent moveComponent => m_moveComponent;
         
+        private void Awake()
+        {
+            if (m_attackManager == null)
+            {
+                m_attackManager = GetComponent<AttackManager>();
+            }
+            
+            if (m_healthComponent == null)
+            {
+                m_healthComponent = GetComponent<HealthComponent>();
+            }
+
+            m_moveComponent = GetComponent<IMoveComponent>();
+        }
+        
         public void Initialize(CharacterSO data)
         {
-            if (attackManager) //пока такой костыль
+            if (attackManager)
             {
                 if(data.weapon)
                 {
@@ -45,21 +60,6 @@ namespace CorruptedLandTales
             {
                m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana);
             }
-        }
-
-        private void Awake()
-        {
-            if (m_attackManager == null)
-            {
-                m_attackManager = GetComponent<AttackManager>();
-            }
-            
-            if (m_healthComponent == null)
-            {
-                m_healthComponent = GetComponent<HealthComponent>();
-            }
-
-            m_moveComponent = GetComponent<IMoveComponent>();
         }
     }
 }

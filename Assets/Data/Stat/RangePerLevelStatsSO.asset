@@ -9,9 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e5deda6ec8a009449b92e53ff0e8195, type: 3}
-  m_Name: RangeWeaponSO
+  m_Script: {fileID: 11500000, guid: 37d6aff0076e8224a9d471852ec58fd1, type: 3}
+  m_Name: RangePerLevelStatsSO
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 8352356418444366943, guid: 58c779f07db3c9f4c8f21fb8763500bf, type: 3}
-  m_damage: 100
-  m_delay: 1
+  moveData:
+    speed: 0.2
+  healthData:
+    health: 20
+  atkData:
+    dmg: 30

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SwordWeaponSO
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 2133098551173313751, guid: dd36e71b7ecfcce47909aadc17ec66fc, type: 3}
-  m_damage: 15
+  m_damage: 210
   m_attackAngle: 120
   m_attackRange: 4
+  m_manaCost: 15
   m_layerMask:
     serializedVersion: 2
     m_Bits: 64

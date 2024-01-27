@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2efcae3029400284c94f0c10abd76d08, type: 3}
-  m_Name: EnemyMeleeSO
+  m_Name: EnemyRangePresetSO
   m_EditorClassIdentifier: 
   moveData:
-    speed: 7
+    speed: 8
     sprintSpeed: 10
   healthData:
-    health: 200
-    maxHealth: 200
-  weapon: {fileID: 11400000, guid: f402540f7e40e0c4496dba42407b5699, type: 2}
+    health: 100
+    maxHealth: 100
+  weapon: {fileID: 11400000, guid: 50c6aa3056e8c1f45bd0d0882e6da3ca, type: 2}
   manaData:
     manaPool: 0
     initMana: 0
   atkData:
-    damage: 20
-  m_stats: {fileID: 11400000, guid: edff87abed60c414889ceab2e2dd22bf, type: 2}
+    damage: 10
+  m_stats: {fileID: 11400000, guid: 1a81dbd1961c5b941bddc05b1f0ffc4d, type: 2}
