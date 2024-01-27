@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -14,6 +10,12 @@ namespace CorruptedLandTales
         [SerializeField] private List<ExitDoorComponent> m_exitDoors;
         
         private GameObject m_activeLevel;
+        private int m_levelCount = 1;
+
+        public int levelCount => m_levelCount;
+
+        public event System.Action onLevelCleared;
+        public LevelController activeLevelController => m_activeLevel.GetComponentInChildren<LevelController>();
         
         private void Awake()
         {
@@ -42,6 +44,7 @@ namespace CorruptedLandTales
             {
                 door.onPlayerExitLocation += OnPlayerExitLocation;
             } 
+            onLevelCleared?.Invoke();
         }
     }
 }

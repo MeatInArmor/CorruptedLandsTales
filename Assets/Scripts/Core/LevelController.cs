@@ -24,6 +24,8 @@ namespace CorruptedLandTales
         private int m_remainigEnemyRooms;
         private int m_healRoomIndex;
         private CharacterController m_characterController;
+
+        public List<RoomComponent> rooms => m_rooms;
         
         //TODO надо разбить потом на функции и подфункции всю логику
         //и отдельно как то вынести "особые префабы" типа хила и сундуков

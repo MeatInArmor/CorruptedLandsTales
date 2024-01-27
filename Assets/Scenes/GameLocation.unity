@@ -322,6 +322,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 459ea041f65dd17489917eb08b246481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &298899641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298899643}
+  - component: {fileID: 298899642}
+  m_Layer: 0
+  m_Name: RewardCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &298899642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298899641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ceb83261e7dc8842893a484d4c62c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_gameController: {fileID: 1830921841}
+  m_levelController: {fileID: 1099922425}
+--- !u!4 &298899643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298899641}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36873773, y: 27.756008, z: -41.035297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &453497034
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +539,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2434871bc4e05ee49a57711fe10bef64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1099922425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6322321852008576553, guid: 6afc862040cd32243ad7ce27f9d31865, type: 3}
+  m_PrefabInstance: {fileID: 5158885549433086121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce0b801832984e41b400fbcfd0f6a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1192474796
@@ -1775,6 +1832,7 @@ SceneRoots:
   - {fileID: 7361355911437775130}
   - {fileID: 5158885549433086121}
   - {fileID: 1830921842}
+  - {fileID: 298899643}
   - {fileID: 209443809}
   - {fileID: 3619299838995122507}
   - {fileID: 1316860818}

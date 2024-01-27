@@ -24,10 +24,6 @@ namespace CorruptedLandTales
 		private InputAction m_useWeaponSkill;
 		private CharMoveComponent m_charMoveController;
 		
-		//Dash
-		//private InputAction m_useDash;
-		
-		
 		private void Awake()
 		{
 			m_playerMap = m_inputActionAsset.FindActionMap("Player");
@@ -38,20 +34,11 @@ namespace CorruptedLandTales
 			m_useWeaponSkill = m_playerMap.FindAction("WeaponSkill");
 			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
-			//Dash
-            //m_useDash = m_playerMap.FindAction("Dash");
-		}
-
-		private void Start()
-		{
-			//m_character.GetComponent<CharacterController>().enabled = true;
 		}
 
 		private void OnEnable()
 		{
 			m_playerMap.Enable();
-            //Dash
-            //m_useDash.performed += OnUseDash;
             m_AttackAction.performed += OnAttackInput;
 			m_pickUp.performed += OnPickUpInput;
 			m_useSpecial.performed += OnUseSpecial;
@@ -61,8 +48,6 @@ namespace CorruptedLandTales
 		private void OnDisable()
 		{
 			m_playerMap.Disable();
-            //Dash
-            //m_useDash.performed -= OnUseDash;
             m_AttackAction.performed -= OnAttackInput;
 			m_pickUp.performed -= OnPickUpInput;
 			m_useSpecial.performed -= OnUseSpecial;
@@ -88,11 +73,6 @@ namespace CorruptedLandTales
 		{
 			m_findItem.UseItem();
 		}
-        //Dash
-        /*private void OnUseDash(InputAction.CallbackContext context)
-		{
-			m_charMoveController.Dash();
-		}*/
 
 		private void Update()
 		{

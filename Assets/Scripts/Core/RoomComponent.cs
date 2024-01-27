@@ -21,7 +21,8 @@ namespace CorruptedLandTales
         private int m_remainigEnemy;
         private int m_currentEnemyCount;
         private string m_roomType;
-        
+
+        public List<GameObject> enemies => m_enemies; 
         public event System.Action onRoomCleared;
 
         private RoomStatus m_state;
@@ -35,7 +36,7 @@ namespace CorruptedLandTales
         //TODO можно отрефакторить в нормальный StateMachine
         private void Start()
         {
-            switch (m_roomType) // при необходимости можно будет добавить что то в каждый тип
+            switch (m_roomType)
             {
                 case "Player":
                     /*m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
@@ -147,7 +148,7 @@ namespace CorruptedLandTales
                         door.Deactivate();
                     }
                     m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
-                    m_doors.Clear(); //мб можно убрать
+                    m_doors.Clear();
                     onRoomCleared?.Invoke();
                     gameObject.SetActive(false);
                     

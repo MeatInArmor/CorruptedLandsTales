@@ -68,8 +68,6 @@ namespace CorruptedLandTales
 
                     if (data is GameObject)
                     {
-
-                        //надо будет не спавнить а включать
                         Instantiate((GameObject)data, m_useItem.transform.position, m_useItem.transform.rotation);
                     }
 
