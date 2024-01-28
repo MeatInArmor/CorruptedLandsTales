@@ -34,7 +34,8 @@ namespace CorruptedLandTales
             Deactivating
         }
         //TODO можно отрефакторить в нормальный StateMachine
-        public void Start()
+        
+        public void SpawnEnemy()
         {
             switch (m_roomType)
             {
@@ -119,7 +120,7 @@ namespace CorruptedLandTales
                 index += m_currentEnemyCount;
             }
         }
-
+        
         private void Update()
         {
             switch (m_state)

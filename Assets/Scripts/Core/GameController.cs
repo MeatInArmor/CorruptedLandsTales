@@ -12,15 +12,17 @@ namespace CorruptedLandTales
         
         private GameObject m_activeLevel;
         private int m_levelCount = 1;
-
+        private LevelController m_activeLevelController;
+        
         public int levelCount => m_levelCount;
+        public LevelController activeLevelController => m_activeLevelController;
 
         public event System.Action onLevelCleared;
-        public LevelController activeLevelController => m_activeLevel.GetComponentInChildren<LevelController>();
         
         private void Awake()
         {
             m_activeLevel = m_firstLevel;
+            GetNewLevelController();
             SubscribeDoors();
         }
 
@@ -28,8 +30,7 @@ namespace CorruptedLandTales
         {
             Destroy(m_activeLevel);
             RespawnLevel();
-            /*var lc = activeLevelController;
-            lc.SetPlayer(m_player);*/
+            GetNewLevelController();
             UnsubscribeDoors();
             SubscribeDoors();
         }
@@ -59,6 +60,13 @@ namespace CorruptedLandTales
                 door.onPlayerExitLocation -= OnPlayerExitLocation;
             }
             m_exitDoors.Clear();
+        }
+
+        private void GetNewLevelController()
+        {
+            m_activeLevelController = m_activeLevel.GetComponentInChildren<LevelController>();
+            m_activeLevelController.SetPlayer(m_player);
+            m_activeLevelController.SetLevelController();
         }
     }
 }

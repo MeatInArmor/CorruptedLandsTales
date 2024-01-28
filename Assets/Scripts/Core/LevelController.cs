@@ -32,37 +32,13 @@ namespace CorruptedLandTales
         //TODO надо разбить потом на функции и подфункции всю логику
         //и отдельно как то вынести "особые префабы" типа хила и сундуков
         
-        private void Awake()
+        public void SetLevelController()
         {
-            m_roomCount = m_rooms.Count;
-            m_remainigEnemyRooms = m_roomCount - 2; //комната для босса и комната где спавнится игрок
-            m_enemyCountOnRoom = m_enemyCountOnLevel / m_remainigEnemyRooms;
-            m_bossRoomIndex = m_bossPossibleRoomIndexes[Random.Range(0, m_bossPossibleRoomIndexes.Length)] - 1;
-            
-            //TODO переделать 
-            if (m_player == null)
-            {
-                m_player = GameObject.Find("Player"); 
-            }
-            if (!m_characterController)
-            {
-                m_characterController = m_player.GetComponent<CharacterController>();
-            }
-
-            do
-            {
-                m_playerRoomIndex = Random.Range(0, m_roomCount);
-            } while (m_playerRoomIndex == m_bossRoomIndex);
-
-            do
-            {
-                m_healRoomIndex = Random.Range(0, m_roomCount);
-            } while (m_healRoomIndex == m_bossRoomIndex || m_healRoomIndex == m_playerRoomIndex);
-            
+            RandomIndexes();
             m_prefabList.Clear();
             for (int i = 0; i < m_rooms.Count; i++)
             {
-                SubscribeRoom(rooms[i]);
+                SubscribeRoom(m_rooms[i]);
                 if (i == m_playerRoomIndex)
                 {
                     //TODO переделать потом под рут моушен
@@ -71,7 +47,7 @@ namespace CorruptedLandTales
                                                               + m_playerSpawnOffset, m_player.transform.rotation);
                     m_characterController.enabled = true;
                     m_prefabList.Add(m_player);
-                    SetRoom(rooms[i], "Player", m_prefabList, null, 0);
+                    SetRoom(m_rooms[i], "Player", m_prefabList, null, 0);
                     m_prefabList.Clear();
                 }
                 else
@@ -79,23 +55,44 @@ namespace CorruptedLandTales
                     if (i == m_bossRoomIndex)
                     {
                         m_prefabList.Add(m_bossPrefab);
-                        SetRoom(rooms[i], "Boss", m_prefabList, m_chestPrefab, m_bossCountOnRoom);
+                        SetRoom(m_rooms[i], "Boss", m_prefabList, m_chestPrefab, m_bossCountOnRoom);
                         m_prefabList.Clear();
                     }
                     else
                     {
                         if (i == m_healRoomIndex)
                         {
-                            SetRoom(rooms[i], "Heal", m_enemyPrefabs, m_healItemPrefab, 
+                            SetRoom(m_rooms[i], "Heal", m_enemyPrefabs, m_healItemPrefab, 
                                 m_enemyCountOnRoom + m_additionalEnemyOnHealRoom);
                         }
                         else
                         {
-                            SetRoom(rooms[i], "Enemy", m_enemyPrefabs, null, m_enemyCountOnRoom);
+                            SetRoom(m_rooms[i], "Enemy", m_enemyPrefabs, null, m_enemyCountOnRoom);
                         }
                     }
                 }
+                m_rooms[i].SpawnEnemy();
             }
+        }
+
+        private void RandomIndexes()
+        {
+            m_roomCount = m_rooms.Count;
+            m_remainigEnemyRooms = m_roomCount - 2; //комната для босса и комната где спавнится игрок
+            m_enemyCountOnRoom = m_enemyCountOnLevel / m_remainigEnemyRooms;
+            m_bossRoomIndex = m_bossPossibleRoomIndexes[Random.Range(0, m_bossPossibleRoomIndexes.Length)] - 1;
+            if (!m_characterController)
+            {
+                m_characterController = m_player.GetComponent<CharacterController>();
+            }
+            do
+            {
+                m_playerRoomIndex = Random.Range(0, m_roomCount);
+            } while (m_playerRoomIndex == m_bossRoomIndex);
+            do
+            {
+                m_healRoomIndex = Random.Range(0, m_roomCount);
+            } while (m_healRoomIndex == m_bossRoomIndex || m_healRoomIndex == m_playerRoomIndex);
         }
 
         private void SetRoom(RoomComponent room, string roomtype, List<GameObject> prefabs, 
@@ -123,9 +120,9 @@ namespace CorruptedLandTales
             };
         }
 
-        /*public void SetPlayer(GameObject player)
+        public void SetPlayer(GameObject player)
         {
             m_player = player;
-        }*/
+        }
     }
 }
