@@ -1170,6 +1170,10 @@ PrefabInstance:
       propertyPath: m_timeController
       value: 
       objectReference: {fileID: 71243116}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_rangeProjectile
+      value: 
+      objectReference: {fileID: -970571510421341990, guid: 6140c94da7e70e94883123b2adb53dd7, type: 3}
     - target: {fileID: 8578256703099070303, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.4000313
@@ -1629,6 +1633,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 930502608288238426, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
+      propertyPath: m_fillMaxAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 1449008938074601657, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1967,7 +1975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616952980201909679, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_manaCost
-      value: 15
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8616952980201909679, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_manaCompnonent

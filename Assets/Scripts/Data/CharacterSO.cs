@@ -20,7 +20,7 @@ namespace CorruptedLandTales
                 moveData.speed += m_stats.moveData.speed;
                 healthData.maxHealth += m_stats.healthData.health;
                 healthData.health += m_stats.healthData.health;
-                weapon.IncreaseDamage(atkData.damage); 
+                weapon.IncreaseDamage(m_stats.atkData.dmg); 
             }
         }
 

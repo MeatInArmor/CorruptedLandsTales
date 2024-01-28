@@ -123,9 +123,9 @@ namespace CorruptedLandTales
             };
         }
 
-        public void SetPlayer(GameObject player)
+        /*public void SetPlayer(GameObject player)
         {
             m_player = player;
-        }
+        }*/
     }
 }

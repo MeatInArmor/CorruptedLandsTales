@@ -10,12 +10,14 @@ namespace CorruptedLandTales
         [SerializeField] private CharacterSO m_meleePreset;
         [SerializeField] private CharacterSO m_rangeData;
         [SerializeField] private CharacterSO m_rangePreset;
+        [SerializeField] private ProjectileComponent m_rangeProjectile; //TODO костыль
         [SerializeField] private GameController m_gameController;
         
         private void Awake()
         {
             m_meleeData.RefreshStats(m_meleePreset);
             m_rangeData.RefreshStats(m_rangePreset);
+            m_rangeProjectile.RefreshDamage(m_rangePreset.atkData.damage);
         }
 
         private void Start()
@@ -30,10 +32,11 @@ namespace CorruptedLandTales
         
         private void IncreaseStats()
         {
-            for (int i = 0; i <= m_timeController.GetLevel(); i++) 
+            for (int i = 0; i <= m_timeController.GetMobLevel(); i++) 
             {
                     m_meleeData.IncreaseStats();
                     m_rangeData.IncreaseStats();
+                    m_rangeProjectile.IncreaseDamage(m_rangeData.atkData.damage);
             }
         }
     }

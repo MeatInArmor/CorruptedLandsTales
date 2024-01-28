@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RangeWeaponSO
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 8352356418444366943, guid: 58c779f07db3c9f4c8f21fb8763500bf, type: 3}
-  m_damage: 100
+  m_damage: 50
   m_delay: 1

@@ -15,7 +15,7 @@ namespace CorruptedLandTales
             }
         }
 
-        public int GetLevel()
+        public int GetMobLevel()
         {
             return m_currentLevel;
         }

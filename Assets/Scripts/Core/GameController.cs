@@ -28,8 +28,8 @@ namespace CorruptedLandTales
         {
             Destroy(m_activeLevel);
             RespawnLevel();
-            var lc = activeLevelController;
-            lc.SetPlayer(m_player);
+            /*var lc = activeLevelController;
+            lc.SetPlayer(m_player);*/
             UnsubscribeDoors();
             SubscribeDoors();
         }

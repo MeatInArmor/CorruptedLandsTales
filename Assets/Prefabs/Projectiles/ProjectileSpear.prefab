@@ -106,6 +106,7 @@ MonoBehaviour:
   m_force: 27
   m_lifeTime: 1.5
   m_damage: 50
+  m_defaultDamage: 0
   m_group: 0
 --- !u!54 &7471758433239499433
 Rigidbody:

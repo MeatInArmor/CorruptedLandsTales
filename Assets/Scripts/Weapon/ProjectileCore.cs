@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CorruptedLandTales
 {
@@ -19,6 +20,16 @@ namespace CorruptedLandTales
             {
                 damageable.TakeDamage(m_damage);
             }
+        }
+
+        public void IncreaseDamage(float damage)
+        {
+            m_damage += damage;
+        }
+
+        public void RefreshDamage(float damage)
+        {
+            m_damage = damage;
         }
     }
 }
