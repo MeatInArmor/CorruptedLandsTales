@@ -24,7 +24,8 @@ namespace CorruptedLandTales
         {
             m_levelController = m_gameController.activeLevelController;
             m_rooms = m_levelController.rooms;
-            StartCoroutine(WaitSpawnCoroutine(1f)); //ждём пока заспвнятся враги
+            //StartCoroutine(WaitSpawnCoroutine(1f)); //ждём пока заспвнятся враги
+            SubscribeEnemies(m_rooms);
         }
         
         private void OnDisable()
@@ -32,11 +33,11 @@ namespace CorruptedLandTales
             m_gameController.onLevelCleared -= OnNextLevel;
         }
 
-        private IEnumerator WaitSpawnCoroutine(float time)
+        /*private IEnumerator WaitSpawnCoroutine(float time)
         {
             yield return new WaitForSeconds(time);
             SubscribeEnemies(m_rooms);
-        }
+        }*/
         
         private void SubscribeEnemies(List<RoomComponent> rooms)
         {

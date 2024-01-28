@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -29,16 +30,13 @@ namespace CorruptedLandTales
 
         public List<RoomComponent> rooms => m_rooms;
         
-        //TODO надо разбить потом на функции и подфункции всю логику
-        //и отдельно как то вынести "особые префабы" типа хила и сундуков
-        
         public void SetLevelController()
         {
             RandomIndexes();
             m_prefabList.Clear();
             for (int i = 0; i < m_rooms.Count; i++)
             {
-                SubscribeRoom(m_rooms[i]);
+                m_rooms[i].onRoomCleared += DecreaseActiveRoom;
                 if (i == m_playerRoomIndex)
                 {
                     //TODO переделать потом под рут моушен
@@ -107,17 +105,21 @@ namespace CorruptedLandTales
             room.SetEnemyCount(enemyCount);
         }
 
-        //TODO переписать
-        private void SubscribeRoom(RoomComponent room)
+        private void OnDisable()
         {
-            room.onRoomCleared += () =>
+            foreach (var room in m_rooms)
             {
-                m_remainigEnemyRooms--;
-                if (m_remainigEnemyRooms <= 0)
-                {
-                    m_rooms[m_bossRoomIndex].OpenBossDoors();
-                }
-            };
+                room.onRoomCleared += DecreaseActiveRoom;
+            }
+        }
+
+        private void DecreaseActiveRoom()
+        {
+            m_remainigEnemyRooms--;
+            if (m_remainigEnemyRooms <= 0)
+            {
+                m_rooms[m_bossRoomIndex].OpenBossDoors();
+            }
         }
 
         public void SetPlayer(GameObject player)
