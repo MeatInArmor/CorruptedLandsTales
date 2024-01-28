@@ -1909,6 +1909,10 @@ PrefabInstance:
       propertyPath: m_pickUpbtn
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2536953490566234966, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
+      propertyPath: m_rotationSmoothTime
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 3465083201844976310, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_data
       value: 
