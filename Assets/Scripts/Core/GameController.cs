@@ -20,7 +20,7 @@ namespace CorruptedLandTales
 
         public event System.Action onLevelCleared;
         
-        private void Awake()
+        private void Start()
         {
             m_activeLevel = m_firstLevel;
             StartNewLevelController();
