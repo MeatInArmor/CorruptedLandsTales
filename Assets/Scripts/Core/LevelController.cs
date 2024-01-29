@@ -109,7 +109,7 @@ namespace CorruptedLandTales
         {
             foreach (var room in m_rooms)
             {
-                room.onRoomCleared += DecreaseActiveRoom;
+                room.onRoomCleared -= DecreaseActiveRoom;
             }
         }
 
@@ -125,6 +125,11 @@ namespace CorruptedLandTales
         public void SetPlayer(GameObject player)
         {
             m_player = player;
+        }
+
+        public void IncreaseEnemyCount(int count)
+        {
+            m_enemyCountOnLevel += count;
         }
     }
 }

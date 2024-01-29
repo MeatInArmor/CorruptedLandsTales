@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -12,6 +13,7 @@ namespace CorruptedLandTales
         [SerializeField] private CharacterSO m_rangePreset;
         [SerializeField] private ProjectileComponent m_rangeProjectile; //TODO костыль
         [SerializeField] private GameController m_gameController;
+        [SerializeField] private int m_newEnemyPerTime;
         
         private void Awake()
         {
@@ -32,11 +34,15 @@ namespace CorruptedLandTales
         
         private void IncreaseStats()
         {
-            for (int i = 0; i <= m_timeController.GetMobLevel(); i++) 
+            for (int i = 0; i < m_timeController.GetMobLevel(); i++) 
             {
                     m_meleeData.IncreaseStats();
                     m_rangeData.IncreaseStats();
                     m_rangeProjectile.IncreaseDamage(m_rangeData.atkData.damage);
+            }
+            for (int i = 0; i < m_timeController.GetNewCount(); i++) 
+            {
+                m_gameController.activeLevelController.IncreaseEnemyCount(m_newEnemyPerTime);
             }
         }
     }
