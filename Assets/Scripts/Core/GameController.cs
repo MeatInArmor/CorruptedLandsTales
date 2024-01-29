@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +23,7 @@ namespace CorruptedLandTales
         private void Awake()
         {
             m_activeLevel = m_firstLevel;
-            GetNewLevelController();
+            StartNewLevelController();
             SubscribeDoors();
         }
 
@@ -30,7 +31,7 @@ namespace CorruptedLandTales
         {
             Destroy(m_activeLevel);
             RespawnLevel();
-            GetNewLevelController();
+            StartNewLevelController();
             UnsubscribeDoors();
             SubscribeDoors();
         }
@@ -62,7 +63,7 @@ namespace CorruptedLandTales
             m_exitDoors.Clear();
         }
 
-        private void GetNewLevelController()
+        private void StartNewLevelController()
         {
             m_activeLevelController = m_activeLevel.GetComponentInChildren<LevelController>();
             m_activeLevelController.SetPlayer(m_player);

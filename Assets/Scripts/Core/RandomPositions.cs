@@ -9,23 +9,19 @@ namespace CorruptedLandTales
         [SerializeField] private GameObject endCoordinate;
         [SerializeField] private int partitionCount;
         
-        private List<Vector3> m_points = new List<Vector3>();
+        private List<Vector3> m_points = new ();
         private void Awake()
         {
             Vector3 start = startCoordinate.transform.position;
             Vector3 end = endCoordinate.transform.position;
-            m_points = BuildCoordinateGrid(start, end, partitionCount);
+            m_points = BuildCoordinateGrid(start, end, partitionCount); 
         }
         
         private List<Vector3> BuildCoordinateGrid(Vector3 startCoordinate, Vector3 endCoordinate, int partitionCount)
         {
             List<Vector3> coordinateGrid = new List<Vector3>();
-
-            
             float stepX = (endCoordinate.x - startCoordinate.x) / partitionCount;
             float stepZ = (endCoordinate.z - startCoordinate.z) / partitionCount;
-
-            
             for (int i = 0; i <= partitionCount; i++)
             {
                 for (int j = 0; j <= partitionCount; j++)
@@ -40,11 +36,10 @@ namespace CorruptedLandTales
                     coordinateGrid.Add(coordinate);
                 }
             }
-
             return coordinateGrid;
         }
         
-        private void OnDrawGizmos()
+        /*private void OnDrawGizmos()
         {
             if (m_points!=null)
             {
@@ -54,7 +49,7 @@ namespace CorruptedLandTales
                     Gizmos.DrawCube(new Vector3(m_points[i].x, m_points[i].y, m_points[i].z), new Vector3(1, 1, 1));
                 }
             }
-        }
+        }*/
 
         public List<Vector3> GetRandomRoomPoints() 
         {

@@ -88,7 +88,6 @@ namespace CorruptedLandTales
                     m_state = RoomStatus.Activating;
                 };
             }
-            
             m_spawnPoints = m_RandomPositions.GetRandomRoomPoints();
             m_remainigEnemy = m_enemyCount;
             int index = 0;
