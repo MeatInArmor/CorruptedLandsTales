@@ -1,25 +1,26 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CorruptedLandTales
 {
     public class InteractionBtn : MonoBehaviour
     {
-        [SerializeField] private FindItem m_findItem;
+        [SerializeField] private ItemFinder m_ItemFinder;
         [SerializeField] private Image m_parentImage;
         [SerializeField] private Image m_childImage;
 
         private void OnEnable()
         {
-            m_findItem.onFindItem += TurnOn;
-            m_findItem.onDisableItem += TurnOff;
+            m_ItemFinder.onFindItem += TurnOn;
+            m_ItemFinder.onMissItem += TurnOff;
         }
         
         private void OnDisable()
         {
-            m_findItem.onFindItem -= TurnOn;
-            m_findItem.onDisableItem -= TurnOff;
+            m_ItemFinder.onFindItem -= TurnOn;
+            m_ItemFinder.onMissItem -= TurnOff;
         }
 
         private void TurnOn()

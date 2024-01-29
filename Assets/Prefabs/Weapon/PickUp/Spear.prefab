@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2008415584525529584}
   - component: {fileID: 4340243109004723514}
   - component: {fileID: 801816008085441579}
-  - component: {fileID: 7174042720683897134}
+  - component: {fileID: 4330578580366412971}
   m_Layer: 9
   m_Name: Spear
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.045230865, y: 1.8238779, z: 0.028158568}
   m_Center: {x: 0, y: -0.158719, z: -0.00045944238}
---- !u!114 &7174042720683897134
+--- !u!114 &4330578580366412971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,8 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2826950414564320495}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2219a048eca0f418bc3d770c6b79eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 421fc3fa473b7f44baf3b09579a6cd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: 06f4adcdb7ff3124cab3d9be2dd0b664, type: 2}
-  m_attackManager: {fileID: 2892508709089259748, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
+  m_weaponData: {fileID: 11400000, guid: 676a01b68730b4840a6fa70e70aa89c0, type: 2}

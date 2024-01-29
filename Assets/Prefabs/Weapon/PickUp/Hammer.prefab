@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5397279034459744295}
   - component: {fileID: 5909853134486944635}
-  - component: {fileID: 7454360829051875787}
+  - component: {fileID: -4593111211592823737}
   m_Layer: 9
   m_Name: Hammer
   m_TagString: Untagged
@@ -266,7 +266,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.55, y: 2.25, z: 1}
   m_Center: {x: 0, y: 1.12, z: 0}
---- !u!114 &7454360829051875787
+--- !u!114 &-4593111211592823737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,8 +275,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7900906350088172212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e2219a048eca0f418bc3d770c6b79eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 421fc3fa473b7f44baf3b09579a6cd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: a8c3322662fdda140ac00935914e4235, type: 2}
-  m_attackManager: {fileID: 2892508709089259748, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
+  m_weaponData: {fileID: 11400000, guid: 19a850e6598030f429a3975f79a8c485, type: 2}

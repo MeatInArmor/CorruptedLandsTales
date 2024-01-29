@@ -19,7 +19,6 @@ namespace CorruptedLandTales
         {
             foreach (var item in views)
             {
-                
                 item.SetActive(true);
             }
         }
@@ -27,8 +26,7 @@ namespace CorruptedLandTales
         {
             foreach (var item in views)
             {
-                if(item)
-                    item.SetActive(false);
+                item.SetActive(false);
             }
         }
     }

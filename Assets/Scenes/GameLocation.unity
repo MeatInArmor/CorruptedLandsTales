@@ -610,7 +610,7 @@ MonoBehaviour:
   m_inputActionAsset: {fileID: -944628639613478452, guid: 1eb9786b1712ca941b3f0ac3069114d1, type: 3}
   m_cameraTransform: {fileID: 1799929117}
   m_specialAttack: {fileID: 5704897559480570162}
-  m_findItem: {fileID: 2573612662567074169}
+  mItemFinder: {fileID: 2573612662567074169}
 --- !u!4 &1192474799
 Transform:
   m_ObjectHideFlags: 0
@@ -1794,6 +1794,10 @@ PrefabInstance:
       objectReference: {fileID: 209443811}
     - target: {fileID: 6322048549086239891, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
       propertyPath: m_findItem
+      value: 
+      objectReference: {fileID: 2573612662567074169}
+    - target: {fileID: 6322048549086239891, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
+      propertyPath: m_ItemFinder
       value: 
       objectReference: {fileID: 2573612662567074169}
     - target: {fileID: 6438673557761127662, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}

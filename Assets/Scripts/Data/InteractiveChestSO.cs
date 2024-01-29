@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    [CreateAssetMenu(fileName = "ChestSO", menuName = "CorruptedLandTales/ChestSO")]
-    public class ChestSO : ScriptableObject
+    [CreateAssetMenu(fileName = "InteractiveChestSO", menuName = "CorruptedLandTales/InteractiveChestSO")]
+    public class InteractiveChestSO : InteractiveItemSO
     {
         [SerializeField] private List<GameObject> m_weapons;
 

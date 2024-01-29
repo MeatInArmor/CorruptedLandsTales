@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -35,18 +32,16 @@ namespace CorruptedLandTales
         
         public void Initialize(CharacterSO data)
         {
+            if (data == null)
+            {
+                return;
+            }
             if (attackManager)
             {
-                if(data.weapon)
-                {
-                    attackManager.Initialize(data.weapon);
-                }
-                else
-                {
-                }
+                attackManager.Initialize(data.weapon);
             }
             
-            if (m_healthComponent)
+            if (m_healthComponent != null)
             {
                 m_healthComponent.Initialize(data.healthData.maxHealth, data.healthData.health);
             }

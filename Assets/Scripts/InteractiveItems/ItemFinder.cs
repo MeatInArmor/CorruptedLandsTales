@@ -1,28 +1,29 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CorruptedLandTales
 {
-    public class FindItem : MonoBehaviour
+    public class ItemFinder : MonoBehaviour
     {
         [SerializeField] private float m_findRange = 2.0f;
         [SerializeField] private AttackManager m_attackManager;
         [SerializeField] private HealthComponent m_healthComponent;
         
         private Collider[] m_result = new Collider[2];
-        private IInteractiveItem m_useItemComponent;
-        private GameObject m_useItem; 
+        private List<GameObject> m_weapons = new (5); //будет аллокация, нужно переписывать capacity = количеству оружия
+        private IInteractiveItem m_interactItemComponent;
+        private GameObject m_interactItem;
         private LayerMask m_layerMask;
         private bool m_flag = true;
         
         public event System.Action onFindItem;
-        public event System.Action onDisableItem;
+        public event System.Action onMissItem;
 
         private void Start()
         {
             m_layerMask = LayerMask.GetMask("Item");
         }
         
-        //TODO можно вынести в отдельный скрипт
         private void Update()
         {
             var count = Physics.OverlapSphereNonAlloc(transform.position,  m_findRange, m_result, m_layerMask,
@@ -33,8 +34,8 @@ namespace CorruptedLandTales
                 onFindItem?.Invoke();
                 for (int i = 0; i < count; i++)
                 {
-                    m_useItemComponent = m_result[i].GetComponent<IInteractiveItem>();
-                    m_useItem = m_result[i].gameObject;
+                    m_interactItemComponent = m_result[i].GetComponent<IInteractiveItem>();
+                    m_interactItem = m_result[i].gameObject;
                 }
                 m_flag = true;
             }
@@ -42,7 +43,7 @@ namespace CorruptedLandTales
             {
                 if (m_flag)
                 {
-                    onDisableItem?.Invoke();
+                    onMissItem?.Invoke();
                     m_flag = false;
                     for (int i = 0; i < m_result.Length; i++)
                     {
@@ -52,30 +53,28 @@ namespace CorruptedLandTales
             }
         }
         
-        //TODO переписать как будет правильнее
         public void UseItem()
         {
-            if (m_useItemComponent!=null)
+            if (m_interactItemComponent!=null)
             {
-                var data = m_useItemComponent.GetData<object>();
+                var data = m_interactItemComponent.GetData();
                 if (data != null)
                 {
-                    if (data is float)
+                    if (data is InteractiveHealSO healData)
                     {
-                        m_healthComponent.HealHealth((float)data);
+                        m_healthComponent.HealHealth(healData.healAmount);
                     }
-
-                    if (data is ScriptableObject)
+                    if (data is InteractiveChestSO chestData)
                     {
-                        m_attackManager.Initialize((WeaponSO)data);
+                        m_weapons = chestData.weapons;
+                        var weapon = m_weapons[Random.Range(0, m_weapons.Count)];
+                        Instantiate(weapon, m_interactItem.transform.position, m_interactItem.transform.rotation);
                     }
-
-                    if (data is GameObject)
+                    if (data is InteractiveWeaponSO weaponData)
                     {
-                        Instantiate((GameObject)data, m_useItem.transform.position, m_useItem.transform.rotation);
+                        m_attackManager.Initialize(weaponData.weapon);
                     }
-
-                    Destroy(m_useItem);
+                    Destroy(m_interactItem);
                 }
             }
         }
