@@ -71,7 +71,7 @@ namespace CorruptedLandTales
 
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
-			mItemFinder.UseItem();
+			mItemFinder.InteractItem();
 		}
 
 		private void Update()
