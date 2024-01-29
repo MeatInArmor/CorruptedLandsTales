@@ -14,7 +14,7 @@ namespace CorruptedLandTales
 		[SerializeField] private InputActionAsset m_inputActionAsset;
 		[SerializeField] private Transform m_cameraTransform;
 		[SerializeField] private SpecialAttack m_specialAttack;
-		[FormerlySerializedAs("m_findItem")] [SerializeField] private ItemFinder mItemFinder;
+		[SerializeField] private ItemFinder m_itemFinder;
 		
 		private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
@@ -71,7 +71,7 @@ namespace CorruptedLandTales
 
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
-			mItemFinder.InteractItem();
+			m_itemFinder.InteractItem();
 		}
 
 		private void Update()

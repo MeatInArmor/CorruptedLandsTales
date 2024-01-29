@@ -9,7 +9,8 @@ namespace CorruptedLandTales
         [SerializeField] private HealthComponent m_healthComponent;
         [SerializeField] private ItemFinder m_itemFinder;
         
-        private List<GameObject> m_weapons = new (5);//будет аллокация, нужно переписывать capacity = количеству оружия
+        private List<GameObject> m_weapons = new (5);//будет аллокация если сделать не конечный count
+                                                     //нужно переписывать capacity = количеству оружия
 
         private void OnEnable()
         {
