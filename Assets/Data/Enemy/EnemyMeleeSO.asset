@@ -16,8 +16,8 @@ MonoBehaviour:
     speed: 7
     sprintSpeed: 10
   healthData:
-    health: 200
-    maxHealth: 200
+    health: 150
+    maxHealth: 150
   weapon: {fileID: 11400000, guid: f402540f7e40e0c4496dba42407b5699, type: 2}
   manaData:
     manaPool: 0
