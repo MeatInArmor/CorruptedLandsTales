@@ -93,8 +93,8 @@ namespace CorruptedLandTales
         //}
         private void LateUpdate()
         {
-            var speed = moveComponent.velocity.magnitude;
-            m_animator.SetFloat(SpeedId, speed);
+            /*var speed = moveComponent.velocity.magnitude;
+            m_animator.SetFloat(SpeedId, speed);*/
         }
 
         private void Slash()

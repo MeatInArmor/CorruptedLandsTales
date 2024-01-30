@@ -49,15 +49,5 @@ namespace CorruptedLandTales
             //onImpact.Invoke();
             m_behaviourTree.enabled = true;
         }
-        
-        public void StartDash()
-        {
-            m_charMoveComponent.isDashing = true;
-        }
-
-        public void EndDash()
-        {
-            m_charMoveComponent.isDashing = false;
-        }
     }
 }

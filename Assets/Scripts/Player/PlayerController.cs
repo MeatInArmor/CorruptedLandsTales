@@ -1,5 +1,6 @@
 using System;
 using Cinemachine;
+using ShadowChimera;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -15,6 +16,7 @@ namespace CorruptedLandTales
 		[SerializeField] private Transform m_cameraTransform;
 		[SerializeField] private SpecialAttack m_specialAttack;
 		[SerializeField] private FindItem m_findItem;
+		[SerializeField] private CharMoveComponentAnimator m_charMoveComponentAnimator;
 		
 		private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
@@ -22,8 +24,6 @@ namespace CorruptedLandTales
 		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
 		//private InputAction m_useWeaponSkill;
-		//Dash
-		//private InputAction m_useDash;
 		
 		private CharMoveComponent m_charMoveController;
 		
@@ -37,8 +37,6 @@ namespace CorruptedLandTales
 			//m_useWeaponSkill = m_playerMap.FindAction("WeaponSkill");
 			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
-			//Dash
-            //m_useDash = m_playerMap.FindAction("Dash");
 		}
 
 		private void Start()
@@ -87,11 +85,6 @@ namespace CorruptedLandTales
 		{
 			m_findItem.PickUp();
 		}
-        //Dash
-        private void OnUseDash(InputAction.CallbackContext context)
-		{
-			m_charMoveController.Dash();
-		}
 
 		private void Update()
 		{
@@ -101,12 +94,7 @@ namespace CorruptedLandTales
 				return;
 			}
 			Vector2 move = m_moveAction.ReadValue<Vector2>();
-			Move(move, false);
-		}
-
-		private void Move(Vector2 move, bool isSprint)
-		{
-			m_charMoveController.Move(move, isSprint, m_cameraTransform.eulerAngles.y);
+			m_charMoveComponentAnimator.AnimateMove(move, m_cameraTransform.eulerAngles.y);
 		}
 	}
 }
