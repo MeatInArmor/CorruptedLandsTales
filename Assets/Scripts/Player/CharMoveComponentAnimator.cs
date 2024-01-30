@@ -24,7 +24,7 @@ namespace ShadowChimera
         public void AnimateMove(Vector2 move, float cameraY)
         {
             float inputMagnitude = move.magnitude;
-            Debug.Log(inputMagnitude);
+            //Debug.Log(inputMagnitude);
             m_animator.SetFloat("Speed", Mathf.Abs(inputMagnitude));
             
             var targetTr = gameObject.transform;

@@ -10,11 +10,11 @@ namespace ShadowChimera
         public int noOfClicks;
         float lastClickedTime;
         public float maxComdoDelay;
-        private CharacterController characterController;
+        //private CharacterController characterController;
         void Start()
         {
-            anim = gameObject.GetComponent<Animator>();
-            characterController = gameObject.GetComponentInParent<CharacterController>();
+            anim = gameObject.GetComponentInParent<Animator>();
+            //characterController = gameObject.GetComponentInParent<CharacterController>();
         }
 
         
@@ -24,7 +24,7 @@ namespace ShadowChimera
             //{
             //    noOfClicks = 0;
             //}
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Q))
             {
                 //lastClickedTime = Time.time;
                 noOfClicks++;

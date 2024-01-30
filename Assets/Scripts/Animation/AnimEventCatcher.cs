@@ -1,3 +1,4 @@
+using ShadowChimera;
 using TheKiwiCoder;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +10,7 @@ namespace CorruptedLandTales
         private AttackManager m_attackManager;
         [SerializeField] private SpecialAttack m_specialAttack;
         [SerializeField] private CharMoveComponent m_charMoveComponent;
+        //[SerializeField] private CharMoveComponentAnimator m_charMoveComponent;
         [SerializeField] private Animator m_animator;
         [SerializeField] private UnityEvent m_EndDie;
         [SerializeField] private UnityEvent m_onImpact;

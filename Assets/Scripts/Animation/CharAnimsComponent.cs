@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
+using ShadowChimera;
 
 namespace CorruptedLandTales
 {
@@ -13,6 +14,7 @@ namespace CorruptedLandTales
         [SerializeField] private Character m_character;
         [SerializeField] private ProjectileCore m_impact;
         [SerializeField] private CharMoveComponent m_charMoveComponent;
+        [SerializeField] private CharMoveComponentAnimator m_charMoveComponentAnimator;
         [SerializeField] private SpecialAttack m_specialAttack;
         //[SerializeField] private HealthComponent m_healthcomponent;
 

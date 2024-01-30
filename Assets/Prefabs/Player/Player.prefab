@@ -1367,6 +1367,7 @@ MonoBehaviour:
   m_character: {fileID: 2297376893487946721}
   m_impact: {fileID: 0}
   m_charMoveComponent: {fileID: 2536953490566234966}
+  m_charMoveComponentAnimator: {fileID: 0}
   m_specialAttack: {fileID: 8616952980201909679}
 --- !u!114 &4807377456819990454
 MonoBehaviour:
@@ -3140,7 +3141,6 @@ MonoBehaviour:
   m_rotationSmoothTime: 0.08
   m_speedChangeRate: 15
   m_dashSpeed: 40
-  isDashing: 0
 --- !u!1 &5741678466699072853
 GameObject:
   m_ObjectHideFlags: 0
