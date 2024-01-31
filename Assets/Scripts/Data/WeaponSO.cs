@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -11,7 +9,7 @@ namespace CorruptedLandTales
         
         public GameObject prefab => m_prefab;
         public float damage => m_damage;
-
+        
         public void IncreaseDamage(float dmg)
         {
             m_damage += dmg;

@@ -32,9 +32,9 @@ namespace CorruptedLandTales
                 m_activeWeapon.Hide();
                 m_activeWeapon.DestroySelf();
             }
-            var item = Instantiate(weaponData.prefab, m_weaponRoot);
+            GameObject item = Instantiate(weaponData.prefab, m_weaponRoot);
             item.transform.SetParent(m_weaponRoot);
-            var attackComponent = item.GetComponent<IAttackItem>();
+            IAttackItem attackComponent = item.GetComponent<IAttackItem>();
             attackComponent.Initialize(weaponData);
             m_activeWeapon = attackComponent;
             m_activeWeapon.Show();

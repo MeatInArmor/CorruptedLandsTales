@@ -24,12 +24,12 @@ namespace CorruptedLandTales
 
         private void Start()
         {
-            m_gameController.onLevelCleared += IncreaseStats;
+            m_gameController.onResetLevelcontroller += IncreaseStats;
         }
         
         private void OnDisable()
         {
-            m_gameController.onLevelCleared -= IncreaseStats;
+            m_gameController.onResetLevelcontroller -= IncreaseStats;
         }
         
         private void IncreaseStats()

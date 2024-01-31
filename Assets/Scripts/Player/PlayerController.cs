@@ -22,6 +22,7 @@ namespace CorruptedLandTales
 		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
 		private InputAction m_useWeaponSkill;
+		private InputAction m_useUpgrade;
 		private CharMoveComponent m_charMoveController;
 		
 		private void Awake()
@@ -32,6 +33,7 @@ namespace CorruptedLandTales
 			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
 			m_useWeaponSkill = m_playerMap.FindAction("WeaponSkill");
+			m_useUpgrade = m_playerMap.FindAction("UpgradeWeapon");
 			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
 		}
@@ -43,6 +45,7 @@ namespace CorruptedLandTales
 			m_pickUp.performed += OnPickUpInput;
 			m_useSpecial.performed += OnUseSpecial;
 			m_useWeaponSkill.performed += OnUseWeaponSkill;
+			m_useUpgrade.performed += OnUpgradeWeapon;
 		}
 
 		private void OnDisable()
@@ -52,6 +55,12 @@ namespace CorruptedLandTales
 			m_pickUp.performed -= OnPickUpInput;
 			m_useSpecial.performed -= OnUseSpecial;
 			m_useWeaponSkill.performed -= OnUseWeaponSkill;
+			m_useUpgrade.performed -= OnUpgradeWeapon;
+		}
+
+		private void OnUpgradeWeapon(InputAction.CallbackContext context)
+		{
+			//
 		}
 		
 		private void OnAttackInput(InputAction.CallbackContext context)

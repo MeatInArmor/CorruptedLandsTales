@@ -7,7 +7,6 @@ namespace CorruptedLandTales
         [SerializeField] private float m_findRange = 2.0f;
         
         private Collider[] m_result = new Collider[2];
-        private IInteractiveItem m_interactItemComponent;
         private GameObject m_interactItem;
         private LayerMask m_layerMask;
         private bool m_flag = true;
@@ -15,6 +14,7 @@ namespace CorruptedLandTales
         public event System.Action onFindItem;
         public event System.Action onMissItem;
         public event System.Action onInteractItem;
+        public event System.Action onFindWeapon;
 
         private void Start()
         {
@@ -32,6 +32,10 @@ namespace CorruptedLandTales
                 for (int i = 0; i < count; i++)
                 {
                     m_interactItem = m_result[i].gameObject;
+                    if (m_interactItem.GetComponent<IInteractiveItem>().GetData() is InteractiveWeapon)
+                    {
+                        onFindWeapon?.Invoke();
+                    }
                 }
                 m_flag = true;
             }

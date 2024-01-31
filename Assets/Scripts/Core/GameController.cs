@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +18,7 @@ namespace CorruptedLandTales
         public LevelController activeLevelController => m_activeLevelController;
 
         public event System.Action onLevelCleared;
+        public event System.Action onResetLevelcontroller;
         
         private void Start()
         {
@@ -32,6 +32,7 @@ namespace CorruptedLandTales
             Destroy(m_activeLevel);
             RespawnLevel();
             StartNewLevelController();
+            onLevelCleared?.Invoke();
             UnsubscribeDoors();
             SubscribeDoors();
         }
@@ -51,7 +52,6 @@ namespace CorruptedLandTales
             {
                 door.onPlayerExitLocation += OnPlayerExitLocation;
             } 
-            onLevelCleared?.Invoke();
         }
 
         private void UnsubscribeDoors()
@@ -67,6 +67,7 @@ namespace CorruptedLandTales
         {
             m_activeLevelController = m_activeLevel.GetComponentInChildren<LevelController>();
             m_activeLevelController.SetPlayer(m_player);
+            onResetLevelcontroller?.Invoke();
             m_activeLevelController.SetLevelController();
         }
     }

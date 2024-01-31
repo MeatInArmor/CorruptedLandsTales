@@ -11,7 +11,7 @@ namespace CorruptedLandTales
         
         private List<GameObject> m_weapons = new (5);//будет аллокация если сделать не конечный count
                                                      //нужно переписывать capacity = количеству оружия
-
+                                                     
         private void OnEnable()
         {
             m_itemFinder.onInteractItem += HandleItem;

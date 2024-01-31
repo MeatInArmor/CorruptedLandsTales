@@ -5,18 +5,27 @@ namespace CorruptedLandTales
 {
     public class TimeController : MonoBehaviour
     {
+        [SerializeField] private float m_intervalUpgradeMobs = 90f;
+        [SerializeField] private float m_intervalIncreaseCount = 180f;
+        
+        private float m_timerUpgradeMobs;
+        private float m_timerIncreaseCount;
         private int m_currentLevel = 0;
         private int m_newCount = 0;
         
         private void Update()
         {
-            if (Time.time % 60 == 0)
+            m_timerUpgradeMobs += Time.deltaTime;
+            m_timerIncreaseCount += Time.deltaTime;
+            if (m_timerUpgradeMobs >= m_intervalUpgradeMobs)
             {
                 m_currentLevel += 1;
+                m_timerUpgradeMobs -= m_intervalUpgradeMobs;
             }
-            if (Time.time % 300 == 0)
+            if  (m_timerIncreaseCount > m_intervalIncreaseCount)
             {
                 m_newCount += 1;
+                m_timerIncreaseCount -= m_intervalIncreaseCount;
             }
         }
 
