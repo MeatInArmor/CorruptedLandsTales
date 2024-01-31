@@ -12,6 +12,7 @@ namespace CorruptedLandTales
         public AttackData atkData;
 
         [SerializeField] private StatsIncreaseSO m_stats;
+        public StatsIncreaseSO stats => m_stats; 
         
         public void IncreaseStats()
         {
@@ -20,7 +21,10 @@ namespace CorruptedLandTales
                 moveData.speed += m_stats.moveData.speed;
                 healthData.maxHealth += m_stats.healthData.health;
                 healthData.health += m_stats.healthData.health;
-                weapon.IncreaseDamage(m_stats.atkData.dmg); 
+                if (weapon!=null)
+                {
+                    weapon.IncreaseDamage(m_stats.atkData.dmg);
+                }
             }
         }
 
@@ -29,7 +33,10 @@ namespace CorruptedLandTales
             moveData.speed = stats.moveData.speed;
             healthData.maxHealth = stats.healthData.health;
             healthData.health = stats.healthData.health;
-            weapon.SetDamage(stats.atkData.damage);
+            if (weapon!=null)
+            {
+                weapon.SetDamage(stats.atkData.damage);
+            }
         }
     }
 

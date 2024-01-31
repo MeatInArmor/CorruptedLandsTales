@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2597da6ebcad94389163e9be62fd45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_intervalUpgradeMobs: 60
+  m_intervalUpgradeMobs: 90
   m_intervalIncreaseCount: 180
 --- !u!4 &71243117 stripped
 Transform:
@@ -1662,6 +1662,14 @@ PrefabInstance:
       value: StatIncreaser
       objectReference: {fileID: 0}
     - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_bossData
+      value: 
+      objectReference: {fileID: 11400000, guid: 17ad1827674b8ea48b6e411d1511f3b0, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_bossPreset
+      value: 
+      objectReference: {fileID: 11400000, guid: 86893bf10141aa0458328f77da481456, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_meleePreset
       value: 
       objectReference: {fileID: 11400000, guid: de8ca51d68e9b84459765b7b929eba63, type: 2}
@@ -1669,6 +1677,10 @@ PrefabInstance:
       propertyPath: m_rangePreset
       value: 
       objectReference: {fileID: 11400000, guid: 7f6b7bc32f79eb145bcd49ab4e969dd8, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_bossProjectile
+      value: 
+      objectReference: {fileID: 5794678928835978894, guid: c6cdeff8dfca05d46967b175464618a0, type: 3}
     - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_gameController
       value: 

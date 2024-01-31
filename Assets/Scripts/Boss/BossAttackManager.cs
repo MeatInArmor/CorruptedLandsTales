@@ -7,24 +7,32 @@ namespace CorruptedLandTales
     public class BossAttackManager : MonoBehaviour
     {
         [Header("Attacks")]
-        [SerializeField] private List<WeaponSO> m_weaponList;
+        //[SerializeField] private List<WeaponSO> m_weaponList;
 
         [SerializeField] private BossStageManager m_stageManager;
         
-        private List<IAttackItem> m_attackList = new List<IAttackItem>();
+        private List<IAttackItem> m_attackList = new (4);
         
         public event System.Action onMeleeAttack1Action;
         public event System.Action onMeleeAttack2Action;
         public event System.Action onMeleeAttack3Action;
         public event System.Action onRangeAttack1Action;
+
+        public void Initialize(List<WeaponSO> attacks)
+        {
+            for (int i = 0; i < attacks.Count; i++)
+            {
+                m_attackList.Add(EquipWeapon(attacks[i]));
+            }
+        }
         
-        private void Start()
+        /*private void Start()
         {
             for (int i = 0; i < m_weaponList.Count; i++)
             {
                 m_attackList.Add(EquipWeapon(m_weaponList[i]));
             }
-        }
+        }*/
 
         private IAttackItem EquipWeapon<T>(T data) where T: WeaponSO
         {
@@ -81,7 +89,7 @@ namespace CorruptedLandTales
 
         public string[] GetAttackTypes()
         {
-            if (m_weaponList == null)
+            if (m_attackList == null)
             {
                 return null;
             }
