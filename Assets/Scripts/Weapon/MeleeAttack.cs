@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using CorruptedLandTales;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -12,12 +8,12 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackAngle = 120.0f;
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
-
         [SerializeField] private float m_manaCost;
+        [SerializeField] private float m_manaPerHit = 5.0f;
         
         private ManaComponent m_manaComponent;
         private IWeaponSkill m_weaponSkill;
-        private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
+        private Collider[] m_result = new Collider[20]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
         
         public void Initialize(WeaponSO data)
@@ -86,11 +82,15 @@ namespace CorruptedLandTales
                     damageable.TakeDamage(m_damage);
                     if (m_manaComponent)
                     {
-                        /*m_manaComponent.GainMana(m_damage/5f);*/
-                        m_manaComponent.GainMana(5);
+                        m_manaComponent.GainMana(m_manaPerHit);
                     }
                 }
             }
+        }
+
+        public void IncreaseDamage(float damage)
+        {
+            m_damage += damage; //TODO лютый костыль => WeaponUpgrader
         }
     }
 }

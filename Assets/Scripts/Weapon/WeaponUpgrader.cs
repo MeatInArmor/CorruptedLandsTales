@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +10,8 @@ namespace CorruptedLandTales
         [SerializeField] private List<WeaponSO> m_presetWeapons;
         [SerializeField] private float m_damageToIncrease = 30f;
 
+        public float damageToIncrease => m_damageToIncrease;
+        
         private void Start()
         {
             m_gameController.onLevelCleared += IncreaseStats;

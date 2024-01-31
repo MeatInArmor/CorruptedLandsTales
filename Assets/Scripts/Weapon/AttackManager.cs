@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -8,7 +7,8 @@ namespace CorruptedLandTales
         [SerializeField] private Transform m_weaponRoot;
             
         private IAttackItem m_activeWeapon;
-        
+
+        public IAttackItem activeWeapon => m_activeWeapon; 
         public event System.Action onUseAttack;
 
         public void Initialize(WeaponSO data)

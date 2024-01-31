@@ -11,9 +11,8 @@ namespace CorruptedLandTales
         private LayerMask m_layerMask;
         private bool m_flag = true;
         
-        public event System.Action onFindItem;
+        public event System.Action <GameObject>onFindItem;
         public event System.Action onMissItem;
-        public event System.Action onInteractItem;
         public event System.Action onFindWeapon;
 
         private void Start()
@@ -28,11 +27,11 @@ namespace CorruptedLandTales
             
             if (count > 0)
             {
-                onFindItem?.Invoke();
                 for (int i = 0; i < count; i++)
                 {
                     m_interactItem = m_result[i].gameObject;
-                    if (m_interactItem.GetComponent<IInteractiveItem>().GetData() is InteractiveWeapon)
+                    onFindItem?.Invoke(m_result[i].gameObject);
+                    if (m_interactItem.GetComponent<IInteractiveItem>().GetData() is InteractiveWeaponSO)
                     {
                         onFindWeapon?.Invoke();
                     }
@@ -51,16 +50,6 @@ namespace CorruptedLandTales
                     }
                 }
             }
-        }
-        
-        public void InteractItem()
-        {
-            onInteractItem?.Invoke();
-        }
-
-        public GameObject GetItem()
-        {
-            return m_interactItem;
         }
     }
 }

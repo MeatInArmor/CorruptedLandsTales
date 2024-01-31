@@ -1,10 +1,5 @@
-using System;
-using Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -15,6 +10,7 @@ namespace CorruptedLandTales
 		[SerializeField] private Transform m_cameraTransform;
 		[SerializeField] private SpecialAttack m_specialAttack;
 		[SerializeField] private ItemFinder m_itemFinder;
+		[SerializeField] private InteractItemHandler m_itemHandler;
 		
 		private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
@@ -57,11 +53,6 @@ namespace CorruptedLandTales
 			m_useWeaponSkill.performed -= OnUseWeaponSkill;
 			m_useUpgrade.performed -= OnUpgradeWeapon;
 		}
-
-		private void OnUpgradeWeapon(InputAction.CallbackContext context)
-		{
-			//
-		}
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
@@ -78,9 +69,14 @@ namespace CorruptedLandTales
             m_specialAttack.AnimateSpecialAttack();            
         }
 
+		private void OnUpgradeWeapon(InputAction.CallbackContext context)
+		{
+			m_itemHandler.UpgradeCurrentWeapon();
+		}
+		
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
-			m_itemFinder.InteractItem();
+			m_itemHandler.HandleItem();
 		}
 
 		private void Update()

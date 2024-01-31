@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace CorruptedLandTales
 {
-    public class InteractionBtn : MonoBehaviour
+    public class UpgradeBtn : MonoBehaviour
     {
         [SerializeField] private ItemFinder m_ItemFinder;
         [SerializeField] private Image m_parentImage;
@@ -11,17 +11,17 @@ namespace CorruptedLandTales
 
         private void OnEnable()
         {
-            m_ItemFinder.onFindItem += TurnOn;
+            m_ItemFinder.onFindWeapon += TurnOn;
             m_ItemFinder.onMissItem += TurnOff;
         }
         
         private void OnDisable()
         {
-            m_ItemFinder.onFindItem -= TurnOn;
+            m_ItemFinder.onFindWeapon -= TurnOn;
             m_ItemFinder.onMissItem -= TurnOff;
         }
 
-        private void TurnOn(GameObject item)
+        private void TurnOn()
         {
             m_parentImage.enabled = true;
             m_childImage.enabled = true;
