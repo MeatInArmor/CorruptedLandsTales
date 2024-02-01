@@ -1,14 +1,10 @@
 using System.Collections.Generic;
-using CorruptedLandTales;
 using UnityEngine;
 
 namespace CorruptedLandTales
 {
     public class BossAttackManager : MonoBehaviour
     {
-        [Header("Attacks")]
-        //[SerializeField] private List<WeaponSO> m_weaponList;
-
         [SerializeField] private BossStageManager m_stageManager;
         
         private List<IAttackItem> m_attackList = new (4);
@@ -25,14 +21,6 @@ namespace CorruptedLandTales
                 m_attackList.Add(EquipWeapon(attacks[i]));
             }
         }
-        
-        /*private void Start()
-        {
-            for (int i = 0; i < m_weaponList.Count; i++)
-            {
-                m_attackList.Add(EquipWeapon(m_weaponList[i]));
-            }
-        }*/
 
         private IAttackItem EquipWeapon<T>(T data) where T: WeaponSO
         {

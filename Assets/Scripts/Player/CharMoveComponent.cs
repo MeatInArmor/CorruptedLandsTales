@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -13,17 +11,13 @@ namespace CorruptedLandTales
         [SerializeField] private float m_rotationSmoothTime = 0.12f;
         [SerializeField] private float m_speedChangeRate = 15f;
         [SerializeField] private float m_dashSpeed = 40f;
-        //[SerializeField] private Transform player;
 
         private float m_rotationVelocity;
         private float m_targetRotation;
-        //private bool isDashing = false;
 
         public bool isDashing;
         
         public Vector3 velocity => m_characterController.velocity;
-        //Dash
-        public event System.Action onUseDash;
         
         public void Init(float speed, float sprintSpeed)
         {

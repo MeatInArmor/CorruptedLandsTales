@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +11,7 @@ namespace CorruptedLandTales
         
         public void Initialize(ManaComponent ManaComponent)
         {
-            m_manaComponent = ManaComponent;                                        // если компонент указан, то он и будет
+            m_manaComponent = ManaComponent;                                        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
             Refresh();
         }
         private void Awake()
@@ -24,13 +22,13 @@ namespace CorruptedLandTales
         }
         public void SetComponent()
         {
-            if (m_manaComponent != null)                                              // если компонент не указан
+            if (m_manaComponent != null)                                              // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             {
-                var parentManaComponent = GetComponentInParent<ManaComponent>();      // ищется компонент в родителе
-                if (parentManaComponent != null && m_manaComponent == null)           // если в родитееле есть компонент - берётся он
+                var parentManaComponent = GetComponentInParent<ManaComponent>();      // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+                if (parentManaComponent != null && m_manaComponent == null)           // пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
                     m_manaComponent = parentManaComponent;
             }
-            else                                                                      // если нет, то компонент берётся у Player со сцены
+            else                                                                      // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Player пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 m_manaComponent = GameObject.Find("Player").GetComponent<ManaComponent>();
         }
         private void OnEnable()

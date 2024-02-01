@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,7 +10,7 @@ namespace CorruptedLandTales
         [SerializeField] private Image m_fillImage;
         public void Initialize(HealthComponent healthComponent)
         {
-            m_healthComponent = healthComponent;                                        // если компонент указан, то он и будет
+            m_healthComponent = healthComponent;                                        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ
             Refresh();
         }
         private void Awake()
@@ -23,13 +21,13 @@ namespace CorruptedLandTales
         }
         public void SetComponent()
         {
-            if (m_healthComponent != null)                                              // если компонент не указан
+            if (m_healthComponent != null)                                              // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             {
-                var parentHealthComponent = GetComponentInParent<HealthComponent>();    // ищется компонент в родителе
-                if (parentHealthComponent != null && m_healthComponent == null)         // если в родитееле есть компонент - берётся он
+                var parentHealthComponent = GetComponentInParent<HealthComponent>();    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+                if (parentHealthComponent != null && m_healthComponent == null)         // пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ
                     m_healthComponent = parentHealthComponent;
             }
-            else                                                                        // если нет, то компонент берётся у Player со сцены
+            else                                                                        // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Player пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
                 m_healthComponent = GameObject.Find("Player").GetComponent<HealthComponent>();
         }
         private void OnEnable()
