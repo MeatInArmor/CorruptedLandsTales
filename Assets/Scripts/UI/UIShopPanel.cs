@@ -8,12 +8,15 @@ namespace CorruptedLandTales
 {
     public class UIShopPanel : MonoBehaviour
     {
+        public event System.Action<string> onTryBuyItem;
+        
         [SerializeField] private UIShopItem m_healthStat;
         [SerializeField] private UIShopItem m_damageStat;
         [SerializeField] private UIShopItem m_speedStat;
         [SerializeField] private UIShopItem m_attackSpeedStat;
         [SerializeField] private UIShopItem m_manaPoolStat;
         [SerializeField] private UIShopItem m_manaRegenStat;
+        [SerializeField] private UIBuyBtn m_buyBtn;
         [SerializeField] private TMP_Text m_cost;
         [SerializeField] private TMP_Text m_type;
         private List<StatSO> m_playerStats;
@@ -21,6 +24,8 @@ namespace CorruptedLandTales
         //TODO переписать этот говнокод
         public void SetPlayerStatsAndShopItems(PlayerStatsDB playerStatsDB)
         {
+            ClearText();
+            m_buyBtn.onClickBuyButton += OnBuyClick;
             m_playerStats = playerStatsDB.stats;
             foreach (var stat in m_playerStats)
             {
@@ -62,6 +67,11 @@ namespace CorruptedLandTales
             m_cost.text = cost.ToString();
             m_type.text = type;
         }
+        
+        private void OnBuyClick()
+        {
+            onTryBuyItem?.Invoke(m_type.text);
+        }
 
         private void OnDisable() // переписать этот говнокод
         {
@@ -71,6 +81,14 @@ namespace CorruptedLandTales
             m_attackSpeedStat.onClick -= OnItemClick;
             m_manaPoolStat.onClick -= OnItemClick;
             m_manaRegenStat.onClick -= OnItemClick;
+            m_buyBtn.onClickBuyButton -= OnBuyClick;
+            ClearText();
+        }
+
+        private void ClearText()
+        {
+            m_cost.text = "";
+            m_type.text = "";
         }
     }
 }
