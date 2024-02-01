@@ -8,6 +8,7 @@ namespace CorruptedLandTales
         public MoveDataIncrease moveData;
         public HealthDataIncrease healthData;
         public AttackIncrease atkData;
+        public ManaDataIncrease manaDataIncrease;
     }
 
     [System.Serializable]
@@ -26,5 +27,11 @@ namespace CorruptedLandTales
     public class MoveDataIncrease
     {
         public float speed = 5f;
+    }
+    
+    [System.Serializable]
+    public class ManaDataIncrease
+    {
+        public float mana = 0;
     }
 }
