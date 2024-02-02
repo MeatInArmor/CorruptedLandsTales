@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657862, g: 0.49641347, b: 0.5748182, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402325, g: 0.4931664, b: 0.57223254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1662,6 +1662,10 @@ PrefabInstance:
       value: StatIncreaser
       objectReference: {fileID: 0}
     - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 11400000, guid: df76f579643d4684dab2dfadd68d471a, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_bossData
       value: 
       objectReference: {fileID: 11400000, guid: 17ad1827674b8ea48b6e411d1511f3b0, type: 2}
@@ -1701,6 +1705,10 @@ PrefabInstance:
       propertyPath: m_newEnemyPerTrigger
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_playerIncreaseStatsSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a51153bf15862a48a7bb45815456aab, type: 2}
     - target: {fileID: 8578256703099070303, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2555,7 +2563,7 @@ PrefabInstance:
     - target: {fileID: 3465083201844976310, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_data
       value: 
-      objectReference: {fileID: 11400000, guid: 685a3e1961b87c9469b925e541836d2b, type: 2}
+      objectReference: {fileID: 11400000, guid: df76f579643d4684dab2dfadd68d471a, type: 2}
     - target: {fileID: 4089173368887766831, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -80

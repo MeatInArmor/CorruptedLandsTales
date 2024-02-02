@@ -27,5 +27,11 @@ namespace CorruptedLandTales
         {
             m_cost += m_costPerLevel;
         }
+
+        public void RefreshStats()
+        {
+            m_level = 0;
+            m_cost = m_costPerLevel;
+        }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -8,7 +9,7 @@ namespace CorruptedLandTales
         public MoveDataIncrease moveData;
         public HealthDataIncrease healthData;
         public AttackIncrease atkData;
-        public ManaDataIncrease manaDataIncrease;
+        [FormerlySerializedAs("manaDataIncrease")] public ManaDataIncrease manaData;
     }
 
     [System.Serializable]

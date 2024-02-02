@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2efcae3029400284c94f0c10abd76d08, type: 3}
-  m_Name: PlayerSO
+  m_Name: PlayerSO 1
   m_EditorClassIdentifier: 
   moveData:
     speed: 9
@@ -24,4 +24,4 @@ MonoBehaviour:
     initMana: 0
   atkData:
     damage: 30
-  m_stats: {fileID: 11400000, guid: 2a51153bf15862a48a7bb45815456aab, type: 2}
+  m_stats: {fileID: 11400000, guid: 914038ab71085c942beff725992f6ded, type: 2}

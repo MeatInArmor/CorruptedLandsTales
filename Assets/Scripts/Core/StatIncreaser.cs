@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -20,19 +21,59 @@ namespace CorruptedLandTales
         [SerializeField] private GameController m_gameController;
         [Header("")]
         [SerializeField] private int m_newEnemyPerTime;
+
+        [Header("Player")] 
+        [SerializeField] private CharacterSO m_player;
+        [SerializeField] private StatsIncreaseSO m_playerIncreaseStatsSo;
+        
+        private PlayerSettings m_playerSettings;
+        private List<StatSO> m_playerStats;
         
         private void Awake()
         {
+            m_playerSettings = GameInstance.instance.playerSettings;
             m_meleeData.RefreshStats(m_meleePreset);
             m_rangeData.RefreshStats(m_rangePreset);
             m_bossData.RefreshStats(m_bossPreset);
             m_rangeProjectile.RefreshDamage(m_rangePreset.atkData.damage);
+            m_playerStats = new List<StatSO>();
+            m_playerStats = m_playerSettings.playerStats.stats;
+            foreach (var stat in m_playerStats)
+            {
+                var lvl = stat.level;
+                if (stat.statName == "health")
+                {
+                    m_playerIncreaseStatsSo.healthData.health += stat.level * stat.valuePerLevel;
+                }
+                if (stat.statName == "attack")
+                {
+                    m_playerIncreaseStatsSo.atkData.dmg += stat.level * stat.valuePerLevel;
+                }
+                if (stat.statName == "attackspeed")
+                {
+                    Debug.Log("Try to increase attackspeed stat");
+                }
+                if (stat.statName == "manapool")
+                {
+                    m_playerIncreaseStatsSo.manaData.mana += stat.level * stat.valuePerLevel;
+                }
+                if (stat.statName == "manaregen")
+                {
+                    Debug.Log("Try to increase manaregen stat");
+                }
+                if (stat.statName == "speed")
+                {
+                    m_playerIncreaseStatsSo.moveData.speed += stat.level * stat.valuePerLevel;
+                }
+            }
+            m_player.IncreaseStats();
         }
 
         private void Start()
         {
             m_gameController.onResetLevelcontroller += IncreaseStats;
         }
+        
         
         private void OnDisable()
         {

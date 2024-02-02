@@ -16,12 +16,13 @@ namespace CorruptedLandTales
         {
             base.OnEnable();
             m_shopPanel.onTryBuyItem += OnTryBuyItem;
-            
+            m_shopPanel.onRefresh += RefreshStats;
         }
         protected override void OnDisable()
         {
             base.OnDisable();
             m_shopPanel.onTryBuyItem -= OnTryBuyItem;
+            m_shopPanel.onRefresh -= RefreshStats;
         }
         
         protected override void OnEnter()
@@ -42,6 +43,14 @@ namespace CorruptedLandTales
             Exit();
         }
 
+        private void RefreshStats()
+        {
+            foreach (var stat in m_playerStats)
+            {
+                stat.RefreshStats();
+            }
+        }
+
         private void OnTryBuyItem(string item)
         {
             Debug.Log($"Try buy! - {item}");
@@ -51,7 +60,9 @@ namespace CorruptedLandTales
             {
                 if (m_player.money > itemData.cost)
                 {
+                    itemData.IncreaseStatLevel();
                     m_player.money -= itemData.cost;
+                    itemData.IncreaseCost();
                     Debug.Log($"{itemData.statName} BUY!!!");
                 }
             }
