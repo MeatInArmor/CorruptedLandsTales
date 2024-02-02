@@ -8,7 +8,7 @@ namespace CorruptedLandTales
 {
     public class UIShopPanel : MonoBehaviour
     {
-        public event System.Action<string> onTryBuyItem;
+        public event System.Action<StatSO> onTryBuyItem;
         public event System.Action onRefresh; 
         
         [SerializeField] private UIShopItem m_healthStat;
@@ -23,6 +23,10 @@ namespace CorruptedLandTales
         [SerializeField] private TMP_Text m_type;
         private List<StatSO> m_playerStats;
 
+        private StatSO activeStat;
+        private string activeType;
+        private int activeCost;
+        
         //TODO переписать этот говнокод
         public void SetPlayerStatsAndShopItems(PlayerStatsDB playerStatsDB)
         {
@@ -34,46 +38,61 @@ namespace CorruptedLandTales
             {
                 if (stat.statName == "health")
                 {
-                    m_healthStat.SetUpShopItem("health", stat.cost, stat.level);
+                    m_healthStat.SetUpShopItem(stat);
                     m_healthStat.onClick += OnItemClick;
                 }
                 if (stat.statName == "attack")
                 {
-                    m_damageStat.SetUpShopItem("attack", stat.cost, stat.level);
+                    m_damageStat.SetUpShopItem(stat);
                     m_damageStat.onClick += OnItemClick;
                 }
                 if (stat.statName == "attackspeed")
                 {
-                    m_attackSpeedStat.SetUpShopItem("attackspeed", stat.cost, stat.level);
+                    m_attackSpeedStat.SetUpShopItem(stat);
                     m_attackSpeedStat.onClick += OnItemClick;
                 }
                 if (stat.statName == "manapool")
                 {
-                    m_manaPoolStat.SetUpShopItem("manapool", stat.cost, stat.level);
+                    m_manaPoolStat.SetUpShopItem(stat);
                     m_manaPoolStat.onClick += OnItemClick;
                 }
                 if (stat.statName == "manaregen")
                 {
-                    m_manaRegenStat.SetUpShopItem("manaregen", stat.cost, stat.level);
+                    m_manaRegenStat.SetUpShopItem(stat);
                     m_manaRegenStat.onClick += OnItemClick;
                 }
                 if (stat.statName == "speed")
                 {
-                    m_speedStat.SetUpShopItem("speed", stat.cost, stat.level);
+                    m_speedStat.SetUpShopItem(stat);
                     m_speedStat.onClick += OnItemClick;
                 }
             }
         }
 
-        private void OnItemClick(string type, int cost)
+        private void RefreshCost(StatSO stat)
         {
-            m_cost.text = cost.ToString();
-            m_type.text = type;
+            m_manaPoolStat.SetUpShopItem(stat);
+        }
+
+        private void OnItemClick(StatSO stat)
+        {
+            activeStat = stat;
+            activeType = stat.statName;
+            activeCost = stat.cost;
+            SetCostAndType();
+        }
+
+        private void SetCostAndType()
+        {
+            m_cost.text = activeCost.ToString();
+            m_type.text = activeType;
         }
         
         private void OnBuyClick()
         {
-            onTryBuyItem?.Invoke(m_type.text);
+            onTryBuyItem?.Invoke(activeStat);
+            RefreshCost(activeStat);
+            OnItemClick(activeStat);
         }
 
         private void OnRefreshClick()

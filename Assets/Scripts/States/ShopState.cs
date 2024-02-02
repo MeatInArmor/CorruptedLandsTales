@@ -51,11 +51,11 @@ namespace CorruptedLandTales
             }
         }
 
-        private void OnTryBuyItem(string item)
+        private void OnTryBuyItem(StatSO stat)
         {
-            Debug.Log($"Try buy! - {item}");
+            Debug.Log($"Try buy! - {stat.statName}");
             
-            var itemData = m_playerStats.Find(x=> x.statName == item);
+            var itemData = m_playerStats.Find(x=> x.statName == stat.statName);
             if (itemData != null)
             {
                 if (m_player.money > itemData.cost)
