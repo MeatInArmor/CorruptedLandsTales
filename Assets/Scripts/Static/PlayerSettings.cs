@@ -44,6 +44,7 @@ namespace CorruptedLandTales
             
             PlayerPrefs.SetString("player.data", json);
         }
+        
         public void Load() 
         {
             var json = PlayerPrefs.GetString("playerSettings.settings");
