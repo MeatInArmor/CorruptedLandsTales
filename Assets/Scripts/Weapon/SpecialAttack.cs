@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -7,19 +6,31 @@ namespace CorruptedLandTales
     {
         [SerializeField] private ProjectileComponent m_prefab;
         [SerializeField] private Transform m_muzzle;
-        [SerializeField] private float m_cooldown = 3f;
+        [SerializeField] private float m_cooldown = 0.4f;
+        [SerializeField] private float m_manaCost;
+
+        [SerializeField] private ManaComponent m_manaComponent;
 
         private float m_timeLastUsed;
+        //private ManaComponent m_manaComponent;
         
         public event System.Action onUseSpecial;
+
+        private void Awake()
+        {
+            //m_manaComponent = GetComponentInParent<ManaComponent>();
+        }
 
         public void AnimateSpecialAttack()
         {
             float passedTime = Time.time - m_timeLastUsed; 
             if (m_cooldown < passedTime)
             {
-                onUseSpecial?.Invoke();
-                m_timeLastUsed = Time.time;
+                if (m_manaComponent.SpendMana(m_manaCost))
+                {
+                    onUseSpecial?.Invoke();
+                    m_timeLastUsed = Time.time;
+                }
             }
         }
 

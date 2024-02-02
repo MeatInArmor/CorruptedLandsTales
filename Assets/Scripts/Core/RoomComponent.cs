@@ -1,26 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace CorruptedLandTales
 {
     public class RoomComponent : MonoBehaviour
     {
-        [FormerlySerializedAs("m_meshSpawn")] [SerializeField] private RandomPositions mRandomPositions;
+        [SerializeField] private RandomPositions m_RandomPositions;
         [SerializeField] private List<RoomDoorComponent> m_doors;
         [SerializeField] private ExitDoorComponent m_exitDoor;
-        
-        private List<GameObject> m_prefabs = new List<GameObject>();
+        [SerializeField] private RoomOnMap m_roomOnMap;
+
+        private List<GameObject> m_prefabs = new List<GameObject>(4);
         private List<GameObject> m_enemies = new List<GameObject>(9);
         private List<Vector3> m_spawnPoints = new List<Vector3>();
         private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
-        private int m_enemyCount;
+        private int m_enemyCount = 0;
         private int m_remainigEnemy;
         private int m_currentEnemyCount;
         private string m_roomType;
-        
+
+        public List<GameObject> enemies => m_enemies; 
         public event System.Action onRoomCleared;
 
         private RoomStatus m_state;
@@ -31,18 +31,23 @@ namespace CorruptedLandTales
             InCombat,
             Deactivating
         }
+        //TODO можно отрефакторить в нормальный StateMachine
         
-        private void Start()
+        public void SpawnEnemy()
         {
-            switch (m_roomType) // при необходимости можно будет добавить что то в каждый тип
+            switch (m_roomType)
             {
                 case "Player":
-                    m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
-                        m_prefabs[0].transform.rotation); 
+                    /*m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
+                        m_prefabs[0].transform.rotation);*/
+                    m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
                     gameObject.SetActive(false);
                     break;
                 
                 case "Boss":
+                    var chest = Instantiate(m_prefabs[0], transform.position + m_playerSpawnOffset,
+                        m_prefabs[0].transform.rotation);
+                    chest.SetActive(false);
                     foreach (var door in m_doors)
                     {
                         door.Activate();
@@ -51,10 +56,25 @@ namespace CorruptedLandTales
                     onRoomCleared += () =>
                     {
                         m_exitDoor.Open();
+                        chest.SetActive(true);
                     };
+                    m_prefabs.RemoveAt(0);
+                    m_roomOnMap.bossIconOnMap.gameObject.SetActive(true);
                     break;
                 
                 case "Enemy":
+                    m_prefabs.RemoveAt(0);
+                    break;
+                
+                case "Heal":
+                    var heal = Instantiate(m_prefabs[0], transform.position + m_playerSpawnOffset,
+                        m_prefabs[0].transform.rotation);
+                    heal.SetActive(false);
+                    onRoomCleared += () =>
+                    {
+                        heal.SetActive(true);
+                    };
+                    m_prefabs.RemoveAt(0);
                     break;
             }
             
@@ -66,8 +86,7 @@ namespace CorruptedLandTales
                     m_state = RoomStatus.Activating;
                 };
             }
-            
-            m_spawnPoints = mRandomPositions.GetRandomRoomPoints();
+            m_spawnPoints = m_RandomPositions.GetRandomRoomPoints();
             m_remainigEnemy = m_enemyCount;
             int index = 0;
             
@@ -81,22 +100,24 @@ namespace CorruptedLandTales
                 {
                     m_currentEnemyCount = Random.Range(1, m_remainigEnemy + 1);
                 }
-                for (int j = 0; j < m_currentEnemyCount; j++)
+                if (m_remainigEnemy != 0)
                 {
-                    var enemy = Instantiate(m_prefabs[i], m_spawnPoints[j + index], transform.rotation);
-                    m_enemies.Add(enemy);
-                    enemy.SetActive(false);
-                    var healthComponent = enemy.GetComponent<HealthComponent>();
-                    healthComponent.onDie += () =>
+                    for (int j = 0; j < m_currentEnemyCount; j++)
                     {
-                        m_enemyCount -= 1;
-                    };
+                        var enemy = Instantiate(m_prefabs[i], m_spawnPoints[j + index], transform.rotation);
+                        m_enemies.Add(enemy);
+                        enemy.SetActive(false);
+                        if (enemy.TryGetComponent<HealthComponent>(out HealthComponent healthComponent))
+                        {
+                            healthComponent.onDie += () => { m_enemyCount -= 1; };
+                        }
+                    }
                 }
                 m_remainigEnemy -= m_currentEnemyCount;
                 index += m_currentEnemyCount;
             }
         }
-
+        
         private void Update()
         {
             switch (m_state)
@@ -128,9 +149,11 @@ namespace CorruptedLandTales
                     {
                         door.Deactivate();
                     }
-                    m_doors.Clear(); //мб можно убрать
+                    m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
+                    m_doors.Clear();
                     onRoomCleared?.Invoke();
                     gameObject.SetActive(false);
+                    
                     //m_state = RoomStatus.Deactivated;
                     break;
             }
@@ -141,7 +164,7 @@ namespace CorruptedLandTales
             m_enemyCount = count;
         }
 
-        public void SetEnemyTypes(GameObject enemyType)
+        public void SetPrefabs(GameObject enemyType)
         {
             m_prefabs.Add(enemyType);
         }

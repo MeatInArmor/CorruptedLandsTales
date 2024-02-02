@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3328c70ea2492458e1d900e9d26b41, type: 3}
+  m_Name: BossPresetSO
+  m_EditorClassIdentifier: 
+  moveData:
+    speed: 3.5
+    sprintSpeed: 0
+  healthData:
+    health: 500
+    maxHealth: 500
+  weapon: {fileID: 0}
+  manaData:
+    manaPool: 50
+    initMana: 0
+  atkData:
+    damage: 30
+  m_stats: {fileID: 11400000, guid: df92816da173cb24ca5157a6ad81a4a1, type: 2}
+  m_attacks:
+  - {fileID: 11400000, guid: 22121537f7f33ed4abdb6ee282ec32e2, type: 2}
+  - {fileID: 11400000, guid: e28ace02d0447be4aa96d0dffa1ceb87, type: 2}
+  - {fileID: 11400000, guid: 1e8c030aad04c8b4f904be237286f053, type: 2}
+  - {fileID: 11400000, guid: 6a73f063aee9e0a4bbd0157f42aece06, type: 2}

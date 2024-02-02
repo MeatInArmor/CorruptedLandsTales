@@ -1,7 +1,3 @@
-using System;
-using CorruptedLandTales;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TheKiwiCoder;
 using ShadowChimera;
@@ -23,9 +19,6 @@ namespace CorruptedLandTales
         private IAttackItem m_attackItem;
         
         private static int SpeedId = Animator.StringToHash("Speed");
-        //private static int DieId = Animator.StringToHash("Die");
-        //private static int SlashId = Animator.StringToHash("Slash");
-        //private static int SpecialId = Animator.StringToHash("Special");
         
         private void Start()
         {

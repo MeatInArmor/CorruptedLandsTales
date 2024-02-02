@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,9 +6,18 @@ namespace CorruptedLandTales
     public class GameState : MonoBehaviour
     {
         public List<GameObject> views;
+        
+        protected virtual void OnEnter()
+        {
+        }
+		
+        protected virtual void OnExit()
+        {
+        }
         public void Enter()
         {
             gameObject.SetActive(true);
+            OnEnter();
         }
         public void Exit()
         {

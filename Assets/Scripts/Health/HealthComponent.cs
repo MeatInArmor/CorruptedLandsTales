@@ -18,6 +18,7 @@ namespace CorruptedLandTales
         public float healthPercent => m_health / m_healthMax;
         public float MaxHealth => m_healthMax;
         public event System.Action<float> onTakeDamage;
+        public event System.Action<float> onHeal;
         public event System.Action onDie;
         public event System.Action onImpact;
 
@@ -47,16 +48,30 @@ namespace CorruptedLandTales
             {
                 onDie?.Invoke();
                 m_onDie.Invoke();
+                if (m_group == 0)
+                {
+                    NumbersCounts.kills++;
+                }
                 //Destroy(gameObject);
             }
             else
             {
                 //m_onImpact.Invoke();
-                onImpact.Invoke();
-                
+                onImpact.Invoke();                
             }
         }
 
-        
+        public void HealHealth(float amount)
+        {
+            if (m_health + amount >= m_healthMax)
+            {
+                m_health = m_healthMax;
+            }
+            else
+            {
+                m_health += amount;
+            }
+            onHeal?.Invoke(amount);
+        }
     }
 }

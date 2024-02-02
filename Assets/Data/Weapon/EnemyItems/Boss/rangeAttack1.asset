@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: rangeAttack1
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 5588360234851695542, guid: 0912d678dfc0b364e99ab97ce6787ac3, type: 3}
+  m_damage: 30
   m_delay: 1

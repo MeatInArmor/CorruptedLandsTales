@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -9,7 +7,7 @@ namespace CorruptedLandTales
         [SerializeField] private CharacterSO m_data;
         [SerializeField] private Character m_character;
 
-        private void Start() //awake не помог
+        private void Start()
         {
             if (m_character != null)
             {

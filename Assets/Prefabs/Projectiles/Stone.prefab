@@ -149,4 +149,5 @@ MonoBehaviour:
   m_force: 15
   m_lifeTime: 3
   m_damage: 30
+  m_defaultDamage: 0
   m_group: 1

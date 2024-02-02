@@ -1,14 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace CorruptedLandTales
 {
     public class MapState : GameState
     {
-        
-        public MapState miniMap;
-
 
         protected override void OnEnable()
         {
@@ -20,10 +13,10 @@ namespace CorruptedLandTales
         }
         public void OpenCloseMap()
         {
-            if (miniMap.isActiveAndEnabled)
-                miniMap.Exit();
+            if (isActiveAndEnabled)
+                Exit();
             else 
-                miniMap.Enter();
+                Enter();
         }
 
     }

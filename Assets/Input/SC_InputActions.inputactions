@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "17b54efa-4736-4bf2-9e5b-ad2b7a4c1791",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "9efc2ac1-0209-49cf-9fe8-2915406f053f",
@@ -72,6 +63,24 @@
                     "name": "Inventory",
                     "type": "Button",
                     "id": "d460b28c-8182-4b98-a3c2-526f5e44fc04",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WeaponSkill",
+                    "type": "Button",
+                    "id": "01386a4b-b9df-42e2-8f11-779dac708a6e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UpgradeWeapon",
+                    "type": "Button",
+                    "id": "fa7c6c34-0b7a-4091-89e9-dd3f5103e688",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -334,17 +343,6 @@
                 },
                 {
                     "name": "",
-                    "id": "a6610a57-98dc-4e17-a300-cf20c15cd736",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Dash",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "3a798fb2-08b7-4012-939b-b57d41569a05",
                     "path": "<Keyboard>/backquote",
                     "interactions": "",
@@ -362,6 +360,28 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c9ed0488-eac6-47ce-b356-22128cc72d2c",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "WeaponSkill",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c13c28eb-c640-493c-a1a8-13d33f87ec64",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "UpgradeWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

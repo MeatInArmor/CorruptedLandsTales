@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -9,6 +6,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] private AttackManager m_attackManager;
         [SerializeField] private HealthComponent m_healthComponent;
+        [SerializeField] private ManaComponent m_manaComponent;
         
         private IMoveComponent m_moveComponent;
         public AttackManager attackManager => m_attackManager;
@@ -17,30 +15,6 @@ namespace CorruptedLandTales
         
         public IMoveComponent moveComponent => m_moveComponent;
         
-        public void Initialize(CharacterSO data)
-        {
-            if (attackManager) //пока такой костыль
-            {
-                if(data.weapon)
-                {
-                    attackManager.Initialize(data.weapon);
-                }
-                else
-                {
-                }
-            }
-            
-            if (m_healthComponent)
-            {
-                m_healthComponent.Initialize(data.healthData.maxHealth, data.healthData.health);
-            }
-
-            if (m_moveComponent != null)
-            {
-                m_moveComponent.Init(data.moveData.speed, data.moveData.sprintSpeed);
-            }
-        }
-
         private void Awake()
         {
             if (m_attackManager == null)
@@ -54,6 +28,33 @@ namespace CorruptedLandTales
             }
 
             m_moveComponent = GetComponent<IMoveComponent>();
+        }
+        
+        public void Initialize(CharacterSO data)
+        {
+            if (data == null)
+            {
+                return;
+            }
+            if (attackManager)
+            {
+                attackManager.Initialize(data.weapon);
+            }
+            
+            if (m_healthComponent != null)
+            {
+                m_healthComponent.Initialize(data.healthData.maxHealth, data.healthData.health);
+            }
+
+            if (m_moveComponent != null)
+            {
+                m_moveComponent.Init(data.moveData.speed, data.moveData.sprintSpeed);
+            }
+
+            if (m_manaComponent != null)
+            {
+               m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana);
+            }
         }
     }
 }

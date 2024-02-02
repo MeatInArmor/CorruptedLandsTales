@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 1b70ae992a919f6429b76715ee6766f2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_healthComponent: {fileID: 9196480389814277058, guid: 0d5af6dc07ea79d4fb97ac3b710e4c5f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

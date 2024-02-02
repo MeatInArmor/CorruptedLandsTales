@@ -8,6 +8,9 @@ namespace CorruptedLandTales
         [SerializeField] private float m_lifeTime = 5f;
         [SerializeField] private float m_damage = 10f;
         [SerializeField] private int m_group = 0; //0 enemy 1 player
+
+        public float LifeTime => m_lifeTime;
+        public float Force => m_force;
         
         private void Start()
         {
@@ -24,6 +27,16 @@ namespace CorruptedLandTales
             {
                 damageable.TakeDamage(m_damage);                
             }
+        }
+
+        public void IncreaseDamage(float damage)
+        {
+            m_damage += damage;
+        }
+
+        public void RefreshDamage(float damage)
+        {
+            m_damage = damage;
         }
     }
 }

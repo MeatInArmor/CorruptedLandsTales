@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -11,11 +8,13 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackAngle = 120.0f;
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private LayerMask m_layerMask;
+        [SerializeField] private float m_manaCost;
+        [SerializeField] private float m_manaPerHit = 5.0f;
         
+        private ManaComponent m_manaComponent;
         private IWeaponSkill m_weaponSkill;
-        private Collider[] m_result = new Collider[10]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
+        private Collider[] m_result = new Collider[20]; // ограничения строгие т.к. не меняется массив полученных значений!!!!!!
         private Transform m_parentTransform;
-        
         
         public void Initialize(WeaponSO data)
         {
@@ -24,6 +23,7 @@ namespace CorruptedLandTales
             m_attackAngle = weaponData.attackAngle;
             m_attackRange = weaponData.attackRange;
             m_layerMask = weaponData.layerMask;
+            m_manaCost = weaponData.manaCost;
         }
         
         private void Awake()
@@ -31,6 +31,7 @@ namespace CorruptedLandTales
             m_attackAngle /= 2;
             m_parentTransform = transform.root;
             m_weaponSkill = GetComponent<IWeaponSkill>();
+            m_manaComponent = GetComponentInParent<ManaComponent>();
         }
 
         public void Use()
@@ -40,7 +41,10 @@ namespace CorruptedLandTales
 
         public void UseSkill() 
         {
-            m_weaponSkill.Use();
+            if (m_manaComponent.SpendMana(m_manaCost))
+            {
+                m_weaponSkill.Use();
+            }
         }
 
         public void Show()
@@ -76,8 +80,17 @@ namespace CorruptedLandTales
                 if (damageable != null && dist < m_attackRange && dotProductAngle < m_attackAngle)
                 {
                     damageable.TakeDamage(m_damage);
+                    if (m_manaComponent)
+                    {
+                        m_manaComponent.GainMana(m_manaPerHit);
+                    }
                 }
             }
+        }
+
+        public void IncreaseDamage(float damage)
+        {
+            m_damage += damage; //TODO лютый костыль => WeaponUpgrader
         }
     }
 }

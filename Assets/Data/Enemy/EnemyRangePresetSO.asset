@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efcae3029400284c94f0c10abd76d08, type: 3}
+  m_Name: EnemyRangePresetSO
+  m_EditorClassIdentifier: 
+  moveData:
+    speed: 8
+    sprintSpeed: 10
+  healthData:
+    health: 80
+    maxHealth: 80
+  weapon: {fileID: 11400000, guid: 50c6aa3056e8c1f45bd0d0882e6da3ca, type: 2}
+  manaData:
+    manaPool: 0
+    initMana: 0
+  atkData:
+    damage: 10
+  m_stats: {fileID: 11400000, guid: 1a81dbd1961c5b941bddc05b1f0ffc4d, type: 2}

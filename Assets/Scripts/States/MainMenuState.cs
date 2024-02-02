@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
     public class MainMenuState : GameState
     {
+        public SettingsState settingsState;
+        [SerializeField] private ShopState m_shopState;
 
         protected override void OnEnable()
         {
@@ -28,6 +31,17 @@ namespace CorruptedLandTales
         public void LoadLevel()
         {
             SceneManager.LoadScene("GameLocation");
+        }
+        public void GoToSettings()
+        {
+            settingsState.Enter();
+            Exit();
+        }
+
+        public void GoToShop()
+        {
+            m_shopState.Enter();
+            Exit();
         }
     }
 }

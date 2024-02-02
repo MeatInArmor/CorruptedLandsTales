@@ -4,9 +4,9 @@ namespace CorruptedLandTales
 {
     public class ExitDoorComponent : MonoBehaviour
     {
+        [SerializeField] private Material m_material;
         private BoxCollider m_collider;
         private MeshRenderer m_renderer;
-        [SerializeField] private Material m_material;
         
         public event System.Action onPlayerExitLocation;
         
@@ -29,8 +29,8 @@ namespace CorruptedLandTales
         {
             if (other.CompareTag("Player"))
             {
+                NumbersCounts.levelsCleared++;
                 onPlayerExitLocation?.Invoke();
-                Debug.Log("Try to enter next location");
             }
         }
     }

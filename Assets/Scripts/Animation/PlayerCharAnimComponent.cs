@@ -42,8 +42,7 @@ namespace ShadowChimera
             }
 
             if (m_healthcomponent)
-            {
-                //m_healthcomponent = GetComponentInParent<HealthComponent>();
+            {                
                 m_healthcomponent = GetComponent<HealthComponent>();
             }
 
@@ -52,7 +51,6 @@ namespace ShadowChimera
 
             m_character.attackManager.onUseAttack += () =>
             {
-                //m_animator.SetTrigger(SlashId);
                 Slash();
             };
 
@@ -60,7 +58,6 @@ namespace ShadowChimera
             {
                 m_specialAttack.onUseSpecial += () =>
                 {
-                    //m_animator.SetTrigger(SpecialId);
                     CastSpell();
                 };
             }
@@ -68,7 +65,6 @@ namespace ShadowChimera
             m_character.HealthComponent.onImpact += () =>
             {
                 m_animator.SetBool("IsImpact", true);
-                //m_animator.SetTrigger("isImpact");
             };
 
             m_character.HealthComponent.onDie += () =>
@@ -98,7 +94,7 @@ namespace ShadowChimera
 
         private void Slash()
         {
-            m_animator.SetTrigger("isSlash");
+            //m_animator.SetTrigger("isSlash");
         }
 
         private void CastSpell()

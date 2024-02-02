@@ -13,9 +13,15 @@ MonoBehaviour:
   m_Name: EnemyMeleeSO
   m_EditorClassIdentifier: 
   moveData:
-    speed: 5
+    speed: 7
     sprintSpeed: 10
   healthData:
-    health: 100
-    maxHealth: 100
+    health: 150
+    maxHealth: 150
   weapon: {fileID: 11400000, guid: f402540f7e40e0c4496dba42407b5699, type: 2}
+  manaData:
+    manaPool: 0
+    initMana: 0
+  atkData:
+    damage: 20
+  m_stats: {fileID: 11400000, guid: edff87abed60c414889ceab2e2dd22bf, type: 2}

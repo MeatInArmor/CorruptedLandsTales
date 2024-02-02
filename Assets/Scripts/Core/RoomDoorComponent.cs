@@ -16,8 +16,8 @@ namespace CorruptedLandTales
         
         private void Awake()
         {
-            m_collider = gameObject.GetComponent<BoxCollider>();
-            m_renderer = gameObject.GetComponent<MeshRenderer>();
+            m_collider = GetComponent<BoxCollider>();
+            m_renderer = GetComponent<MeshRenderer>();
             foreach (var addDoor in m_addDoors)
             {
                 addDoor.onEnter += () =>

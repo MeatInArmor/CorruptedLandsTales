@@ -1,11 +1,10 @@
-using CorruptedLandTales;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.EventSystems.StandaloneInputModule;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
     public class NewPlayerController : MonoBehaviour
     {
@@ -13,9 +12,8 @@ namespace ShadowChimera
         [SerializeField] private InputActionAsset m_inputActionAsset;
         [SerializeField] private Transform m_cameraTransform;
         [SerializeField] private SpecialAttack m_specialAttack;
-        [SerializeField] private FindItem m_findItem;
-        [SerializeField] private CharMoveComponentAnimator m_charMoveComponentAnimator;
-
+        [SerializeField] private ItemFinder m_findItem;
+       
         private InputActionMap m_playerMap;
         private InputAction m_moveAction;
         private InputAction m_AttackAction;
@@ -93,7 +91,7 @@ namespace ShadowChimera
 
         private void OnPickUpInput(InputAction.CallbackContext context)
         {
-            m_findItem.PickUp();
+            
         }
 
         private void Update()
@@ -115,16 +113,6 @@ namespace ShadowChimera
 
             m_animator.SetFloat(HorizontalId, 0f, 0.05f, Time.deltaTime);
             m_animator.SetFloat(VerticalId, inputMagnitude, 0.05f, Time.deltaTime);
-
-            
-
-            //if (!m_character)
-            //{
-            //    enabled = false;
-            //    return;
-            //}
-            //Vector2 move = m_moveAction.ReadValue<Vector2>();
-            //m_charMoveComponentAnimator.AnimateMove(move, m_cameraTransform.eulerAngles.y);
         }
     }
 }
