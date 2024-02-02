@@ -71,7 +71,7 @@ namespace CorruptedLandTales
 
         private void RefreshCost(StatSO stat)
         {
-            m_manaPoolStat.SetUpShopItem(stat);
+            //m_manaPoolStat.SetUpShopItem(stat);
         }
 
         private void OnItemClick(StatSO stat)
@@ -91,7 +91,7 @@ namespace CorruptedLandTales
         private void OnBuyClick()
         {
             onTryBuyItem?.Invoke(activeStat);
-            RefreshCost(activeStat);
+            //RefreshCost(activeStat);
             OnItemClick(activeStat);
         }
 

@@ -24,7 +24,9 @@ namespace CorruptedLandTales
 
         [Header("Player")] 
         [SerializeField] private CharacterSO m_player;
+        [SerializeField] private CharacterSO m_playerPreset;
         [SerializeField] private StatsIncreaseSO m_playerIncreaseStatsSo;
+        [SerializeField] private StatsIncreaseSO m_playerIncreaseStatsPresetSo;
         
         private PlayerSettings m_playerSettings;
         private List<StatSO> m_playerStats;
@@ -36,6 +38,11 @@ namespace CorruptedLandTales
             m_rangeData.RefreshStats(m_rangePreset);
             m_bossData.RefreshStats(m_bossPreset);
             m_rangeProjectile.RefreshDamage(m_rangePreset.atkData.damage);
+            SetUpPlayerStats();
+        }
+
+        private void SetUpPlayerStats()
+        {
             m_playerStats = new List<StatSO>();
             m_playerStats = m_playerSettings.playerStats.stats;
             foreach (var stat in m_playerStats)

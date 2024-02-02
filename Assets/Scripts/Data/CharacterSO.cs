@@ -25,7 +25,6 @@ namespace CorruptedLandTales
                 {
                     weapon.IncreaseDamage(m_stats.atkData.dmg);
                 }
-
                 manaData.manaPool += m_stats.manaData.mana;
             }
         }
@@ -39,6 +38,7 @@ namespace CorruptedLandTales
             {
                 weapon.SetDamage(stats.atkData.damage);
             }
+            manaData.manaPool = m_stats.manaData.mana;
         }
     }
 
