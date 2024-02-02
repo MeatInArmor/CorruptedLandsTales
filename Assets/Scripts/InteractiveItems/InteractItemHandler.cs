@@ -10,6 +10,8 @@ namespace CorruptedLandTales
         [SerializeField] private WeaponUpgrader m_weaponUpgrader;
         [SerializeField] private HealthComponent m_healthComponent;
         [SerializeField] private ItemFinder m_itemFinder;
+        [SerializeField] private Animator m_animator;
+        [SerializeField] private GameObject m_equipmentWeapon;
 
         private GameObject m_item;
         private float m_damageToIncrease;
@@ -55,6 +57,8 @@ namespace CorruptedLandTales
             if(m_item != null)
             {
                 var data = m_item.GetComponent<IInteractiveItem>().GetData();
+                var dataequipmentWeapon = m_attackManager.activeWeapon as MeleeAttack;
+                //dataequipmentWeapon;
                 if (data != null)
                 {
                     if (data is InteractiveHealSO healData)
@@ -71,7 +75,15 @@ namespace CorruptedLandTales
 
                     if (data is InteractiveWeaponSO weaponData)
                     {
+                        // изменили вес анимации для экипированного оружия
+                        name = weaponData.weapon.layerAnimName;
+                        m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
+
                         m_attackManager.Initialize(weaponData.weapon);
+
+                        // изменили вес анимации для поднятого оружия
+                        name = weaponData.weapon.layerAnimName;
+                        m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
                     }
                     Destroy(m_item);
                     m_item = null;

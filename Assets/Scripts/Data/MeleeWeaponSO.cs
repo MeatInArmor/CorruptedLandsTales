@@ -8,6 +8,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_attackAngle = 120.0f;
         [SerializeField] private float m_attackRange = 3.0f;
         [SerializeField] private float m_manaCost = 15;
+        
         [Header("Who to Damage")]
         [SerializeField] private LayerMask m_layerMask;
         
