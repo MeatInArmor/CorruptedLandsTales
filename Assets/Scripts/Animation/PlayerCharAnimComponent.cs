@@ -1,14 +1,11 @@
-using System;
 using CorruptedLandTales;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TheKiwiCoder;
-using ShadowChimera;
 
-namespace CorruptedLandTales
+namespace ShadowChimera
 {
-    public class CharAnimsComponent : MonoBehaviour
+    public class PlayerCharAnimComponent : MonoBehaviour
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private Character m_character;
@@ -21,12 +18,12 @@ namespace CorruptedLandTales
         private HealthComponent m_healthcomponent;
         private IMoveComponent moveComponent => m_character.moveComponent;
         private IAttackItem m_attackItem;
-        
+
         private static int SpeedId = Animator.StringToHash("Speed");
         //private static int DieId = Animator.StringToHash("Die");
         //private static int SlashId = Animator.StringToHash("Slash");
         //private static int SpecialId = Animator.StringToHash("Special");
-        
+
         private void Start()
         {
             if (m_animator == null)
@@ -58,7 +55,7 @@ namespace CorruptedLandTales
                 //m_animator.SetTrigger(SlashId);
                 Slash();
             };
-            
+
             if (m_specialAttack != null)
             {
                 m_specialAttack.onUseSpecial += () =>
@@ -69,15 +66,15 @@ namespace CorruptedLandTales
             }
 
             m_character.HealthComponent.onImpact += () =>
-            {                
+            {
                 m_animator.SetBool("IsImpact", true);
                 //m_animator.SetTrigger("isImpact");
             };
-            
+
             m_character.HealthComponent.onDie += () =>
-            {                
+            {
                 m_animator.SetTrigger("isDie");
-            };            
+            };
 
             /*
             m_charMoveComponent.onUseDash += () =>
@@ -88,15 +85,15 @@ namespace CorruptedLandTales
             */
 
         }
-        public void OnEndImpact()
-        {
-            m_animator.SetBool("IsImpact", false);
+        //public void OnEndImpact()
+        //{
+        //    m_animator.SetBool("IsImpact", false);
 
-        }
+        //}
         private void LateUpdate()
         {
-            var speed = moveComponent.velocity.magnitude;
-            m_animator.SetFloat(SpeedId, speed);
+            /*var speed = moveComponent.velocity.magnitude;
+            m_animator.SetFloat(SpeedId, speed);*/
         }
 
         private void Slash()
@@ -113,6 +110,5 @@ namespace CorruptedLandTales
         {
             m_animator.SetTrigger("isDash");
         }
-
     }
 }

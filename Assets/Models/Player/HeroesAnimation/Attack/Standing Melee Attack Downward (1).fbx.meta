@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7e1a9d0c3485be542a8bcb8e0f8df9c3
+guid: 56137faf1b44d4647821464b2fe5718a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -40,11 +40,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: punch ground
+      name: molot 3 combo end
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 70
-      lastFrame: 95
+      firstFrame: 0
+      lastFrame: 68
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f827b16f3a7e0064594792cb6c302a4e
+guid: 32822c5ba7bd68e4485c09b085576a6a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -40,11 +40,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: molot combo
+      name: one hand combo
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 38
-      lastFrame: 116
+      firstFrame: 0
+      lastFrame: 66
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
