@@ -27,9 +27,8 @@ namespace CorruptedLandTales
         [SerializeField] private CharacterSO m_playerData;
         [SerializeField] private CharacterSO m_playerPreset;
         [SerializeField] private StatsIncreaseSO m_playerIncreaseStatsSo;
-
         [SerializeField] private PlayerStatsDB m_playerStatsSO;
-        //private PlayerStatsDB m_playerStatsSO;
+        
         private List<StatSO> m_playerStats;
         
         private void Awake()

@@ -10,7 +10,6 @@ namespace CorruptedLandTales
         [SerializeField] private UIShopPanel m_shopPanel;
         [SerializeField] private PlayerStatsDB m_playerStatsSO;
         private PlayerSettings m_player;
-        //private PlayerStatsDB m_playerStatsSO;
         private List<StatSO> m_playerStats;
        
         
