@@ -27,7 +27,6 @@ namespace CorruptedLandTales
         private string activeType;
         private int activeCost;
         
-        //TODO переписать этот говнокод
         public void SetPlayerStatsAndShopItems(PlayerStatsDB playerStatsDB)
         {
             ClearText();
@@ -69,11 +68,6 @@ namespace CorruptedLandTales
             }
         }
 
-        private void RefreshCost(StatSO stat)
-        {
-            //m_manaPoolStat.SetUpShopItem(stat);
-        }
-
         private void OnItemClick(StatSO stat)
         {
             activeStat = stat;
@@ -91,7 +85,6 @@ namespace CorruptedLandTales
         private void OnBuyClick()
         {
             onTryBuyItem?.Invoke(activeStat);
-            //RefreshCost(activeStat);
             OnItemClick(activeStat);
         }
 
@@ -100,7 +93,7 @@ namespace CorruptedLandTales
             onRefresh?.Invoke();
         }
 
-        private void OnDisable() // переписать этот говнокод
+        private void OnDisable()
         {
             m_healthStat.onClick -= OnItemClick;
             m_damageStat.onClick -= OnItemClick;

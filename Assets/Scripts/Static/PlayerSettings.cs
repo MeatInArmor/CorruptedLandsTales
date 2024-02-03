@@ -23,13 +23,6 @@ namespace CorruptedLandTales
             }
             get => m_money;
         }
-            
-        private PlayerStatsDB m_playerStats;
-        
-        public PlayerStatsDB playerStats
-        {
-            get => m_playerStats;
-        }
         
         public void Save()
         {
@@ -39,7 +32,6 @@ namespace CorruptedLandTales
             json = JsonUtility.ToJson(new PlayerData()
             {
                 money = m_money,
-                //playerStats = m_playerStats,
             });
             
             PlayerPrefs.SetString("player.data", json);
@@ -54,14 +46,11 @@ namespace CorruptedLandTales
             }
             
             json = PlayerPrefs.GetString("player.data");
-            //m_playerStats = new PlayerStatsDB();
-            m_playerStats = Resources.Load<PlayerStatsDB>("PlayerStatsDB");
             
             if (!string.IsNullOrEmpty(json))
             {
                 var playerData = JsonUtility.FromJson<PlayerData>(json);
                 m_money = playerData.money;
-                //m_playerStats = playerData.playerStats;
             }
         }
 
@@ -77,7 +66,6 @@ namespace CorruptedLandTales
         private class PlayerData
         {
             public int money;
-            public PlayerStatsDB playerStats;
         }
     }
 }

@@ -4145,6 +4145,7 @@ MonoBehaviour:
   - {fileID: 3394252577923014886}
   m_mainMenu: {fileID: 1762648065}
   m_shopPanel: {fileID: 606055190}
+  m_playerStatsSO: {fileID: 11400000, guid: 543a8c7a4cfa1bf4aa0a6f2ae3711e59, type: 2}
 --- !u!4 &1974207360
 Transform:
   m_ObjectHideFlags: 0

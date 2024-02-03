@@ -38,7 +38,7 @@ namespace CorruptedLandTales
             {
                 weapon.SetDamage(stats.atkData.damage);
             }
-            manaData.manaPool = m_stats.manaData.mana;
+            manaData.manaPool = stats.manaData.manaPool;
         }
     }
 

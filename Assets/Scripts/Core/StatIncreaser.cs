@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -21,59 +22,26 @@ namespace CorruptedLandTales
         [SerializeField] private GameController m_gameController;
         [Header("")]
         [SerializeField] private int m_newEnemyPerTime;
-
+        
         [Header("Player")] 
-        [SerializeField] private CharacterSO m_player;
+        [SerializeField] private CharacterSO m_playerData;
         [SerializeField] private CharacterSO m_playerPreset;
         [SerializeField] private StatsIncreaseSO m_playerIncreaseStatsSo;
-        [SerializeField] private StatsIncreaseSO m_playerIncreaseStatsPresetSo;
-        
-        private PlayerSettings m_playerSettings;
+
+        [SerializeField] private PlayerStatsDB m_playerStatsSO;
+        //private PlayerStatsDB m_playerStatsSO;
         private List<StatSO> m_playerStats;
         
         private void Awake()
         {
-            m_playerSettings = GameInstance.instance.playerSettings;
             m_meleeData.RefreshStats(m_meleePreset);
             m_rangeData.RefreshStats(m_rangePreset);
             m_bossData.RefreshStats(m_bossPreset);
+            m_bossProjectile.RefreshDamage(m_bossPreset.atkData.damage);
             m_rangeProjectile.RefreshDamage(m_rangePreset.atkData.damage);
+            m_playerStatsSO = Resources.Load<PlayerStatsDB>("PlayerStatsDB");
+            m_playerStats = m_playerStatsSO.stats;
             SetUpPlayerStats();
-        }
-
-        private void SetUpPlayerStats()
-        {
-            m_playerStats = new List<StatSO>();
-            m_playerStats = m_playerSettings.playerStats.stats;
-            foreach (var stat in m_playerStats)
-            {
-                var lvl = stat.level;
-                if (stat.statName == "health")
-                {
-                    m_playerIncreaseStatsSo.healthData.health += stat.level * stat.valuePerLevel;
-                }
-                if (stat.statName == "attack")
-                {
-                    m_playerIncreaseStatsSo.atkData.dmg += stat.level * stat.valuePerLevel;
-                }
-                if (stat.statName == "attackspeed")
-                {
-                    Debug.Log("Try to increase attackspeed stat");
-                }
-                if (stat.statName == "manapool")
-                {
-                    m_playerIncreaseStatsSo.manaData.mana += stat.level * stat.valuePerLevel;
-                }
-                if (stat.statName == "manaregen")
-                {
-                    Debug.Log("Try to increase manaregen stat");
-                }
-                if (stat.statName == "speed")
-                {
-                    m_playerIncreaseStatsSo.moveData.speed += stat.level * stat.valuePerLevel;
-                }
-            }
-            m_player.IncreaseStats();
         }
 
         private void Start()
@@ -81,10 +49,43 @@ namespace CorruptedLandTales
             m_gameController.onResetLevelcontroller += IncreaseStats;
         }
         
-        
         private void OnDisable()
         {
             m_gameController.onResetLevelcontroller -= IncreaseStats;
+        }
+        
+        private void SetUpPlayerStats()
+        {
+            m_playerData.RefreshStats(m_playerPreset);
+            foreach (var stat in m_playerStats)
+            {
+                var lvl = stat.level;
+                if (stat.statName == "health")
+                {
+                    m_playerIncreaseStatsSo.healthData.health = stat.level * stat.valuePerLevel;
+                }
+                if (stat.statName == "attack")
+                {
+                    m_playerIncreaseStatsSo.atkData.dmg = stat.level * stat.valuePerLevel;
+                }
+                if (stat.statName == "attackspeed")
+                {
+                    Debug.Log("Try to increase attackspeed stat");
+                }
+                if (stat.statName == "manapool")
+                {
+                    m_playerIncreaseStatsSo.manaData.mana = stat.level * stat.valuePerLevel;
+                }
+                if (stat.statName == "manaregen")
+                {
+                    Debug.Log("Try to increase manaregen stat");
+                }
+                if (stat.statName == "speed")
+                {
+                    m_playerIncreaseStatsSo.moveData.speed = stat.level * stat.valuePerLevel;
+                }
+            }
+            m_playerData.IncreaseStats();
         }
         
         private void IncreaseStats()

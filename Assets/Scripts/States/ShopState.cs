@@ -8,7 +8,9 @@ namespace CorruptedLandTales
     {
         [SerializeField] private MainMenuState m_mainMenu;
         [SerializeField] private UIShopPanel m_shopPanel;
+        [SerializeField] private PlayerStatsDB m_playerStatsSO;
         private PlayerSettings m_player;
+        //private PlayerStatsDB m_playerStatsSO;
         private List<StatSO> m_playerStats;
        
         
@@ -27,14 +29,14 @@ namespace CorruptedLandTales
         
         protected override void OnEnter()
         {
-            m_shopPanel.SetPlayerStatsAndShopItems(m_player.playerStats);
-            m_playerStats = new List<StatSO>();
-            m_playerStats = m_player.playerStats.stats;
+            m_shopPanel.SetPlayerStatsAndShopItems(m_playerStatsSO);
         }
 
         private void Awake()
         {
             m_player = GameInstance.instance.playerSettings;
+            m_playerStatsSO = Resources.Load<PlayerStatsDB>("PlayerStatsDB");
+            m_playerStats = m_playerStatsSO.stats;
         }
 
         public void GoToMainMenu()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44402325, g: 0.4931664, b: 0.57223254, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657862, g: 0.49641347, b: 0.5748182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1674,6 +1674,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 86893bf10141aa0458328f77da481456, type: 2}
     - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: df76f579643d4684dab2dfadd68d471a, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_meleePreset
       value: 
       objectReference: {fileID: 11400000, guid: de8ca51d68e9b84459765b7b929eba63, type: 2}
@@ -1681,6 +1685,14 @@ PrefabInstance:
       propertyPath: m_rangePreset
       value: 
       objectReference: {fileID: 11400000, guid: 7f6b7bc32f79eb145bcd49ab4e969dd8, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_playerPreset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0338a65584cbd224b8afcae7823ef7ff, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_playerStatsSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 543a8c7a4cfa1bf4aa0a6f2ae3711e59, type: 2}
     - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_bossProjectile
       value: 
@@ -1709,6 +1721,10 @@ PrefabInstance:
       propertyPath: m_playerIncreaseStatsSo
       value: 
       objectReference: {fileID: 11400000, guid: 2a51153bf15862a48a7bb45815456aab, type: 2}
+    - target: {fileID: 8111255128683429485, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
+      propertyPath: m_playerIncreaseStatsPresetSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 914038ab71085c942beff725992f6ded, type: 2}
     - target: {fileID: 8578256703099070303, guid: 60f2ebca3bf3ed340b35ff708621512e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
