@@ -1,6 +1,3 @@
-using UnityEditor;
-using UnityEngine;
-
 namespace CorruptedLandTales
 {
     public interface IDamageable

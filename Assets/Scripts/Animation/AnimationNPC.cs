@@ -1,6 +1,3 @@
-using CorruptedLandTales;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -10,7 +7,6 @@ namespace CorruptedLandTales
         private IMoveComponent m_moveComponent;
         private IAttackItem m_attackItem;
         private NavMeshAgentComponent m_navMeshAgentComponent;
-        //[SerializeField] private Avatar m_Avataranimator;
         [SerializeField] private Animator m_animator;
 
         private void Awake()
@@ -22,27 +18,15 @@ namespace CorruptedLandTales
 
             Character character = GetComponentInParent<Character>();
             m_moveComponent = character.moveComponent;
-            //m_navMeshAgentComponent.velocity.magnitude;
-            //m_attackItem = (IAttackItem)character.attackManager;
-            /*character.healthComponent.onDie += () =>
-            {
-                m_animator.SetTrigger("Die");
-            };*/
         }
 
         private void Update()
         {
-            //var speed = m_navMeshAgentComponent.velocity.magnitude;
-            //m_animator.SetFloat("Speed", speed);
             if (m_moveComponent != null)
             {
                 var speed = m_navMeshAgentComponent.velocity.magnitude;
                 m_animator.SetFloat("Speed", speed);
             }
-            //if (m_attackItem != null)
-            //{                
-            //    m_animator.SetBool("IsSlash",true);
-            //}
         }
         public void Slash()
         {

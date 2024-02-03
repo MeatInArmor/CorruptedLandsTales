@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using CorruptedLandTales;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {

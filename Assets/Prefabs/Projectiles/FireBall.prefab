@@ -151,6 +151,7 @@ MonoBehaviour:
   m_force: 20
   m_lifeTime: 3
   m_damage: 100
+  m_defaultDamage: 0
   m_group: 0
 --- !u!198 &2985905355087271752
 ParticleSystem:

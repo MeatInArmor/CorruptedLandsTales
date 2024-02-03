@@ -5,7 +5,7 @@ namespace CorruptedLandTales
     public class BossAnimComponent : MonoBehaviour
     {
         [SerializeField] private Animator m_animator;
-        [SerializeField] private Character m_character;
+        [SerializeField] private BossCharacter m_character;
         [SerializeField] private BossAttackManager m_attackManager;
         
         private IMoveComponent moveComponent => m_character.moveComponent;
@@ -27,10 +27,10 @@ namespace CorruptedLandTales
 
             if (m_character == null)
             {
-                m_character = GetComponent<Character>();
+                m_character = GetComponent<BossCharacter>();
             }
             
-            m_character = GetComponentInParent<Character>();
+            m_character = GetComponentInParent<BossCharacter>();
             
             m_attackManager.onMeleeAttack1Action += () =>
             {
@@ -52,7 +52,7 @@ namespace CorruptedLandTales
                 m_animator.SetTrigger(MeleeAttack3Id);
             };
 
-            m_character.HealthComponent.onDie += () =>
+            m_character.healthComponent.onDie += () =>
             {
                 m_animator.SetTrigger(DieId);
             };

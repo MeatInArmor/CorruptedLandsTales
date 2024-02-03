@@ -830,7 +830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_animator: {fileID: 5461522271730871998}
-  m_character: {fileID: 5010889676696430491}
+  m_character: {fileID: 0}
   m_attackManager: {fileID: 3972476039621488070}
 --- !u!114 &4917926653391218907
 MonoBehaviour:
@@ -892,9 +892,10 @@ GameObject:
   - component: {fileID: 4896854975139417411}
   - component: {fileID: 6790132509896539290}
   - component: {fileID: 3302770050730588976}
-  - component: {fileID: 5010889676696430491}
   - component: {fileID: 3972476039621488070}
   - component: {fileID: 2554258382921855741}
+  - component: {fileID: -1112667230050965952}
+  - component: {fileID: 4706512623000969074}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -999,20 +1000,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_agent: {fileID: 3058403240876692289}
---- !u!114 &5010889676696430491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7050268017130397507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d732d5daf507ac14496f51a3ce463de0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_attackManager: {fileID: 0}
-  m_healthComponent: {fileID: 6790132509896539290}
 --- !u!114 &3972476039621488070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,11 +1012,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8114e688a8339d540a72db2e5b33071b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponList:
-  - {fileID: 11400000, guid: 22121537f7f33ed4abdb6ee282ec32e2, type: 2}
-  - {fileID: 11400000, guid: e28ace02d0447be4aa96d0dffa1ceb87, type: 2}
-  - {fileID: 11400000, guid: 1e8c030aad04c8b4f904be237286f053, type: 2}
-  - {fileID: 11400000, guid: 6a73f063aee9e0a4bbd0157f42aece06, type: 2}
   m_stageManager: {fileID: 2554258382921855741}
 --- !u!114 &2554258382921855741
 MonoBehaviour:
@@ -1044,6 +1026,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_countStages: 2
+  m_healthComponent: {fileID: 6790132509896539290}
+--- !u!114 &-1112667230050965952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050268017130397507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63aec66d29ac8e545bae1d1aa0023e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_data: {fileID: 11400000, guid: 17ad1827674b8ea48b6e411d1511f3b0, type: 2}
+  m_bossCharacter: {fileID: 4706512623000969074}
+--- !u!114 &4706512623000969074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7050268017130397507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66ffab7c81279054ba726ee8001c5b55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_attackManager: {fileID: 3972476039621488070}
   m_healthComponent: {fileID: 6790132509896539290}
 --- !u!1 &7406269880767609251
 GameObject:

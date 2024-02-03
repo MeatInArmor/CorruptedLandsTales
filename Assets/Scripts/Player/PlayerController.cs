@@ -1,10 +1,5 @@
-using System;
-using Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -14,7 +9,8 @@ namespace CorruptedLandTales
 		[SerializeField] private InputActionAsset m_inputActionAsset;
 		[SerializeField] private Transform m_cameraTransform;
 		[SerializeField] private SpecialAttack m_specialAttack;
-		[SerializeField] private FindItem m_findItem;
+		[SerializeField] private ItemFinder m_itemFinder;
+		[SerializeField] private InteractItemHandler m_itemHandler;
 		
 		private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
@@ -22,11 +18,8 @@ namespace CorruptedLandTales
 		private InputAction m_pickUp;
 		private InputAction m_useSpecial;
 		private InputAction m_useWeaponSkill;
+		private InputAction m_useUpgrade;
 		private CharMoveComponent m_charMoveController;
-		
-		//Dash
-		//private InputAction m_useDash;
-		
 		
 		private void Awake()
 		{
@@ -36,37 +29,29 @@ namespace CorruptedLandTales
 			m_pickUp = m_playerMap.FindAction("PickUp");
 			m_useSpecial = m_playerMap.FindAction("Special");
 			m_useWeaponSkill = m_playerMap.FindAction("WeaponSkill");
+			m_useUpgrade = m_playerMap.FindAction("UpgradeWeapon");
 			
 			m_charMoveController = m_character.GetComponent<CharMoveComponent>();
-			//Dash
-            //m_useDash = m_playerMap.FindAction("Dash");
-		}
-
-		private void Start()
-		{
-			//m_character.GetComponent<CharacterController>().enabled = true;
 		}
 
 		private void OnEnable()
 		{
 			m_playerMap.Enable();
-            //Dash
-            //m_useDash.performed += OnUseDash;
             m_AttackAction.performed += OnAttackInput;
 			m_pickUp.performed += OnPickUpInput;
 			m_useSpecial.performed += OnUseSpecial;
 			m_useWeaponSkill.performed += OnUseWeaponSkill;
+			m_useUpgrade.performed += OnUpgradeWeapon;
 		}
 
 		private void OnDisable()
 		{
 			m_playerMap.Disable();
-            //Dash
-            //m_useDash.performed -= OnUseDash;
             m_AttackAction.performed -= OnAttackInput;
 			m_pickUp.performed -= OnPickUpInput;
 			m_useSpecial.performed -= OnUseSpecial;
 			m_useWeaponSkill.performed -= OnUseWeaponSkill;
+			m_useUpgrade.performed -= OnUpgradeWeapon;
 		}
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
@@ -84,15 +69,15 @@ namespace CorruptedLandTales
             m_specialAttack.AnimateSpecialAttack();            
         }
 
+		private void OnUpgradeWeapon(InputAction.CallbackContext context)
+		{
+			m_itemHandler.UpgradeCurrentWeapon();
+		}
+		
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
-			m_findItem.UseItem();
+			m_itemHandler.HandleItem();
 		}
-        //Dash
-        /*private void OnUseDash(InputAction.CallbackContext context)
-		{
-			m_charMoveController.Dash();
-		}*/
 
 		private void Update()
 		{

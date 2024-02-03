@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TheKiwiCoder;
 using UnityEngine;
 
@@ -17,8 +15,6 @@ namespace CorruptedLandTales
             {
                 m_attackManager = context.agent.GetComponent<BossAttackManager>();
             }
-            /*m_attackTypes = m_attackManager.GetAttackTypes();
-            Debug.Log($"{m_attackTypes}");*/
         }
 
         protected override void OnStop()

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -18,35 +15,6 @@ namespace CorruptedLandTales
         
         public IMoveComponent moveComponent => m_moveComponent;
         
-        public void Initialize(CharacterSO data)
-        {
-            if (attackManager) //пока такой костыль
-            {
-                if(data.weapon)
-                {
-                    attackManager.Initialize(data.weapon);
-                }
-                else
-                {
-                }
-            }
-            
-            if (m_healthComponent)
-            {
-                m_healthComponent.Initialize(data.healthData.maxHealth, data.healthData.health);
-            }
-
-            if (m_moveComponent != null)
-            {
-                m_moveComponent.Init(data.moveData.speed, data.moveData.sprintSpeed);
-            }
-
-            if (m_manaComponent != null)
-            {
-               m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana);
-            }
-        }
-
         private void Awake()
         {
             if (m_attackManager == null)
@@ -60,6 +28,33 @@ namespace CorruptedLandTales
             }
 
             m_moveComponent = GetComponent<IMoveComponent>();
+        }
+        
+        public void Initialize(CharacterSO data)
+        {
+            if (data == null)
+            {
+                return;
+            }
+            if (attackManager)
+            {
+                attackManager.Initialize(data.weapon);
+            }
+            
+            if (m_healthComponent != null)
+            {
+                m_healthComponent.Initialize(data.healthData.maxHealth, data.healthData.health);
+            }
+
+            if (m_moveComponent != null)
+            {
+                m_moveComponent.Init(data.moveData.speed, data.moveData.sprintSpeed);
+            }
+
+            if (m_manaComponent != null)
+            {
+               m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana);
+            }
         }
     }
 }

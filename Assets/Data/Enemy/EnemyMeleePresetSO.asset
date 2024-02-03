@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efcae3029400284c94f0c10abd76d08, type: 3}
+  m_Name: EnemyMeleePresetSO
+  m_EditorClassIdentifier: 
+  moveData:
+    speed: 7
+    sprintSpeed: 10
+  healthData:
+    health: 150
+    maxHealth: 150
+  weapon: {fileID: 11400000, guid: f402540f7e40e0c4496dba42407b5699, type: 2}
+  manaData:
+    manaPool: 0
+    initMana: 0
+  atkData:
+    damage: 20
+  m_stats: {fileID: 11400000, guid: edff87abed60c414889ceab2e2dd22bf, type: 2}

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,7 +16,7 @@ namespace CorruptedLandTales
         private void Awake()
         {
             m_quality.ClearOptions();
-            m_quality.AddOptions(new List<string>() { "Очень низкая", "Низкая","Средняя","Высокая","Очень высокая", "Ультра"});
+            m_quality.AddOptions(new List<string>() { "пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ","пїЅпїЅпїЅпїЅпїЅпїЅпїЅ","пїЅпїЅпїЅпїЅпїЅпїЅпїЅ","пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ", "пїЅпїЅпїЅпїЅпїЅпїЅ"});
             
         }
         private void Start()

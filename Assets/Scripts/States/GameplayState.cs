@@ -1,9 +1,3 @@
-using CorruptedLandTales;
-using System.Collections;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using UnityEngine;
-
 namespace CorruptedLandTales
 {
     public class GameplayState : GameState
