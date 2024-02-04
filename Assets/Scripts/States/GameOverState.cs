@@ -10,7 +10,6 @@ namespace CorruptedLandTales
         [SerializeField] private RewardCounter m_rewardCounter;
         [SerializeField] private UIGameOverPanel m_gameOverPanel;
         private PlayerSettings m_player;
-        private int m_money;
         
         protected override void OnEnable()
         {

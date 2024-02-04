@@ -11,7 +11,7 @@ namespace CorruptedLandTales
         [SerializeField] private List<ExitDoorComponent> m_exitDoors;
         
         private GameObject m_activeLevel;
-        private int m_levelCount = 1;
+        private int m_levelCount = 0;
         private LevelController m_activeLevelController;
         
         public int levelCount => m_levelCount;
@@ -69,6 +69,7 @@ namespace CorruptedLandTales
             m_activeLevelController.SetPlayer(m_player);
             onResetLevelcontroller?.Invoke();
             m_activeLevelController.SetLevelController();
+            m_levelCount += 1;
         }
     }
 }

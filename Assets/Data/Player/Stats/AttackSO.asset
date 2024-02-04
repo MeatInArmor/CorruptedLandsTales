@@ -15,5 +15,5 @@ MonoBehaviour:
   m_statName: attack
   m_level: 0
   m_valuePerLevel: 10
-  m_cost: 45
-  m_costPerLevel: 45
+  m_cost: 100
+  m_costPerLevel: 100

@@ -15,5 +15,5 @@ MonoBehaviour:
   m_statName: health
   m_level: 0
   m_valuePerLevel: 50
-  m_cost: 50
-  m_costPerLevel: 50
+  m_cost: 25
+  m_costPerLevel: 25

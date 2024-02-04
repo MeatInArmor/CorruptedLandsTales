@@ -15,5 +15,5 @@ MonoBehaviour:
   m_statName: manapool
   m_level: 0
   m_valuePerLevel: 15
-  m_cost: 70
-  m_costPerLevel: 70
+  m_cost: 15
+  m_costPerLevel: 15
