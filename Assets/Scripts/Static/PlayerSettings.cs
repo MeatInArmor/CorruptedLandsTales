@@ -8,7 +8,7 @@ namespace CorruptedLandTales
     {
         public Settings settings {  get; private set; } = new Settings();
 
-        private int m_money = 1000;
+        private int m_money;
         public event System.Action<int> changeMoney;
 
         public int money
