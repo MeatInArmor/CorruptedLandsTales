@@ -35,35 +35,37 @@ namespace CorruptedLandTales
             m_refreshBtn.onClickRefreshButton += OnRefreshClick;
             foreach (var stat in m_playerStats)
             {
-                if (stat.statName == "health")
+                switch (stat.statName)
                 {
-                    m_healthStat.SetUpShopItem(stat);
-                    m_healthStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "attack")
-                {
-                    m_damageStat.SetUpShopItem(stat);
-                    m_damageStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "attackspeed")
-                {
-                    m_attackSpeedStat.SetUpShopItem(stat);
-                    m_attackSpeedStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "manapool")
-                {
-                    m_manaPoolStat.SetUpShopItem(stat);
-                    m_manaPoolStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "manaregen")
-                {
-                    m_manaRegenStat.SetUpShopItem(stat);
-                    m_manaRegenStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "speed")
-                {
-                    m_speedStat.SetUpShopItem(stat);
-                    m_speedStat.onClick += OnItemClick;
+                    case "здоровье":
+                        m_healthStat.SetUpShopItem(stat);
+                        m_healthStat.onClick += OnItemClick;
+                        break;
+
+                    case "сила атаки":
+                        m_damageStat.SetUpShopItem(stat);
+                        m_damageStat.onClick += OnItemClick;
+                        break;
+
+                    case "скорость атаки":
+                        m_attackSpeedStat.SetUpShopItem(stat);
+                        m_attackSpeedStat.onClick += OnItemClick;
+                        break;
+
+                    case "сила духа":
+                        m_manaPoolStat.SetUpShopItem(stat);
+                        m_manaPoolStat.onClick += OnItemClick;
+                        break;
+
+                    case "укрепление духа":
+                        m_manaRegenStat.SetUpShopItem(stat);
+                        m_manaRegenStat.onClick += OnItemClick;
+                        break;
+
+                    case "скорость движения":
+                        m_speedStat.SetUpShopItem(stat);
+                        m_speedStat.onClick += OnItemClick;
+                        break;
                 }
             }
         }
