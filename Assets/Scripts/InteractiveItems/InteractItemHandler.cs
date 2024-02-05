@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,7 +12,8 @@ namespace CorruptedLandTales
         [SerializeField] private HealthComponent m_healthComponent;
         [SerializeField] private ItemFinder m_itemFinder;
         [SerializeField] private Animator m_animator;
-        [SerializeField] private GameObject m_equipmentWeapon;
+        [SerializeField] private InitCharacter m_initCharacter;
+        [SerializeField] private CharacterSO m_data;
 
         private GameObject m_item;
         private float m_damageToIncrease;
@@ -57,8 +59,10 @@ namespace CorruptedLandTales
             if(m_item != null)
             {
                 var data = m_item.GetComponent<IInteractiveItem>().GetData();
-                var dataequipmentWeapon = m_attackManager.activeWeapon as MeleeAttack;
-                //dataequipmentWeapon;
+
+                var equipWeaponData = m_attackManager.activeLayer;
+
+
                 if (data != null)
                 {
                     if (data is InteractiveHealSO healData)
@@ -76,7 +80,7 @@ namespace CorruptedLandTales
                     if (data is InteractiveWeaponSO weaponData)
                     {
                         // изменили вес анимации для экипированного оружия
-                        name = weaponData.weapon.layerAnimName;
+                        name = equipWeaponData;                        
                         m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
 
                         m_attackManager.Initialize(weaponData.weapon);

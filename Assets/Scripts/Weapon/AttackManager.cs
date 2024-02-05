@@ -7,9 +7,11 @@ namespace CorruptedLandTales
         [SerializeField] private Transform m_weaponRoot;
             
         private IAttackItem m_activeWeapon;
+        private string m_activeLayer;
 
         public IAttackItem activeWeapon => m_activeWeapon; 
         public event System.Action onUseAttack;
+        public string activeLayer => m_activeLayer;
 
         public void Initialize(WeaponSO data)
         {
@@ -38,6 +40,7 @@ namespace CorruptedLandTales
             attackComponent.Initialize(weaponData);
             m_activeWeapon = attackComponent;
             m_activeWeapon.Show();
+            m_activeLayer = weaponData.layerAnimName;
         }
 
         private void Awake()
