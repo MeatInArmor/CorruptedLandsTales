@@ -114,7 +114,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664769549470013864}
   m_Layer: 5
-  m_Name: States
+  m_Name: InGameStates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

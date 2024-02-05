@@ -75,6 +75,7 @@ namespace CorruptedLandTales
                         heal.SetActive(true);
                     };
                     m_prefabs.RemoveAt(0);
+                    m_roomOnMap.healingRoomOnMap.gameObject.SetActive(true);
                     break;
             }
             

@@ -9,14 +9,15 @@ namespace CorruptedLandTales
     public class UIShopPanel : MonoBehaviour
     {
         public event System.Action<StatSO> onTryBuyItem;
-        public event System.Action onRefresh; 
-        
-        [SerializeField] private UIShopItem m_healthStat;
-        [SerializeField] private UIShopItem m_damageStat;
-        [SerializeField] private UIShopItem m_speedStat;
-        [SerializeField] private UIShopItem m_attackSpeedStat;
-        [SerializeField] private UIShopItem m_manaPoolStat;
-        [SerializeField] private UIShopItem m_manaRegenStat;
+        public event System.Action onRefresh;
+
+        [SerializeField] public UIShopItem[] stats;
+        //[SerializeField] private UIShopItem m_healthStat;
+        //[SerializeField] private UIShopItem m_damageStat;
+        //[SerializeField] private UIShopItem m_speedStat;
+        //[SerializeField] private UIShopItem m_attackSpeedStat;
+        //[SerializeField] private UIShopItem m_manaPoolStat;
+        //[SerializeField] private UIShopItem m_manaRegenStat;
         [SerializeField] private UIBuyBtn m_buyBtn;
         [SerializeField] private UIRefreshBtn m_refreshBtn;
         [SerializeField] private TMP_Text m_cost;
@@ -38,33 +39,30 @@ namespace CorruptedLandTales
                 switch (stat.statName)
                 {
                     case "здоровье":
-                        m_healthStat.SetUpShopItem(stat);
-                        m_healthStat.onClick += OnItemClick;
+                        stats[0].SetUpShopItem(stat);
+                        stats[0].onClick += OnItemClick;
                         break;
 
                     case "сила атаки":
-                        m_damageStat.SetUpShopItem(stat);
-                        m_damageStat.onClick += OnItemClick;
+                        stats[1].SetUpShopItem(stat);
+                        stats[1].onClick += OnItemClick;
                         break;
-
+                    case "скорость движения":
+                        stats[2].SetUpShopItem(stat);
+                        stats[2].onClick += OnItemClick;
+                        break;
                     case "скорость атаки":
-                        m_attackSpeedStat.SetUpShopItem(stat);
-                        m_attackSpeedStat.onClick += OnItemClick;
+                        stats[3].SetUpShopItem(stat);
+                        stats[3].onClick += OnItemClick;
                         break;
 
                     case "сила духа":
-                        m_manaPoolStat.SetUpShopItem(stat);
-                        m_manaPoolStat.onClick += OnItemClick;
+                        stats[4].SetUpShopItem(stat);
+                        stats[4].onClick += OnItemClick;
                         break;
-
                     case "укрепление духа":
-                        m_manaRegenStat.SetUpShopItem(stat);
-                        m_manaRegenStat.onClick += OnItemClick;
-                        break;
-
-                    case "скорость движения":
-                        m_speedStat.SetUpShopItem(stat);
-                        m_speedStat.onClick += OnItemClick;
+                        stats[5].SetUpShopItem(stat);
+                        stats[5].onClick += OnItemClick;
                         break;
                 }
             }
@@ -88,21 +86,27 @@ namespace CorruptedLandTales
         {
             onTryBuyItem?.Invoke(activeStat);
             OnItemClick(activeStat);
+            RefreshStatsLevels();
         }
 
         private void OnRefreshClick()
         {
             onRefresh?.Invoke();
+            RefreshStatsLevels();
         }
 
         private void OnDisable()
         {
-            m_healthStat.onClick -= OnItemClick;
-            m_damageStat.onClick -= OnItemClick;
-            m_speedStat.onClick -= OnItemClick;
-            m_attackSpeedStat.onClick -= OnItemClick;
-            m_manaPoolStat.onClick -= OnItemClick;
-            m_manaRegenStat.onClick -= OnItemClick;
+            foreach(var stat in stats)
+            {
+                stat.onClick -= OnItemClick;
+            }
+            //m_healthStat.onClick -= OnItemClick;
+            //m_damageStat.onClick -= OnItemClick;
+            //m_speedStat.onClick -= OnItemClick;
+            //m_attackSpeedStat.onClick -= OnItemClick;
+            //m_manaPoolStat.onClick -= OnItemClick;
+            //m_manaRegenStat.onClick -= OnItemClick;
             m_buyBtn.onClickBuyButton -= OnBuyClick;
             m_refreshBtn.onClickRefreshButton -= OnRefreshClick;
             ClearText();
@@ -112,6 +116,13 @@ namespace CorruptedLandTales
         {
             m_cost.text = "";
             m_type.text = "";
+        }
+        public void RefreshStatsLevels()
+        {
+            foreach (var stat in stats)
+            {
+                stat.RefreshStatsLevelImagin();
+            }
         }
     }
 }

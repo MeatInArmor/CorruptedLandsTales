@@ -16,7 +16,7 @@ namespace CorruptedLandTales
         private void Awake()
         {
             m_quality.ClearOptions();
-            m_quality.AddOptions(new List<string>() { "����� ������", "������","�������","�������","����� �������", "������"});
+            m_quality.AddOptions(new List<string>() { "Очень низка", "Низкая", "Средняя", "Высокая", "Очень высокая", "Ультра"});
             
         }
         private void Start()

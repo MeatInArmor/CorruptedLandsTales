@@ -513,7 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_manaComponent: {fileID: 0}
   m_fillImage: {fileID: 4744860764813598765}
-  m_fillMaxAmount: 15
+  m_fillMaxAmount: 25
 --- !u!114 &771106174813804492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1621,7 +1621,7 @@ GameObject:
   - component: {fileID: 6828949953515383093}
   - component: {fileID: 3035002761383387604}
   - component: {fileID: 1786137595760020803}
-  - component: {fileID: 5372768811534186688}
+  - component: {fileID: 4595592923491280267}
   m_Layer: 7
   m_Name: Bar
   m_TagString: Untagged
@@ -1695,7 +1695,7 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &5372768811534186688
+--- !u!114 &4595592923491280267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1704,10 +1704,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6826193041941720189}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a416e6defdaba74d85bdf2cd3e2e449, type: 3}
+  m_Script: {fileID: 11500000, guid: 4912d6e4d0bf821429e90a8a3d62dd86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_healthComponent: {fileID: 0}
+  m_manaComponent: {fileID: 0}
   m_fillImage: {fileID: 3450604818179584550}
 --- !u!1 &7166232568289822542
 GameObject:
@@ -2441,7 +2441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004459417020969919, guid: 5f74fb97c40f3604f8fea01283953881, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7603180400266170032, guid: 5f74fb97c40f3604f8fea01283953881, type: 3}
       propertyPath: m_Pivot.x
@@ -2547,7 +2547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2736548822411841647, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3264289869381266784, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
       propertyPath: m_Pivot.x
@@ -2629,11 +2629,56 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9094074152182917286, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094074152182917286, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094074152182917286, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094074152182917286, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094074152182917286, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094074152182917286, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2736548822411841647, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8851462003226084349}
   m_SourcePrefab: {fileID: 100100000, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+--- !u!1 &259608248460739875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2736548822411841647, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
+  m_PrefabInstance: {fileID: 2765347559158093132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8851462003226084349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259608248460739875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ControlPath: <Keyboard>/f
 --- !u!224 &805417158769965100 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3264289869381266784, guid: 705be8f35fab649479817c1083d3c5e1, type: 3}
@@ -3233,6 +3278,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7993712229842576928}
     m_Modifications:
+    - target: {fileID: 1720143089616452504, guid: c68d88fbd70644348bba10bc4f364da9, type: 3}
+      propertyPath: m_fillMaxAmount
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3227201488006020933, guid: c68d88fbd70644348bba10bc4f364da9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
