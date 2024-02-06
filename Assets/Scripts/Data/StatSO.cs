@@ -33,5 +33,15 @@ namespace CorruptedLandTales
             m_level = 0;
             m_cost = m_costPerLevel;
         }
+
+        public void SetCost(int cost)
+        {
+            m_cost = cost;
+        }
+
+        public void SetLevel(int lvl)
+        {
+            m_level = lvl;
+        }
     }
 }

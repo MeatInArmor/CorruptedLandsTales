@@ -39,12 +39,16 @@ namespace CorruptedLandTales
             PlayerPrefs.SetString("player.data", json);
 
             var ps = new PlayerStatsData();
-            foreach (var stat in playerStats.stats)
+            var statsSO = Resources.Load<PlayerStatsDB>("PlayerStatsDB").stats; 
+            foreach (var stat in statsSO)
             {
                 ps.stats.Add(new PlayerStatsData.StatData()
                 {
-                    cost = stat.cost,
+                    statName = stat.statName,
                     level = stat.level,
+                    valuePerLevel = stat.valuePerLevel,
+                    cost = stat.cost,
+                    costPerLevel = stat.costPerLevel,
                 });
             }
             
@@ -66,13 +70,21 @@ namespace CorruptedLandTales
                 var playerData = JsonUtility.FromJson<PlayerData>(json);
                 m_money = playerData.money;
             }
-
-            /*json = PlayerPrefs.GetString("player.stats");
+            
+            json = PlayerPrefs.GetString("player.stats");
             if (!string.IsNullOrEmpty(json))
             {
-                var playerData = JsonUtility.FromJson<PlayerStatsData>(json);
-                m_stats = playerData.stats;
-            }*/
+                var ps = new PlayerStatsData();
+                ps = JsonUtility.FromJson<PlayerStatsData>(json);
+                var statsSO = Resources.Load<PlayerStatsDB>("PlayerStatsDB").stats;
+                foreach (var stat in ps.stats)
+                {
+                    var statFromSO = statsSO.Find(x=> x.statName == stat.statName);
+                    statFromSO.SetCost(stat.cost);
+                    statFromSO.SetLevel(stat.level);
+                    Debug.Log($"{stat.statName} {stat.cost} {stat.level}");
+                }
+            }
         }
 
         [System.Serializable]
