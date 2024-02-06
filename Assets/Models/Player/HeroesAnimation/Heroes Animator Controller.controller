@@ -190,7 +190,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Trow
+  m_Name: Axe Special
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6257518304595609020}
@@ -865,7 +865,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Spear Combo
+    m_Name: Axe Combo
     m_StateMachine: {fileID: 1094988453277755900}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -877,7 +877,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Trow
+    m_Name: Axe Special
     m_StateMachine: {fileID: -6519100582599338615}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -941,7 +941,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Spear Combo
+  m_Name: Axe Combo
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 3724204143802153407}
@@ -1390,7 +1390,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: spearPunch
+  m_Name: axe combo
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1405,7 +1405,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 74e2f6b1310d9264ea1407743a4e1d7a, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 227c78de6dc0af84e82cae4e4849ace6, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
