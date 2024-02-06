@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3996735393203337054}
   - component: {fileID: 6181362732418168327}
+  - component: {fileID: -199221539369335966}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -46,14 +47,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f6f1f597c9e9343945aacc0b7efc9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponType: 1
   m_damage: 30
   m_attackAngle: 90
   m_attackRange: 3.5
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
-  m_delay: 1
+  m_manaCost: 0
+  m_manaPerHit: 5
+--- !u!114 &-199221539369335966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133098551173313751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 734f807420094e645b3003ca20cee986, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_damage: 40
+  m_attackRange: 6
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &4777572813946602796
 GameObject:
   m_ObjectHideFlags: 0

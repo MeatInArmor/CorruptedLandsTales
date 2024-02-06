@@ -3,16 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ShadowChimera
+namespace CorruptedLandTales
 {
     public class PlayerCharAnimComponent : MonoBehaviour
     {
         [SerializeField] private Animator m_animator;
         [SerializeField] private Character m_character;
-        [SerializeField] private ProjectileCore m_impact;
-        [SerializeField] private CharMoveComponent m_charMoveComponent;
-        [SerializeField] private CharMoveComponentAnimator m_charMoveComponentAnimator;
+        //[SerializeField] private ProjectileCore m_impact;
+        //[SerializeField] private CharMoveComponent m_charMoveComponent;
+        //[SerializeField] private CharMoveComponentAnimator m_charMoveComponentAnimator;
         [SerializeField] private SpecialAttack m_specialAttack;
+        [SerializeField] private AttackManager m_attackManager;
         //[SerializeField] private HealthComponent m_healthcomponent;
 
         private HealthComponent m_healthcomponent;
@@ -36,23 +37,23 @@ namespace ShadowChimera
                 m_character = GetComponentInParent<Character>();
             }
 
-            if (m_charMoveComponent == null)
+            /*if (m_charMoveComponent == null)
             {
                 m_charMoveComponent = GetComponent<CharMoveComponent>();
-            }
+            }*/
 
             if (m_healthcomponent)
             {                
                 m_healthcomponent = GetComponent<HealthComponent>();
             }
 
-            m_character = GetComponentInParent<Character>();
-            m_charMoveComponent = GetComponentInParent<CharMoveComponent>();
+           /* m_charMoveComponent = GetComponentInParent<CharMoveComponent>();*/
 
             m_character.attackManager.onUseAttack += () =>
             {
                 Slash();
             };
+
 
             if (m_specialAttack != null)
             {
@@ -71,6 +72,13 @@ namespace ShadowChimera
             {
                 m_animator.SetTrigger("isDie");
             };
+
+            /* m_character.attackManager.onUseWeaponSkill += () =>
+             {
+                 m_animator.SetTrigger("isUseWeaponSkill");
+             };*/
+
+            m_attackManager.onUseWeaponSkill += WeaponSkill;
 
             /*
             m_charMoveComponent.onUseDash += () =>
@@ -105,6 +113,11 @@ namespace ShadowChimera
         private void Dash()
         {
             m_animator.SetTrigger("isDash");
+        }
+
+        private void WeaponSkill ()
+        {
+            m_animator.SetTrigger("isUseWeaponSkill");
         }
     }
 }

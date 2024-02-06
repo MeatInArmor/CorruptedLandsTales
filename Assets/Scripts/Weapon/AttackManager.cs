@@ -7,11 +7,15 @@ namespace CorruptedLandTales
         [SerializeField] private Transform m_weaponRoot;
             
         private IAttackItem m_activeWeapon;
-        private string m_activeLayer;
+        private string m_activeWeaponLayer;
+        private string m_activeLayerWeaponSpecial;
 
         public IAttackItem activeWeapon => m_activeWeapon; 
+
         public event System.Action onUseAttack;
-        public string activeLayer => m_activeLayer;
+        public event System.Action onUseWeaponSkill;
+        public string activeWeaponLayer => m_activeWeaponLayer;
+        public string activeLayerWeaponSkill => m_activeLayerWeaponSpecial;
 
         public void Initialize(WeaponSO data)
         {
@@ -40,7 +44,8 @@ namespace CorruptedLandTales
             attackComponent.Initialize(weaponData);
             m_activeWeapon = attackComponent;
             m_activeWeapon.Show();
-            m_activeLayer = weaponData.layerAnimName;
+            m_activeWeaponLayer = weaponData.layerAnimName;
+            m_activeLayerWeaponSpecial = weaponData.layerAnimNameSpecialWeapon;
         }
 
         private void Awake()
@@ -61,6 +66,14 @@ namespace CorruptedLandTales
             if (m_activeWeapon != null)
             {
                 onUseAttack?.Invoke();
+            }
+        }
+
+        public void AnimateWeaponSkill()
+        {
+            if (m_activeWeapon != null)
+            {
+                onUseWeaponSkill?.Invoke();
             }
         }
 

@@ -16,6 +16,7 @@ namespace CorruptedLandTales
         [SerializeField] private Animator m_animator;
         [SerializeField] private CharacterController m_characterController;
 		[SerializeField] private GameObject m_Player;
+		[SerializeField] private ComboAnimator m_comboAnimator;
 
         private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
@@ -71,12 +72,12 @@ namespace CorruptedLandTales
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
 		{
-            m_character.attackManager.AnimateUse();
+			m_comboAnimator.ClickAttack();
         }
 		
 		private void OnUseWeaponSkill(InputAction.CallbackContext context)
 		{
-			m_character.attackManager.UseWeaponSkill();
+			m_character.attackManager.AnimateWeaponSkill();
 		}
 
 		private void OnUseSpecial(InputAction.CallbackContext context)

@@ -33,6 +33,11 @@ namespace CorruptedLandTales
         {
             m_specialAttack.CastSpecialAttack();
         }
+
+        public void UseWeaponSkill()
+        {
+            m_attackManager.UseWeaponSkill();
+        }
         
         public void OnEndDie()
         {

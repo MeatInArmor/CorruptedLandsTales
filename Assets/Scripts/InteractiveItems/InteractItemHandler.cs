@@ -58,9 +58,7 @@ namespace CorruptedLandTales
         {
             if(m_item != null)
             {
-                var data = m_item.GetComponent<IInteractiveItem>().GetData();
-
-                var equipWeaponData = m_attackManager.activeLayer;
+                var data = m_item.GetComponent<IInteractiveItem>().GetData();              
 
 
                 if (data != null)
@@ -79,14 +77,20 @@ namespace CorruptedLandTales
 
                     if (data is InteractiveWeaponSO weaponData)
                     {
+                        var equipWeaponData = m_attackManager.activeWeaponLayer;
+                        var equipWeaponDataSkill = m_attackManager.activeLayerWeaponSkill;
                         // изменили вес анимации для экипированного оружия
                         name = equipWeaponData;                        
+                        m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
+                        name = equipWeaponDataSkill;
                         m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
 
                         m_attackManager.Initialize(weaponData.weapon);
 
                         // изменили вес анимации для поднятого оружия
                         name = weaponData.weapon.layerAnimName;
+                        m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
+                        name = weaponData.weapon.layerAnimNameSpecialWeapon;
                         m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
                     }
                     Destroy(m_item);
