@@ -2696,6 +2696,10 @@ PrefabInstance:
       value: 'CanvasGameScene '
       objectReference: {fileID: 0}
     - target: {fileID: 3067901852190260732, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
+      propertyPath: m_Name
+      value: GameOverPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067901852190260732, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
