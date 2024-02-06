@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +7,11 @@ namespace CorruptedLandTales
     {
         public Settings settings {  get; private set; } = new Settings();
 
-        private int m_money;
+        // private PlayerStatsDB m_stats = Resources.Load<PlayerStatsDB>("PlayerStatsDB");
+        
+        private int m_money = 1000;
+
+        public PlayerStatsData playerStats {  get; private set; } = new PlayerStatsData();
         public event System.Action<int> changeMoney;
 
         public int money
@@ -33,8 +36,20 @@ namespace CorruptedLandTales
             {
                 money = m_money,
             });
-            
             PlayerPrefs.SetString("player.data", json);
+
+            var ps = new PlayerStatsData();
+            foreach (var stat in playerStats.stats)
+            {
+                ps.stats.Add(new PlayerStatsData.StatData()
+                {
+                    cost = stat.cost,
+                    level = stat.level,
+                });
+            }
+            
+            json = JsonUtility.ToJson(ps);
+            PlayerPrefs.SetString("player.stats", json);
         }
         
         public void Load() 
@@ -46,12 +61,18 @@ namespace CorruptedLandTales
             }
             
             json = PlayerPrefs.GetString("player.data");
-            
             if (!string.IsNullOrEmpty(json))
             {
                 var playerData = JsonUtility.FromJson<PlayerData>(json);
                 m_money = playerData.money;
             }
+
+            /*json = PlayerPrefs.GetString("player.stats");
+            if (!string.IsNullOrEmpty(json))
+            {
+                var playerData = JsonUtility.FromJson<PlayerStatsData>(json);
+                m_stats = playerData.stats;
+            }*/
         }
 
         [System.Serializable]
@@ -66,6 +87,22 @@ namespace CorruptedLandTales
         private class PlayerData
         {
             public int money;
+        }
+
+        [System.Serializable]
+        public class PlayerStatsData
+        {
+            public List<StatData> stats = new List<StatData>();
+
+            [System.Serializable]
+            public class StatData
+            {
+                public string statName;
+                public int level;
+                public float valuePerLevel;
+                public int cost;
+                public int costPerLevel;
+            }
         }
     }
 }

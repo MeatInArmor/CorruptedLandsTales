@@ -57,7 +57,6 @@ namespace CorruptedLandTales
         
         public int CountReward()
         {
-            Debug.Log($"{m_enemyCount / 2} {m_inGameTime/60} {m_gameController.levelCount * 5}");
             return (int)(m_enemyCount/2 + m_inGameTime/30 + m_gameController.levelCount * 5);
         }
     }

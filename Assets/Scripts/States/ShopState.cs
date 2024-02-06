@@ -29,6 +29,12 @@ namespace CorruptedLandTales
         protected override void OnEnter()
         {
             m_shopPanel.SetPlayerStatsAndShopItems(m_playerStatsSO);
+            
+        }
+
+        protected override void OnExit()
+        {
+            
         }
 
         private void Awake()

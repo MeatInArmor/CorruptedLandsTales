@@ -29,7 +29,6 @@ namespace CorruptedLandTales
         {
             base.OnEnter();
             m_player.money += m_rewardCounter.CountReward();
-            Debug.Log($"{m_rewardCounter.CountReward()}");
             m_gameOverPanel.SetPlayerReward(m_rewardCounter.CountReward());
         }
 
