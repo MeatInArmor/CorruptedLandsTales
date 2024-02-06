@@ -8,6 +8,7 @@ namespace CorruptedLandTales
         [SerializeField] private GameObject m_player;
         [SerializeField] private GameObject m_firstLevel;
         [SerializeField] private GameObject m_levelPrefab;
+        [SerializeField] private RewardCounter m_rewardCounter;
         [SerializeField] private List<ExitDoorComponent> m_exitDoors;
         
         private GameObject m_activeLevel;
@@ -25,10 +26,12 @@ namespace CorruptedLandTales
             m_activeLevel = m_firstLevel;
             StartNewLevelController();
             SubscribeDoors();
+            m_rewardCounter.StartRewardCounter();
         }
 
         private void OnPlayerExitLocation()
         {
+            m_levelCount += 1;
             Destroy(m_activeLevel);
             RespawnLevel();
             StartNewLevelController();
@@ -69,7 +72,6 @@ namespace CorruptedLandTales
             m_activeLevelController.SetPlayer(m_player);
             onResetLevelcontroller?.Invoke();
             m_activeLevelController.SetLevelController();
-            m_levelCount += 1;
         }
     }
 }

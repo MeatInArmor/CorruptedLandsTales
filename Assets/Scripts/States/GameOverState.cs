@@ -28,9 +28,8 @@ namespace CorruptedLandTales
         protected override void OnEnter()
         {
             base.OnEnter();
-            Debug.Log($"{m_player.money}");
             m_player.money += m_rewardCounter.CountReward();
-            Debug.Log($"{m_player.money} {m_rewardCounter.CountReward()}");
+            Debug.Log($"{m_rewardCounter.CountReward()}");
             m_gameOverPanel.SetPlayerReward(m_rewardCounter.CountReward());
         }
 

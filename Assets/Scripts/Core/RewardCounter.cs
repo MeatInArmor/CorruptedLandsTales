@@ -13,7 +13,7 @@ namespace CorruptedLandTales
         private int m_enemyCount = 0;
         private float m_inGameTime = 0;
         
-        private void Start()
+        public void StartRewardCounter()
         {
             m_rooms = m_levelController.rooms;
             SubscribeEnemies(m_rooms);
@@ -57,7 +57,8 @@ namespace CorruptedLandTales
         
         public int CountReward()
         {
-            return (int)(m_enemyCount/2 + m_inGameTime/60 + m_gameController.levelCount * 5);
+            Debug.Log($"{m_enemyCount / 2} {m_inGameTime/60} {m_gameController.levelCount * 5}");
+            return (int)(m_enemyCount/2 + m_inGameTime/30 + m_gameController.levelCount * 5);
         }
     }
 }

@@ -11,10 +11,10 @@ namespace CorruptedLandTales
         [SerializeField] private ExitDoorComponent m_exitDoor;
         [SerializeField] private RoomOnMap m_roomOnMap;
 
-        private List<GameObject> m_prefabs = new List<GameObject>(4);
-        private List<GameObject> m_enemies = new List<GameObject>(9);
-        private List<Vector3> m_spawnPoints = new List<Vector3>();
-        private Vector3 m_playerSpawnOffset = new Vector3(0, 1, 0);
+        private List<GameObject> m_prefabs = new (4);
+        private List<GameObject> m_enemies = new (9);
+        private List<Vector3> m_spawnPoints = new ();
+        private Vector3 m_playerSpawnOffset = new (0, 1, 0);
         private int m_enemyCount = 0;
         private int m_remainigEnemy;
         private int m_currentEnemyCount;
