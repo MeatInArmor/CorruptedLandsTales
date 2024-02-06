@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790e1ebd2aa803341a42d968c7b5881d, type: 3}
   m_Name: AttackSO
   m_EditorClassIdentifier: 
-  m_statName: "\u0441\u0438\u043B\u0430 \u0430\u0442\u0430\u043A\u0438"
+  m_statName: Power
   m_level: 0
   m_valuePerLevel: 10
   m_cost: 45

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790e1ebd2aa803341a42d968c7b5881d, type: 3}
   m_Name: ManaRegenSO
   m_EditorClassIdentifier: 
-  m_statName: "\u0443\u043A\u0440\u0435\u043F\u043B\u0435\u043D\u0438\u0435 \u0434\u0443\u0445\u0430"
+  m_statName: Mana regeneration
   m_level: 0
   m_valuePerLevel: 0.5
   m_cost: 90

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790e1ebd2aa803341a42d968c7b5881d, type: 3}
   m_Name: ManaPoolSO
   m_EditorClassIdentifier: 
-  m_statName: "\u0441\u0438\u043B\u0430 \u0434\u0443\u0445\u0430"
+  m_statName: Manapool
   m_level: 0
   m_valuePerLevel: 15
   m_cost: 70

@@ -11,13 +11,12 @@ namespace CorruptedLandTales
         public event System.Action<StatSO> onTryBuyItem;
         public event System.Action onRefresh;
 
-        [SerializeField] public UIShopItem[] stats;
-        //[SerializeField] private UIShopItem m_healthStat;
-        //[SerializeField] private UIShopItem m_damageStat;
-        //[SerializeField] private UIShopItem m_speedStat;
-        //[SerializeField] private UIShopItem m_attackSpeedStat;
-        //[SerializeField] private UIShopItem m_manaPoolStat;
-        //[SerializeField] private UIShopItem m_manaRegenStat;
+        [SerializeField] private UIShopItem m_healthStat;
+        [SerializeField] private UIShopItem m_damageStat;
+        [SerializeField] private UIShopItem m_speedStat;
+        [SerializeField] private UIShopItem m_attackSpeedStat;
+        [SerializeField] private UIShopItem m_manaPoolStat;
+        [SerializeField] private UIShopItem m_manaRegenStat;
         [SerializeField] private UIBuyBtn m_buyBtn;
         [SerializeField] private UIRefreshBtn m_refreshBtn;
         [SerializeField] private TMP_Text m_cost;
@@ -38,31 +37,31 @@ namespace CorruptedLandTales
             {
                 switch (stat.statName)
                 {
-                    case "здоровье":
-                        stats[0].SetUpShopItem(stat);
-                        stats[0].onClick += OnItemClick;
+                    case "Health":
+                        m_healthStat.SetUpShopItem(stat);
+                        m_healthStat.onClick += OnItemClick;
                         break;
 
-                    case "сила атаки":
-                        stats[1].SetUpShopItem(stat);
-                        stats[1].onClick += OnItemClick;
+                    case "Power":
+                        m_damageStat.SetUpShopItem(stat);
+                        m_damageStat.onClick += OnItemClick;
                         break;
-                    case "скорость движения":
-                        stats[2].SetUpShopItem(stat);
-                        stats[2].onClick += OnItemClick;
+                    case "Move speed":
+                        m_speedStat.SetUpShopItem(stat);
+                        m_speedStat.onClick += OnItemClick;
                         break;
-                    case "скорость атаки":
-                        stats[3].SetUpShopItem(stat);
-                        stats[3].onClick += OnItemClick;
+                    case "Attack speed":
+                        m_attackSpeedStat.SetUpShopItem(stat);
+                        m_attackSpeedStat.onClick += OnItemClick;
                         break;
 
-                    case "сила духа":
-                        stats[4].SetUpShopItem(stat);
-                        stats[4].onClick += OnItemClick;
+                    case "Manapool":
+                        m_manaPoolStat.SetUpShopItem(stat);
+                        m_manaPoolStat.onClick += OnItemClick;
                         break;
-                    case "укрепление духа":
-                        stats[5].SetUpShopItem(stat);
-                        stats[5].onClick += OnItemClick;
+                    case "Mana regeneration":
+                        m_manaRegenStat.SetUpShopItem(stat);
+                        m_manaRegenStat.onClick += OnItemClick;
                         break;
                 }
             }
@@ -97,16 +96,13 @@ namespace CorruptedLandTales
 
         private void OnDisable()
         {
-            foreach(var stat in stats)
-            {
-                stat.onClick -= OnItemClick;
-            }
-            //m_healthStat.onClick -= OnItemClick;
-            //m_damageStat.onClick -= OnItemClick;
-            //m_speedStat.onClick -= OnItemClick;
-            //m_attackSpeedStat.onClick -= OnItemClick;
-            //m_manaPoolStat.onClick -= OnItemClick;
-            //m_manaRegenStat.onClick -= OnItemClick;
+
+            m_healthStat.onClick -= OnItemClick;
+            m_damageStat.onClick -= OnItemClick;
+            m_speedStat.onClick -= OnItemClick;
+            m_attackSpeedStat.onClick -= OnItemClick;
+            m_manaPoolStat.onClick -= OnItemClick;
+            m_manaRegenStat.onClick -= OnItemClick;
             m_buyBtn.onClickBuyButton -= OnBuyClick;
             m_refreshBtn.onClickRefreshButton -= OnRefreshClick;
             ClearText();
@@ -119,10 +115,7 @@ namespace CorruptedLandTales
         }
         public void RefreshStatsLevels()
         {
-            foreach (var stat in stats)
-            {
-                stat.RefreshStatsLevelImagin();
-            }
+            GetComponentInChildren<UIShopItem>().RefreshStatsLevelImagin();
         }
     }
 }
