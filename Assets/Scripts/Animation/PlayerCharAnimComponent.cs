@@ -25,6 +25,13 @@ namespace CorruptedLandTales
         //private static int SlashId = Animator.StringToHash("Slash");
         //private static int SpecialId = Animator.StringToHash("Special");
 
+        [SerializeField] private float m_speedCoef = 1f;
+
+        private void OnAnimatorMove()
+        {
+            GetComponent<CharacterController>().Move(m_animator.deltaPosition * m_speedCoef);
+        }
+
         private void Start()
         {
             if (m_animator == null)

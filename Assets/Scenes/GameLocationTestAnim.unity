@@ -176,6 +176,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306601387588991804, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
+      propertyPath: m_speedCoef
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4306601387588991804, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_attackManager
       value: 
       objectReference: {fileID: 1702110046}
@@ -5739,8 +5743,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -83.433, y: 1.92, z: -22.007}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.66, y: 1.66, z: 1.66}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7787,9 +7791,9 @@ SceneRoots:
   - {fileID: 3619299838995122507}
   - {fileID: 1316860818}
   - {fileID: 659664030}
-  - {fileID: 533486901}
   - {fileID: 613181204}
   - {fileID: 481541270}
+  - {fileID: 533486901}
   - {fileID: 1305875041}
   - {fileID: 188474068}
   - {fileID: 884907594}
