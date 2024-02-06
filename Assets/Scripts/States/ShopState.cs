@@ -18,6 +18,7 @@ namespace CorruptedLandTales
             base.OnEnable();
             m_shopPanel.onTryBuyItem += OnTryBuyItem;
             m_shopPanel.onRefresh += RefreshStats;
+
         }
         protected override void OnDisable()
         {
@@ -29,12 +30,7 @@ namespace CorruptedLandTales
         protected override void OnEnter()
         {
             m_shopPanel.SetPlayerStatsAndShopItems(m_playerStatsSO);
-            
-        }
-
-        protected override void OnExit()
-        {
-            
+            m_shopPanel.RefreshStatsLevels();
         }
 
         private void Awake()
@@ -56,6 +52,7 @@ namespace CorruptedLandTales
             {
                 stat.RefreshStats();
             }
+            
         }
 
         private void OnTryBuyItem(StatSO stat)

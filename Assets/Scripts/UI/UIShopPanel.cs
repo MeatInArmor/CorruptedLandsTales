@@ -19,7 +19,6 @@ namespace CorruptedLandTales
         [SerializeField] private UIRefreshBtn m_refreshBtn;
 
         [Header("Active Type")] 
-        [SerializeField] private UILevelPanel m_levelPanel;
         [SerializeField] private TMP_Text m_cost;
         [SerializeField] private TMP_Text m_type;
         
@@ -27,55 +26,53 @@ namespace CorruptedLandTales
         private StatSO activeStat;
         private string activeType;
         private int activeCost;
-        private int activeLevel;
         
         public event System.Action<StatSO> onTryBuyItem;
         public event System.Action onRefresh; 
         
         public void SetPlayerStatsAndShopItems(PlayerStatsDB playerStatsDB)
         {
-            Clear();
+            ClearText();
             m_buyBtn.onClickBuyButton += OnBuyClick;
             m_playerStats = playerStatsDB.stats;
             m_refreshBtn.onClickRefreshButton += OnRefreshClick;
             foreach (var stat in m_playerStats)
             {
-                if (stat.statName == "health")
+                switch (stat.statName)
                 {
-                    m_healthStat.SetUpShopItem(stat);
-                    m_healthStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "attack")
-                {
-                    m_damageStat.SetUpShopItem(stat);
-                    m_damageStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "attackspeed")
-                {
-                    m_attackSpeedStat.SetUpShopItem(stat);
-                    m_attackSpeedStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "manapool")
-                {
-                    m_manaPoolStat.SetUpShopItem(stat);
-                    m_manaPoolStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "manaregen")
-                {
-                    m_manaRegenStat.SetUpShopItem(stat);
-                    m_manaRegenStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "speed")
-                {
-                    m_speedStat.SetUpShopItem(stat);
-                    m_speedStat.onClick += OnItemClick;
+                    case "Health":
+                        m_healthStat.SetUpShopItem(stat);
+                        m_healthStat.onClick += OnItemClick;
+                        break;
+
+                    case "Power":
+                        m_damageStat.SetUpShopItem(stat);
+                        m_damageStat.onClick += OnItemClick;
+                        break;
+                    case "Move speed":
+                        m_speedStat.SetUpShopItem(stat);
+                        m_speedStat.onClick += OnItemClick;
+                        break;
+                    case "Attack speed":
+                        m_attackSpeedStat.SetUpShopItem(stat);
+                        m_attackSpeedStat.onClick += OnItemClick;
+                        break;
+
+                    case "Manapool":
+                        m_manaPoolStat.SetUpShopItem(stat);
+                        m_manaPoolStat.onClick += OnItemClick;
+                        break;
+                    case "Mana regeneration":
+                        m_manaRegenStat.SetUpShopItem(stat);
+                        m_manaRegenStat.onClick += OnItemClick;
+                        break;
                 }
             }
         }
         
         private void OnEnable()
         {
-            Clear();
+            ClearText();
         }
 
         private void OnDisable()
@@ -88,7 +85,7 @@ namespace CorruptedLandTales
             m_manaRegenStat.onClick -= OnItemClick;
             m_buyBtn.onClickBuyButton -= OnBuyClick;
             m_refreshBtn.onClickRefreshButton -= OnRefreshClick;
-            Clear();
+            ClearText();
         }
         
         private void OnItemClick(StatSO stat)
@@ -96,7 +93,6 @@ namespace CorruptedLandTales
             activeStat = stat;
             activeType = stat.statName;
             activeCost = stat.cost;
-            activeLevel = stat.level;
             SetCostTypeAndLevel();
         }
 
@@ -104,26 +100,32 @@ namespace CorruptedLandTales
         {
             m_cost.text = activeCost.ToString();
             m_type.text = activeType;
-            m_levelPanel.RefreshLevels();
-            m_levelPanel.SetUpLevels(activeLevel);
         }
         
         private void OnBuyClick()
         {
             onTryBuyItem?.Invoke(activeStat);
             OnItemClick(activeStat);
+            RefreshStatsLevels();
         }
 
         private void OnRefreshClick()
         {
             onRefresh?.Invoke();
+            RefreshStatsLevels();
         }
 
-        private void Clear()
+        private void ClearText()
         {
             m_cost.text = "";
             m_type.text = "";
-            m_levelPanel.RefreshLevels();
+        }
+        public void RefreshStatsLevels()
+        {
+            foreach(var stat in stats)
+            {
+                stat.RefreshStatsLevelImagin();
+            }
         }
     }
 }

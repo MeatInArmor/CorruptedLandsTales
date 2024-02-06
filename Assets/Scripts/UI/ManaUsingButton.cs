@@ -7,13 +7,13 @@ namespace CorruptedLandTales
     {
         [SerializeField] private ManaComponent m_manaComponent;
         [SerializeField] private Image m_fillImage;
-        [SerializeField] private float m_fillMaxAmount = 15f;
+        [SerializeField] private float m_fillMaxAmount;
         private Color32 m_fullFillColor;
         private float m_fillAmountPercent => m_manaComponent.CurrentMana / m_fillMaxAmount;
 
         private void Awake()
         {
-            if(m_manaComponent == null)
+            if (m_manaComponent == null)
                 m_manaComponent = GameObject.Find("Player").GetComponent<ManaComponent>();
             m_fullFillColor = m_fillImage.color;
             Refresh();

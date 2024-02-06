@@ -2955,7 +2955,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -90.7, y: 1, z: -37}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4590952302268205976}
   - {fileID: 6186415469472178621}
@@ -3031,8 +3031,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_findRange: 1.5
-  m_attackManager: {fileID: 2892508709089259748}
-  m_healthComponent: {fileID: 9196480389814277058}
 --- !u!114 &2297376893487946721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3480,6 +3478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 9222002406757968233, guid: f3ce70df8178cfc499e4f474b9aa0365, type: 3}
   m_muzzle: {fileID: 5159035948889149013}
+  m_cooldown: 0.4
   m_manaCost: 25
 --- !u!1 &7141368172809501033
 GameObject:
