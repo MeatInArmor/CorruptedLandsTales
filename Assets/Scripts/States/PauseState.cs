@@ -30,8 +30,9 @@ namespace CorruptedLandTales
         
         public void Concede()
         {
-            m_gameOverState.Enter();
             Exit();
+            m_gameOverState.Enter();
+            
         }
         public void Resume()
         {

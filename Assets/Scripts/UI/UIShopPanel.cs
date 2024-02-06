@@ -7,12 +7,7 @@ namespace CorruptedLandTales
     public class UIShopPanel : MonoBehaviour
     {
         [Header("Stats")]
-        [SerializeField] private UIShopItem m_healthStat;
-        [SerializeField] private UIShopItem m_damageStat;
-        [SerializeField] private UIShopItem m_speedStat;
-        [SerializeField] private UIShopItem m_attackSpeedStat;
-        [SerializeField] private UIShopItem m_manaPoolStat;
-        [SerializeField] private UIShopItem m_manaRegenStat;
+        [SerializeField] private UIShopItem[] stats;
         
         [Header("Buttons")]
         [SerializeField] private UIBuyBtn m_buyBtn;
@@ -41,30 +36,30 @@ namespace CorruptedLandTales
                 switch (stat.statName)
                 {
                     case "Health":
-                        m_healthStat.SetUpShopItem(stat);
-                        m_healthStat.onClick += OnItemClick;
+                        stats[0].SetUpShopItem(stat);
+                        stats[0].onClick += OnItemClick;
                         break;
 
                     case "Power":
-                        m_damageStat.SetUpShopItem(stat);
-                        m_damageStat.onClick += OnItemClick;
+                        stats[1].SetUpShopItem(stat);
+                        stats[1].onClick += OnItemClick;
                         break;
                     case "Move speed":
-                        m_speedStat.SetUpShopItem(stat);
-                        m_speedStat.onClick += OnItemClick;
+                        stats[2].SetUpShopItem(stat);
+                        stats[2].onClick += OnItemClick;
                         break;
                     case "Attack speed":
-                        m_attackSpeedStat.SetUpShopItem(stat);
-                        m_attackSpeedStat.onClick += OnItemClick;
+                        stats[3].SetUpShopItem(stat);
+                        stats[3].onClick += OnItemClick;
                         break;
 
                     case "Manapool":
-                        m_manaPoolStat.SetUpShopItem(stat);
-                        m_manaPoolStat.onClick += OnItemClick;
+                        stats[4].SetUpShopItem(stat);
+                        stats[4].onClick += OnItemClick;
                         break;
                     case "Mana regeneration":
-                        m_manaRegenStat.SetUpShopItem(stat);
-                        m_manaRegenStat.onClick += OnItemClick;
+                        stats[5].SetUpShopItem(stat);
+                        stats[5].onClick += OnItemClick;
                         break;
                 }
             }
@@ -77,12 +72,10 @@ namespace CorruptedLandTales
 
         private void OnDisable()
         {
-            m_healthStat.onClick -= OnItemClick;
-            m_damageStat.onClick -= OnItemClick;
-            m_speedStat.onClick -= OnItemClick;
-            m_attackSpeedStat.onClick -= OnItemClick;
-            m_manaPoolStat.onClick -= OnItemClick;
-            m_manaRegenStat.onClick -= OnItemClick;
+            foreach (var stat in stats) 
+            {
+                stat.onClick -= OnItemClick;
+            }
             m_buyBtn.onClickBuyButton -= OnBuyClick;
             m_refreshBtn.onClickRefreshButton -= OnRefreshClick;
             ClearText();
@@ -122,7 +115,10 @@ namespace CorruptedLandTales
         }
         public void RefreshStatsLevels()
         {
-            GetComponentInChildren<UIShopItem>().RefreshStatsLevelImagin();
+            foreach(var stat in stats)
+            {
+                stat.RefreshStatsLevelImagin();
+            }
         }
     }
 }
