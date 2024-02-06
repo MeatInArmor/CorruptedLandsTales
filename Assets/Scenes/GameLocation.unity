@@ -2016,6 +2016,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4472799179859303718, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 209443813}
+    - target: {fileID: 4472799179859303718, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 4580941334244104381, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2219,6 +2227,10 @@ PrefabInstance:
     - target: {fileID: 7990391227446821026, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105687566592031177, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8447127591934789429, guid: d529ff8982bda7846b16d9df644e5eb1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

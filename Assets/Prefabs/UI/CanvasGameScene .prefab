@@ -528,10 +528,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameplayHUD
       objectReference: {fileID: 0}
-    - target: {fileID: 1876724930293534144, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7993712229842576928, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -612,16 +608,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8141368670800301355, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 160
-      objectReference: {fileID: 0}
-    - target: {fileID: 8141368670800301355, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -195
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5676280945041895227, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
+    - {fileID: 41541985966344622, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
+    - {fileID: 4714103323831749495, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
+    - {fileID: 700276168188286935, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
+    - {fileID: 8096995388087538106, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
+    - {fileID: 2717987943013869021, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 250414ab8afb1a24a8da7f8c6340746b, type: 3}

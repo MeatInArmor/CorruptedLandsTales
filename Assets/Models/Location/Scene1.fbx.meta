@@ -1,0 +1,349 @@
+fileFormatVersion: 2
+guid: 5bcf7d31e6b043d4e843afa4ea1b1a45
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BoxLine_Albedo
+    second: {fileID: 2800000, guid: ed2e4c430ef76c34280235ae1fb62972, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BoxLine_Alpha
+    second: {fileID: 2800000, guid: 6ff7b02a6e5c5af468a9f40e568d1a06, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DesireLines_Albedo
+    second: {fileID: 2800000, guid: 2b8777a58b8cb0f4481897ac6b1e6579, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DesireLines_Normal
+    second: {fileID: 2800000, guid: 3f39a43826b4b424c954ba9c8d448496, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: DesireLines_Specular
+    second: {fileID: 2800000, guid: cf7e4026e95898c4c806f0555bb851a8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Log_Albedo
+    second: {fileID: 2800000, guid: 2255bee7c4ec1ba499fa0a1a12d8666c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Log_Normal
+    second: {fileID: 2800000, guid: 67a1cb96401969d4383641f7fc662886, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Log_Specular
+    second: {fileID: 2800000, guid: cdb9eb1dd6bb9d84da0cd15f8be0ba13, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pile_Albedo
+    second: {fileID: 2800000, guid: 45242796e4b324e49931388cf01a8a94, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pile_Alpha
+    second: {fileID: 2800000, guid: 6a10953390606e349a2ed33c27287b3a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pile_Normal
+    second: {fileID: 2800000, guid: 417c62b9804407942b747de17461acda, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Pile_Specular
+    second: {fileID: 2800000, guid: a887c18263c145648bef79329aa0b091, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock01_Albedo
+    second: {fileID: 2800000, guid: 16bd2e38cfbe241468c0bc6d6b0bfbb4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock01_Specular
+    second: {fileID: 2800000, guid: 79aeb2a08503f004e8dd13c13043b6c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock02_Albedo
+    second: {fileID: 2800000, guid: 4e4669662905a8e44b9bc374ca59e177, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock02_Specular
+    second: {fileID: 2800000, guid: 78a80fbcbc1ff0042b9b686c35aa99b6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock03_Albedo
+    second: {fileID: 2800000, guid: 193ce488912fb6f48b6bc3d703f50a29, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock03_Specular
+    second: {fileID: 2800000, guid: 364baac76f928a54facc9de080994d3f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock04_Albedo
+    second: {fileID: 2800000, guid: fe76326eed9055541abe365a99e8a475, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Rock04_Specular
+    second: {fileID: 2800000, guid: b8a1569a498f1f94191d1e9f7da28b3a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SeaBox_Albedo
+    second: {fileID: 2800000, guid: 6b001b1b28d2b0f4c9a730da35ab8fd2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SeaBox_Normal
+    second: {fileID: 2800000, guid: cebf927328d455a4e9cdf52cfde027d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SeaBox_Specular
+    second: {fileID: 2800000, guid: f9fe92b8fdf22ba44b02a30fec530976, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ShroomRock_Albedo
+    second: {fileID: 2800000, guid: d9b3d1b3fddc5aa46b7fa9daed3d1d51, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ShroomRock_Normal
+    second: {fileID: 2800000, guid: 4adba6bcc62516d479a47e50b706ae80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ShroomRock_Specular
+    second: {fileID: 2800000, guid: ed0d93aa0cb9b6e4bbd862e4ef61c7ae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Shrooms_Albedo
+    second: {fileID: 2800000, guid: d54bc3a46f7d79849a8ca338eba6ff07, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Shrooms_Normal
+    second: {fileID: 2800000, guid: 96afee3c043f23242a7ec3d82b31e54e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Shrooms_Specular
+    second: {fileID: 2800000, guid: b013318b40c1f2949a8fe67cb91e78e8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpawnWall_Albedo
+    second: {fileID: 2800000, guid: 4514eadc3c9ec684dae987c5fa20e951, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpawnWall_Normal
+    second: {fileID: 2800000, guid: 9967694aa314de54cb0efbdee776b5fb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SpawnWall_Specular
+    second: {fileID: 2800000, guid: 842aeb5e7d533284bb4638ae5522aeae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree02_Alpha
+    second: {fileID: 2800000, guid: 45df2f7dc717d5a448a407846ce92604, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree02_Diffuse
+    second: {fileID: 2800000, guid: 207a30a3dd2e1144e83a3b140a6c7283, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree02_Normal
+    second: {fileID: 2800000, guid: 5f5f171fd38274646810f4f6e774ca93, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree02_Specular
+    second: {fileID: 2800000, guid: 76a0f0ffb53d3f44b8117d6256d86fcb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree03_Albedo
+    second: {fileID: 2800000, guid: 2e989248bbc697d4eb7b9b4f2f0bf02a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree03_Alpha
+    second: {fileID: 2800000, guid: 0e3e675003284c34fbcfd40836b26069, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree03_Normal
+    second: {fileID: 2800000, guid: 4acf8a47f6f24df4fbbb8d9315e1110c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree03_Specular
+    second: {fileID: 2800000, guid: 7d8b66e05d57a2046a62f2a42387dd95, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree04_Albedo
+    second: {fileID: 2800000, guid: 853784d8a8c48894db32486ebc65cbaf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree04_Normal
+    second: {fileID: 2800000, guid: 5b6d3e7f47081ad45a32baf510763c20, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree04_Specular
+    second: {fileID: 2800000, guid: f4cc3d71e8d49b743b3018d56652fd69, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree05_Albedo
+    second: {fileID: 2800000, guid: b8af0f7306962c54db785fd63da228ac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree05_Normal
+    second: {fileID: 2800000, guid: 6a620e7c1ede5ed449ebd7d390f228c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tree05_Specular
+    second: {fileID: 2800000, guid: 48bfdf53103ac9b4282c6933b458867c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TreeLine_Albedo
+    second: {fileID: 2800000, guid: c431b0146ce130b4ab8d38775f606440, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: TreeLine_Alpha
+    second: {fileID: 2800000, guid: e2932ec3a2ffd1a458a5c7871fecc2ab, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
