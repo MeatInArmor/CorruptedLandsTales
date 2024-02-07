@@ -45,6 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_timeController: {fileID: 0}
+  m_bossData: {fileID: 11400000, guid: 17ad1827674b8ea48b6e411d1511f3b0, type: 2}
+  m_bossPreset: {fileID: 11400000, guid: 86893bf10141aa0458328f77da481456, type: 2}
+  m_bossProjectile: {fileID: 5794678928835978894, guid: c6cdeff8dfca05d46967b175464618a0, type: 3}
   m_meleeData: {fileID: 11400000, guid: 9d598192da6e050478ce6e66acb12fc4, type: 2}
+  m_meleePreset: {fileID: 11400000, guid: de8ca51d68e9b84459765b7b929eba63, type: 2}
   m_rangeData: {fileID: 11400000, guid: e4bbf56cd18e1bc4ebc986bbb7be993d, type: 2}
+  m_rangePreset: {fileID: 11400000, guid: 7f6b7bc32f79eb145bcd49ab4e969dd8, type: 2}
+  m_rangeProjectile: {fileID: -970571510421341990, guid: 6140c94da7e70e94883123b2adb53dd7, type: 3}
   m_gameController: {fileID: 0}
+  m_newEnemyPerTime: 6

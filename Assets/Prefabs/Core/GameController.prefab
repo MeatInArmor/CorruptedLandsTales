@@ -46,7 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
   m_firstLevel: {fileID: 0}
-  m_levelPrefab: {fileID: 1875990733257375894, guid: e2f3eb8ef8fa7e947b3406d3f9d775d6, type: 3}
+  m_levelPrefab: {fileID: 1199947991183807516, guid: e530264031d2b824db1cd95fef85924d, type: 3}
   m_exitDoors:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
