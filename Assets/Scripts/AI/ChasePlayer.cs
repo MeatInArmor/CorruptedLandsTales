@@ -7,7 +7,10 @@ public class ChasePlayer : ActionNode
 	{
 		context.agent.isStopped = false;
 		context.agent.stoppingDistance = blackboard.attackRange;
-		context.agent.SetDestination(blackboard.target.position);
+		if(blackboard.target != null)
+		{
+			context.agent.SetDestination(blackboard.target.position);
+		}
 	}
 
 	protected override void OnStop()

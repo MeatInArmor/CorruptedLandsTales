@@ -932,9 +932,9 @@ NavMeshAgent:
   m_AgentTypeID: -1372625422
   m_Radius: 3
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 7
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 80
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c6f9b140a52a14881ec09eaebb66eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: 5ac8dc0a192301e489af7556abb6a91a, type: 2}
+  tree: {fileID: 11400000, guid: 083e3036db3615541b9ca3b74fb98caf, type: 2}
 --- !u!114 &4896854975139417411
 MonoBehaviour:
   m_ObjectHideFlags: 0

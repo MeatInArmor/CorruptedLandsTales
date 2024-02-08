@@ -43,11 +43,11 @@ MonoBehaviour:
   blackboard:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-    attackRange: 2.5
-    reserveAttackRange: 2.5
+    attackRange: 2.25
+    reserveAttackRange: 2.25
     typeOfAttack: 
     hasChangedTypeOfAttack: 0
-  viewPosition: {x: 503, y: -73, z: 0}
+  viewPosition: {x: 422, y: -35, z: 0}
   viewScale: {x: 0.49717674, y: 0.49717674, z: 1}
   references:
     version: 2

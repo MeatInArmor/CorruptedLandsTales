@@ -6,8 +6,6 @@ namespace CorruptedLandTales
     public class PlayerSettings
     {
         public Settings settings {  get; private set; } = new Settings();
-
-        // private PlayerStatsDB m_stats = Resources.Load<PlayerStatsDB>("PlayerStatsDB");
         
         private int m_money = 1000;
 
@@ -82,7 +80,6 @@ namespace CorruptedLandTales
                     var statFromSO = statsSO.Find(x=> x.statName == stat.statName);
                     statFromSO.SetCost(stat.cost);
                     statFromSO.SetLevel(stat.level);
-                    Debug.Log($"{stat.statName} {stat.cost} {stat.level}");
                 }
             }
         }

@@ -12,7 +12,7 @@ namespace CorruptedLandTales.AI
 		private float m_angularSpeed;
 		protected override void OnStart()
 		{
-			m_layerMask = LayerMask.GetMask("Projectile");
+			m_layerMask = LayerMask.GetMask("EnemyProjectile");
 			m_agentTransform = context.agent.transform;
 			m_angularSpeed = context.agent ? context.agent.angularSpeed : 360f;
 			if (name == null)
@@ -43,7 +43,6 @@ namespace CorruptedLandTales.AI
 						blackboard.attackRange = 0.1f;
 						Debug.DrawRay(m_agentTransform.position,
 							fwd * 100, Color.white);
-
 					}
 					else
 					{
