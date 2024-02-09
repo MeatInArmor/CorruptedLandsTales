@@ -15,6 +15,8 @@ namespace CorruptedLandTales
         [SerializeField] private InitCharacter m_initCharacter;
         [SerializeField] private CharacterSO m_data;
 
+        public event System.Action onPickUp;
+
         private GameObject m_item;
         private float m_damageToIncrease;
         private List<GameObject> m_weapons = new (5);//будет аллокация если сделать не конечный count
@@ -27,14 +29,18 @@ namespace CorruptedLandTales
 
         private void OnEnable()
         {
-            m_itemFinder.onFindItem += GetItem;
+            m_itemFinder.onFindItem += GetItem;            
         }
 
         private void OnDisable()
         {
             m_itemFinder.onFindItem -= GetItem;
         }
-
+        public void AnimatePickUp()
+        {
+            onPickUp?.Invoke();
+            
+        }
         private void GetItem(GameObject item)
         {
             m_item = item;
@@ -63,6 +69,7 @@ namespace CorruptedLandTales
 
                 if (data != null)
                 {
+                    AnimatePickUp();
                     if (data is InteractiveHealSO healData)
                     {
                         m_healthComponent.HealHealth(healData.healAmount);

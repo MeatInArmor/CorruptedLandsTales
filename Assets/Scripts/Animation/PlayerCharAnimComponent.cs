@@ -8,13 +8,10 @@ namespace CorruptedLandTales
     public class PlayerCharAnimComponent : MonoBehaviour
     {
         [SerializeField] private Animator m_animator;
-        [SerializeField] private Character m_character;
-        //[SerializeField] private ProjectileCore m_impact;
-        //[SerializeField] private CharMoveComponent m_charMoveComponent;
-        //[SerializeField] private CharMoveComponentAnimator m_charMoveComponentAnimator;
+        [SerializeField] private Character m_character;        
         [SerializeField] private SpecialAttack m_specialAttack;
         [SerializeField] private AttackManager m_attackManager;
-        //[SerializeField] private HealthComponent m_healthcomponent;
+        [SerializeField] private InteractItemHandler m_interactItemHandler;
 
         private HealthComponent m_healthcomponent;
         private IMoveComponent moveComponent => m_character.moveComponent;
@@ -42,25 +39,17 @@ namespace CorruptedLandTales
             if (m_character == null)
             {
                 m_character = GetComponentInParent<Character>();
-            }
-
-            /*if (m_charMoveComponent == null)
-            {
-                m_charMoveComponent = GetComponent<CharMoveComponent>();
-            }*/
+            }            
 
             if (m_healthcomponent)
             {                
                 m_healthcomponent = GetComponent<HealthComponent>();
             }
 
-           /* m_charMoveComponent = GetComponentInParent<CharMoveComponent>();*/
-
             m_character.attackManager.onUseAttack += () =>
             {
                 Slash();
             };
-
 
             if (m_specialAttack != null)
             {
@@ -79,14 +68,10 @@ namespace CorruptedLandTales
             {
                 m_animator.SetTrigger("isDie");
             };
-
-            /* m_character.attackManager.onUseWeaponSkill += () =>
-             {
-                 m_animator.SetTrigger("isUseWeaponSkill");
-             };*/
-
+            
             m_attackManager.onUseWeaponSkill += WeaponSkill;
 
+            m_interactItemHandler.onPickUp += PickUp;
             /*
             m_charMoveComponent.onUseDash += () =>
             {
@@ -116,7 +101,10 @@ namespace CorruptedLandTales
         {
             m_animator.SetTrigger("isCastSpell");
         }
-
+        private void PickUp()
+        {
+            m_animator.SetBool("isPickUp",true);
+        }
         private void Dash()
         {
             m_animator.SetTrigger("isDash");
@@ -126,5 +114,6 @@ namespace CorruptedLandTales
         {
             m_animator.SetTrigger("isUseWeaponSkill");
         }
+
     }
 }

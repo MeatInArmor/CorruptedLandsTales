@@ -13,8 +13,8 @@ namespace CorruptedLandTales
         //[SerializeField] private CharMoveComponentAnimator m_charMoveComponent;
         [SerializeField] private Animator m_animator;
         [SerializeField] private UnityEvent m_EndDie;
-        [SerializeField] private UnityEvent m_onImpact;
-        
+        [SerializeField] private UnityEvent m_onImpact; 
+        [SerializeField] private InteractItemHandler m_PickUp;
         private BehaviourTreeRunner m_behaviourTree;
         //private Animator m_animator;
         private void Start()
@@ -38,7 +38,12 @@ namespace CorruptedLandTales
         {
             m_attackManager.UseWeaponSkill();
         }
-        
+        public void endPickUp()
+        {
+            //m_PickUp.HandleItem();
+            m_animator.SetBool("isPickUp", false);
+            //Debug.Log("PickUp");
+        }
         public void OnEndDie()
         {
             m_EndDie.Invoke();

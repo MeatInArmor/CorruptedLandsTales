@@ -176,6 +176,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4306601387588991804, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
+      propertyPath: m_interactItemHandler
+      value: 
+      objectReference: {fileID: 989314882}
+    - target: {fileID: 4306601387588991804, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_charMoveComponentAnimator
       value: 
       objectReference: {fileID: 0}
