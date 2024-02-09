@@ -89,9 +89,9 @@ namespace CorruptedLandTales
 
                         // изменили вес анимации для поднятого оружия
                         name = weaponData.weapon.layerAnimName;
-                        m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
-                        name = weaponData.weapon.layerAnimNameSpecialWeapon;
-                        m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
+                        //m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
+                        //name = weaponData.weapon.layerAnimNameSpecialWeapon;
+                        //m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
                     }
                     Destroy(m_item);
                     m_item = null;

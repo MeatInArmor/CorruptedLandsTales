@@ -103,13 +103,16 @@ namespace CorruptedLandTales
                 return;
             }
             var inputMove = m_moveAction.ReadValue<Vector2>();
+			//Debug.Log(inputMove);
             var cameraY = m_cameraTransform.localEulerAngles.y;
             var inputMagnitude = inputMove.magnitude;
+            //Debug.Log(inputMagnitude);
             if (inputMagnitude > 0)
             {
                 float targetRotation = Mathf.Atan2(inputMove.x, inputMove.y) * Mathf.Rad2Deg + cameraY;
-                Quaternion toRotation = Quaternion.Euler(0f, targetRotation, 0f);                
-                m_Player.transform.rotation = Quaternion.RotateTowards(m_Player.transform.rotation, toRotation, 360f * Time.deltaTime);                
+                Quaternion toRotation = Quaternion.Euler(0f, targetRotation, 0f);
+                //Debug.Log(toRotation);
+                m_Player.transform.rotation = Quaternion.RotateTowards(m_Player.transform.rotation, toRotation, 1440 * Time.deltaTime);                
             }
 
             m_animator.SetFloat(HorizontalId, 0f, 0.05f, Time.deltaTime);

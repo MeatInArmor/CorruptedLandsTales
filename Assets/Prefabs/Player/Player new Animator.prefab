@@ -3039,6 +3039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponRoot: {fileID: 4918675479565110694}
+  m_Animator: {fileID: 6795548287528926784}
 --- !u!114 &9196480389814277058
 MonoBehaviour:
   m_ObjectHideFlags: 0
