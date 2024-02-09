@@ -11,7 +11,6 @@ namespace CorruptedLandTales
         [SerializeField] private PlayerStatsDB m_playerStatsSO;
         private PlayerSettings m_player;
         private List<StatSO> m_playerStats;
-       
         
         protected override void OnEnable()
         {

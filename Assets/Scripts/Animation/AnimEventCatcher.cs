@@ -22,15 +22,5 @@ namespace CorruptedLandTales
         {
             m_specialAttack.CastSpecialAttack();
         }
-
-        public void StartDash()
-        {
-            m_charMoveComponent.isDashing = true;
-        }
-
-        public void EndDash()
-        {
-            m_charMoveComponent.isDashing = false;
-        }
     }
 }

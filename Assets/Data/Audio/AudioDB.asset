@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffee5826d2b9eed43b65df482fa8df9a, type: 3}
+  m_Name: AudioDB
+  m_EditorClassIdentifier: 
+  audios:
+  - id: mainMenu
+    clip: {fileID: 8300000, guid: 0088107746512884d85912d01f6b41d8, type: 3}
+  - id: meleeAttack1
+    clip: {fileID: 8300000, guid: 3c0063ac7381b7445bc1f2f1fd3e1ad7, type: 3}
+  - id: meleeAttack3
+    clip: {fileID: 8300000, guid: 10b5f5cbf3fc394449ae1406eb2bc023, type: 3}
+  - id: rangeAttack1
+    clip: {fileID: 8300000, guid: 740bd7cac5650df46b394558ba39b0c7, type: 3}
+  - id: boulderImpact
+    clip: {fileID: 8300000, guid: 10b5f5cbf3fc394449ae1406eb2bc023, type: 3}
+  - id: rangeEnemyAttack
+    clip: {fileID: 8300000, guid: fec98695b60deed419202ba60aefdcd8, type: 3}
+  - id: meleeEnemyAttack
+    clip: {fileID: 8300000, guid: 4caf5b87e5edeb54ab43a171e6afc83c, type: 3}
+  - id: gameplay1
+    clip: {fileID: 8300000, guid: 3d547e29c8839a14f94b394725cb2631, type: 3}
+  - id: gameplay2
+    clip: {fileID: 8300000, guid: 2a13a82ce8b36c046994076f457c4b20, type: 3}
+  - id: gameplay3
+    clip: {fileID: 8300000, guid: 859d9e3520c5bc046824604e12822cd8, type: 3}
+  - id: fireball
+    clip: {fileID: 8300000, guid: bc97b4110db0c7d44923f0db94057bfb, type: 3}

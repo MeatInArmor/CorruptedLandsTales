@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1987516197142424325}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1389, y: 642, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a98ff6ee2a0b2a47be6f0be061ec2dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_audioMixer: {fileID: 24100000, guid: 2a4589e0131430847a1b102abb3170ca, type: 2}
+  startScene: MainMenu
