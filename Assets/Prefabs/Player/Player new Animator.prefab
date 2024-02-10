@@ -2886,7 +2886,6 @@ GameObject:
   - component: {fileID: 2297376893487946721}
   - component: {fileID: 3465083201844976310}
   - component: {fileID: 8084762253156811663}
-  - component: {fileID: 5877319605898431595}
   m_Layer: 6
   m_Name: Player new Animator
   m_TagString: Player
@@ -2977,6 +2976,7 @@ MonoBehaviour:
   m_character: {fileID: 2297376893487946721}
   m_specialAttack: {fileID: 8616952980201909679}
   m_attackManager: {fileID: 2892508709089259748}
+  m_interactItemHandler: {fileID: 0}
   m_speedCoef: 2
 --- !u!114 &8389748514222896813
 MonoBehaviour:
@@ -3126,20 +3126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_manaPool: 50
   m_currentMana: 40
---- !u!114 &5877319605898431595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701134899015483886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 567d12682ace0074b97fbcf17d6936aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_data: {fileID: 11400000, guid: 685a3e1961b87c9469b925e541836d2b, type: 2}
-  m_character: {fileID: 2297376893487946721}
 --- !u!1 &5741678466699072853
 GameObject:
   m_ObjectHideFlags: 0

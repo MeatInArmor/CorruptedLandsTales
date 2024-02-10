@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponRoot: {fileID: 4759652776575553004}
+  m_Animator: {fileID: 0}
 --- !u!114 &6740973288869589746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_attackManager: {fileID: 6082371126744485788}
   m_healthComponent: {fileID: 3689000501695359997}
+  m_manaComponent: {fileID: 0}
 --- !u!1001 &2711973166612819505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,6 +603,7 @@ MonoBehaviour:
   m_character: {fileID: 7861628940492116717}
   m_impact: {fileID: 0}
   m_charMoveComponent: {fileID: 0}
+  m_charMoveComponentAnimator: {fileID: 0}
   m_specialAttack: {fileID: 0}
 --- !u!114 &9082352320028724049
 MonoBehaviour:
