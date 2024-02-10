@@ -21,17 +21,21 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 10b5f5cbf3fc394449ae1406eb2bc023, type: 3}
   - id: rangeAttack1
     clip: {fileID: 8300000, guid: 740bd7cac5650df46b394558ba39b0c7, type: 3}
-  - id: boulderImpact
-    clip: {fileID: 8300000, guid: 10b5f5cbf3fc394449ae1406eb2bc023, type: 3}
   - id: rangeEnemyAttack
-    clip: {fileID: 8300000, guid: fec98695b60deed419202ba60aefdcd8, type: 3}
+    clip: {fileID: 8300000, guid: 311a443f198ca7a47811044b80fc2bf8, type: 3}
   - id: meleeEnemyAttack
     clip: {fileID: 8300000, guid: 4caf5b87e5edeb54ab43a171e6afc83c, type: 3}
   - id: gameplay1
-    clip: {fileID: 8300000, guid: 3d547e29c8839a14f94b394725cb2631, type: 3}
+    clip: {fileID: 8300000, guid: c55c220f12d2feb49a6037724b3c871a, type: 3}
   - id: gameplay2
-    clip: {fileID: 8300000, guid: 2a13a82ce8b36c046994076f457c4b20, type: 3}
+    clip: {fileID: 8300000, guid: 7ed26f8af175c8447a50cd864250a6bc, type: 3}
   - id: gameplay3
-    clip: {fileID: 8300000, guid: 859d9e3520c5bc046824604e12822cd8, type: 3}
+    clip: {fileID: 8300000, guid: 8865be50cdb708448bf1513a54530811, type: 3}
   - id: fireball
     clip: {fileID: 8300000, guid: bc97b4110db0c7d44923f0db94057bfb, type: 3}
+  - id: menuNext
+    clip: {fileID: 8300000, guid: ae46e87a1569d1b45bad01b7cc1de3d3, type: 3}
+  - id: statSelect
+    clip: {fileID: 8300000, guid: 33b6cd7837c7642958dac012307e9086, type: 3}
+  - id: buyBtn
+    clip: {fileID: 8300000, guid: 7b34a1c3f2d86478f8ece94c4c46c8dd, type: 3}
