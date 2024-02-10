@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 2253320477585459482, guid: f6665b248f2f18c4cb8c2528cf9e5014, type: 3}
   m_damage: 20
-  m_layerAnimName: Slash
-  m_layerAnimNameSpecialWeapon: Slash
+  m_layerAnimName: 
+  m_layerAnimNameSpecialWeapon: 
   m_attackAngle: 120
   m_attackRange: 4
   m_manaCost: 15

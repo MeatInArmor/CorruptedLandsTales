@@ -47,8 +47,11 @@ namespace CorruptedLandTales
             m_activeWeapon.Show();
             m_activeWeaponLayer = weaponData.layerAnimName;
             m_activeLayerWeaponSpecial = weaponData.layerAnimNameSpecialWeapon;
-            m_Animator.SetLayerWeight(m_Animator.GetLayerIndex(m_activeWeaponLayer), 1f);
-            m_Animator.SetLayerWeight(m_Animator.GetLayerIndex(m_activeLayerWeaponSpecial), 1f);
+            if (m_activeWeaponLayer != "" && m_activeLayerWeaponSpecial != "")
+            {
+                m_Animator.SetLayerWeight(m_Animator.GetLayerIndex(m_activeWeaponLayer), 1f);
+                m_Animator.SetLayerWeight(m_Animator.GetLayerIndex(m_activeLayerWeaponSpecial), 1f);
+            }            
         }
 
         private void Awake()
