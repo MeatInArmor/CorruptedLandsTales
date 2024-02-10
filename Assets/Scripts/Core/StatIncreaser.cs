@@ -28,6 +28,9 @@ namespace CorruptedLandTales
         [SerializeField] private CharacterSO m_playerPreset;
         [SerializeField] private StatsIncreaseSO m_playerIncreaseStatsSo;
         [SerializeField] private PlayerStatsDB m_playerStatsSO;
+        [SerializeField] private ProjectileComponent m_fireBall;
+        [SerializeField] private float m_fireBallStartDamage = 150;
+        [SerializeField] private float m_damagePerLevel = 50;
         
         private List<StatSO> m_playerStats;
         
@@ -38,6 +41,7 @@ namespace CorruptedLandTales
             m_bossData.RefreshStats(m_bossPreset);
             m_bossProjectile.RefreshDamage(m_bossPreset.atkData.damage);
             m_rangeProjectile.RefreshDamage(m_rangePreset.atkData.damage);
+            m_fireBall.RefreshDamage(m_fireBallStartDamage);
             m_playerStatsSO = Resources.Load<PlayerStatsDB>("PlayerStatsDB");
             m_playerStats = m_playerStatsSO.stats;
             SetUpPlayerStats();
@@ -97,6 +101,7 @@ namespace CorruptedLandTales
                     m_bossData.IncreaseAttacksDamage();
                     m_rangeProjectile.IncreaseDamage(m_rangeData.atkData.damage);
                     m_bossProjectile.IncreaseDamage(m_bossData.atkData.damage);
+                    m_fireBall.IncreaseDamage(m_damagePerLevel);
             }
             for (int i = 0; i < m_timeController.GetNewCount(); i++) 
             {

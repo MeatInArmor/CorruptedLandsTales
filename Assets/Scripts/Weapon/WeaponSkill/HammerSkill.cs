@@ -25,6 +25,16 @@ namespace CorruptedLandTales
             Attack();
         }
 
+        public void SetDamage(float dmg)
+        {
+            m_damage = dmg;
+        }
+
+        public void IncreaseDamage(float dmg)
+        {
+            m_damage += dmg;
+        }
+
         private void Attack()
         {
             var count = Physics.OverlapSphereNonAlloc(transform.position,  m_attackRange, m_result, m_layerMask,

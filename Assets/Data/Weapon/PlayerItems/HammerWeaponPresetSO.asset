@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 5277693757349116810, guid: d71717835adfdff4e87c60a1a04662f6, type: 3}
   m_damage: 50
+  m_skillDamage: 80
   m_attackAngle: 150
   m_attackRange: 3
+  m_manaCost: 15
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
