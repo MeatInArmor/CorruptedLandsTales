@@ -13,9 +13,9 @@ namespace CorruptedLandTales
         //[SerializeField] private CharMoveComponentAnimator m_charMoveComponent;
         [SerializeField] private Animator m_animator;
         [SerializeField] private UnityEvent m_EndDie;
-        [SerializeField] private UnityEvent m_onImpact; 
-        [SerializeField] private InteractItemHandler m_PickUp;
+        [SerializeField] private UnityEvent m_onImpact;         
         private BehaviourTreeRunner m_behaviourTree;
+        //[SerializeField] private InteractItemHandler m_PickUp;
         //private Animator m_animator;
         private void Start()
         {

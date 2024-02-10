@@ -131,6 +131,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3465083201844976310, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
+      propertyPath: m_data
+      value: 
+      objectReference: {fileID: 11400000, guid: df76f579643d4684dab2dfadd68d471a, type: 2}
     - target: {fileID: 4089173368887766831, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_LocalPosition.x
       value: -83.42
@@ -198,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 5385239697022772945, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1944696784}
+      objectReference: {fileID: 1930290117}
     - target: {fileID: 5385239697022772945, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_VersionIndex
       value: 805
@@ -210,12 +214,13 @@ PrefabInstance:
     - target: {fileID: 5844283529314300107, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1944696784}
+      objectReference: {fileID: 1930290117}
     - target: {fileID: 6336512968445314302, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1944696784}
-    m_RemovedComponents: []
+      objectReference: {fileID: 1930290117}
+    m_RemovedComponents:
+    - {fileID: 5877319605898431595, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
     m_RemovedGameObjects:
     - {fileID: 948152729221165657, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
     m_AddedGameObjects: []
@@ -5794,11 +5799,11 @@ MonoBehaviour:
   m_gameController: {fileID: 1684338586}
   m_weapons:
   - {fileID: 11400000, guid: a8c3322662fdda140ac00935914e4235, type: 2}
-  - {fileID: 11400000, guid: 06f4adcdb7ff3124cab3d9be2dd0b664, type: 2}
+  - {fileID: 11400000, guid: a3226c7329f72bb4782e2109d662ef1e, type: 2}
   - {fileID: 11400000, guid: 627953c6e95c60e48ab4824056b37166, type: 2}
   m_presetWeapons:
   - {fileID: 11400000, guid: 1e43a238e4b258d46ab416f7de27af62, type: 2}
-  - {fileID: 11400000, guid: 98ebfa76b7df4c7499c38b327f0d2def, type: 2}
+  - {fileID: 11400000, guid: 9da11544714949a4482775fdb725aa01, type: 2}
   - {fileID: 11400000, guid: 44cd48d1d11e20d4198d83499b6f96d8, type: 2}
   m_damageToIncrease: 30
 --- !u!1 &938932457 stripped
@@ -6556,13 +6561,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f845301366d030545bd8b76d43eeae68, type: 3}
---- !u!43 &1944696784
+--- !u!43 &1930290117
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-18866(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Name: pb_Mesh-18866(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2

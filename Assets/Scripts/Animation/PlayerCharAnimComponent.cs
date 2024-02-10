@@ -61,7 +61,7 @@ namespace CorruptedLandTales
 
             m_character.HealthComponent.onImpact += () =>
             {
-                m_animator.SetBool("IsImpact", true);
+                //m_animator.SetBool("IsImpact", true);
             };
 
             m_character.HealthComponent.onDie += () =>

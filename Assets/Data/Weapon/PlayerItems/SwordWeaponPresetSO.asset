@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b897dbb5ca4f26f46af26dfa272240d8, type: 3}
   m_Name: SwordWeaponPresetSO
   m_EditorClassIdentifier: 
-  m_prefab: {fileID: 2133098551173313751, guid: dd36e71b7ecfcce47909aadc17ec66fc, type: 3}
+  m_prefab: {fileID: 2253320477585459482, guid: d4661d2f75a1cbd428f981d923f25701, type: 3}
   m_damage: 30
+  m_layerAnimName: Sword Combo
+  m_layerAnimNameSpecialWeapon: Sword Special
   m_attackAngle: 120
   m_attackRange: 5
+  m_manaCost: 15
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256

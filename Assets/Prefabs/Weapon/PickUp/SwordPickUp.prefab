@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8995184272252722514}
   - component: {fileID: -5088026091321318641}
   m_Layer: 9
-  m_Name: Sword
+  m_Name: SwordPickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 5909853134486944635}
   - component: {fileID: -4593111211592823737}
   m_Layer: 9
-  m_Name: Hammer
+  m_Name: HammerPickUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
