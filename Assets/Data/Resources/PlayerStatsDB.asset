@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: PlayerStatsDB
   m_EditorClassIdentifier: 
   m_stats:
-  - {fileID: 11400000, guid: f22431a150fbdfa42ad4c8c484197ae5, type: 2}
-  - {fileID: 11400000, guid: aaa1e8655c570fb418e7979f1b5bc35c, type: 2}
   - {fileID: 11400000, guid: 58f9dda86dbc389469dbbc8e0aa38190, type: 2}
   - {fileID: 11400000, guid: 2e3a7c64bcb7c7c4ba78cd95c76372ef, type: 2}
   - {fileID: 11400000, guid: 06c245396683c0c458a8c75f1dc04251, type: 2}

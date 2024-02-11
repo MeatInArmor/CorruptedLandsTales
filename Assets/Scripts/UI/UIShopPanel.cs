@@ -1,94 +1,114 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
     public class UIShopPanel : MonoBehaviour
     {
-        public event System.Action<string> onTryBuyItem;
+        [Header("Stats")]
+        [SerializeField] private UIShopItem[] stats;
         
-        [SerializeField] private UIShopItem m_healthStat;
-        [SerializeField] private UIShopItem m_damageStat;
-        [SerializeField] private UIShopItem m_speedStat;
-        [SerializeField] private UIShopItem m_attackSpeedStat;
-        [SerializeField] private UIShopItem m_manaPoolStat;
-        [SerializeField] private UIShopItem m_manaRegenStat;
+        [Header("Buttons")]
         [SerializeField] private UIBuyBtn m_buyBtn;
+        [SerializeField] private UIRefreshBtn m_refreshBtn;
+
+        [Header("Active Type")] 
         [SerializeField] private TMP_Text m_cost;
         [SerializeField] private TMP_Text m_type;
+        
         private List<StatSO> m_playerStats;
-
-        //TODO переписать этот говнокод
+        private StatSO activeStat;
+        private string activeType;
+        private int activeCost;
+        
+        public event System.Action<StatSO> onTryBuyItem;
+        public event System.Action onRefresh; 
+        
         public void SetPlayerStatsAndShopItems(PlayerStatsDB playerStatsDB)
         {
             ClearText();
             m_buyBtn.onClickBuyButton += OnBuyClick;
             m_playerStats = playerStatsDB.stats;
+            m_refreshBtn.onClickRefreshButton += OnRefreshClick;
             foreach (var stat in m_playerStats)
             {
-                if (stat.statName == "health")
+                switch (stat.statName)
                 {
-                    m_healthStat.SetUpShopItem("health", stat.cost, stat.level);
-                    m_healthStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "attack")
-                {
-                    m_damageStat.SetUpShopItem("attack", stat.cost, stat.level);
-                    m_damageStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "attackspeed")
-                {
-                    m_attackSpeedStat.SetUpShopItem("attackspeed", stat.cost, stat.level);
-                    m_attackSpeedStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "manapool")
-                {
-                    m_manaPoolStat.SetUpShopItem("manapool", stat.cost, stat.level);
-                    m_manaPoolStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "manaregen")
-                {
-                    m_manaRegenStat.SetUpShopItem("manaregen", stat.cost, stat.level);
-                    m_manaRegenStat.onClick += OnItemClick;
-                }
-                if (stat.statName == "speed")
-                {
-                    m_speedStat.SetUpShopItem("speed", stat.cost, stat.level);
-                    m_speedStat.onClick += OnItemClick;
+                    case "health":
+                        stats[0].SetUpShopItem(stat);
+                        stats[0].onClick += OnItemClick;
+                        break;
+                    case "speed":
+                        stats[1].SetUpShopItem(stat);
+                        stats[1].onClick += OnItemClick;
+                        break;
+                    case "manapool":
+                        stats[2].SetUpShopItem(stat);
+                        stats[2].onClick += OnItemClick;
+                        break;
+                    case "manaregen":
+                        stats[3].SetUpShopItem(stat);
+                        stats[3].onClick += OnItemClick;
+                        break;
                 }
             }
         }
-
-        private void OnItemClick(string type, int cost)
+        
+        private void OnEnable()
         {
-            m_cost.text = cost.ToString();
-            m_type.text = type;
+            ClearText();
+        }
+
+        private void OnDisable()
+        {
+            foreach (var stat in stats) 
+            {
+                stat.onClick -= OnItemClick;
+            }
+            m_buyBtn.onClickBuyButton -= OnBuyClick;
+            m_refreshBtn.onClickRefreshButton -= OnRefreshClick;
+            ClearText();
+        }
+        
+        private void OnItemClick(StatSO stat)
+        {
+            activeStat = stat;
+            activeType = stat.statName;
+            activeCost = stat.cost;
+            SetCostTypeAndLevel();
+        }
+
+        private void SetCostTypeAndLevel()
+        {
+            m_cost.text = activeCost.ToString();
+            m_type.text = activeType;
         }
         
         private void OnBuyClick()
         {
-            onTryBuyItem?.Invoke(m_type.text);
+            onTryBuyItem?.Invoke(activeStat);
+            OnItemClick(activeStat);
+            RefreshStatsLevels();
         }
 
-        private void OnDisable() // переписать этот говнокод
+        private void OnRefreshClick()
         {
-            m_healthStat.onClick -= OnItemClick;
-            m_damageStat.onClick -= OnItemClick;
-            m_speedStat.onClick -= OnItemClick;
-            m_attackSpeedStat.onClick -= OnItemClick;
-            m_manaPoolStat.onClick -= OnItemClick;
-            m_manaRegenStat.onClick -= OnItemClick;
-            m_buyBtn.onClickBuyButton -= OnBuyClick;
-            ClearText();
+            onRefresh?.Invoke();
+            RefreshStatsLevels();
         }
 
         private void ClearText()
         {
             m_cost.text = "";
             m_type.text = "";
+        }
+        public void RefreshStatsLevels()
+        {
+            foreach(var stat in stats)
+            {
+                stat.RefreshStatsLevelImagin();
+            }
         }
     }
 }

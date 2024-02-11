@@ -7,7 +7,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] private ItemFinder m_ItemFinder;
         [SerializeField] private Image m_parentImage;
-        [SerializeField] private Image m_childImage;
+        [SerializeField] private Image[] m_childImage;
 
         private void OnEnable()
         {
@@ -24,13 +24,15 @@ namespace CorruptedLandTales
         private void TurnOn()
         {
             m_parentImage.enabled = true;
-            m_childImage.enabled = true;
+            foreach (var image in m_childImage)
+                image.enabled = true;
         }
 
         private void TurnOff()
         {
             m_parentImage.enabled = false;
-            m_childImage.enabled = false;
+            foreach (var image in m_childImage)
+                image.enabled = false;
         }
     }
 }

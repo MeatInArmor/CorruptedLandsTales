@@ -47,8 +47,8 @@ MonoBehaviour:
   blackboard:
     target: {fileID: 0}
     moveToPosition: {x: 0, y: 0, z: 0}
-    attackRange: 8
-    reserveAttackRange: 8
+    attackRange: 10
+    reserveAttackRange: 10
     typeOfAttack: 
     hasChangedTypeOfAttack: 0
   viewPosition: {x: 700, y: -17, z: 0}

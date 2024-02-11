@@ -14,6 +14,7 @@ namespace CorruptedLandTales
         
         public float attackAngle => m_attackAngle;
         public float attackRange => m_attackRange;
+
         public float manaCost => m_manaCost;
         public LayerMask layerMask => m_layerMask;
     }

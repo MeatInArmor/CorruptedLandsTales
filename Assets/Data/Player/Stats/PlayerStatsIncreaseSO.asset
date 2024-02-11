@@ -18,5 +18,5 @@ MonoBehaviour:
     health: 0
   atkData:
     dmg: 0
-  manaDataIncrease:
+  manaData:
     mana: 0

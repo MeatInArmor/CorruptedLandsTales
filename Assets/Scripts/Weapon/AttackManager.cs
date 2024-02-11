@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -5,7 +6,7 @@ namespace CorruptedLandTales
     public class AttackManager : MonoBehaviour
     {
         [SerializeField] private Transform m_weaponRoot;
-        [SerializeField] private Animator m_Animator;
+        [SerializeField] [CanBeNull] private Animator m_Animator;
 
         private IAttackItem m_activeWeapon;
         private string m_activeWeaponLayer;

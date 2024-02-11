@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ManaPoolSO
   m_EditorClassIdentifier: 
   m_statName: manapool
-  m_level: 0
+  m_level: 2
   m_valuePerLevel: 15
-  m_cost: 70
-  m_costPerLevel: 70
+  m_cost: 45
+  m_costPerLevel: 15

@@ -6,7 +6,6 @@ namespace ShadowChimera
 {
     public class ComboAnimator : MonoBehaviour
     {
-        //[SerializeField] private List<Slash> slashes;
         public Animator anim;
         public int noOfClicks;
         float lastClickedTime;
@@ -15,7 +14,6 @@ namespace ShadowChimera
         {
             anim = gameObject.GetComponentInParent<Animator>();
         }
-
         
         void Update()
         {
@@ -24,8 +22,6 @@ namespace ShadowChimera
                 anim.SetBool("IsAttack", true);
             }
             noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
-            
-
         }
 
         public void attack1()
@@ -43,10 +39,6 @@ namespace ShadowChimera
             {
                 anim.SetBool("IsAttack", false);
                 noOfClicks = 0;
-            }
-            else
-            {
-                //characterController.enabled = false;
             }
         }
 

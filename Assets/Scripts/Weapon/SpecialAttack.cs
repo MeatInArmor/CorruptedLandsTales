@@ -12,14 +12,8 @@ namespace CorruptedLandTales
         [SerializeField] private ManaComponent m_manaComponent;
 
         private float m_timeLastUsed;
-        //private ManaComponent m_manaComponent;
         
         public event System.Action onUseSpecial;
-
-        private void Awake()
-        {
-            //m_manaComponent = GetComponentInParent<ManaComponent>();
-        }
 
         public void AnimateSpecialAttack()
         {

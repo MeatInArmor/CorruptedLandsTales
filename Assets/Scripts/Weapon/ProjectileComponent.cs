@@ -4,6 +4,8 @@ namespace CorruptedLandTales
 {
     public class ProjectileComponent : ProjectileCore
     {
+        public event System.Action onImpact;
+        
         private void Start()
         {
             var rb = GetComponent<Rigidbody>();
@@ -12,10 +14,10 @@ namespace CorruptedLandTales
             Destroy(gameObject, LifeTime);
         }
         
-        
         private void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
+            onImpact?.Invoke();
             Destroy(gameObject);
         }
     }

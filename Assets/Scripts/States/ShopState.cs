@@ -8,32 +8,35 @@ namespace CorruptedLandTales
     {
         [SerializeField] private MainMenuState m_mainMenu;
         [SerializeField] private UIShopPanel m_shopPanel;
+        [SerializeField] private PlayerStatsDB m_playerStatsSO;
         private PlayerSettings m_player;
         private List<StatSO> m_playerStats;
-       
         
         protected override void OnEnable()
         {
             base.OnEnable();
             m_shopPanel.onTryBuyItem += OnTryBuyItem;
-            
+            m_shopPanel.onRefresh += RefreshStats;
+
         }
         protected override void OnDisable()
         {
             base.OnDisable();
             m_shopPanel.onTryBuyItem -= OnTryBuyItem;
+            m_shopPanel.onRefresh -= RefreshStats;
         }
         
         protected override void OnEnter()
         {
-            m_shopPanel.SetPlayerStatsAndShopItems(m_player.playerStats);
-            m_playerStats = new List<StatSO>();
-            m_playerStats = m_player.playerStats.stats;
+            m_shopPanel.SetPlayerStatsAndShopItems(m_playerStatsSO);
+            m_shopPanel.RefreshStatsLevels();
         }
 
         private void Awake()
         {
             m_player = GameInstance.instance.playerSettings;
+            m_playerStatsSO = Resources.Load<PlayerStatsDB>("PlayerStatsDB");
+            m_playerStats = m_playerStatsSO.stats;
         }
 
         public void GoToMainMenu()
@@ -42,17 +45,31 @@ namespace CorruptedLandTales
             Exit();
         }
 
-        private void OnTryBuyItem(string item)
+        private void RefreshStats()
         {
-            Debug.Log($"Try buy! - {item}");
-            
-            var itemData = m_playerStats.Find(x=> x.statName == item);
-            if (itemData != null)
+            foreach (var stat in m_playerStats)
             {
-                if (m_player.money > itemData.cost)
+                stat.RefreshStats();
+            }
+            
+        }
+
+        private void OnTryBuyItem(StatSO stat)
+        {
+            if(stat!=null)
+            {
+                Debug.Log($"Try buy! - {stat.statName}");
+
+                var itemData = m_playerStats.Find(x => x.statName == stat.statName);
+                if (itemData != null)
                 {
-                    m_player.money -= itemData.cost;
-                    Debug.Log($"{itemData.statName} BUY!!!");
+                    if (m_player.money > itemData.cost)
+                    {
+                        itemData.IncreaseStatLevel();
+                        m_player.money -= itemData.cost;
+                        itemData.IncreaseCost();
+                        Debug.Log($"{itemData.statName} BUY!!!");
+                    }
                 }
             }
         }

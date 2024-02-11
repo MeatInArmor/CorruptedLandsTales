@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -7,6 +8,7 @@ namespace CorruptedLandTales
         [SerializeField] private AttackManager m_attackManager;
         [SerializeField] private HealthComponent m_healthComponent;
         [SerializeField] private ManaComponent m_manaComponent;
+        [SerializeField] [NotNull] private PlayerCharAnimComponent m_comp;
         
         private IMoveComponent m_moveComponent;
         public AttackManager attackManager => m_attackManager;
@@ -54,6 +56,11 @@ namespace CorruptedLandTales
             if (m_manaComponent != null)
             {
                m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana);
+            }
+
+            if (m_comp)
+            {
+                m_comp.SetSpeed(data.moveData.speed);
             }
         }
     }

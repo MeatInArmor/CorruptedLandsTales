@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: meleeAttack3Preset
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 5588360234851695542, guid: 0ec5404a860ceab48ba95d91213e0460, type: 3}
-  m_damage: 50
-  m_attackAngle: 70
+  m_damage: 70
+  m_attackAngle: 180
   m_attackRange: 4
+  m_manaCost: 15
   m_layerMask:
     serializedVersion: 2
     m_Bits: 64

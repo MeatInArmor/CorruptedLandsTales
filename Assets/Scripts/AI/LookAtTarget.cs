@@ -6,13 +6,15 @@ namespace CorruptedLandTales.AI
 	public class LookAtTarget : ActionNode
 	{
 		private LayerMask m_layerMask;
+		private LayerMask m_layerMaskEnemy;
 		private Transform m_agentTransform;
 		private bool isBoss = false;
 		private string name;
 		private float m_angularSpeed;
 		protected override void OnStart()
 		{
-			m_layerMask = LayerMask.GetMask("Projectile");
+			m_layerMask = LayerMask.GetMask("EnemyProjectile");
+			m_layerMaskEnemy = LayerMask.GetMask("Enemy");
 			m_agentTransform = context.agent.transform;
 			m_angularSpeed = context.agent ? context.agent.angularSpeed : 360f;
 			if (name == null)
@@ -34,7 +36,7 @@ namespace CorruptedLandTales.AI
 			RaycastHit hit;
 			Vector3 fwd = m_agentTransform.TransformDirection(Vector3.forward);
 			if (Physics.Raycast( m_agentTransform.position,  
-				    fwd, out hit, 100, ~m_layerMask))
+				    fwd, out hit, 100, ~m_layerMask & ~m_layerMaskEnemy))
 			{
 				if (!isBoss)
 				{
@@ -43,7 +45,6 @@ namespace CorruptedLandTales.AI
 						blackboard.attackRange = 0.1f;
 						Debug.DrawRay(m_agentTransform.position,
 							fwd * 100, Color.white);
-
 					}
 					else
 					{

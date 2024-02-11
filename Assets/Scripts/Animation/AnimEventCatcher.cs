@@ -7,21 +7,18 @@ namespace CorruptedLandTales
 {
     public class AnimEventCatcher : MonoBehaviour
     {
-        private AttackManager m_attackManager;
         [SerializeField] private SpecialAttack m_specialAttack;
-        [SerializeField] private CharMoveComponent m_charMoveComponent;
-        //[SerializeField] private CharMoveComponentAnimator m_charMoveComponent;
         [SerializeField] private Animator m_animator;
         [SerializeField] private UnityEvent m_EndDie;
         [SerializeField] private UnityEvent m_onImpact;         
         private BehaviourTreeRunner m_behaviourTree;
-        //[SerializeField] private InteractItemHandler m_PickUp;
-        //private Animator m_animator;
+        private AttackManager m_attackManager;
+        
         private void Start()
         {
             m_attackManager = GetComponentInParent<AttackManager>();
             m_behaviourTree = GetComponentInParent<BehaviourTreeRunner>();
-            //m_animator = GetComponentInParent<Animator>();
+            
         }
 
         public void Attack()
@@ -40,9 +37,9 @@ namespace CorruptedLandTales
         }
         public void endPickUp()
         {
-            //m_PickUp.HandleItem();
+            
             m_animator.SetBool("isPickUp", false);
-            //Debug.Log("PickUp");
+           
         }
         public void OnEndDie()
         {
@@ -57,8 +54,7 @@ namespace CorruptedLandTales
         public void OnEndImpact()
         {
             m_animator.SetBool("IsImpact", false);
-            //m_healthComponent.onImpact.Invoke();
-            //onImpact.Invoke();
+            
             m_behaviourTree.enabled = true;
         }
     }

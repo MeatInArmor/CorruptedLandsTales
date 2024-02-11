@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: PlayerSO
   m_EditorClassIdentifier: 
   moveData:
-    speed: 9
+    speed: 2.5
     sprintSpeed: 12
   healthData:
-    health: 200
-    maxHealth: 200
+    health: 300
+    maxHealth: 300
   weapon: {fileID: 11400000, guid: a8c3322662fdda140ac00935914e4235, type: 2}
   manaData:
-    manaPool: 50
+    manaPool: 80
     initMana: 0
   atkData:
     damage: 30
-  m_stats: {fileID: 0}
+  m_stats: {fileID: 11400000, guid: 2a51153bf15862a48a7bb45815456aab, type: 2}

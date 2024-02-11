@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ChestSO
   m_EditorClassIdentifier: 
   m_weapons:
-  - {fileID: 7900906350088172212, guid: c6527da45ca418a4aa8f95ff9504a6d0, type: 3}
-  - {fileID: 2826950414564320495, guid: 16d990384633b33438001e3d8b362fac, type: 3}
-  - {fileID: 2133098551173313751, guid: 2d0498601f840e14aabf1f5ddf4745af, type: 3}
+  - {fileID: 2826950414564320495, guid: b30a205ad6ec35d4f8a5cad972be05e1, type: 3}
+  - {fileID: 7535813670198841995, guid: c85ff086aa95f904593620f0560fcd2c, type: 3}
+  - {fileID: 2253320477585459482, guid: f845301366d030545bd8b76d43eeae68, type: 3}

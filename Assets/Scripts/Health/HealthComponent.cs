@@ -43,7 +43,6 @@ namespace CorruptedLandTales
             m_health -= damage;
             onTakeDamage?.Invoke(damage);
             
-
             if (m_health <= 0)
             {
                 onDie?.Invoke();
@@ -52,12 +51,10 @@ namespace CorruptedLandTales
                 {
                     NumbersCounts.kills++;
                 }
-                //Destroy(gameObject);
             }
             else
             {
-                //m_onImpact.Invoke();
-                onImpact.Invoke();                
+                onImpact?.Invoke();                
             }
         }
 

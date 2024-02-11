@@ -10,11 +10,8 @@ namespace CorruptedLandTales
 		[SerializeField] private InputActionAsset m_inputActionAsset;
 		[SerializeField] private Transform m_cameraTransform;
 		[SerializeField] private SpecialAttack m_specialAttack;
-		[SerializeField] private ItemFinder m_itemFinder;
 		[SerializeField] private InteractItemHandler m_itemHandler;
-        [SerializeField] private CharMoveComponentAnimator m_charMoveComponentAnimator;
         [SerializeField] private Animator m_animator;
-        [SerializeField] private CharacterController m_characterController;
 		[SerializeField] private GameObject m_Player;
 		[SerializeField] private ComboAnimator m_comboAnimator;
 
@@ -25,7 +22,6 @@ namespace CorruptedLandTales
 		private InputAction m_useSpecial;
 		private InputAction m_useWeaponSkill;
 		private InputAction m_useUpgrade;
-		private CharMoveComponent m_charMoveController;
 
         private static readonly int HorizontalId = Animator.StringToHash("Horizontal");
         private static readonly int VerticalId = Animator.StringToHash("Vertical");
@@ -42,9 +38,6 @@ namespace CorruptedLandTales
 			m_useSpecial = m_playerMap.FindAction("Special");
 			m_useWeaponSkill = m_playerMap.FindAction("WeaponSkill");
 			m_useUpgrade = m_playerMap.FindAction("UpgradeWeapon");
-			
-			m_charMoveController = m_character.GetComponent<CharMoveComponent>();            
-			m_cameraTransform = Camera.main.transform;
         }
         private void Start()
         {
@@ -103,15 +96,12 @@ namespace CorruptedLandTales
                 return;
             }
             var inputMove = m_moveAction.ReadValue<Vector2>();
-			//Debug.Log(inputMove);
             var cameraY = m_cameraTransform.localEulerAngles.y;
             var inputMagnitude = inputMove.magnitude;
-            //Debug.Log(inputMagnitude);
             if (inputMagnitude > 0)
             {
                 float targetRotation = Mathf.Atan2(inputMove.x, inputMove.y) * Mathf.Rad2Deg + cameraY;
                 Quaternion toRotation = Quaternion.Euler(0f, targetRotation, 0f);
-                //Debug.Log(toRotation);
                 m_Player.transform.rotation = Quaternion.RotateTowards(m_Player.transform.rotation, toRotation, 1440 * Time.deltaTime);                
             }
 

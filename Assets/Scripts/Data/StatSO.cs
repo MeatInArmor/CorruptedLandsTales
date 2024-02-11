@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace CorruptedLandTales
 {
@@ -26,6 +26,22 @@ namespace CorruptedLandTales
         public void IncreaseCost()
         {
             m_cost += m_costPerLevel;
+        }
+
+        public void RefreshStats()
+        {
+            m_level = 0;
+            m_cost = m_costPerLevel;
+        }
+
+        public void SetCost(int cost)
+        {
+            m_cost = cost;
+        }
+
+        public void SetLevel(int lvl)
+        {
+            m_level = lvl;
         }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -12,8 +11,6 @@ namespace CorruptedLandTales
         [SerializeField] private HealthComponent m_healthComponent;
         [SerializeField] private ItemFinder m_itemFinder;
         [SerializeField] private Animator m_animator;
-        [SerializeField] private InitCharacter m_initCharacter;
-        [SerializeField] private CharacterSO m_data;
 
         public event System.Action onPickUp;
 
@@ -66,7 +63,6 @@ namespace CorruptedLandTales
             {
                 var data = m_item.GetComponent<IInteractiveItem>().GetData();              
 
-
                 if (data != null)
                 {
                     AnimatePickUp();
@@ -86,19 +82,14 @@ namespace CorruptedLandTales
                     {
                         var equipWeaponData = m_attackManager.activeWeaponLayer;
                         var equipWeaponDataSkill = m_attackManager.activeLayerWeaponSkill;
-                        // изменили вес анимации для экипированного оружия
                         name = equipWeaponData;                        
                         m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
                         name = equipWeaponDataSkill;
                         m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
 
                         m_attackManager.Initialize(weaponData.weapon);
-
-                        // изменили вес анимации для поднятого оружия
+                        
                         name = weaponData.weapon.layerAnimName;
-                        //m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
-                        //name = weaponData.weapon.layerAnimNameSpecialWeapon;
-                        //m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 1f);
                     }
                     Destroy(m_item);
                     m_item = null;

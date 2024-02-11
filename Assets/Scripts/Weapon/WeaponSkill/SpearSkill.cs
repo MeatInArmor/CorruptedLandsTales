@@ -19,6 +19,24 @@ namespace CorruptedLandTales
             Attack();
         }
 
+        public void SetDamage(float dmg)
+        {
+            if (m_spearPrefab.TryGetComponent<SpearComponent>(out SpearComponent spear))
+            {
+                Debug.Log($"{this}");
+                spear.RefreshDamage(dmg);
+            }
+        }
+
+        public void IncreaseDamage(float dmg)
+        {
+            if (m_spearPrefab.TryGetComponent<SpearComponent>(out SpearComponent spear))
+            {
+                Debug.Log($"{this}");
+                spear.IncreaseDamage(dmg);
+            }
+        }
+
         private void Attack()
         {
             var muzzleTransform = m_muzzle.transform.rotation.eulerAngles;

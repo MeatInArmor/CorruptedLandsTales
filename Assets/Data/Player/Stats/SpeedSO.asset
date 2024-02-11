@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SpeedSO
   m_EditorClassIdentifier: 
   m_statName: speed
-  m_level: 0
+  m_level: 2
   m_valuePerLevel: 0.25
-  m_cost: 75
-  m_costPerLevel: 75
+  m_cost: 90
+  m_costPerLevel: 30

@@ -7,6 +7,8 @@ namespace CorruptedLandTales
 {
     public class PauseState : GameState
     {
+        [SerializeField] private GameOverState m_gameOverState;
+        
         public GameplayState gameplayState;
         public MapState mapState;
         public Text killsCount;
@@ -25,12 +27,12 @@ namespace CorruptedLandTales
             base.OnDisable();
             Time.timeScale = 1;
         }
-        public void Restart()
+        
+        public void Concede()
         {
-            var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-            NumbersCounts.kills = 0;
-            NumbersCounts.levelsCleared = 0;
+            Exit();
+            m_gameOverState.Enter();
+            
         }
         public void Resume()
         {

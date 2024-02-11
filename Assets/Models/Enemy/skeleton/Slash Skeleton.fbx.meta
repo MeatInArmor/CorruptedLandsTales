@@ -57,7 +57,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5648415
+      - time: 0.502809
+        functionName: PlayAudio
+        data: meleeEnemyAttack
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5676505
         functionName: Attack
         data: 
         objectReferenceParameter: {instanceID: 0}

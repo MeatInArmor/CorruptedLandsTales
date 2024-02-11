@@ -1,35 +1,35 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace CorruptedLandTales
 {
     public class UIShopItem : MonoBehaviour
     {
-        public event System.Action<string, int> onClick;
-        
-        private int m_cost;
-        private string m_type;
+        public event System.Action<StatSO> onClick;
         private int m_level;
+        private StatSO m_statSo;
+        [SerializeField] private StatLevels statLevel;
 
-        public void SetUpShopItem(string type, int cost, int level)
+        public void SetUpShopItem(StatSO stat)
         {
-            m_cost = cost;
-            m_type = type;
-            m_level = level;
+            m_statSo = stat;
         }
-
-        /*public int GetCost()
+        
+        public void RefreshStatsLevelImagin()
         {
-            return m_cost;
+            for(int i = 0; i < 5; i++)
+            {
+                if(i <= m_statSo.level)
+                    statLevel.level[i].color = Color.red;
+                else
+                    statLevel.level[i].color = Color.white;
+            }
         }
-
-        public string GetType()
-        {
-            return m_type;
-        }*/
         
         public void Click()
         {
-            onClick?.Invoke(m_type, m_cost);
+            onClick?.Invoke(m_statSo);
         }
     }
 }

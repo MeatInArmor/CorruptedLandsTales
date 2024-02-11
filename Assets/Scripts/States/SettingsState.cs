@@ -12,7 +12,6 @@ namespace CorruptedLandTales
         protected override void OnEnable()
         {
             base.OnEnable();
-            Debug.Log(GameInstance.instance);
 
             if (GameInstance.instance == null)
             {

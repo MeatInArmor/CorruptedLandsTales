@@ -1,3 +1,9 @@
+using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
+
 namespace CorruptedLandTales
 {
     public class GameplayState : GameState
@@ -7,7 +13,6 @@ namespace CorruptedLandTales
         public PauseState pauseState;
         public MapState mapState;
         public HealthComponent m_healthComponent;
-
 
         protected override void OnEnable()
         {
@@ -35,9 +40,8 @@ namespace CorruptedLandTales
             Exit();
             mapState.Exit();
             pauseState.Enter();
-
         }
-       
+
+        
     }
-    
 }
