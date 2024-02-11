@@ -16,11 +16,11 @@ MonoBehaviour:
     speed: 2.5
     sprintSpeed: 12
   healthData:
-    health: 300
-    maxHealth: 300
-  weapon: {fileID: 11400000, guid: a8c3322662fdda140ac00935914e4235, type: 2}
+    health: 350
+    maxHealth: 350
+  weapon: {fileID: 11400000, guid: 627953c6e95c60e48ab4824056b37166, type: 2}
   manaData:
-    manaPool: 80
+    manaPool: 50
     initMana: 0
   atkData:
     damage: 30

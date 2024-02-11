@@ -36,24 +36,25 @@ namespace CorruptedLandTales
             m_attackManager.UseWeaponSkill();
         }
         public void endPickUp()
-        {
-            
-            m_animator.SetBool("isPickUp", false);
-           
+        {            
+            m_animator.SetBool("isPickUp", false);           
         }
         public void OnEndDie()
         {
-            m_EndDie.Invoke();
+            m_EndDie.Invoke();            
         }
         
         public void OnImpact()
         {
             m_onImpact.Invoke();
         }
-
+        public void OnEndAttack()
+        {
+            m_animator.SetBool("isAttack", false);       
+        }
         public void OnEndImpact()
         {
-            m_animator.SetBool("IsImpact", false);
+            m_animator.SetBool("isImpact", false);
             
             m_behaviourTree.enabled = true;
         }

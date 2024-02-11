@@ -52,7 +52,7 @@ namespace CorruptedLandTales
             {
                 m_Animator.SetLayerWeight(m_Animator.GetLayerIndex(m_activeWeaponLayer), 1f);
                 m_Animator.SetLayerWeight(m_Animator.GetLayerIndex(m_activeLayerWeaponSpecial), 1f);
-            }            
+            }
         }
 
         private void Awake()
