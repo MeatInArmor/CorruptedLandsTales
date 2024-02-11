@@ -17,8 +17,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 0088107746512884d85912d01f6b41d8, type: 3}
   - id: meleeAttack1
     clip: {fileID: 8300000, guid: 3c0063ac7381b7445bc1f2f1fd3e1ad7, type: 3}
+  - id: meleeAttack2
+    clip: {fileID: 8300000, guid: e642923d32cf4b646b4d044583a35ea3, type: 3}
   - id: meleeAttack3
-    clip: {fileID: 8300000, guid: 10b5f5cbf3fc394449ae1406eb2bc023, type: 3}
+    clip: {fileID: 8300000, guid: 8b2267d3ec5ca2c4d8a0d5772ac35f84, type: 3}
   - id: rangeAttack1
     clip: {fileID: 8300000, guid: 740bd7cac5650df46b394558ba39b0c7, type: 3}
   - id: rangeEnemyAttack
@@ -59,3 +61,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d6b212a0cebf6e04aaebe010b6792708, type: 3}
   - id: step4
     clip: {fileID: 8300000, guid: cb07c588d7daac243853351a3acbb57a, type: 3}
+  - id: bossDie
+    clip: {fileID: 8300000, guid: 5aa4bf21211c944478ca6a50ff431e29, type: 3}
+  - id: meleeDie
+    clip: {fileID: 8300000, guid: eddba0526cf565e44b0d62a785f6fdab, type: 3}
+  - id: meleeImpact
+    clip: {fileID: 8300000, guid: 5e0d69ba44a7b974b8158b2455c2ff4a, type: 3}
