@@ -69,3 +69,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5e0d69ba44a7b974b8158b2455c2ff4a, type: 3}
   - id: rangeDie
     clip: {fileID: 8300000, guid: 7a242fcd3ac867447af039034de46c38, type: 3}
+  - id: playerImpact
+    clip: {fileID: 8300000, guid: 1529f3b5f0c43424c8d1ac397a24230a, type: 3}

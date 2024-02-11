@@ -22,6 +22,7 @@ MonoBehaviour:
   manaData:
     manaPool: 50
     initMana: 0
+    manaRegen: 0.1
   atkData:
     damage: 30
   m_stats: {fileID: 0}

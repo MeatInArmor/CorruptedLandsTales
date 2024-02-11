@@ -14,6 +14,7 @@ namespace CorruptedLandTales
         [SerializeField] private InteractItemHandler m_interactItemHandler;
         [SerializeField] private float m_speedCoef;
         [SerializeField] private float m_cooldown = 3f;
+        [SerializeField] private AudioPlayer m_audioPlayer;
         
         private HealthComponent m_healthcomponent;
         private IAttackItem m_attackItem;
@@ -59,8 +60,7 @@ namespace CorruptedLandTales
 
             m_character.HealthComponent.onImpact += () =>
             {
-                Debug.Log("popali po igroku");
-                //TODO звуки при попадании
+                m_audioPlayer.PlayAudio("playerImpact");
             };
 
             m_character.HealthComponent.onDie += () =>

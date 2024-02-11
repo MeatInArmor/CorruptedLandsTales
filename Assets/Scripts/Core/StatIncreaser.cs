@@ -75,6 +75,10 @@ namespace CorruptedLandTales
                 {
                     m_playerIncreaseStatsSo.moveData.speed = stat.level * stat.valuePerLevel;
                 }
+                if (stat.statName == "manaregen")
+                {
+                    m_playerIncreaseStatsSo.manaData.manaRegen = stat.level * stat.valuePerLevel;
+                }
             }
             m_playerData.IncreaseStats();
         }

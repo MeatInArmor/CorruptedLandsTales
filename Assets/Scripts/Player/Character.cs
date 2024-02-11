@@ -55,7 +55,7 @@ namespace CorruptedLandTales
 
             if (m_manaComponent != null)
             {
-               m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana);
+               m_manaComponent.Initialize(data.manaData.manaPool, data.manaData.initMana, data.manaData.manaRegen);
             }
 
             if (m_comp)
