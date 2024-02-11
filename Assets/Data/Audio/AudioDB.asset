@@ -67,3 +67,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: eddba0526cf565e44b0d62a785f6fdab, type: 3}
   - id: meleeImpact
     clip: {fileID: 8300000, guid: 5e0d69ba44a7b974b8158b2455c2ff4a, type: 3}
+  - id: rangeDie
+    clip: {fileID: 8300000, guid: 7a242fcd3ac867447af039034de46c38, type: 3}
