@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CheaterPlayer
   m_EditorClassIdentifier: 
   moveData:
-    speed: 10
+    speed: 2
     sprintSpeed: 12
   healthData:
     health: 1000
@@ -22,3 +22,6 @@ MonoBehaviour:
   manaData:
     manaPool: 1000
     initMana: 1000
+  atkData:
+    damage: 30
+  m_stats: {fileID: 0}

@@ -153,11 +153,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_damage: 50
-  m_attackAngle: 150
+  m_attackAngle: 120
   m_attackRange: 3
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
+  m_manaCost: 0
+  m_manaPerHit: 5
 --- !u!114 &2763637587762194587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +177,6 @@ MonoBehaviour:
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256
-  m_manaCost: 15
 --- !u!1 &6075040667082494062
 GameObject:
   m_ObjectHideFlags: 0

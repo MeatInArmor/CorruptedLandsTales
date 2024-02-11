@@ -39,3 +39,23 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 33b6cd7837c7642958dac012307e9086, type: 3}
   - id: buyBtn
     clip: {fileID: 8300000, guid: 7b34a1c3f2d86478f8ece94c4c46c8dd, type: 3}
+  - id: sword
+    clip: {fileID: 8300000, guid: 54faf8f41b2c32041a04cc3d876f876b, type: 3}
+  - id: swordSkill
+    clip: {fileID: 8300000, guid: f34eb911f7b1c314a9edfbe58a05aa7b, type: 3}
+  - id: hammer
+    clip: {fileID: 8300000, guid: 8d82978da354e8f4585c0a59797f4760, type: 3}
+  - id: hammerSkill
+    clip: {fileID: 8300000, guid: 10b5f5cbf3fc394449ae1406eb2bc023, type: 3}
+  - id: axe
+    clip: {fileID: 8300000, guid: f34eb911f7b1c314a9edfbe58a05aa7b, type: 3}
+  - id: axeSkill
+    clip: {fileID: 8300000, guid: 16357ee277fd2f34eb52273b4fe16a0d, type: 3}
+  - id: step1
+    clip: {fileID: 8300000, guid: d4a27fba4dcd2bf47a49cfffd20ed82f, type: 3}
+  - id: step2
+    clip: {fileID: 8300000, guid: 5b3c838f14c8bba4bab5b688cf4c5da4, type: 3}
+  - id: step3
+    clip: {fileID: 8300000, guid: d6b212a0cebf6e04aaebe010b6792708, type: 3}
+  - id: step4
+    clip: {fileID: 8300000, guid: cb07c588d7daac243853351a3acbb57a, type: 3}

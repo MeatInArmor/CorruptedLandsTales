@@ -64,6 +64,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.19170985
+        functionName: PlayAudio
+        data: hammer
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.23819844
         functionName: Attack
         data: 
@@ -78,6 +85,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.7018653
+        functionName: PlayAudio
+        data: hammer
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.7450137
         functionName: Attack
         data: 
@@ -87,7 +101,7 @@ ModelImporter:
         messageOptions: 0
       - time: 1
         functionName: attack3
-        data: 
+        data: hammer
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
