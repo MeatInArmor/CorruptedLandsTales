@@ -465,8 +465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be10c51159dbf242ad20f16aeb4b790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_healthMax: 100
-  m_health: 100
+  m_healthMax: 50
+  m_health: 50
   m_onDie:
     m_PersistentCalls:
       m_Calls:
@@ -563,6 +563,7 @@ MonoBehaviour:
   m_attackManager: {fileID: 262048670298448754}
   m_healthComponent: {fileID: 1974900794855629100}
   m_manaComponent: {fileID: 0}
+  m_comp: {fileID: 0}
 --- !u!1001 &5440659246299275884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -818,10 +819,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animator: {fileID: 168306833574357136}
   m_character: {fileID: 7776493581667566217}
-  m_impact: {fileID: 0}
-  m_charMoveComponent: {fileID: 0}
-  m_charMoveComponentAnimator: {fileID: 0}
-  m_specialAttack: {fileID: 0}
 --- !u!114 &1906308002640420071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,7 +832,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_specialAttack: {fileID: 0}
-  m_charMoveComponent: {fileID: 0}
   m_animator: {fileID: 168306833574357136}
   m_EndDie:
     m_PersistentCalls:
