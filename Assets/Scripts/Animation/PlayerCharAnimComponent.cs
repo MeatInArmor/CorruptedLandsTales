@@ -63,7 +63,7 @@ namespace CorruptedLandTales
             m_character.HealthComponent.onImpact += () =>
             {
                 m_audioPlayer.PlayAudio("playerImpact");
-                m_comboAnimator.attack3();
+                //m_comboAnimator.attack3();
             };
 
             m_character.HealthComponent.onDie += () =>
