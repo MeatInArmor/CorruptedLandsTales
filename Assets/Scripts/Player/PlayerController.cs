@@ -94,7 +94,7 @@ namespace CorruptedLandTales
 		}
 		
 		private void OnUseDash(InputAction.CallbackContext context)
-		{
+		{ 
 			m_charComponent.Dash();
 		}
 
