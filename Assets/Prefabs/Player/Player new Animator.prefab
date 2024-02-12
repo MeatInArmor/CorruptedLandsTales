@@ -2444,7 +2444,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 817
+  m_VersionIndex: 820
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2877,6 +2877,7 @@ GameObject:
   - component: {fileID: 4089173368887766831}
   - component: {fileID: 6795548287528926784}
   - component: {fileID: 9120961170461134423}
+  - component: {fileID: 9024517342584782443}
   - component: {fileID: 4306601387588991804}
   - component: {fileID: 8389748514222896813}
   - component: {fileID: 134879055397547484}
@@ -2962,6 +2963,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9024517342584782443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5701134899015483886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1666d79097491f941a34318b07e777e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HealEffects: {fileID: 0}
 --- !u!114 &4306601387588991804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2980,6 +2994,8 @@ MonoBehaviour:
   m_attackManager: {fileID: 2892508709089259748}
   m_interactItemHandler: {fileID: 0}
   m_speedCoef: 2
+  m_cooldown: 2
+  m_audioPlayer: {fileID: 1774776949997951585}
 --- !u!114 &8389748514222896813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,6 +3156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_manaPool: 50
   m_currentMana: 40
+  m_manaRegen: 0
 --- !u!114 &1774776949997951585
 MonoBehaviour:
   m_ObjectHideFlags: 0
