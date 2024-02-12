@@ -88,8 +88,6 @@ namespace CorruptedLandTales
                         m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
 
                         m_attackManager.Initialize(weaponData.weapon);
-                        
-                        name = weaponData.weapon.layerAnimName;
                     }
                     Destroy(m_item);
                     m_item = null;

@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a0f9cbe77c458449d6948d2695ac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_projectilePrefab: {fileID: 0}
+  m_projectilePrefab: {fileID: 2393316542524500278, guid: 74d531c598b533c4c9a4413505318e45, type: 3}
   m_muzzle: {fileID: 5393221449576687959}
   m_delay: 1
 --- !u!1 &7498935545700271009
@@ -651,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 4942719275453674215, guid: de9bae3faef6ceb44a4aca81182cec57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231030583161092647, guid: de9bae3faef6ceb44a4aca81182cec57, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5898811852899362696, guid: de9bae3faef6ceb44a4aca81182cec57, type: 3}
       propertyPath: m_healthComponent

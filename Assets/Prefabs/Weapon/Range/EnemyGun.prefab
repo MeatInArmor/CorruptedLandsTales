@@ -155,4 +155,3 @@ MonoBehaviour:
   m_projectilePrefab: {fileID: 3298326605091429281, guid: 6140c94da7e70e94883123b2adb53dd7, type: 3}
   m_muzzle: {fileID: 914426275139251524}
   m_delay: 1
-  m_castDelay: 1
