@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9222002406757968233}
   - component: {fileID: 2985905355087271752}
   - component: {fileID: 8059807384255969650}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: NPCBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5114249
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0.011424135}
 --- !u!54 &8465032352854147778
 Rigidbody:
@@ -4965,6 +4965,10 @@ PrefabInstance:
       value: TestFX_BulletTrail_Red
       objectReference: {fileID: 0}
     - target: {fileID: 947250871755532473, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 947250871755532473, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -4972,6 +4976,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3fe9270c80e488e4b8f332957926715d, type: 2}
+    - target: {fileID: 8406815242578516651, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406815242764361057, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8406815242764361086, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
       propertyPath: TrailModule.minVertexDistance
       value: 0.1
@@ -5023,6 +5035,14 @@ PrefabInstance:
     - target: {fileID: 8406815242858142251, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
       value: -0.53017414
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406815242858142254, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8406815243336076119, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8891389444157085588, guid: 3e4ceeb85fc9cdb46a11a9dcc9c09d05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5143,8 +5163,20 @@ PrefabInstance:
       value: NPCball
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e935c8af0c6cd094f99eb90085232850, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e935c8af0c6cd094f99eb90085232850, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934968314938569139, guid: e935c8af0c6cd094f99eb90085232850, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7542283774460768043, guid: e935c8af0c6cd094f99eb90085232850, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
