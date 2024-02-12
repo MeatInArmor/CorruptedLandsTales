@@ -15,6 +15,7 @@ namespace CorruptedLandTales
             m_collider = gameObject.GetComponent<BoxCollider>();
             m_renderer = gameObject.GetComponent<MeshRenderer>();
             m_material.color = Color.white;
+            GetComponent<ParticleSystem>().Play();
         }
         
         public void Open() 

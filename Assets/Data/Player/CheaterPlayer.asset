@@ -18,10 +18,11 @@ MonoBehaviour:
   healthData:
     health: 1000
     maxHealth: 1000
-  weapon: {fileID: 11400000, guid: a3226c7329f72bb4782e2109d662ef1e, type: 2}
+  weapon: {fileID: 11400000, guid: d12d3d6c1b76c5e4ab3dc3d5eb7dca0e, type: 2}
   manaData:
     manaPool: 1000
     initMana: 1000
+    manaRegen: 0
   atkData:
     damage: 30
   m_stats: {fileID: 0}
