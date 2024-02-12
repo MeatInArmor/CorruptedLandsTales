@@ -9,6 +9,9 @@ namespace CorruptedLandTales
         
         private Transform m_muzzle;
         private Vector3 m_playerOffset = new Vector3(0, 0.82f, 0);
+        
+        public event System.Action onAnimateWeaponSkill;
+        
         private void Awake()
         {
             m_muzzle = transform.root;

@@ -62,9 +62,10 @@ namespace CorruptedLandTales
 
         private void OnDisable()
         {
-            // Stop the regeneration coroutine when the component is disabled
             if (regenCoroutine != null)
+            {
                 StopCoroutine(regenCoroutine);
+            }
         }
     }
 }

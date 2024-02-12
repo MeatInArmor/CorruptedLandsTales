@@ -48,7 +48,7 @@ namespace CorruptedLandTales
             m_activeWeapon.Show();
             m_activeWeaponLayer = weaponData.layerAnimName;
             m_activeLayerWeaponSpecial = weaponData.layerAnimNameSpecialWeapon;
-            if (m_Animator!=null)
+            if (m_Animator != null)
             {
                 if (m_activeWeaponLayer != "" && m_activeLayerWeaponSpecial != "")
                 {

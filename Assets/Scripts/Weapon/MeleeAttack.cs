@@ -44,6 +44,7 @@ namespace CorruptedLandTales
             if (m_manaComponent.SpendMana(m_manaCost))
             {
                 m_weaponSkill.Use();
+                
             }
         }
 

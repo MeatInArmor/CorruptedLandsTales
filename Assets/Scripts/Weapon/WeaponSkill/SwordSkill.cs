@@ -14,15 +14,15 @@ namespace CorruptedLandTales
         private Transform m_parentTransform;
         private float m_attackAngle = 360.0f;
 
+        public event System.Action onAnimateWeaponSkill;
         private void Awake()
         {
-            m_attackAngle /= 2;
             m_parentTransform = transform.root;
         }
         public void Use()
         {
             Attack();
-            m_attackAngle = 360f;
+            StartCoroutine(SecondAttack());
         }
 
         public void SetDamage(float dmg)
@@ -55,8 +55,12 @@ namespace CorruptedLandTales
                     damageable.TakeDamage(m_damage);
                 }
             }
-
-            m_attackAngle /= 2;
+        }
+        
+        private IEnumerator SecondAttack()
+        {
+            yield return new WaitForSeconds(0.4f);
+            Attack();
         }
     }
 }
