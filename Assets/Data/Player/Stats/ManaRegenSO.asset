@@ -15,5 +15,5 @@ MonoBehaviour:
   m_statName: manaregen
   m_level: 0
   m_valuePerLevel: 0.25
-  m_cost: 90
-  m_costPerLevel: 90
+  m_cost: 30
+  m_costPerLevel: 30

@@ -16,8 +16,9 @@ MonoBehaviour:
   m_damage: 20
   m_layerAnimName: 
   m_layerAnimNameSpecialWeapon: 
+  m_skillDamage: 100
   m_attackAngle: 120
-  m_attackRange: 4
+  m_attackRange: 2.4
   m_manaCost: 15
   m_layerMask:
     serializedVersion: 2

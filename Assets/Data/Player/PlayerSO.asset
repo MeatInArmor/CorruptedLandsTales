@@ -18,7 +18,7 @@ MonoBehaviour:
   healthData:
     health: 200
     maxHealth: 200
-  weapon: {fileID: 11400000, guid: 627953c6e95c60e48ab4824056b37166, type: 2}
+  weapon: {fileID: 11400000, guid: 1e43a238e4b258d46ab416f7de27af62, type: 2}
   manaData:
     manaPool: 50
     initMana: 0
