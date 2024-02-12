@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a0f9cbe77c458449d6948d2695ac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_projectilePrefab: {fileID: 0}
+  m_projectilePrefab: {fileID: 2393316542524500278, guid: 74d531c598b533c4c9a4413505318e45, type: 3}
   m_muzzle: {fileID: 5393221449576687959}
   m_delay: 1
 --- !u!1 &7498935545700271009
@@ -563,6 +563,7 @@ MonoBehaviour:
   m_attackManager: {fileID: 262048670298448754}
   m_healthComponent: {fileID: 1974900794855629100}
   m_manaComponent: {fileID: 0}
+  m_comp: {fileID: 0}
 --- !u!1001 &5440659246299275884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -650,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 4942719275453674215, guid: de9bae3faef6ceb44a4aca81182cec57, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231030583161092647, guid: de9bae3faef6ceb44a4aca81182cec57, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5898811852899362696, guid: de9bae3faef6ceb44a4aca81182cec57, type: 3}
       propertyPath: m_healthComponent
@@ -818,10 +823,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animator: {fileID: 168306833574357136}
   m_character: {fileID: 7776493581667566217}
-  m_impact: {fileID: 0}
-  m_charMoveComponent: {fileID: 0}
-  m_charMoveComponentAnimator: {fileID: 0}
-  m_specialAttack: {fileID: 0}
 --- !u!114 &1906308002640420071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,7 +836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_specialAttack: {fileID: 0}
-  m_charMoveComponent: {fileID: 0}
   m_animator: {fileID: 168306833574357136}
   m_EndDie:
     m_PersistentCalls:

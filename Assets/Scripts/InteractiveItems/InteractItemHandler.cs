@@ -11,6 +11,7 @@ namespace CorruptedLandTales
         [SerializeField] private HealthComponent m_healthComponent;
         [SerializeField] private ItemFinder m_itemFinder;
         [SerializeField] private Animator m_animator;
+        [SerializeField] private VFXeffectsMeneger m_VFXeffects;
 
         public event System.Action onPickUp;
 
@@ -69,6 +70,7 @@ namespace CorruptedLandTales
                     if (data is InteractiveHealSO healData)
                     {
                         m_healthComponent.HealHealth(healData.healAmount);
+                        m_VFXeffects.HeallingEffects();
                     }
 
                     if (data is InteractiveChestSO chestData)
@@ -88,8 +90,6 @@ namespace CorruptedLandTales
                         m_animator.SetLayerWeight(m_animator.GetLayerIndex(name), 0f);
 
                         m_attackManager.Initialize(weaponData.weapon);
-                        
-                        name = weaponData.weapon.layerAnimName;
                     }
                     Destroy(m_item);
                     m_item = null;

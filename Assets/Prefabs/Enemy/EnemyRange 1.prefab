@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a0f9cbe77c458449d6948d2695ac74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_projectilePrefab: {fileID: 0}
+  m_projectilePrefab: {fileID: 2393316542524500278, guid: 74d531c598b533c4c9a4413505318e45, type: 3}
   m_muzzle: {fileID: 5393221449576687959}
   m_delay: 1
 --- !u!1 &7498935545700271009
@@ -467,6 +467,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_healthMax: 100
   m_health: 100
+  m_onDie:
+    m_PersistentCalls:
+      m_Calls: []
   m_group: 0
 --- !u!114 &262048670298448754
 MonoBehaviour:
@@ -481,6 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponRoot: {fileID: 922252120610004865}
+  m_Animator: {fileID: 0}
 --- !u!114 &5350257549637729870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,6 +513,7 @@ MonoBehaviour:
   m_attackManager: {fileID: 262048670298448754}
   m_healthComponent: {fileID: 1974900794855629100}
   m_manaComponent: {fileID: 0}
+  m_comp: {fileID: 0}
 --- !u!114 &5195776346978368524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,8 +783,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_animator: {fileID: 168306833574357136}
   m_character: {fileID: 7776493581667566217}
-  m_charMoveComponent: {fileID: 0}
-  m_specialAttack: {fileID: 0}
 --- !u!114 &1906308002640420071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,7 +796,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_specialAttack: {fileID: 0}
-  m_charMoveComponent: {fileID: 0}
+  m_animator: {fileID: 0}
+  m_EndDie:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onImpact:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2006159836050822446
 MonoBehaviour:
   m_ObjectHideFlags: 0
