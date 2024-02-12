@@ -20,7 +20,7 @@ namespace CorruptedLandTales.AI
 			if (name == null)
 			{
 				name = context.gameObject.name;
-				if (name == "Boss")
+				if (name == "Boss(Clone)")
 				{
 					isBoss = true;
 				}

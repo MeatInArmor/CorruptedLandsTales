@@ -7,6 +7,7 @@ namespace CorruptedLandTales
         [SerializeField] private Material m_material;
         private BoxCollider m_collider;
         private MeshRenderer m_renderer;
+        private ParticleSystem m_particleSystem;
         
         public event System.Action onPlayerExitLocation;
         
@@ -15,7 +16,10 @@ namespace CorruptedLandTales
             m_collider = gameObject.GetComponent<BoxCollider>();
             m_renderer = gameObject.GetComponent<MeshRenderer>();
             m_material.color = Color.white;
-            GetComponent<ParticleSystem>().Play();
+            if (TryGetComponent(out ParticleSystem particleSystem))
+            {
+                m_particleSystem = particleSystem;
+            }
         }
         
         public void Open() 

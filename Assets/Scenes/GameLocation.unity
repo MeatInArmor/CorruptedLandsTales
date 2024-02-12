@@ -1193,6 +1193,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2585124909923891848, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2585124909923891848, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3465083201844976310, guid: 4499e36decddfb24bb67ab0990c3ae79, type: 3}
       propertyPath: m_data
       value: 
