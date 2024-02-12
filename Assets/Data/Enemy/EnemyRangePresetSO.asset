@@ -16,12 +16,13 @@ MonoBehaviour:
     speed: 8
     sprintSpeed: 10
   healthData:
-    health: 80
-    maxHealth: 80
+    health: 50
+    maxHealth: 50
   weapon: {fileID: 11400000, guid: 50c6aa3056e8c1f45bd0d0882e6da3ca, type: 2}
   manaData:
     manaPool: 0
     initMana: 0
+    manaRegen: 0
   atkData:
     damage: 10
   m_stats: {fileID: 11400000, guid: 1a81dbd1961c5b941bddc05b1f0ffc4d, type: 2}

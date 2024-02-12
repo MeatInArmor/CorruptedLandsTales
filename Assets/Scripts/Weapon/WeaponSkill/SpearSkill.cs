@@ -31,7 +31,6 @@ namespace CorruptedLandTales
         {
             if (m_spearPrefab.TryGetComponent<SpearComponent>(out SpearComponent spear))
             {
-                Debug.Log($"{this}");
                 spear.IncreaseDamage(dmg);
             }
         }

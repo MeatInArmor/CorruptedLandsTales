@@ -16,9 +16,10 @@ MonoBehaviour:
   m_damage: 30
   m_layerAnimName: Sword Combo
   m_layerAnimNameSpecialWeapon: Sword Special
+  m_skillDamage: 100
   m_attackAngle: 120
   m_attackRange: 5
-  m_manaCost: 15
+  m_manaCost: 20
   m_layerMask:
     serializedVersion: 2
     m_Bits: 256

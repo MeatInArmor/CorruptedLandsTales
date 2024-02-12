@@ -34,5 +34,6 @@ namespace CorruptedLandTales
     public class ManaDataIncrease
     {
         public float mana = 0;
+        public float manaRegen = 0;
     }
 }

@@ -64,6 +64,13 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
+      - time: 0.02322379
+        functionName: PlayAudio
+        data: meleeImpact
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 1
         functionName: OnEndImpact
         data: 

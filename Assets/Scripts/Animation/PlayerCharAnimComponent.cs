@@ -13,9 +13,16 @@ namespace CorruptedLandTales
         [SerializeField] private AttackManager m_attackManager;
         [SerializeField] private InteractItemHandler m_interactItemHandler;
         [SerializeField] private float m_speedCoef;
-
+        [SerializeField] private float m_cooldown = 3f;
+        [SerializeField] private AudioPlayer m_audioPlayer;
+        
         private HealthComponent m_healthcomponent;
         private IAttackItem m_attackItem;
+        private float m_timeLastUsed;
+
+        public float dashCooldown => m_cooldown;
+        public event System.Action onUseDash;
+        
         public void SetSpeed(float speed)
         {
             m_speedCoef = speed;
@@ -53,7 +60,7 @@ namespace CorruptedLandTales
 
             m_character.HealthComponent.onImpact += () =>
             {
-                //TODO звуки при попадании
+                m_audioPlayer.PlayAudio("playerImpact");
             };
 
             m_character.HealthComponent.onDie += () =>
@@ -72,16 +79,20 @@ namespace CorruptedLandTales
         {
             m_animator.SetBool("isPickUp",true);
         }
-        private void Dash()
+        public void Dash()
         {
-            m_animator.SetTrigger("isDash");
+            float passedTime = Time.time - m_timeLastUsed; 
+            if (m_cooldown < passedTime)
+            {
+                onUseDash?.Invoke();
+                m_animator.SetTrigger("isDash");
+                m_timeLastUsed = Time.time;
+            }
         }
 
         private void WeaponSkill ()
         {
             m_animator.SetTrigger("isUseWeaponSkill");
         }
-
-        
     }
 }

@@ -14,6 +14,7 @@ namespace CorruptedLandTales
         [SerializeField] private Animator m_animator;
 		[SerializeField] private GameObject m_Player;
 		[SerializeField] private ComboAnimator m_comboAnimator;
+		[SerializeField] private PlayerCharAnimComponent m_charComponent;
 
         private InputActionMap m_playerMap;
 		private InputAction m_moveAction;
@@ -22,6 +23,7 @@ namespace CorruptedLandTales
 		private InputAction m_useSpecial;
 		private InputAction m_useWeaponSkill;
 		private InputAction m_useUpgrade;
+		private InputAction m_dash;
 
         private static readonly int HorizontalId = Animator.StringToHash("Horizontal");
         private static readonly int VerticalId = Animator.StringToHash("Vertical");
@@ -38,7 +40,8 @@ namespace CorruptedLandTales
 			m_useSpecial = m_playerMap.FindAction("Special");
 			m_useWeaponSkill = m_playerMap.FindAction("WeaponSkill");
 			m_useUpgrade = m_playerMap.FindAction("UpgradeWeapon");
-        }
+			m_dash = m_playerMap.FindAction("Dash");
+		}
         private void Start()
         {
             m_character.GetComponent<CharacterController>().enabled = true;
@@ -51,6 +54,7 @@ namespace CorruptedLandTales
 			m_useSpecial.performed += OnUseSpecial;
 			m_useWeaponSkill.performed += OnUseWeaponSkill;
 			m_useUpgrade.performed += OnUpgradeWeapon;
+			m_dash.performed += OnUseDash;
 		}
 
 		private void OnDisable()
@@ -61,6 +65,7 @@ namespace CorruptedLandTales
 			m_useSpecial.performed -= OnUseSpecial;
 			m_useWeaponSkill.performed -= OnUseWeaponSkill;
 			m_useUpgrade.performed -= OnUpgradeWeapon;
+			m_dash.performed -= OnUseDash;
 		}
 		
 		private void OnAttackInput(InputAction.CallbackContext context)
@@ -86,6 +91,11 @@ namespace CorruptedLandTales
 		private void OnPickUpInput(InputAction.CallbackContext context)
 		{
 			m_itemHandler.HandleItem();
+		}
+		
+		private void OnUseDash(InputAction.CallbackContext context)
+		{
+			m_charComponent.Dash();
 		}
 
         private void Update()

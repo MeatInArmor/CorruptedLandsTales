@@ -38,8 +38,6 @@ namespace CorruptedLandTales
             switch (m_roomType)
             {
                 case "Player":
-                    /*m_prefabs[0].transform.SetLocalPositionAndRotation(transform.position + m_playerSpawnOffset,
-                        m_prefabs[0].transform.rotation);*/
                     m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
                     gameObject.SetActive(false);
                     break;
@@ -153,6 +151,10 @@ namespace CorruptedLandTales
                     m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
                     m_doors.Clear();
                     onRoomCleared?.Invoke();
+                    foreach (var enemy in m_enemies)
+                    {
+                        Destroy(enemy, 1f);
+                    }
                     gameObject.SetActive(false);
                     
                     //m_state = RoomStatus.Deactivated;
