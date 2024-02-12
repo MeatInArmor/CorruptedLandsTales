@@ -151,6 +151,10 @@ namespace CorruptedLandTales
                     m_roomOnMap.roomFieldOnMap.gameObject.SetActive(true);
                     m_doors.Clear();
                     onRoomCleared?.Invoke();
+                    foreach (var enemy in m_enemies)
+                    {
+                        Destroy(enemy, 1f);
+                    }
                     gameObject.SetActive(false);
                     
                     //m_state = RoomStatus.Deactivated;
