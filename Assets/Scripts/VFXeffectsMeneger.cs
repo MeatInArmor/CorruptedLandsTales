@@ -8,6 +8,7 @@ namespace CorruptedLandTales
     {
         [SerializeField] ParticleSystem m_HealEffects;
         [SerializeField] ParticleSystem m_PucnhGroundEffect;
+        [SerializeField] ParticleSystem m_SwordSpecialEffect;
         void Start()
         {
             //m_HealEffects.Stop(true);
@@ -25,6 +26,10 @@ namespace CorruptedLandTales
         public void PucnhGroundEffect()
         {
             m_PucnhGroundEffect.Play(true);
+        }
+        public void SwordSpecialEffect()
+        {
+            m_SwordSpecialEffect.Play(true);
         }
     }
 }
