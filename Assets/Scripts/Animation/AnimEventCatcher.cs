@@ -18,7 +18,6 @@ namespace CorruptedLandTales
         {
             m_attackManager = GetComponentInParent<AttackManager>();
             m_behaviourTree = GetComponentInParent<BehaviourTreeRunner>();
-            
         }
 
         public void Attack()

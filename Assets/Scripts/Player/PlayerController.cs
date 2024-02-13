@@ -94,7 +94,7 @@ namespace CorruptedLandTales
 		}
 		
 		private void OnUseDash(InputAction.CallbackContext context)
-		{
+		{ 
 			m_charComponent.Dash();
 		}
 
@@ -105,9 +105,9 @@ namespace CorruptedLandTales
                 enabled = false;
                 return;
             }
-            var inputMove = m_moveAction.ReadValue<Vector2>();
-            var cameraY = m_cameraTransform.localEulerAngles.y;
-            var inputMagnitude = inputMove.magnitude;
+            Vector2 inputMove = m_moveAction.ReadValue<Vector2>();
+            float cameraY = m_cameraTransform.localEulerAngles.y;
+            float inputMagnitude = inputMove.magnitude;
             if (inputMagnitude > 0)
             {
                 float targetRotation = Mathf.Atan2(inputMove.x, inputMove.y) * Mathf.Rad2Deg + cameraY;

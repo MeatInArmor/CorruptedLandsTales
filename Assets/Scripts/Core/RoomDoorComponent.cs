@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,6 +37,11 @@ namespace CorruptedLandTales
                     }
                 };
             }
+        }
+
+        private void Start()
+        {
+            m_collider.isTrigger = true;
         }
 
         private void OnTriggerExit(Collider other)

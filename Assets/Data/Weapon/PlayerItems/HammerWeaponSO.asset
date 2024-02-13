@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: HammerWeaponSO
   m_EditorClassIdentifier: 
   m_prefab: {fileID: 7535813670198841995, guid: d51904703ad7ac44a820b126e98c167c, type: 3}
-  m_damage: 30
+  m_damage: 45
   m_layerAnimName: Molot Combo
   m_layerAnimNameSpecialWeapon: Molot Special
   m_skillDamage: 80
   m_attackAngle: 150
-  m_attackRange: 3
+  m_attackRange: 3.5
   m_manaCost: 20
   m_layerMask:
     serializedVersion: 2

@@ -76,7 +76,7 @@ namespace CorruptedLandTales
                     if (data is InteractiveChestSO chestData)
                     {
                         m_weapons = chestData.weapons;
-                        var weapon = m_weapons[Random.Range(0, m_weapons.Count)];
+                        GameObject weapon = m_weapons[Random.Range(0, m_weapons.Count)];
                         Instantiate(weapon, m_item.transform.position, m_item.transform.rotation);
                     }
 

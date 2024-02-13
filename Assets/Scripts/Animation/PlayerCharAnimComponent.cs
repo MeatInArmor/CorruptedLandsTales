@@ -1,6 +1,7 @@
 using CorruptedLandTales;
 using System.Collections;
 using System.Collections.Generic;
+using ShadowChimera;
 using UnityEngine;
 
 namespace CorruptedLandTales
@@ -15,6 +16,7 @@ namespace CorruptedLandTales
         [SerializeField] private float m_speedCoef;
         [SerializeField] private float m_cooldown = 3f;
         [SerializeField] private AudioPlayer m_audioPlayer;
+        [SerializeField] private ComboAnimator m_comboAnimator;
         
         private HealthComponent m_healthcomponent;
         private IAttackItem m_attackItem;
@@ -61,6 +63,7 @@ namespace CorruptedLandTales
             m_character.HealthComponent.onImpact += () =>
             {
                 m_audioPlayer.PlayAudio("playerImpact");
+                //m_comboAnimator.attack3();
             };
 
             m_character.HealthComponent.onDie += () =>

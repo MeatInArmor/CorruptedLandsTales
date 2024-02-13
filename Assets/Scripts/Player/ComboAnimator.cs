@@ -6,16 +6,16 @@ namespace ShadowChimera
 {
     public class ComboAnimator : MonoBehaviour
     {
-        public Animator anim;
-        public int noOfClicks;
-        float lastClickedTime;
-        public float maxComdoDelay;
-        void Start()
+        [SerializeField] private Animator anim;
+        [SerializeField] private int noOfClicks;
+        private float lastClickedTime;
+        
+        private void Start()
         {
-            anim = gameObject.GetComponentInParent<Animator>();
+            //anim = gameObject.GetComponentInParent<Animator>();
         }
         
-        void Update()
+        private void Update()
         {
             if (noOfClicks == 1)
             {

@@ -3003,6 +3003,7 @@ MonoBehaviour:
   m_speedCoef: 2
   m_cooldown: 2
   m_audioPlayer: {fileID: 1774776949997951585}
+  m_comboAnimator: {fileID: 134879055397547484}
 --- !u!114 &8389748514222896813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3049,7 +3050,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 6795548287528926784}
   noOfClicks: 0
-  maxComdoDelay: 0
 --- !u!114 &2892508709089259748
 MonoBehaviour:
   m_ObjectHideFlags: 0

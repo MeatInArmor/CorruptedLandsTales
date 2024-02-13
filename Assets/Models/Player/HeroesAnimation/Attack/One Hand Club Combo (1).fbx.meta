@@ -78,28 +78,28 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.56260705
+      - time: 0.5599261
         functionName: attack1
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7038625
+      - time: 0.6985006
         functionName: PlayAudio
         data: sword
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7381301
+      - time: 0.73544914
         functionName: Attack
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 1
+      - time: 0.94101876
         functionName: attack3
         data: 
         objectReferenceParameter: {instanceID: 0}

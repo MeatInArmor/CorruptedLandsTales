@@ -10,7 +10,7 @@ namespace CorruptedLandTales
         [SerializeField] private Image m_fillImage;
         [SerializeField] private float m_fillMaxAmount;
         
-        private OnScreenButton m_btn;
+        private OnScreenButton m_btn; //TODO не ругайтесь пришлось быстро делать
         private Color32 m_fullFillColor;
         private float m_fillAmountPercent => m_manaComponent.CurrentMana / m_fillMaxAmount;
 
