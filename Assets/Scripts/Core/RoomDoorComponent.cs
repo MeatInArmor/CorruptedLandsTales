@@ -12,6 +12,7 @@ namespace CorruptedLandTales
         private MeshRenderer m_renderer;
         private AddDoorComponent enterAdd;
         private AddDoorComponent exitAdd;
+        private ParticleSystem m_particleSystem;
         
         public event System.Action onPlayerEnter;
         
@@ -19,6 +20,8 @@ namespace CorruptedLandTales
         {
             m_collider = GetComponent<BoxCollider>();
             m_renderer = GetComponent<MeshRenderer>();
+            m_particleSystem = GetComponentInChildren<ParticleSystem>();
+            m_particleSystem.Stop();
             foreach (var addDoor in m_addDoors)
             {
                 addDoor.onEnter += () =>
@@ -60,6 +63,7 @@ namespace CorruptedLandTales
             m_collider.enabled = true;
             m_renderer.enabled = true;
             m_collider.isTrigger = false;
+            m_particleSystem.Play();
         }
 
         public void Deactivate()
@@ -69,6 +73,7 @@ namespace CorruptedLandTales
                 m_collider.enabled = true;
                 m_renderer.enabled = false;
                 m_collider.isTrigger = true;
+                m_particleSystem.Stop();
                 if (enterAdd != null && exitAdd != null)
                 {
                     enterAdd.Deactivate();
