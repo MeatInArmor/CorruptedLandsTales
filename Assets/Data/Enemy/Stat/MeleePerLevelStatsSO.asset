@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: MeleePerLevelStatsSO
   m_EditorClassIdentifier: 
   moveData:
-    speed: 0.5
+    speed: 0.3
   healthData:
-    health: 30
+    health: 20
   atkData:
-    dmg: 15
+    dmg: 10
+  manaData:
+    mana: 0
+    manaRegen: 0

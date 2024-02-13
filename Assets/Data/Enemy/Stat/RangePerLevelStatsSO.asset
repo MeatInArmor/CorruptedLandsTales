@@ -17,4 +17,7 @@ MonoBehaviour:
   healthData:
     health: 15
   atkData:
-    dmg: 20
+    dmg: 15
+  manaData:
+    mana: 0
+    manaRegen: 0
