@@ -9,7 +9,7 @@ namespace CorruptedLandTales
         [SerializeField] ParticleSystem m_HealEffects;
         void Start()
         {
-            m_HealEffects.Stop(true);
+            //m_HealEffects.Stop(true);
         }
 
         // Update is called once per frame
