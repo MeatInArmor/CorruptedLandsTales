@@ -9,6 +9,7 @@ namespace CorruptedLandTales
         [SerializeField] ParticleSystem m_HealEffects;
         [SerializeField] ParticleSystem m_PucnhGroundEffect;
         [SerializeField] ParticleSystem m_SwordSpecialEffect;
+        [SerializeField] ParticleSystem m_AxeThrowlEffect;
         void Start()
         {
             //m_HealEffects.Stop(true);
@@ -30,6 +31,10 @@ namespace CorruptedLandTales
         public void SwordSpecialEffect()
         {
             m_SwordSpecialEffect.Play(true);
+        }
+        public void AxeThrowlEffect()
+        {
+            m_AxeThrowlEffect.Play(true);
         }
     }
 }
