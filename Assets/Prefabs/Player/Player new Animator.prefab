@@ -2914,6 +2914,7 @@ Transform:
   - {fileID: 230581200685492915}
   - {fileID: 7158560148165069342}
   - {fileID: 432561383182189206}
+  - {fileID: 7642308644092718278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6795548287528926784
@@ -2976,6 +2977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HealEffects: {fileID: 0}
+  m_PucnhGroundEffect: {fileID: 0}
 --- !u!114 &4306601387588991804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4331,3 +4333,101 @@ Transform:
   - {fileID: 8173609553848181357}
   m_Father: {fileID: 8984308530778819823}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3306764515318852491
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4089173368887766831}
+    m_Modifications:
+    - target: {fileID: 503385641847414234, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1218978338253383016, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2208576233791906499, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285755066653096070, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3056184392828457411, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4071703275497007380, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4995461573065839325, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6586679001710254678, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8262427872422423092, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378648546881499446, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+      propertyPath: m_Name
+      value: MolotPucnhEffect
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+--- !u!4 &7642308644092718278 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5182820693866792781, guid: 506de6f5a6ffd824a9884661aab93924, type: 3}
+  m_PrefabInstance: {fileID: 3306764515318852491}
+  m_PrefabAsset: {fileID: 0}
