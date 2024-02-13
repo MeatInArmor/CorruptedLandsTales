@@ -15,11 +15,13 @@ namespace CorruptedLandTales
         {
             m_collider = gameObject.GetComponent<BoxCollider>();
             m_renderer = gameObject.GetComponent<MeshRenderer>();
-            m_material.color = Color.white;
-            if (TryGetComponent(out ParticleSystem particleSystem))
-            {
-                m_particleSystem = particleSystem;
-            }
+            m_material.color = new Color32(0, 0, 0, 0);
+            m_particleSystem = gameObject.GetComponentInChildren<ParticleSystem>();
+            m_particleSystem.Stop();
+            //if (TryGetComponent(out ParticleSystem particleSystem))
+            //{
+            //    m_particleSystem = particleSystem;
+            //}
         }
         
         public void Open() 
@@ -27,7 +29,8 @@ namespace CorruptedLandTales
             m_collider.enabled = true;
             m_renderer.enabled = true;
             m_collider.isTrigger = true;
-            m_material.color = Color.green;
+            m_material.color = new Color32(0, 200, 0, 80);
+            m_particleSystem.Play();
         }
 
         private void OnTriggerEnter(Collider other)
