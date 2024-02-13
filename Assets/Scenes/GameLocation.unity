@@ -3139,6 +3139,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 752431407}
+    - target: {fileID: 2062398093628484457, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062398093628484457, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3374753982502458053, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
       propertyPath: m_PolyMesh.m_Mesh
       value: 
@@ -3167,10 +3175,42 @@ PrefabInstance:
       propertyPath: m_PolyMesh.m_Mesh
       value: 
       objectReference: {fileID: 691798057}
+    - target: {fileID: 6853298077294229807, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 33.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853298077294229807, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908887535027935305, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908887535027935305, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041810509326973674, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7041810509326973674, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7537253904329875996, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
       propertyPath: m_PolyMesh.m_Mesh
       value: 
       objectReference: {fileID: 631904402}
+    - target: {fileID: 7540627038127184642, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7540627038127184642, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.6
+      objectReference: {fileID: 0}
     - target: {fileID: 7549084176085960953, guid: 716d2f694fd4e6b4a8460eaa48ffae2d, type: 3}
       propertyPath: m_Name
       value: TalesLocation
